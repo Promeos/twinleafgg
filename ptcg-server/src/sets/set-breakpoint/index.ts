@@ -95,7 +95,6 @@ import { TrevenantBREAK } from './trevenant-break';
 import { Trubbish } from './trubbish';
 import { Tympole } from './tympole';
 import { Zebstrika } from './zebstrika';
-import { Zoroark } from './zoroark';
 import { AllNightParty } from './all-night-party';
 import { BurstingBalloon } from './bursting-balloon';
 import { Delinquent } from './delinquent';
@@ -228,7 +227,6 @@ export const setBreakpoint: Card[] = [
   new Trubbish(),
   new Tympole(),
   new Zebstrika(),
-  new Zoroark(),
 
   // Trainers
   new AllNightParty(),

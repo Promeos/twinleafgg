@@ -1,9 +1,9 @@
 import { FirefighterPikachu } from '../set-sun-and-moon-promos/firefighter-pikachu';
-import { PheromosaBuzzwoleGX as PheromosaBuzzwoleGXUNB1 } from '../set-unbroken-bonds/pheromosa-buzzwole-gx';
+import { PheromosaAndBuzzwoleGX as PheromosaBuzzwoleGXUNB1 } from './pheromosa-and-buzzwole-gx';
 import { ReshiramCharizardGX as ReshiramCharizardGXUNB20 } from '../set-unbroken-bonds/reshiram-and-charizard-gx';
 import { MukAlolanMukGX as MukAlolanMukGXUNB61 } from '../set-unbroken-bonds/muk-and-alolan-muk-gx';
 import { MarshadowMachampGX as MarshadowMachampGXUNB82 } from '../set-unbroken-bonds/marshadow-and-machamp-gx';
-import { GreninjaZoroarkGX as GreninjaZoroarkGXUNB107 } from '../set-unbroken-bonds/greninja-zoroark-gx';
+import { GreninjaAndZoroarkGX as GreninjaZoroarkGXUNB107 } from './greninja-and-zoroark-gx';
 import { HonchkrowGX as HonchkrowGXUNB109 } from '../set-unbroken-bonds/honchkrow-gx';
 import { LucarioMelmetalGX as LucarioMelmetalGXUNB120 } from '../set-unbroken-bonds/lucario-and-melmetal-gx';
 import { GardevoirSylveonGX as GardevoirSylveonGXUNB130 } from '../set-unbroken-bonds/gardevoir-and-sylveon-gx';
@@ -234,12 +234,6 @@ export class DedenneGX3UNB extends DedenneGXUNB195 {
   public setNumber = '195a';
   public fullName: string = 'Dedenne-GX3 UNB';
   public set = 'UNB';
-}
-
-export class WelderUNB extends WelderUNB189 {
-  public set: string = 'UNB';
-  public setNumber: string = '189';
-  public fullName: string = 'Welder UNB';
 }
 
 export class VenomothGx2 extends VenomothGx {

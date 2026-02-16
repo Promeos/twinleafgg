@@ -39,7 +39,6 @@ import { Farfetchd } from './farfetchd';
 import { Ferroseed } from './ferroseed';
 import { Ferrothorn } from './ferrothorn';
 import { Flaaffy } from './flaaffy';
-import { Galvantula } from './galvantula';
 import { GengarMimikyuGX } from './gengar-and-mimikyu-gx';
 import { Golduck } from './golduck';
 import { Grimer } from './grimer';
@@ -214,6 +213,7 @@ import {
   LatiasAndLatiosGx4,
   Electrocharger2,
 } from './other-prints';
+import { Galvantula } from './galvantula';
 
 export const setTeamUp: Card[] = [
   // Pokemon
@@ -259,7 +259,6 @@ export const setTeamUp: Card[] = [
   new Flaaffy(),
   new Galvantula(),
   new GengarMimikyuGX(),
-  new Galvantula(),
   new Golduck(),
   new Grimer(),
   new Gyarados(),

@@ -117,7 +117,6 @@ import {
   GardevoirEx3STS,
   SteelixEx2,
   MSteelixEx2,
-  MagearnaEx2,
 } from './other-prints';
 
 export const setSteamSiege: Card[] = [
@@ -242,5 +241,4 @@ export const setSteamSiege: Card[] = [
   new GardevoirEx3STS(),
   new SteelixEx2(),
   new MSteelixEx2(),
-  new MagearnaEx2(),
 ];

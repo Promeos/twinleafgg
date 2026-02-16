@@ -114,11 +114,9 @@ import { Wishiwashi } from './wishiwashi';
 import { Yungoos } from './yungoos';
 import { Zubat } from './zubat';
 import { BigMalasada } from './big-malasada';
-import { EnergyRetrieval } from './energy-retrieval';
 import { Ilima } from './ilima';
 import { PoisonBarb } from './poison-barb';
 import { ProfessorKukui } from './professor-kukui';
-import { RareCandy } from './rare-candy';
 import { Repel } from './repel';
 import { RainbowEnergy } from './rainbow-energy';
 import { RotomDex } from './rotom-dex';
@@ -165,7 +163,7 @@ import {
   LunalaGx3,
   UmbreonGx3,
   SolgaleoGx3,
-  GumssoosGx3,
+  GumshoosGx3,
 } from './other-prints';
 
 export const setSunAndMoon: Card[] = [
@@ -178,7 +176,6 @@ export const setSunAndMoon: Card[] = [
   new AlolanMuk(),
   new AlolanPersian(),
   new AlolanRaticate(),
-  new AlolanRattata(),
   new Araquanid(),
   new Arcanine(),
   new Bewear(),
@@ -187,7 +184,6 @@ export const setSunAndMoon: Card[] = [
   new Brionne(),
   new Bruxish(),
   new Butterfree(),
-  new EnergyRetrievalSUM(),
   new Carvanha(),
   new Caterpie(),
   new Charjabug(),
@@ -288,11 +284,9 @@ export const setSunAndMoon: Card[] = [
 
   // Trainers
   new BigMalasada(),
-  new EnergyRetrieval(),
   new Ilima(),
   new PoisonBarb(),
   new ProfessorKukui(),
-  new RareCandy(),
   new Repel(),
   new RotomDex(),
   new TeamSkullGrunt(),

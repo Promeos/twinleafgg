@@ -184,9 +184,6 @@ import {
   PalkiaGx3,
   MissingClover2,
   PeekingRedCardUPR,
-  DewpiderUPR16,
-  LanaUPR150,
-  PeekingRedCardUPR169,
 } from './other-prints';
 
 export const setUltraPrism: Card[] = [
@@ -380,7 +377,4 @@ export const setUltraPrism: Card[] = [
   new PalkiaGx3(),
   new MissingClover2(),
   new PeekingRedCardUPR(),
-  new DewpiderUPR16(),
-  new LanaUPR150(),
-  new PeekingRedCardUPR169(),
 ];

@@ -260,21 +260,3 @@ export class PeekingRedCardUPR extends PeekingRedCard {
   public setNumber: string = '169';
   public fullName: string = 'Peeking Red Card UPR';
 }
-
-export class DewpiderUPR16 extends Dewpider {
-  public set: string = 'UPR';
-  public setNumber: string = '16';
-  public fullName: string = 'Dewpider UPR';
-}
-
-export class LanaUPR150 extends Lana {
-  public set: string = 'UPR';
-  public setNumber: string = '150';
-  public fullName: string = 'Lana UPR';
-}
-
-export class PeekingRedCardUPR169 extends PeekingRedCard {
-  public set: string = 'UPR';
-  public setNumber: string = '169';
-  public fullName: string = 'Peeking Red Card UPR';
-}

@@ -72,9 +72,3 @@ export class MSteelixEx2 extends MSteelixEx {
   public setNumber: string = '109';
   public fullName: string = 'M Steelix-EX STS 109';
 }
-
-export class MagearnaEx2 extends MagearnaEX {
-  public set: string = 'STS';
-  public setNumber: string = '110';
-  public fullName: string = 'Magearna-EX STS 110';
-}

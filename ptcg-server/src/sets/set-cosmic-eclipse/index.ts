@@ -8,7 +8,6 @@ import { BellelbaAndBrycenMan } from './bellelba-and-brycen-man';
 import { Blacephalon } from './blacephalon';
 import { Buzzwole } from './buzzwole';
 import { ChaoticSwell } from './chaotic-swell';
-import { Clamperl } from './clamperl';
 import { Clay } from './clay';
 import { Clefairy } from './clefairy';
 import { CynthiaAndCaitlin } from './cynthia-and-caitlin';
@@ -95,7 +94,6 @@ export const setCosmicEclipse: Card[] = [
   new Carvanha(),
   new ChaoticSwell(),
   new CharizardBraixenGX(),
-  new Clamperl(),
   new Clay(),
   new Clefairy(),
   new CynthiaAndCaitlin(),

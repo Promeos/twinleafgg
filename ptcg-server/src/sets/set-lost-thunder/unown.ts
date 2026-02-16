@@ -16,7 +16,7 @@ export class Unown extends PokemonCard {
   public weakness = [{ type: P }];
   public retreat = [C];
 
-  public powers = [  {
+  public powers = [{
     name: 'DAMAGE',
     useWhenInPlay: true,
     powerType: PowerType.ABILITY,
@@ -36,7 +36,7 @@ export class Unown extends PokemonCard {
   public setNumber: string = '90';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Unown';
-  public fullName: string = 'Unown LOT';
+  public fullName: string = 'Unown LOT 2';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: DAMAGE

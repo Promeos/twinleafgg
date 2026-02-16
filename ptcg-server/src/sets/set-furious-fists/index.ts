@@ -111,11 +111,9 @@ import {
   LucarioEx2FFI,
   MLucarioEx2,
   MaintenanceFFI96,
-  SuperScoopUpFFI100,
   DragoniteEx2,
   BattleReporter2,
   FossilResearcher2,
-  Korrina2,
   MHeracrossEx2,
   MLucarioEx3,
 } from './other-prints';
@@ -238,11 +236,9 @@ export const setFuriousFists: Card[] = [
   new LucarioEx2FFI(),
   new MLucarioEx2(),
   new MaintenanceFFI96(),
-  new SuperScoopUpFFI100(),
   new DragoniteEx2(),
   new BattleReporter2(),
   new FossilResearcher2(),
-  new Korrina2(),
   new MHeracrossEx2(),
   new MLucarioEx3(),
 ];

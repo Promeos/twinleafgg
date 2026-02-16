@@ -67,12 +67,6 @@ export class MaintenanceFFI96 extends Maintenance {
   public fullName: string = 'Maintenance FFI';
 }
 
-export class SuperScoopUpFFI100 extends SuperScoopUp {
-  public set: string = 'FFI';
-  public setNumber: string = '100';
-  public fullName: string = 'Super Scoop Up FFI';
-}
-
 export class DragoniteEx2 extends DragoniteEx {
   public set: string = 'FFI';
   public setNumber: string = '108';
@@ -89,12 +83,6 @@ export class FossilResearcher2 extends FossilResearcher {
   public set: string = 'FFI';
   public setNumber: string = '110';
   public fullName: string = 'Fossil Researcher FFI 110';
-}
-
-export class Korrina2 extends Korrina {
-  public set: string = 'FFI';
-  public setNumber: string = '111';
-  public fullName: string = 'Korrina FFI 111';
 }
 
 export class MHeracrossEx2 extends MHeracrossEx {

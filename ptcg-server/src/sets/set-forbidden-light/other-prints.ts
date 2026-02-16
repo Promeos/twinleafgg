@@ -21,7 +21,6 @@ import { Snover } from '../set-ultra-prism/snover';
 import { Heatran } from '../set-ultra-prism/heatran';
 import { PalkiaGx } from '../set-ultra-prism/palkia-gx';
 import { Magneton } from '../set-ultra-prism/magneton';
-import { Honedge } from '../set-primal-clash/honedge';
 import { Torterra } from '../set-ultra-prism/torterra';
 import { Gible } from '../set-ultra-prism/gible';
 import { Garchomp } from '../set-ultra-prism/garchomp';
@@ -220,12 +219,6 @@ export class MagnetonFLI extends Magneton {
   public set: string = 'FLI';
   public setNumber: string = '35';
   public fullName: string = 'Magneton FLI';
-}
-
-export class HonedgeFLI extends Honedge {
-  public set: string = 'FLI';
-  public setNumber: string = '47';
-  public fullName: string = 'Honedge FLI';
 }
 
 export class TorterraFLI extends Torterra {

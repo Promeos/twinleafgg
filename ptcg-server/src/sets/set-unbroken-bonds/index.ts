@@ -52,8 +52,6 @@ import { Goldeen } from './goldeen';
 import { Golem } from './golem';
 import { Graveler } from './graveler';
 import { Greninja } from './greninja';
-import { GreninjaAndZoroarkGx } from './greninja-and-zoroark-gx';
-import { GreninjaZoroarkGX } from './greninja-zoroark-gx';
 import { Growlithe } from './growlithe';
 import { Grubbin } from './grubbin';
 import { Happiny } from './happiny';
@@ -98,8 +96,6 @@ import { Oddish } from './oddish';
 import { Oddish2 } from './oddish-2';
 import { Persian } from './persian';
 import { PersianGx } from './persian-gx';
-import { PheromosaAndBuzzwoleGx } from './pheromosa-and-buzzwole-gx';
-import { PheromosaBuzzwoleGX } from './pheromosa-buzzwole-gx';
 import { Pikachu } from './pikachu';
 import { Poliwag } from './poliwag';
 import { Poliwag2 } from './poliwag-2';
@@ -226,7 +222,6 @@ import {
   Pokegear30HS3UNB,
   Welder2UNB,
   DedenneGX3UNB,
-  WelderUNB,
   VenomothGx2,
   DedenneGx2,
   WhimsicottGx2,
@@ -243,6 +238,8 @@ import {
   CelesteelaGx3,
   BeastBringer2,
 } from './other-prints';
+import { GreninjaAndZoroarkGX } from './greninja-and-zoroark-gx';
+import { PheromosaAndBuzzwoleGX } from './pheromosa-and-buzzwole-gx';
 
 export const setUnbrokenBonds: Card[] = [
   // Pokemon
@@ -299,8 +296,7 @@ export const setUnbrokenBonds: Card[] = [
   new Golem(),
   new Graveler(),
   new Greninja(),
-  new GreninjaAndZoroarkGx(),
-  new GreninjaZoroarkGX(),
+  new GreninjaAndZoroarkGX(),
   new Growlithe(),
   new Grubbin(),
   new Happiny(),
@@ -345,8 +341,7 @@ export const setUnbrokenBonds: Card[] = [
   new Oddish2(),
   new Persian(),
   new PersianGx(),
-  new PheromosaAndBuzzwoleGx(),
-  new PheromosaBuzzwoleGX(),
+  new PheromosaAndBuzzwoleGX(),
   new Pikachu(),
   new Poliwag(),
   new Poliwag2(),
@@ -477,7 +472,6 @@ export const setUnbrokenBonds: Card[] = [
   new Pokegear30HS3UNB(),
   new Welder2UNB(),
   new DedenneGX3UNB(),
-  new WelderUNB(),
   new VenomothGx2(),
   new DedenneGx2(),
   new WhimsicottGx2(),

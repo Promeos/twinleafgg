@@ -4,10 +4,10 @@
 
 import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { Stage, CardType } from '../../game/store/card/card-types';
-import { PlayerType, PowerType, StoreLike, State } from '../../game';
-import { CheckTableStateEffect } from '../../game/store/effects/check-effects';
+import { PowerType, StoreLike, State, PokemonCardList, StateUtils } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
-import { PowerEffect } from '../../game/store/effects/game-effects';
+import { PlayPokemonEffect } from '../../game/store/effects/play-card-effects';
+import { IS_ABILITY_BLOCKED, CAN_EVOLVE_ON_FIRST_TURN_GOING_SECOND } from '../../game/store/prefabs/prefabs';
 
 export class Clamperl extends PokemonCard {
   public stage: Stage = Stage.BASIC;
@@ -38,29 +38,13 @@ export class Clamperl extends PokemonCard {
   public fullName: string = 'Clamperl CES';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
-    // Ability: Evolutionary Advantage
-    // Ref: set-ultra-prism/shinx.ts (Evolutionary Advantage)
-    if (effect instanceof CheckTableStateEffect) {
-      const player = state.players[state.activePlayer];
-      if (state.turn === 2) {
-        try {
-          const stub = new PowerEffect(player, {
-            name: 'test',
-            powerType: PowerType.ABILITY,
-            text: ''
-          }, this);
-          store.reduceEffect(state, stub);
-        } catch {
-          return state;
-        }
-        player.canEvolve = true;
-        player.forEachPokemon(PlayerType.BOTTOM_PLAYER, cardList => {
-          if (cardList.getPokemonCard() === this) {
-            cardList.pokemonPlayedTurn = state.turn - 1;
-          }
-        });
-      }
-      return state;
+
+    if (effect instanceof PlayPokemonEffect && effect.pokemonCard === this) {
+      const player = effect.player;
+      const cardList = StateUtils.findCardList(state, this) as PokemonCardList;
+      if (IS_ABILITY_BLOCKED(store, state, player, this))
+        return state;
+      CAN_EVOLVE_ON_FIRST_TURN_GOING_SECOND(state, player, cardList);
     }
     return state;
   }

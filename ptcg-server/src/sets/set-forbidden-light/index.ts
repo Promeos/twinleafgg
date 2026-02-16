@@ -25,6 +25,7 @@ import { DialgaGX } from './dialga-gx';
 import { Diancie } from './diancie';
 import { DianciePrismStar } from './diancie-prism-star';
 import { Diggersby } from './diggersby';
+import { Honedge2 } from './honedge-2';
 import { Doublade } from './doublade';
 import { Dragalge } from './dragalge';
 import { Espurr } from './espurr';
@@ -139,7 +140,6 @@ import {
   HeatranFLI,
   PalkiaGxFLI,
   MagnetonFLI,
-  HonedgeFLI,
   TorterraFLI,
   GibleFLI,
   GarchompFLI,
@@ -209,6 +209,7 @@ export const setForbiddenLight: Card[] = [
   new Heliolisk(),
   new Helioptile(),
   new Honedge(),
+  new Honedge2(),
   new Hoopa(),
   new Infernape(),
   new Inkay(),
@@ -302,7 +303,6 @@ export const setForbiddenLight: Card[] = [
   new HeatranFLI(),
   new PalkiaGxFLI(),
   new MagnetonFLI(),
-  new HonedgeFLI(),
   new TorterraFLI(),
   new GibleFLI(),
   new GarchompFLI(),
