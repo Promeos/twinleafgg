@@ -829,6 +829,44 @@ Example:
 
 ---
 
+## Selective Weakness/Resistance Modification
+
+### Remove a specific weakness type
+
+When card text says "Pokemon of [type] have no Weakness" or "remove [type] Weakness", intercept `CheckPokemonStatsEffect` and filter:
+
+```typescript
+if (effect instanceof CheckPokemonStatsEffect) {
+  // ... find all Pokemon this applies to, check IS_ABILITY_BLOCKED ...
+  effect.weakness = effect.weakness.filter(w => w.type !== CardType.PSYCHIC);
+}
+```
+
+Do NOT use `ignoreWeakness = true` — that removes ALL weakness types.
+
+Reference: `set-unified-minds/jirachi-gx.ts` (Psychic Zone)
+
+---
+
+## Random Card Selection (Non-Coin-Flip)
+
+### Discard a random card from opponent's hand
+
+```typescript
+// "Discard a random card from your opponent's hand."
+if (opponent.hand.cards.length > 0) {
+  const randomIndex = Math.floor(Math.random() * opponent.hand.cards.length);
+  const randomCard = opponent.hand.cards[randomIndex];
+  opponent.hand.moveCardTo(randomCard, opponent.discard);
+}
+```
+
+`Math.random()` is allowed for non-coin-flip randomness (shuffling, random selection). Only coin flips must use `COIN_FLIP_PROMPT`.
+
+Reference: `set-unified-minds/skorupi.ts`, `set-sun-and-moon/mars.ts`
+
+---
+
 ## Common Gotchas
 
 ### "You may" vs mandatory actions

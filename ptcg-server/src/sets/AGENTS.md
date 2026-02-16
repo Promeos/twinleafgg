@@ -897,6 +897,51 @@ Only use the generator pattern (with `effect.preventDefault`, supporter zone man
 
 Reference: `set-lost-thunder/whitney.ts`
 
+### "During your next turn, ALL your Pokemon can't attack" (self-restriction)
+
+When a card says "During your next turn, your Pokemon can't attack" (affecting ALL Pokemon, not just this one), use the 2-phase marker pattern on `player.marker`. Do NOT use `cannotAttackNextTurnPending` (which only affects the single Pokemon):
+
+```typescript
+public readonly GIGATON_SHAKE_MARKER = 'GIGATON_SHAKE_MARKER';
+public readonly CLEAR_GIGATON_SHAKE_MARKER = 'CLEAR_GIGATON_SHAKE_MARKER';
+
+// On attack: set phase-1 marker
+if (WAS_ATTACK_USED(effect, 0, this)) {
+  player.marker.addMarker(this.GIGATON_SHAKE_MARKER, this);
+}
+
+// Block ALL attacks while both phase markers are present
+if (effect instanceof AttackEffect) {
+  if (effect.player.marker.hasMarker(this.GIGATON_SHAKE_MARKER, this)
+    || effect.player.marker.hasMarker(this.CLEAR_GIGATON_SHAKE_MARKER, this)) {
+    throw new GameError(GameMessage.BLOCKED_BY_EFFECT);
+  }
+}
+
+// EndTurnEffect: 2-phase transition
+REMOVE_MARKER_AT_END_OF_TURN(effect, this.CLEAR_GIGATON_SHAKE_MARKER, this);
+REPLACE_MARKER_AT_END_OF_TURN(effect, this.GIGATON_SHAKE_MARKER, this.CLEAR_GIGATON_SHAKE_MARKER, this);
+```
+
+This differs from `cannotAttackNextTurnPending` in that it blocks ALL of your Pokemon, not just the attacking one.
+
+Reference: `set-unified-minds/steelix.ts` (Gigaton Shake)
+
+### Selective weakness removal via `CheckPokemonStatsEffect`
+
+When a card removes a SPECIFIC weakness type (not all weakness), intercept `CheckPokemonStatsEffect` and filter the `weakness` array instead of using `ignoreWeakness = true`:
+
+```typescript
+if (effect instanceof CheckPokemonStatsEffect) {
+  // ... find ability owner and check IS_ABILITY_BLOCKED ...
+  effect.weakness = effect.weakness.filter(w => w.type !== CardType.PSYCHIC);
+}
+```
+
+`ignoreWeakness = true` removes ALL weakness, which is wrong when only one type should be removed.
+
+Reference: `set-unified-minds/jirachi-gx.ts` (Psychic Zone)
+
 ### Overly broad ability type check: `powers.length > 0` vs `PowerType.ABILITY`
 
 When card text says "Pokemon that has an Ability", filter specifically for `PowerType.ABILITY`, not just any power:
