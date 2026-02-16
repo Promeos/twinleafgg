@@ -687,6 +687,29 @@ Reference: `set-ancient-origins/entei.ts` (Burning Roar)
 
 ---
 
+## "Can't Apply More Than 1" Ability Stacking Prevention
+
+When multiple copies of the same Pokemon with a passive ability are in play, only one should apply. Use the "find first instance" pattern:
+
+```typescript
+// In the passive ability intercept (e.g., DealDamageEffect, CheckHpEffect):
+let firstInstance: MyCard | undefined;
+player.forEachPokemon(PlayerType.BOTTOM_PLAYER, (cardList) => {
+  const card = cardList.getPokemonCard();
+  if (card instanceof MyCard && !firstInstance) {
+    firstInstance = card;
+  }
+});
+if (firstInstance !== this) {
+  return state; // Skip — another copy is already applying this effect
+}
+// Apply the ability effect...
+```
+
+Reference: `set-cosmic-eclipse/flareon.ts` (Power Cheer), `set-cosmic-eclipse/jolteon.ts` (Speed Cheer), `set-cosmic-eclipse/vaporeon.ts` (Vitality Cheer)
+
+---
+
 ## Swift / Full Damage Bypass
 
 There are three levels of damage bypass. Choose the correct one based on card text:
@@ -1002,3 +1025,48 @@ if (effect instanceof TrainerTargetEffect && effect.target?.cards.includes(this)
 ```
 
 Reference: `set-team-up/galvantula.ts` (Unnerve), `set-forbidden-light/pyroar.ts` (Unnerve)
+
+### Energy type counting must include CardType.ANY
+
+When counting energy of a specific type from `CheckProvidedEnergyEffect.energyMap.provides`, you MUST include `CardType.ANY` — special energy like Rainbow Energy provides `CardType.ANY`, not the specific type it satisfies:
+
+```typescript
+// CORRECT: counts both native Lightning energy AND multi-type energy
+const lightningCount = checkEnergy.energyMap.reduce((sum, em) =>
+  sum + em.provides.filter(t => t === CardType.LIGHTNING || t === CardType.ANY).length, 0);
+
+// WRONG: misses Rainbow Energy and similar multi-type energy
+const lightningCount = checkEnergy.energyMap.reduce((sum, em) =>
+  sum + em.provides.filter(t => t === CardType.LIGHTNING).length, 0);
+```
+
+Reference: `set-cosmic-eclipse/raichu.ts` (Powerful Spark), `set-team-up/mareep.ts`
+
+### `moveTo()` does NOT move tools
+
+When shuffling/discarding/bouncing an entire Pokemon to another zone, `cardList.moveTo()` only moves `cards` and `energies`, NOT `tools`. You must explicitly handle the tools array:
+
+```typescript
+// Move tools first
+cardList.tools.slice().forEach(tool => {
+  cardList.moveCardTo(tool, destination);
+});
+// Then move the rest
+cardList.moveTo(destination);
+```
+
+Reference: `set-cosmic-eclipse/togepi-and-cleffa-and-igglybuff-gx.ts` (Supreme Puff-GX)
+
+### Stadium existence check: use StateUtils.getStadiumCard
+
+To check if any Stadium card is in play, use `StateUtils.getStadiumCard(state)`. Do NOT use `player.stadium.cards.length > 0` — that only checks one player's stadium slot, but stadiums are shared:
+
+```typescript
+// CORRECT: checks for any stadium in play
+if (StateUtils.getStadiumCard(state) !== undefined) { ... }
+
+// WRONG: only checks current player's stadium slot
+if (player.stadium.cards.length > 0) { ... }
+```
+
+Reference: `set-cosmic-eclipse/black-kyurem.ts`
