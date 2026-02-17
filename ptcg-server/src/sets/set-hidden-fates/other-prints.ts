@@ -577,7 +577,7 @@ export class HikerHIF extends Hiker {
 export class CharmeleonHIF extends Charmeleon {
   public set: string = 'HIF';
   public setNumber: string = '8';
-  public fullName: string = 'Charmeleon HIF';
+  public fullName: string = 'Charmeleon HIF 8';
 }
 
 export class StaryuHIF extends Staryu {

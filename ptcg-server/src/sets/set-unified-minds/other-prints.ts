@@ -20,7 +20,6 @@ import { RecycleEnergyN1 as RecycleEnergyN1N1105 } from '../set-neo-genesis/othe
 import { WeaknessGuardEnergy as WeaknessGuardEnergyUNM213 } from '../set-unified-minds/weakness-guard-energy';
 import { Litwick } from './litwick';
 import { JirachiGx } from './jirachi-gx';
-import { GiantHearth } from '../set-sword-and-shield/giant-hearth';
 import { HeatranGX } from './heatran-gx';
 import { LatiosGx } from './latios-gx';
 import { AerodactylGx } from './aerodactyl-gx';
@@ -240,12 +239,6 @@ export class JirachiGx2 extends JirachiGx {
   public set: string = 'UNM';
   public setNumber: string = '79a';
   public fullName: string = 'Jirachi-GX UNM 79a';
-}
-
-export class GiantHearthUNM extends GiantHearth {
-  public set: string = 'UNM';
-  public setNumber: string = '197';
-  public fullName: string = 'Giant Hearth UNM';
 }
 
 export class HeatranGx2 extends HeatranGX {

@@ -103,7 +103,6 @@ import { Mareanie } from './mareanie';
 import { MawileGX } from './mawile-gx';
 import { Medicham } from './medicham';
 import { Meditite } from './meditite';
-import { MegaSableyeAndTyranitarGx } from './mega-sableye-and-tyranitar-gx';
 import { MegaSableyeTyranitarGX } from './mega-sableye-tyranitar-gx';
 import { Meloetta } from './meloetta';
 import { Mesprit } from './mesprit';
@@ -245,7 +244,6 @@ import {
   ResetStamp2UNM,
   Litwick2,
   JirachiGx2,
-  GiantHearthUNM,
   HeatranGx2,
   LatiosGx2,
   AerodactylGx2,
@@ -371,7 +369,6 @@ export const setUnifiedMinds: Card[] = [
   new MawileGX(),
   new Medicham(),
   new Meditite(),
-  new MegaSableyeAndTyranitarGx(),
   new MegaSableyeTyranitarGX(),
   new Meloetta(),
   new Mesprit(),
@@ -517,7 +514,6 @@ export const setUnifiedMinds: Card[] = [
   new ResetStamp2UNM(),
   new Litwick2(),
   new JirachiGx2(),
-  new GiantHearthUNM(),
   new HeatranGx2(),
   new LatiosGx2(),
   new AerodactylGx2(),

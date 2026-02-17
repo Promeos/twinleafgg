@@ -350,12 +350,6 @@ export class SilvallyGx2 extends SilvallyGx {
   public fullName: string = 'Silvally-GX CEC 227';
 }
 
-export class GuzmaAndHala2 extends GuzmaAndHala {
-  public set: string = 'CEC';
-  public setNumber: string = '229';
-  public fullName: string = 'Guzma & Hala CEC 229';
-}
-
 export class NsResolve2 extends NsResolve {
   public set: string = 'CEC';
   public setNumber: string = '232';

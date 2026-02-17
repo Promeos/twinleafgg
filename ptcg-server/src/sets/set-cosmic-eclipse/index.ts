@@ -12,7 +12,6 @@ import { AlolanVulpix } from './alolan-vulpix';
 import { Ambipom } from './ambipom';
 import { Anorith } from './anorith';
 import { Araquanid } from './araquanid';
-import { ArceusAndDialgaAndPalkiaGx } from './arceus-and-dialga-and-palkia-gx';
 import { ArceusDialgaPalkiaGX } from './arceus-dialga-palkia-gx';
 import { Armaldo } from './armaldo';
 import { Azurill } from './azurill';
@@ -20,15 +19,12 @@ import { Bewear } from './bewear';
 import { Bisharp } from './bisharp';
 import { Blacephalon } from './blacephalon';
 import { BlackKyurem } from './black-kyurem';
-import { BlastoiseAndPiplupGx } from './blastoise-and-piplup-gx';
 import { BlastoisePiplupGX } from './blastoise-piplup-gx';
 import { Braviary } from './braviary';
 import { Buzzwole } from './buzzwole';
 import { Carvanha } from './carvanha';
-import { CharizardAndBraixenGx } from './charizard-and-braixen-gx';
 import { CharizardBraixenGX } from './charizard-braixen-gx';
 import { Chinchou } from './chinchou';
-import { Clamperl } from './clamperl';
 import { Clefairy } from './clefairy';
 import { Cosmoem } from './cosmoem';
 import { Cosmog } from './cosmog';
@@ -96,11 +92,9 @@ import { Magnemite } from './magnemite';
 import { Magneton } from './magneton';
 import { Marshadow } from './marshadow';
 import { Mawile } from './mawile';
-import { MegaLopunnyAndJigglypuffGx } from './mega-lopunny-and-jigglypuff-gx';
 import { MegaLopunnyJigglypuffGX } from './mega-lopuny-and-jigglypuff-gx';
 import { Mimikyu } from './mimikyu';
 import { Mimikyu2 } from './mimikyu-2';
-import { NaganadelAndGuzzlordGx } from './naganadel-and-guzzlord-gx';
 import { NaganadelGuzzlordGX } from './naganadel-guzzlord-gx';
 import { Natu } from './natu';
 import { Nosepass } from './nosepass';
@@ -162,7 +156,6 @@ import { Tepig } from './tepig';
 import { Throh } from './throh';
 import { Togedemaru } from './togedemaru';
 import { Togedemaru2 } from './togedemaru-2';
-import { TogepiAndCleffaAndIgglybuffGx } from './togepi-and-cleffa-and-igglybuff-gx';
 import { TogepiCleffaIgglybuffGX } from './togepi-cleffa-igglybuff-gx';
 import { Torkoal } from './torkoal';
 import { Trapinch } from './trapinch';
@@ -267,7 +260,6 @@ import {
   FlygonGx2,
   ReshiramAndZekromGx2,
   SilvallyGx2,
-  GuzmaAndHala2,
   NsResolve2,
   RedAndBlue2,
   RollerSkater2,
@@ -298,7 +290,6 @@ export const setCosmicEclipse: Card[] = [
   new Ambipom(),
   new Anorith(),
   new Araquanid(),
-  new ArceusAndDialgaAndPalkiaGx(),
   new ArceusDialgaPalkiaGX(),
   new Armaldo(),
   new Azurill(),
@@ -306,18 +297,12 @@ export const setCosmicEclipse: Card[] = [
   new Bisharp(),
   new Blacephalon(),
   new BlackKyurem(),
-  new BlastoiseAndPiplupGx(),
   new BlastoisePiplupGX(),
   new Braviary(),
   new Buzzwole(),
   new Carvanha(),
-  new CharizardAndBraixenGx(),
-  new CharizardBraixenGX(),
-  new Carvanha(),
-  new CharizardAndBraixenGx(),
   new CharizardBraixenGX(),
   new Chinchou(),
-  new Clamperl(),
   new Clefairy(),
   new Cosmoem(),
   new Cosmog(),
@@ -385,11 +370,9 @@ export const setCosmicEclipse: Card[] = [
   new Magneton(),
   new Marshadow(),
   new Mawile(),
-  new MegaLopunnyAndJigglypuffGx(),
   new MegaLopunnyJigglypuffGX(),
   new Mimikyu(),
   new Mimikyu2(),
-  new NaganadelAndGuzzlordGx(),
   new NaganadelGuzzlordGX(),
   new Natu(),
   new Nosepass(),
@@ -451,7 +434,6 @@ export const setCosmicEclipse: Card[] = [
   new Throh(),
   new Togedemaru(),
   new Togedemaru2(),
-  new TogepiAndCleffaAndIgglybuffGx(),
   new TogepiCleffaIgglybuffGX(),
   new Torkoal(),
   new Trapinch(),
@@ -560,7 +542,6 @@ export const setCosmicEclipse: Card[] = [
   new FlygonGx2(),
   new ReshiramAndZekromGx2(),
   new SilvallyGx2(),
-  new GuzmaAndHala2(),
   new NsResolve2(),
   new RedAndBlue2(),
   new RollerSkater2(),
