@@ -1,4 +1,4 @@
-import { PokemonCard, Stage, CardType, PowerType, StoreLike, State, MoveEnergyPrompt, GameMessage, PlayerType, SlotType, SuperType, StateUtils, GameError } from '../../game';
+import { PokemonCard, Stage, CardType, PowerType, StoreLike, State, MoveEnergyPrompt, GameMessage, PlayerType, SlotType, SuperType, StateUtils, GameError, CardTag } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
 import { PlayPokemonEffect } from '../../game/store/effects/play-card-effects';
 import { WAS_POWER_USED, ABILITY_USED, WAS_ATTACK_USED, BLOCK_IF_ASLEEP_CONFUSED_PARALYZED, ADD_MARKER, HAS_MARKER, REMOVE_MARKER_AT_END_OF_TURN, REMOVE_MARKER, THIS_ATTACK_DOES_X_DAMAGE_TO_X_OF_YOUR_OPPONENTS_POKEMON } from '../../game/store/prefabs/prefabs';
@@ -6,6 +6,7 @@ import { WAS_POWER_USED, ABILITY_USED, WAS_ATTACK_USED, BLOCK_IF_ASLEEP_CONFUSED
 export class ErikasBellsprout extends PokemonCard {
   public stage: Stage = Stage.BASIC;
   public cardType: CardType = G;
+  public tags = [CardTag.ERIKAS];
   public hp: number = 40;
   public weakness = [{ type: R }];
   public retreat = [C];
