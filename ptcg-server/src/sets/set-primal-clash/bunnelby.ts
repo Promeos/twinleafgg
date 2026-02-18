@@ -1,11 +1,11 @@
-import { ChooseCardsPrompt, ShowCardsPrompt, ShuffleDeckPrompt } from '../../game';
+import { ChooseCardsPrompt } from '../../game';
 import { GameMessage } from '../../game/game-message';
 import { CardType, Stage } from '../../game/store/card/card-types';
 import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { PowerType } from '../../game/store/card/pokemon-types';
 import { Effect } from '../../game/store/effects/effect';
 import { AttackEffect } from '../../game/store/effects/game-effects';
-import { MOVE_CARDS } from '../../game/store/prefabs/prefabs';
+import { MOVE_CARDS, SHOW_CARDS_TO_PLAYER, SHUFFLE_DECK } from '../../game/store/prefabs/prefabs';
 import { StateUtils } from '../../game/store/state-utils';
 import { State } from '../../game/store/state/state';
 import { StoreLike } from '../../game/store/store-like';
@@ -66,24 +66,15 @@ export class Bunnelby extends PokemonCard {
       if (player.discard.cards.length > 0) {
         state = store.prompt(state, new ChooseCardsPrompt(
           player,
-          GameMessage.CHOOSE_CARD_TO_HAND,
+          GameMessage.CHOOSE_CARD_TO_DECK,
           player.discard,
           {},
           { min: 1, max: 1, allowCancel: false }
         ), selected => {
           const cards = selected || [];
-          store.prompt(state, [new ShowCardsPrompt(
-            opponent.id,
-            GameMessage.CARDS_SHOWED_BY_THE_OPPONENT,
-            cards
-          )], () => {
-            player.discard.moveCardsTo(cards, player.deck);
-          });
-
-          return store.prompt(state, new ShuffleDeckPrompt(player.id), order => {
-            player.deck.applyOrder(order);
-          });
-
+          SHOW_CARDS_TO_PLAYER(store, state, opponent, cards);
+          MOVE_CARDS(store, state, player.discard, player.deck, { cards, sourceCard: this, sourceEffect: this.attacks[1] });
+          SHUFFLE_DECK(store, state, player);
         });
       }
     }

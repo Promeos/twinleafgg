@@ -1,79 +1,41 @@
 import { Card } from '../../game/store/card/card';
-import { Appletun } from './appletun';
-import { Arctozolt } from './arctozolt';
 import { Arrokuda } from './arrokuda';
-import { Barraskewda } from './barraskewda';
-import { Blipbug } from './blipbug';
 import { Buizel } from './buizel';
 import { Cacnea } from './cacnea';
 import { Carkol } from './carkol';
 import { Celebi } from './celebi';
-import { Centiskorch } from './centiskorch';
-import { Chewtle } from './chewtle';
 import { Chewtle2 } from './chewtle-2';
 import { Cinccino } from './cinccino';
-import { Cinderace } from './cinderace';
-import { CinderaceV } from './cinderace-v';
-import { Coalossal } from './coalossal';
-import { Copperajah } from './copperajah';
 import { Cramorant2 } from './cramorant-2';
 import { CramorantVmax } from './cramorant-vmax';
-import { CrobatV } from './crobat-v';
 import { CrobatVmax } from './crobat-vmax';
 import { Cufant } from './cufant';
 import { Dartrix } from './dartrix';
-import { Decidueye } from './decidueye';
 import { DhelmiseVmax } from './dhelmise-vmax';
 import { DittoV } from './ditto-v';
 import { DittoVmax } from './ditto-vmax';
-import { Dracovish } from './dracovish';
-import { Dragapult } from './dragapult';
 import { Drednaw2 } from './drednaw-2';
-import { Drizzile } from './drizzile';
-import { DubwoolV } from './dubwool-v';
 import { Ducklett } from './ducklett';
 import { Eevee } from './eevee';
-import { Eiscue } from './eiscue';
 import { Eldegoss2 } from './eldegoss-2';
-import { EternatusV } from './eternatus-v';
-import { EternatusVmax } from './eternatus-vmax';
 import { Falinks } from './falinks';
-import { FalinksV } from './falinks-v';
-import { Flapple } from './flapple';
 import { Floatzel } from './floatzel';
-import { Frosmoth } from './frosmoth';
 import { ApplinSV } from './full-art';
-import { GalarianCursola } from './galarian-cursola';
-import { GalarianMeowth } from './galarian-meowth';
 import { GalarianMrMime } from './galarian-mr-mime';
-import { GalarianMrRime } from './galarian-mr-rime';
-import { GalarianObstagoon } from './galarian-obstagoon';
-import { GalarianPerrserker } from './galarian-perrserker';
-import { GalarianRapidash } from './galarian-rapidash';
-import { GalarianStunfisk } from './galarian-stunfisk';
 import { GalarianWeezing } from './galarian-weezing';
-import { GalarianZigzagoon } from './galarian-zigzagoon';
 import { Gossifleur } from './gossifleur';
 import { Gossifleur2 } from './gossifleur-2';
-import { Greedent } from './greedent';
 import { GreedentV } from './greedent-v';
-import { Grimmsnarl } from './grimmsnarl';
-import { Hatterene } from './hatterene';
 import { Horsea } from './horsea';
 import { Impidimp } from './impidimp';
 import { Indeedee2 } from './indeedee-2';
 import { IndeedeeV } from './indeedee-v';
-import { Inteleon } from './inteleon';
 import { Koffing } from './koffing';
 import { Kyogre } from './kyogre';
-import { Luxio } from './luxio';
 import { Manaphy } from './manaphy';
 import { Morpeko2 } from './morpeko-2';
-import { Oranguru } from './oranguru';
-import { Orbeetle } from './orbeetle';
 import { Raboot } from './raboot';
 import { Reshiram } from './reshiram';
-import { Rillaboom } from './rillaboom';
 import { Rolycoly } from './rolycoly';
 import { Rookidee } from './rookidee';
 import { Rotom } from './rotom';
@@ -81,7 +43,6 @@ import { Sinistea } from './sinistea';
 import { Sizzlipede } from './sizzlipede';
 import { Skwovet } from './skwovet';
 import { Snom } from './snom';
-import { Sobble } from './sobble';
 import { Spinarak } from './spinarak';
 import { Thievul2 } from './thievul-2';
 import { Thwackey } from './thwackey';
@@ -97,6 +58,7 @@ import { GymTrainer } from './gym-trainer';
 import { RustedShield } from './rusted-shield';
 import { RustedSword } from './rusted-sword';
 import { TeamYellTowel } from './team-yell-towel';
+import { Rillaboom } from '../set-sword-and-shield/rillaboom';
 
 import {
   BirdKeeperSHF,
@@ -197,82 +159,120 @@ import {
   RoseSHF,
   SkylaSHF,
   AlcremieVmaxSHF,
+  OrbeetleSHF,
+  GreedentSHF,
+  HattereneSHF,
+  GrimmsnarlSHF,
+  OranguruSHF,
+  GalarianStunfiskSHF,
+  InteleonSHF,
+  LuxioSHF,
+  EternatusVSHF,
+  EternatusVmaxSHF,
+  CrobatVSHF,
+  CoalossalSHF,
+  CinderaceVSHF,
+  CinderaceSHF,
+  FrosmothSHF2,
+  GalarianObstagoonSHF,
+  AppletunSHF,
+  GalarianZigzagoonSHF,
+  GalarianMeowthSHF,
+  GalarianRapidashSHF,
+  FlappleSHF,
+  DecidueyeSHF,
+  DracovishSHF,
+  ArctozoltSHF,
+  GalarianCursolaSHF,
+  GalarianPerrserkerSHF,
+  GalarianMrRimeSHF,
+  CentiskorchSHF,
+  BarraskewdaSHF,
+  FalinksVSHF,
+  DragapultSHF,
+  EiscueSHF,
+  DubwoolVSHF,
+  CopperajahSHF,
+  BlipbugSHF,
+  ChewtleSHF,
+  DrizzileSHF,
+  SobbleSHF,
 } from './other-prints';
 
 export const setShiningFates: Card[] = [
   // Pokemon
-  new Appletun(),
-  new Arctozolt(),
+  new AppletunSHF(),
+  new ArctozoltSHF(),
   new Arrokuda(),
-  new Barraskewda(),
-  new Blipbug(),
+  new BarraskewdaSHF(),
+  new BlipbugSHF(),
   new Buizel(),
   new Cacnea(),
   new Carkol(),
   new Celebi(),
-  new Centiskorch(),
-  new Chewtle(),
+  new CentiskorchSHF(),
+  new ChewtleSHF(),
   new Chewtle2(),
   new Cinccino(),
-  new Cinderace(),
-  new CinderaceV(),
-  new Coalossal(),
-  new Copperajah(),
+  new CinderaceSHF(),
+  new CinderaceVSHF(),
+  new CoalossalSHF(),
+  new CopperajahSHF(),
   new Cramorant2(),
   new CramorantVmax(),
-  new CrobatV(),
+  new CrobatVSHF(),
   new CrobatVmax(),
   new Cufant(),
   new Dartrix(),
-  new Decidueye(),
+  new DecidueyeSHF(),
   new DhelmiseVmax(),
   new DittoV(),
   new DittoVmax(),
-  new Dracovish(),
-  new Dragapult(),
+  new DracovishSHF(),
+  new DragapultSHF(),
   new Drednaw2(),
-  new Drizzile(),
-  new DubwoolV(),
+  new DrizzileSHF(),
+  new DubwoolVSHF(),
   new Ducklett(),
   new Eevee(),
-  new Eiscue(),
+  new EiscueSHF(),
   new Eldegoss2(),
-  new EternatusV(),
-  new EternatusVmax(),
+  new EternatusVSHF(),
+  new EternatusVmaxSHF(),
   new Falinks(),
-  new FalinksV(),
-  new Flapple(),
+  new FalinksVSHF(),
+  new FlappleSHF(),
   new Floatzel(),
-  new Frosmoth(),
+  new FrosmothSHF2(),
   new ApplinSV(),
-  new GalarianCursola(),
-  new GalarianMeowth(),
+  new GalarianCursolaSHF(),
+  new GalarianMeowthSHF(),
   new GalarianMrMime(),
-  new GalarianMrRime(),
-  new GalarianObstagoon(),
-  new GalarianPerrserker(),
-  new GalarianRapidash(),
-  new GalarianStunfisk(),
+  new GalarianMrRimeSHF(),
+  new GalarianObstagoonSHF(),
+  new GalarianPerrserkerSHF(),
+  new GalarianRapidashSHF(),
+  new GalarianStunfiskSHF(),
   new GalarianWeezing(),
-  new GalarianZigzagoon(),
+  new GalarianZigzagoonSHF(),
   new Gossifleur(),
   new Gossifleur2(),
-  new Greedent(),
+  new GreedentSHF(),
   new GreedentV(),
-  new Grimmsnarl(),
-  new Hatterene(),
+  new GrimmsnarlSHF(),
+  new HattereneSHF(),
   new Horsea(),
   new Impidimp(),
   new Indeedee2(),
   new IndeedeeV(),
-  new Inteleon(),
+  new InteleonSHF(),
   new Koffing(),
   new Kyogre(),
-  new Luxio(),
+  new LuxioSHF(),
   new Manaphy(),
   new Morpeko2(),
-  new Oranguru(),
-  new Orbeetle(),
+  new OranguruSHF(),
+  new OrbeetleSHF(),
   new Raboot(),
   new Reshiram(),
   new Rillaboom(),
@@ -283,7 +283,7 @@ export const setShiningFates: Card[] = [
   new Sizzlipede(),
   new Skwovet(),
   new Snom(),
-  new Sobble(),
+  new SobbleSHF(),
   new Spinarak(),
   new Thievul2(),
   new Thwackey(),

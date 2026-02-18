@@ -5,7 +5,7 @@ import { VikavoltV as VikavoltVDAA60 } from '../set-darkness-ablaze/vikavolt-v';
 import { Piers as PiersCPA58 } from '../set-champions-path/piers';
 import { PokemonBreedersNurturing as PokemonBreedersNurturingDAA166 } from '../set-darkness-ablaze/pokemon-breeders-nurturing';
 import { EternatusVMAX as EternatusVMAXDAA117 } from '../set-darkness-ablaze/eternatus-vmax';
-import { Rillaboom } from '../set-shining-fates/rillaboom';
+import { Rillaboom } from '../set-sword-and-shield/rillaboom';
 import { Coalossal } from '../set-rebel-clash/coalossal';
 import { BigParasol as BigParasolDAA157 } from '../set-darkness-ablaze/big-parasol';
 import { CaptureEnergy } from '../set-rebel-clash/capture-energy';

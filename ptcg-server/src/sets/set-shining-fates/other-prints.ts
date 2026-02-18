@@ -62,10 +62,10 @@ import { ToxtricityVmax } from '../set-rebel-clash/toxtricity-vmax';
 import { GrimmsnarlV } from '../set-darkness-ablaze/grimmsnarl-v';
 import { GrimmsnarlVmax } from '../set-darkness-ablaze/grimmsnarl-vmax';
 import { Dartrix } from './dartrix';
-import { Decidueye } from './decidueye';
+import { Decidueye } from '../set-darkness-ablaze/decidueye';
 import { DhelmiseV } from '../set-sword-and-shield/dhelmise-v';
 import { Thwackey } from './thwackey';
-import { Rillaboom } from './rillaboom';
+import { Rillaboom } from '../set-sword-and-shield/rillaboom';
 import { CinderaceVmax } from '../set-rebel-clash/cinderace-vmax';
 import { Snom } from './snom';
 import { Shinx } from '../set-rebel-clash/shinx';
@@ -93,6 +93,42 @@ import { PokeKid } from '../set-sword-and-shield/poke-kid';
 import { Rose } from '../set-darkness-ablaze/rose';
 import { Skyla } from '../set-boundaries-crossed/skyla';
 import { AlcremieVmax } from '../set-champions-path/alcremie-vmax';
+import { Orbeetle } from '../set-sword-and-shield/orbeetle';
+import { Greedent } from '../set-rebel-clash/greedent';
+import { Hatterene } from '../set-rebel-clash/hatterene';
+import { Grimmsnarl } from '../set-rebel-clash/grimmsnarl';
+import { Oranguru } from '../set-vivid-voltage/oranguru';
+import { GalarianStunfisk } from '../set-sword-and-shield/galarian-stunfisk';
+import { Inteleon } from '../set-sword-and-shield/inteleon';
+import { Luxio } from '../set-rebel-clash/luxio';
+import { EternatusV } from '../set-darkness-ablaze/eternatus-v';
+import { EternatusVMAX } from '../set-darkness-ablaze/eternatus-vmax';
+import { CrobatV } from '../set-darkness-ablaze/crobat-v';
+import { Coalossal } from '../set-rebel-clash/coalossal';
+import { CinderaceV } from '../set-rebel-clash/cinderace-v';
+import { Cinderace } from '../set-sword-and-shield/cinderace';
+import { GalarianObstagoon } from '../set-vivid-voltage/galarian-obstagoon';
+import { Appletun } from '../set-rebel-clash/appletun';
+import { GalarianZigzagoon } from '../set-sword-and-shield/galarian-zigzagoon';
+import { GalarianMeowth } from '../set-rebel-clash/galarian-meowth';
+import { GalarianRapidash } from '../set-sword-and-shield/galarian-rapidash';
+import { Flapple } from '../set-rebel-clash/flapple';
+import { Dracovish } from '../set-darkness-ablaze/dracovish';
+import { Arctozolt } from '../set-darkness-ablaze/arctozolt';
+import { GalarianCursola } from '../set-rebel-clash/galarian-cursola';
+import { GalarianPerrserker } from '../set-sword-and-shield/galarian-perrserker';
+import { GalarianMrRime } from '../set-darkness-ablaze/galarian-mr-rime';
+import { Centiskorch } from '../set-sword-and-shield/centiskorch';
+import { Barraskewda } from '../set-rebel-clash/barraskewda';
+import { FalinksV } from '../set-rebel-clash/falinks-v';
+import { Dragapult } from '../set-rebel-clash/dragapult';
+import { Eiscue } from '../set-rebel-clash/eiscue';
+import { DubwoolV } from '../set-rebel-clash/dubwool-v';
+import { Copperajah } from '../set-darkness-ablaze/copperajah';
+import { Blipbug } from '../set-sword-and-shield/blipbug';
+import { Chewtle } from '../set-sword-and-shield/chewtle';
+import { Drizzile } from '../set-sword-and-shield/drizzile';
+import { Sobble3 } from '../set-sword-and-shield/sobble-3';
 
 export class BirdKeeperSHF extends BirdKeeper {
   public fullName = 'Bird Keeper SHF';
@@ -680,4 +716,232 @@ export class AlcremieVmaxSHF extends AlcremieVmax {
   public set: string = 'SHF';
   public setNumber: string = '73';
   public fullName: string = 'Alcremie VMAX SHF';
+}
+
+export class OrbeetleSHF extends Orbeetle {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV009';
+  public fullName: string = 'Orbeetle SHF';
+}
+
+export class GreedentSHF extends Greedent {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV100';
+  public fullName: string = 'Greedent SHF';
+}
+
+export class HattereneSHF extends Hatterene {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV056';
+  public fullName: string = 'Hatterene SHF';
+}
+
+export class GrimmsnarlSHF extends Grimmsnarl {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV085';
+  public fullName: string = 'Grimmsnarl SHF';
+}
+
+export class OranguruSHF extends Oranguru {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV098';
+  public fullName: string = 'Oranguru SHF';
+}
+
+export class GalarianStunfiskSHF extends GalarianStunfisk {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV088';
+  public fullName: string = 'Galarian Stunfisk SHF';
+}
+
+export class InteleonSHF extends Inteleon {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV027';
+  public fullName: string = 'Inteleon SHF';
+}
+
+export class LuxioSHF extends Luxio {
+  public set: string = 'SHF';
+  public setNumber: string = '32';
+  public fullName: string = 'Luxio SHF';
+}
+
+export class EternatusVSHF extends EternatusV {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV121';
+  public fullName: string = 'Eternatus V SHF';
+}
+
+export class EternatusVmaxSHF extends EternatusVMAX {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV122';
+  public fullName: string = 'Eternatus VMAX SHF';
+}
+
+export class CrobatVSHF extends CrobatV {
+  public set: string = 'SHF';
+  public setNumber: string = '44';
+  public fullName: string = 'Crobat V SHF';
+}
+
+export class CoalossalSHF extends Coalossal {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV069';
+  public fullName: string = 'Coalossal SHF';
+}
+
+export class CinderaceVSHF extends CinderaceV {
+  public set: string = 'SHF';
+  public setNumber: string = '18';
+  public fullName: string = 'Cinderace V SHF';
+}
+
+export class CinderaceSHF extends Cinderace {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV017';
+  public fullName: string = 'Cinderace SHF';
+}
+
+export class FrosmothSHF2 extends Frosmoth {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV034';
+  public fullName: string = 'Frosmoth SHF SV034';
+}
+
+export class GalarianObstagoonSHF extends GalarianObstagoon {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV080';
+  public fullName: string = 'Galarian Obstagoon SHF';
+}
+
+export class AppletunSHF extends Appletun {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV014';
+  public fullName: string = 'Appletun SHF';
+}
+
+export class GalarianZigzagoonSHF extends GalarianZigzagoon {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV078';
+  public fullName: string = 'Galarian Zigzagoon SHF';
+}
+
+export class GalarianMeowthSHF extends GalarianMeowth {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV086';
+  public fullName: string = 'Galarian Meowth SHF';
+}
+
+export class GalarianRapidashSHF extends GalarianRapidash {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV048';
+  public fullName: string = 'Galarian Rapidash SHF';
+}
+
+export class FlappleSHF extends Flapple {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV013';
+  public fullName: string = 'Flapple SHF';
+}
+
+export class DecidueyeSHF extends Decidueye {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV003';
+  public fullName: string = 'Decidueye SHF';
+}
+
+export class DracovishSHF extends Dracovish {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV036';
+  public fullName: string = 'Dracovish SHF';
+}
+
+export class ArctozoltSHF extends Arctozolt {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV046';
+  public fullName: string = 'Arctozolt SHF';
+}
+
+export class GalarianCursolaSHF extends GalarianCursola {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV050';
+  public fullName: string = 'Galarian Cursola SHF';
+}
+
+export class GalarianPerrserkerSHF extends GalarianPerrserker {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV087';
+  public fullName: string = 'Galarian Perrserker SHF';
+}
+
+export class GalarianMrRimeSHF extends GalarianMrRime {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV021';
+  public fullName: string = 'Galarian Mr. Rime SHF';
+}
+
+export class CentiskorchSHF extends Centiskorch {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV019';
+  public fullName: string = 'Centiskorch SHF';
+}
+
+export class BarraskewdaSHF extends Barraskewda {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV032';
+  public fullName: string = 'Barraskewda SHF';
+}
+
+export class FalinksVSHF extends FalinksV {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV115';
+  public fullName: string = 'Falinks V SHF';
+}
+
+export class DragapultSHF extends Dragapult {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV062';
+  public fullName: string = 'Dragapult SHF';
+}
+
+export class EiscueSHF extends Eiscue {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV035';
+  public fullName: string = 'Eiscue SHF';
+}
+
+export class DubwoolVSHF extends DubwoolV {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV120';
+  public fullName: string = 'Dubwool V SHF';
+}
+
+export class CopperajahSHF extends Copperajah {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV091';
+  public fullName: string = 'Copperajah SHF';
+}
+
+export class BlipbugSHF extends Blipbug {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV007';
+  public fullName: string = 'Blipbug SHF';
+}
+
+export class ChewtleSHF extends Chewtle {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV028';
+  public fullName: string = 'Chewtle SHF';
+}
+
+export class DrizzileSHF extends Drizzile {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV026';
+  public fullName: string = 'Drizzile SHF';
+}
+
+export class SobbleSHF extends Sobble3 {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV025';
+  public fullName: string = 'Sobble SHF';
 }
