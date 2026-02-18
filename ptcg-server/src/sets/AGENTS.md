@@ -692,6 +692,27 @@ When card text says "Move a [X] Energy", use `validCardTypes: [CardType.X]` in A
 
 The stub generator may incorrectly set `Stage.BASIC` for evolved Pokemon (especially when card data comes from TCGdex). Always verify: if `evolvesFrom` is present, the stage should be `Stage.STAGE_1` or `Stage.STAGE_2`, not `Stage.BASIC`. This was the most common bug found during set-shining-legends review (11 out of 37 cards affected).
 
+### `PlaceDamageCountersEffect` for non-attack damage sources
+
+`PutCountersEffect` requires an `AttackEffect`/`AbstractAttackEffect` as its base — it's for attack-sourced damage counters only. For damage counters placed by stadiums, abilities, or other non-attack sources, use `PlaceDamageCountersEffect` instead:
+
+```typescript
+// WRONG: PutCountersEffect needs AttackEffect base — `as any` cast is a type violation
+const damage = new PutCountersEffect(effect as any, 20);
+
+// CORRECT: For stadiums, abilities, items placing damage counters
+const damage = new PlaceDamageCountersEffect(player, target, 20);
+store.reduceEffect(state, damage);
+```
+
+Reference: `set-darkness-ablaze/spikemuth.ts`
+
+### Item card generator: discard from `player.supporter`, not `player.hand`
+
+In generator-pattern Item cards, the `PlayItemEffect` flow moves the card from hand → supporter BEFORE the card's `reduceEffect` runs. When discarding the card at the end of the generator, use `player.supporter.moveCardTo(effect.trainerCard, player.discard)`, NOT `player.hand.moveCardTo(...)`. Using `player.hand` silently fails because the card is no longer there, leaving it stuck in the supporter zone.
+
+Reference: `set-paldea-evolved/delivery-drone.ts`, `set-darkness-ablaze/old-pc.ts`
+
 ### Passive abilities: use `IS_ABILITY_BLOCKED` prefab, not manual `PowerEffect` try/catch
 
 For passive abilities that intercept effects (e.g., `PutDamageEffect`, `DealDamageEffect`, `RetreatEffect`), use `IS_ABILITY_BLOCKED(store, state, player, this)` followed by `return state` instead of the manual `try { new PowerEffect(...) } catch { return state }` pattern. The prefab is cleaner and the established preferred pattern.
