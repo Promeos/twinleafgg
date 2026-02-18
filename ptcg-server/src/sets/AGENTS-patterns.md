@@ -238,6 +238,13 @@ Use these before writing custom marker/prompt logic.
 
 ### Post-Damage Switching (CRITICAL - use AfterAttackEffect)
 
+> **WARNING**: ALL switching in attacks that also deal damage MUST use the AfterAttackEffect pattern below. This includes:
+> - "Switch this Pokemon with 1 of your Benched Pokemon" (self-switch)
+> - "Switch the Defending Pokemon with 1 of your opponent's Benched Pokemon" (opponent switch)
+> - "Your opponent switches their Active Pokemon" (opponent chooses)
+>
+> Even if the switch is inside a prompt callback within `WAS_ATTACK_USED`, it STILL needs AfterAttackEffect.
+
 ```typescript
 public usedSwitchAttack = false;
 
@@ -281,6 +288,24 @@ if (effect instanceof EndTurnEffect) {
 > cards.forEach(c => { player.active.moveCardTo(c, player.discard); });
 > ```
 > Reference: `set-primal-clash/manectric.ts`
+
+### Returning Energy to Hand (NOT Discard)
+
+When the card text says "put Energy into their hand" or "return Energy to your hand," use `GameMessage.CHOOSE_ENERGIES_TO_HAND` instead of `GameMessage.CHOOSE_ENERGIES_TO_DISCARD`:
+
+```typescript
+// Card text: "Put 2 Energy attached to this Pokemon into your hand."
+store.prompt(state, new ChooseEnergyPrompt(
+  player.id,
+  GameMessage.CHOOSE_ENERGIES_TO_HAND,  // NOT CHOOSE_ENERGIES_TO_DISCARD
+  player.active,
+  ...
+), selected => {
+  player.active.moveCardsTo(selected, player.hand);  // Move to HAND, not discard
+});
+```
+
+> **Common mistake**: Using `CHOOSE_ENERGIES_TO_DISCARD` when the card puts energy into the hand. Always match the `GameMessage` to the card text destination.
 
 ### Discarding Energy from Opponent's Pokemon
 
@@ -823,6 +848,7 @@ Reference: `set-surging-sparks/energy-search-pro.ts`
 |-------------|----------------|-----------------|----------|
 | Activated (click to use) | `true` | `WAS_POWER_USED(effect, 0, this)` | Victreebel FFI (Wafting Scent), Gothitelle FFI (Teleport Room) |
 | Passive (auto-triggers) | omit | `effect instanceof DealDamageEffect` etc. | Klefki FFI (Secret Key), Noivern FFI (Echolocation), Eevee FFI (Energy Evolution) |
+| On-evolve (triggers when played) | omit | `JUST_EVOLVED(effect, this)` | Galarian Obstagoon SSH (Untamed Shout) |
 
 **Why this matters:** Setting `useWhenInPlay: true` on a passive ability creates a non-functional "use ability" button in the game UI.
 
@@ -1070,3 +1096,27 @@ if (player.stadium.cards.length > 0) { ... }
 ```
 
 Reference: `set-cosmic-eclipse/black-kyurem.ts`
+
+### Activated ability: `throw GameError` vs `return state` for IS_ABILITY_BLOCKED
+
+When `IS_ABILITY_BLOCKED` returns `true`, the response depends on the ability type:
+
+```typescript
+// ACTIVATED ability (WAS_POWER_USED): THROW error to show feedback to player
+if (WAS_POWER_USED(effect, 0, this)) {
+  if (IS_ABILITY_BLOCKED(store, state, player, this)) {
+    throw new GameError(GameMessage.BLOCKED_BY_EFFECT);  // Player sees "blocked" message
+  }
+  // ... ability logic
+}
+
+// PASSIVE ability (DealDamageEffect, etc.): RETURN state silently
+if (effect instanceof DealDamageEffect) {
+  if (IS_ABILITY_BLOCKED(store, state, owner, this)) {
+    return state;  // Silently skip, no UI message
+  }
+  // ... ability logic
+}
+```
+
+> **Common mistake**: Using `return state` in activated abilities. This fails silently without showing the player why their ability didn't work.
