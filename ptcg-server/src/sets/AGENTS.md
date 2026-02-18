@@ -316,6 +316,23 @@ if (effect instanceof EndTurnEffect) {
 
 Reference: `set-great-encounters/dialga-lv-x.ts`
 
+### Passive damage-reduction abilities MUST check `GamePhase.ATTACK`
+
+When intercepting `DealDamageEffect` for passive abilities that "reduce/prevent damage from attacks", always guard with `state.phase === GamePhase.ATTACK`. Without this check, the ability may incorrectly trigger on non-attack damage. When an ability intercepts BOTH `DealDamageEffect` AND `PutDamageEffect`, both blocks must have matching phase guards.
+
+```typescript
+import { GamePhase } from '../../game/store/state/state';
+
+if (effect instanceof DealDamageEffect && effect.target.cards.includes(this)
+  && effect.target.getPokemonCard() === this) {
+  if (state.phase === GamePhase.ATTACK) {
+    // Apply damage reduction/prevention
+  }
+}
+```
+
+Reference: `set-rebel-clash/dubwool-v.ts` (Soft Wool), `set-champions-path/drednaw-vmax.ts` (Solid Shell)
+
 ### ATTACH_ENERGY_PROMPT doesn't support conditional post-attachment logic
 
 When a card says "If you attached Energy in this way, then [do something]", you cannot use the `ATTACH_ENERGY_PROMPT` prefab because it doesn't expose whether attachment actually happened. Inline the `AttachEnergyPrompt` logic and set the flag inside the callback when `transfers.length > 0`.
@@ -546,7 +563,7 @@ return SHUFFLE_DECK(store, state, player);
 When using the 3-call BLOCK_RETREAT pattern, `BLOCK_RETREAT_IF_MARKER` and `REMOVE_MARKER_FROM_ACTIVE_AT_END_OF_TURN` must use `MarkerConstants.DEFENDING_POKEMON_CANNOT_RETREAT_MARKER` — the exact marker that `BLOCK_RETREAT()` sets internally. Custom marker names will silently fail to block retreat.
 
 ```typescript
-import { MarkerConstants } from '../../game/store/prefabs/prefabs';
+import { MarkerConstants } from '../../game/store/markers/marker-constants';
 
 // In WAS_ATTACK_USED: set the marker
 BLOCK_RETREAT(player, opponent, effect);

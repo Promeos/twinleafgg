@@ -796,7 +796,7 @@ Reference: `set-breakthrough/giovannis-scheme.ts`
 When card text says "The Defending Pokemon can't retreat during your opponent's next turn":
 
 ```typescript
-import { MarkerConstants } from '../../game/store/prefabs/prefabs';
+import { MarkerConstants } from '../../game/store/markers/marker-constants';
 
 // In WAS_ATTACK_USED block (MUST return the result):
 return BLOCK_RETREAT(store, state, effect, this);
