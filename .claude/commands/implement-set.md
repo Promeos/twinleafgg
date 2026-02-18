@@ -32,7 +32,7 @@ Read `.claude/set-progress/$ARGUMENTS.json` if it exists.
 
 ## Phase 3: Classify & Divide
 
-Scan all `.ts` files in `ptcg-server/src/sets/$ARGUMENTS/` (excluding `index.ts`, `other-prints.ts`, and `card-data.json`) for `// TODO:` comments. Only files with TODO comments need implementation.
+Scan all `.ts` files in `ptcg-server/src/sets/$ARGUMENTS/` (excluding `index.ts`, `other-prints.ts`, and `card-data.json`) for `// TODO:` comments. Only files with TODO comments need implementation. **Skip any file that has no `// TODO:` comments** — it is already implemented and must not be touched or overwritten.
 
 **Classify each card by complexity:**
 
@@ -66,7 +66,7 @@ Scan all `.ts` files in `ptcg-server/src/sets/$ARGUMENTS/` (excluding `index.ts`
 
 Write `implementing` to `.claude/set-progress/$ARGUMENTS-phase.txt`.
 
-Spawn **3 `dev-implementer` agents** via the `Task` tool with `run_in_background: true`. Each agent gets a prompt structured as follows. **All 3 agents must be spawned in a single message** (parallel tool calls).
+Spawn **3 `dev-implementer` agents** via the `Task` tool with `run_in_background: true` and `model: "sonnet"`. Each agent gets a prompt structured as follows. **All 3 agents must be spawned in a single message** (parallel tool calls).
 
 ### Agent prompt template (customize batch list per agent):
 
@@ -93,7 +93,7 @@ Do NOT edit any files outside your batch. Do NOT edit index.ts or other-prints.t
 
 For each card file in your batch:
 
-1. **Read the file** - find the // TODO: comments describing the effects to implement
+1. **Read the file** - find the // TODO: comments describing the effects to implement. **If the file has no // TODO: comments, it is already implemented — SKIP IT entirely. Do not modify it.**
 2. **Search for similar effects** - this is MANDATORY before writing any code:
    - Search by card text keywords (e.g., grep for "more damage", "is now Paralyzed")
    - Search by prefab usage (e.g., grep for "FLIP_A_COIN_IF_HEADS")
@@ -119,18 +119,18 @@ For each card file in your batch:
 
 After implementing every 8-12 cards, run:
 ```
-cd ptcg-server && npx tsc --noEmit
+cd ptcg-server && npm run compile
 ```
 Fix any TypeScript errors before continuing.
 
 ## When Done
 
-After implementing all cards in your batch, run a final `cd ptcg-server && npx tsc --noEmit` and fix any remaining errors. Report the list of files you implemented.
+After implementing all cards in your batch, run a final `cd ptcg-server && npm run compile` and fix any remaining errors. Report the list of files you implemented.
 ```
 
 **Wait for all 3 agents to complete.** Monitor their output files periodically.
 
-After all 3 finish, run `cd ptcg-server && npx tsc --noEmit` yourself. If there are errors, fix them.
+After all 3 finish, run `cd ptcg-server && npm run compile` yourself. If there are errors, fix them.
 
 **Determine which files were actually implemented:** Scan each batch file for remaining `// TODO:` comments. Files with no remaining `// TODO:` comments are considered implemented. Update the progress file's `"implemented"` array with only the files confirmed done. This is more reliable than agent self-reporting, especially if an agent crashed partway through.
 
@@ -140,7 +140,7 @@ After all 3 finish, run `cd ptcg-server && npx tsc --noEmit` yourself. If there 
 
 Write `reviewing` to `.claude/set-progress/$ARGUMENTS-phase.txt`.
 
-Spawn **3 `code-quality-reviewer` agents** via the `Task` tool with `run_in_background: true`. Each reviewer gets the batch that was implemented by a different implementer. **All 3 agents must be spawned in a single message** (parallel tool calls).
+Spawn **3 `code-quality-reviewer` agents** via the `Task` tool with `run_in_background: true` and `model: "sonnet"`. Each reviewer gets the batch that was implemented by a different implementer. **All 3 agents must be spawned in a single message** (parallel tool calls).
 
 ### Reviewer prompt template:
 
@@ -193,7 +193,7 @@ After reviewing all files, write a brief summary to a **batch-specific file** �
 Each reviewer writes to their own file to avoid conflicts.
 ```
 
-**Wait for all 3 reviewers to complete.** Then run `cd ptcg-server && npx tsc --noEmit` yourself. Fix any remaining errors.
+**Wait for all 3 reviewers to complete.** Then run `cd ptcg-server && npm run compile` yourself. Fix any remaining errors.
 
 ---
 
@@ -214,7 +214,7 @@ This feedback loop improves docs for future sets.
 
 Write `committing` to `.claude/set-progress/$ARGUMENTS-phase.txt`.
 
-1. Run `cd ptcg-server && npx tsc --noEmit` — must pass clean with no errors
+1. Run `cd ptcg-server && npm run compile` — **must pass clean with ZERO errors. If compilation fails, fix ALL errors before proceeding. Do NOT commit if there are any TypeScript errors. Repeat compile-fix cycles until clean.**
 2. Stage the set's files: `git add ptcg-server/src/sets/$ARGUMENTS/`
 3. Check for modified docs with `git diff --name-only ptcg-server/src/sets/AGENTS.md ptcg-server/src/sets/AGENTS-patterns.md ptcg-server/src/sets/CLAUDE-prefabs.md` — stage only files that appear in the output
 4. Commit with message: `Implement $ARGUMENTS card effects`
