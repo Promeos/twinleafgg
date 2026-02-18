@@ -4,7 +4,8 @@ import { Stage, CardType } from '../../game/store/card/card-types';
 import { StoreLike } from '../../game/store/store-like';
 import { State } from '../../game/store/state/state';
 import { Effect } from '../../game/store/effects/effect';
-import { WAS_ATTACK_USED} from '../../game/store/prefabs/prefabs';
+import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
+import { KnockOutEffect } from '../../game/store/effects/game-effects';
 
 
 export class Yveltal extends PokemonCard {
@@ -32,12 +33,14 @@ export class Yveltal extends PokemonCard {
   public fullName: string = 'Yveltal SHF';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
-    // Amazing Destruction
+    // Attack: Amazing Destruction (knock out opponent's Active Pokemon)
+    // Ref: set-team-up/pinsir.ts (Guillotine Hug - KnockOutEffect for instant KO)
     if (WAS_ATTACK_USED(effect, 0, this)) {
       const player = effect.player;
       const opponent = StateUtils.getOpponent(state, player);
-      opponent.active.damage += 999;
-    } 
+      const knockOut = new KnockOutEffect(player, opponent.active);
+      store.reduceEffect(state, knockOut);
+    }
 
     return state;
   }

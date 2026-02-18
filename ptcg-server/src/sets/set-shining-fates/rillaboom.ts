@@ -1,12 +1,10 @@
 import { PokemonCard } from '../../game/store/card/pokemon-card';
-import { Stage, CardType, SuperType, EnergyType } from '../../game/store/card/card-types';
+import { Stage, CardType, EnergyType, SuperType } from '../../game/store/card/card-types';
 import { PowerType } from '../../game/store/card/pokemon-types';
-import { StoreLike, State, AttachEnergyPrompt, GameMessage, PlayerType, SlotType, GameError, StateUtils } from '../../game';
+import { StoreLike, State, GameError, GameMessage, PlayerType, SlotType } from '../../game';
+import { EnergyCard } from '../../game/store/card/energy-card';
 import { Effect } from '../../game/store/effects/effect';
-import { PowerEffect } from '../../game/store/effects/game-effects';
-import { PlayPokemonEffect } from '../../game/store/effects/play-card-effects';
-import { EndTurnEffect } from '../../game/store/effects/game-phase-effects';
-import { ABILITY_USED, HAS_MARKER, REMOVE_MARKER, SHUFFLE_DECK } from '../../game/store/prefabs/prefabs';
+import { WAS_POWER_USED, IS_ABILITY_BLOCKED, USE_ABILITY_ONCE_PER_TURN, ABILITY_USED, REMOVE_MARKER_AT_END_OF_TURN, ATTACH_ENERGY_PROMPT } from '../../game/store/prefabs/prefabs';
 
 export class Rillaboom extends PokemonCard {
   public stage: Stage = Stage.STAGE_2;
@@ -36,52 +34,43 @@ export class Rillaboom extends PokemonCard {
   public fullName: string = 'Rillaboom SSH';
   public cardImage: string = 'assets/cardback.png';
 
-  public readonly VOLTAGE_BEAT_MARKER = 'VOLTAGE_BEAT_MARKER';
+  public readonly VOLTAGE_BEAT_MARKER = 'RILLABOOM_SSH_VOLTAGE_BEAT_MARKER';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
-
-    if (effect instanceof PlayPokemonEffect && effect.pokemonCard === this) {
+    // Ability: Voltage Beat (once per turn - search deck for up to 2 Grass Energy, attach to 1 Pokemon)
+    // Ref: set-sword-and-shield/rillaboom.ts (Voltage Beat)
+    if (WAS_POWER_USED(effect, 0, this)) {
       const player = effect.player;
-      player.marker.removeMarker(this.VOLTAGE_BEAT_MARKER, this);
-    }
 
-    if (effect instanceof EndTurnEffect) {
-      const player = effect.player;
-      player.marker.removeMarker(this.VOLTAGE_BEAT_MARKER, this);
-    }
-
-    if (effect instanceof PowerEffect && effect.power === this.powers[0]) {
-      const player = effect.player;
-      if (player.marker.hasMarker(this.VOLTAGE_BEAT_MARKER, this)) {
-        throw new GameError(GameMessage.POWER_ALREADY_USED);
+      if (IS_ABILITY_BLOCKED(store, state, player, this)) {
+        throw new GameError(GameMessage.BLOCKED_BY_EFFECT);
       }
 
-      return store.prompt(state, new AttachEnergyPrompt(
-        player.id,
-        GameMessage.ATTACH_ENERGY_TO_BENCH,
-        player.deck,
+      const hasGrassEnergyInDeck = player.deck.cards.some(c =>
+        c instanceof EnergyCard && c.energyType === EnergyType.BASIC && c.provides.includes(CardType.GRASS)
+      );
+
+      if (!hasGrassEnergyInDeck) {
+        throw new GameError(GameMessage.CANNOT_USE_POWER);
+      }
+
+      USE_ABILITY_ONCE_PER_TURN(player, this.VOLTAGE_BEAT_MARKER, this);
+      ABILITY_USED(player, this);
+
+      state = ATTACH_ENERGY_PROMPT(
+        store,
+        state,
+        player,
         PlayerType.BOTTOM_PLAYER,
-        [SlotType.BENCH, SlotType.ACTIVE],
+        SlotType.DECK,
+        [SlotType.ACTIVE, SlotType.BENCH],
         { superType: SuperType.ENERGY, energyType: EnergyType.BASIC, name: 'Grass Energy' },
-        { allowCancel: true, min: 0, max: 2, sameTarget: true },
-      ), transfers => {
-        transfers = transfers || [];
-        player.marker.addMarker(this.VOLTAGE_BEAT_MARKER, this);
-        ABILITY_USED(player, this);
-
-        for (const transfer of transfers) {
-          const target = StateUtils.getTarget(state, player, transfer.to);
-          player.deck.moveCardTo(transfer.card, target);
-        }
-
-        SHUFFLE_DECK(store, state, player);
-      });
-
+        { min: 0, max: 2, allowCancel: true, sameTarget: true }
+      );
     }
 
-    if (effect instanceof EndTurnEffect && HAS_MARKER(this.VOLTAGE_BEAT_MARKER, effect.player, this)) {
-      REMOVE_MARKER(this.VOLTAGE_BEAT_MARKER, effect.player, this);
-    }
+    REMOVE_MARKER_AT_END_OF_TURN(effect, this.VOLTAGE_BEAT_MARKER, this);
+
     return state;
   }
 

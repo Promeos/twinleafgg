@@ -1061,3 +1061,23 @@ REMOVE_MARKER_FROM_ACTIVE_AT_END_OF_TURN(effect, MarkerConstants.DEFENDING_POKEM
 
 - `NEXT_TURN_ATTACK_BONUS`: Same-attack self-setup. "During your next turn, **this attack** does X more damage."
 - `NEXT_TURN_ATTACK_BASE_DAMAGE`: Cross-attack setup. "During your next turn, [other attack] does X more damage." The `baseDamage` parameter is the TOTAL (base + bonus).
+
+### Passive trigger abilities MUST check `isPokemonInPlay`
+
+Passive abilities that intercept effects like `DealDamageEffect` or `PutDamageEffect` must verify the card is actually in play using `StateUtils.isPokemonInPlay(owner, this)`. Without this check, the ability can trigger from the discard pile or hand.
+
+```typescript
+if (effect instanceof DealDamageEffect && ...) {
+  const owner = StateUtils.findOwner(state, effect.target);
+  if (!StateUtils.isPokemonInPlay(owner, this)) { return state; }
+  // ... rest of ability logic
+}
+```
+
+Reference: `set-shining-fates/arctozolt.ts` (Numbing Vortex)
+
+### "Look at" / "reveal" card text requires SHOW_CARDS_TO_PLAYER
+
+When card text says "look at the top X cards" or "reveal" cards, you must call `SHOW_CARDS_TO_PLAYER(store, state, player, cards)` to display the cards to the player before they make their selection. Omitting this step means players can't see the cards they're choosing from.
+
+Reference: `set-shining-fates/manaphy.ts` (Ocean Search)
