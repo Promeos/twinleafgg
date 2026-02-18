@@ -620,6 +620,12 @@ Without the CLEAR marker, the effect gets cleaned up at the end of YOUR turn bef
 
 Abilities that trigger when played from hand (intercepting `PlayPokemonEffect`) should NOT have `useWhenInPlay: true`. Only activated abilities that a player clicks to use should have this flag. This also applies to passive abilities (see existing gotcha above).
 
+### "If you searched your deck in this way" — KO always fires
+
+For abilities like Electrode's Buzzap Generator that say "search your deck... If you searched your deck in this way, this Pokemon is Knocked Out", the KO must fire whenever the ability is activated, regardless of whether the player actually took any cards from the search. Do NOT gate the KO on `transfers.length > 0` — the search happened the moment the ability was used.
+
+Reference: `set-vivid-voltage/electrode.ts`
+
 ### 2-phase marker ordering: REMOVE before REPLACE
 
 When using the 2-phase marker pattern for "until the end of your next turn" effects, the order of `REMOVE_MARKER_AT_END_OF_TURN` and `REPLACE_MARKER_AT_END_OF_TURN` calls is critical. REMOVE must come before REPLACE:

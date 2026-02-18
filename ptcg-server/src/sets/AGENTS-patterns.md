@@ -1120,3 +1120,39 @@ if (effect instanceof DealDamageEffect) {
 ```
 
 > **Common mistake**: Using `return state` in activated abilities. This fails silently without showing the player why their ability didn't work.
+
+---
+
+## MoveEnergyPrompt: `blockedFrom` vs `blockedTo`
+
+When using `MoveEnergyPrompt` to restrict energy movement direction:
+
+- `blockedFrom` — slots that CANNOT be used as **source** (energy cannot be taken from these slots)
+- `blockedTo` — slots that CANNOT be used as **destination** (energy cannot be moved to these slots)
+
+**Example: Move energy FROM bench TO active only** (e.g., Galarian Sirfetch'd V's Resolute Spear):
+```typescript
+const blockedFrom: CardTarget[] = [];
+const blockedTo: CardTarget[] = [];
+
+player.forEachPokemon(PlayerType.BOTTOM_PLAYER, (cardList, card, target) => {
+  if (cardList === player.active) {
+    blockedFrom.push(target);  // Can't take energy FROM active
+  } else {
+    blockedTo.push(target);    // Can't move energy TO bench
+  }
+});
+
+store.prompt(state, new MoveEnergyPrompt(
+  player.id,
+  GameMessage.MOVE_ENERGY_CARDS,
+  PlayerType.BOTTOM_PLAYER,
+  [SlotType.BENCH, SlotType.ACTIVE],
+  { superType: SuperType.ENERGY },
+  { allowCancel: true, blockedFrom, blockedTo }
+), transfers => { ... });
+```
+
+> **Common mistake**: Swapping `blockedFrom` and `blockedTo`. Always think: "FROM where?" = source, "TO where?" = destination.
+
+Reference: `set-vivid-voltage/galarian-sirfetchd-v.ts`
