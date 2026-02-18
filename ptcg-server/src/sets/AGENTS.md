@@ -955,3 +955,65 @@ sourceCard.powers.some(p => p.powerType === PowerType.ABILITY)
 ```
 
 Reference: `set-lost-thunder/carbink-2.ts` (Wonder Ray)
+
+### Energy counting: `energyMap.reduce()`, not `energyMap.length`
+
+For "each Energy attached" effects, always use `energyMap.reduce((sum, em) => sum + em.provides.length, 0)` to count total energy provided. Never use `energyMap.length` — it counts energy **cards**, not energy **units**. A Double Colorless Energy provides 2 energy from 1 card.
+
+```typescript
+// WRONG: Undercounts multi-energy cards
+const energyCount = checkEnergy.energyMap.length;
+
+// CORRECT: Counts total energy provided
+const energyCount = checkEnergy.energyMap.reduce((sum, em) => sum + em.provides.length, 0);
+```
+
+### Energy type filters MUST include `CardType.ANY`
+
+When filtering for a specific energy type (e.g., Lightning), always include `CardType.ANY` to count Rainbow Energy and similar multi-type energy cards:
+
+```typescript
+// WRONG: Misses Rainbow Energy
+em.provides.filter(c => c === CardType.LIGHTNING).length
+
+// CORRECT: Includes Rainbow Energy
+em.provides.filter(c => c === CardType.LIGHTNING || c === CardType.ANY).length
+```
+
+### `effect.player` in PutDamageEffect/DealDamageEffect is the ATTACKER
+
+In `PutDamageEffect` and `DealDamageEffect`, `effect.player` is the attacking player. For `IS_ABILITY_BLOCKED` on the defending Pokemon's ability, use `StateUtils.findOwner(state, effect.target)`:
+
+```typescript
+// WRONG: Checks if the attacker's abilities are blocked
+if (IS_ABILITY_BLOCKED(store, state, effect.player, this)) { ... }
+
+// CORRECT: Checks if the defender's abilities are blocked
+const owner = StateUtils.findOwner(state, effect.target);
+if (IS_ABILITY_BLOCKED(store, state, owner, this)) { ... }
+```
+
+### IS_ABILITY_BLOCKED: throw for activated, return for passive
+
+- **Activated abilities** (uses `WAS_POWER_USED`): `throw new GameError(GameMessage.BLOCKED_BY_EFFECT)` — gives the player UI feedback
+- **Passive abilities** (auto-triggers): `return state` — silently skips the effect
+
+### BLOCK_RETREAT requires 3 calls
+
+`BLOCK_RETREAT` is a 3-call pattern. All three are required — missing any one breaks the feature:
+
+```typescript
+// 1. Inside WAS_ATTACK_USED: set the marker
+return BLOCK_RETREAT(store, state, effect, this);
+
+// 2. Outside WAS_ATTACK_USED: intercept retreat attempts
+BLOCK_RETREAT_IF_MARKER(effect, MarkerConstants.DEFENDING_POKEMON_CANNOT_RETREAT_MARKER, this);
+
+// 3. Outside WAS_ATTACK_USED: clean up at end of turn
+REMOVE_MARKER_FROM_ACTIVE_AT_END_OF_TURN(effect, MarkerConstants.DEFENDING_POKEMON_CANNOT_RETREAT_MARKER, this);
+```
+
+### NEXT_TURN_ATTACK_BONUS vs NEXT_TURN_ATTACK_BASE_DAMAGE
+
+- `NEXT_TURN_ATTACK_BONUS`: Same-attack self-setup. "During your next turn, **this attack** does X more damage."
+- `NEXT_TURN_ATTACK_BASE_DAMAGE`: Cross-attack setup. "During your next turn, [other attack] does X more damage." The `baseDamage` parameter is the TOTAL (base + bonus).
