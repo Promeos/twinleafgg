@@ -144,6 +144,14 @@ import { IrisFightingSpirit as IrisFightingSpiritJTG149 } from '../set-journey-t
 import { Surfer as SurferSSP187 } from '../set-surging-sparks/surfer';
 import { MegaCharizardYex as MegaCharizardYexASC22 } from '../set-ascended-heroes/mega-charizard-y-ex';
 import { BossOrders } from '../set-paldea-evolved/boss-orders';
+import { Judge } from '../set-scarlet-and-violet/judge';
+
+export class JudgeMC extends Judge {
+  public setNumber = '711';
+  public fullName: string = 'Judge MC';
+  public set = 'MC';
+  public regulationMark = 'I';
+}
 
 export class BudewASC extends Budew {
   public setNumber = '16';
