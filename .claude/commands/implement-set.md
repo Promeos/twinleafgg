@@ -94,15 +94,39 @@ Do NOT edit any files outside your batch. Do NOT edit index.ts or other-prints.t
 For each card file in your batch:
 
 1. **Read the file** - find the // TODO: comments describing the effects to implement. **If the file has no // TODO: comments, it is already implemented — SKIP IT entirely. Do not modify it.**
-2. **Search for similar effects** - this is MANDATORY before writing any code:
+2. **Check for reprints** — BEFORE implementing, check if this card already exists in another set:
+   - Search: `grep -r "public name.*'CardName'" ptcg-server/src/sets/ --include="*.ts" -l` (replace CardName with the card's name)
+   - If you find a match in another set, read that file and compare attack names and ability names
+   - If the card has the same name, same attack names, and same ability/power names → it is a **REPRINT**
+   - For reprints: replace the stub file's entire content with a minimal reprint class (see Reprint Pattern below). Do NOT re-implement effects that already exist elsewhere.
+3. **Search for similar effects** - this is MANDATORY before writing any code:
    - Search by card text keywords (e.g., grep for "more damage", "is now Paralyzed")
    - Search by prefab usage (e.g., grep for "FLIP_A_COIN_IF_HEADS")
    - Read 1-2 matching reference implementations
-3. **Implement the effect** using prefabs from CLAUDE-prefabs.md, following the reference
-4. **Replace // TODO: with // Ref:** - cite which file and attack/ability you used as reference:
+4. **Implement the effect** using prefabs from CLAUDE-prefabs.md, following the reference
+5. **Replace // TODO: with // Ref:** - cite which file and attack/ability you used as reference:
    - Single ref: // Ref: set-emerging-powers/darmanitan.ts (Rock Smash)
    - Multiple refs: // Refs: set-noble-victories/stunfisk.ts (coin handling), set-noble-victories/audino.ts (self-heal)
    - EVERY implemented effect MUST have a // Ref: comment. This is non-negotiable.
+
+## Reprint Pattern
+
+When you identify a card as a reprint (step 2 above), replace the entire stub file with this pattern:
+
+```typescript
+import { OriginalClassName } from '../set-original-set/original-file';
+
+export class NewClassName extends OriginalClassName {
+  public set: string = 'SET_CODE';
+  public setNumber: string = 'NUMBER';
+  public fullName: string = 'CardName SET_CODE';
+}
+```
+
+- Import the original class from its set directory
+- Extend it, overriding ONLY `set`, `setNumber`, and `fullName`
+- The reprint inherits all stats, attacks, abilities, and effects from the original
+- Report the file as a reprint (not an implementation) in your summary
 
 ## Critical Rules
 

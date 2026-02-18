@@ -4,6 +4,37 @@ You are working with auto-generated card stubs. All card stats (HP, type, weakne
 
 ---
 
+## Reprints — Check Before Implementing
+
+Many Pokemon TCG cards are reprinted across multiple sets with identical effects. Before implementing any card, **always check if it already exists in another set**.
+
+### How to check
+
+Search for the card name across all sets:
+```bash
+grep -r "public name.*'CardName'" ptcg-server/src/sets/ --include="*.ts" -l
+```
+
+If you find a match, compare the attack names and ability/power names. If they match, the card is a **reprint** — do NOT re-implement it.
+
+### Reprint pattern
+
+When working in the batch pipeline, convert the existing stub file into a reprint — **keep the same class name** so `index.ts` imports don't break. The class only overrides `set`, `setNumber`, and `fullName`:
+
+```typescript
+import { OriginalClass } from '../set-original-set/original-file';
+
+export class CardNameSET extends OriginalClass {
+  public set: string = 'SET';
+  public setNumber: string = '123';
+  public fullName: string = 'CardName SET';
+}
+```
+
+The reprint inherits ALL stats, attacks, abilities, and `reduceEffect` from the original. Never re-implement effects that already exist elsewhere.
+
+---
+
 ## Your Workflow
 
 ### 1. Find the TODO
