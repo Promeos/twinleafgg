@@ -6,7 +6,6 @@ import { ProfessorsResearch } from '../set-scarlet-and-violet/professors-researc
 import { ShayminV as ShayminVBRS13 } from '../set-brilliant-stars/shaymin-v';
 import { LumineonV as LumineonVBRS40 } from '../set-brilliant-stars/lumineon-v';
 import { RaichuV as RaichuVBRS45 } from '../set-brilliant-stars/raichu-v';
-import { WhimsicottV as WhimsicottVBRS64 } from '../set-brilliant-stars/whimsicott-v';
 import { ZamazentaV as ZamazentaVCRZ98 } from '../set-crown-zenith/zamazenta-v';
 import { ArceusV as ArceusVBRS122 } from '../set-brilliant-stars/arceus-v';
 import { CherensCare as CherensCareBRS134 } from '../set-brilliant-stars/cherens-care';
@@ -15,7 +14,6 @@ import { Kindler as KindlerBRS143 } from '../set-brilliant-stars/kindler';
 import { MarniesPride as MarniesPrideBRS145 } from '../set-brilliant-stars/marnies-pride';
 import { RoseannesBackup as RoseannesBackupBRS148 } from '../set-brilliant-stars/roseannes-backup';
 import { ShayminVSTAR as ShayminVSTARBRS14 } from '../set-brilliant-stars/shaymin-vstar';
-import { WhimsicottVSTAR as WhimsicottVSTARBRS65 } from '../set-brilliant-stars/whimsicott-vstar';
 import { ArceusVSTAR as ArceusVSTARBRS123 } from '../set-brilliant-stars/arceus-vstar';
 import { GalarianArticunoV } from '../set-chilling-reign/galarian-articuno-v';
 import { GalarianZapdosV } from '../set-chilling-reign/galarian-zapdos-v';
@@ -156,13 +154,6 @@ export class RaichuV2BRS extends RaichuVBRS45 {
   public set = 'BRS';
 }
 
-export class WhimsicottV2BRS extends WhimsicottVBRS64 {
-  public setNumber = '160';
-  public fullName: string = 'Whimsicott V (BRS 160)';
-  public legacyFullName = 'Whimsicott V2 BRS';
-  public set = 'BRS';
-}
-
 export class ZamazentaV2BRS extends ZamazentaVCRZ98 {
   public setNumber = '163';
   public fullName: string = 'Zamazenta V (BRS 163)';
@@ -223,13 +214,6 @@ export class ShayminVSTAR2BRS extends ShayminVSTARBRS14 {
   public setNumber = '173';
   public fullName: string = 'Shaymin VSTAR (BRS 173)';
   public legacyFullName = 'Shaymin VSTAR2 BRS';
-  public set = 'BRS';
-}
-
-export class WhimsicottVSTAR2BRS extends WhimsicottVSTARBRS65 {
-  public setNumber = '175';
-  public fullName: string = 'Whimsicott VSTAR (BRS 175)';
-  public legacyFullName = 'Whimsicott VSTAR2 BRS';
   public set = 'BRS';
 }
 

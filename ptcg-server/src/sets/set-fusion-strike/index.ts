@@ -139,7 +139,6 @@ import { MewV } from './mew-v';
 import { MewVMAX } from './mew-vmax';
 import { Minun } from './minun';
 import { Morgrem } from './morgrem';
-import { Morpeko } from './morpeko';
 import { Morpeko2 } from './morpeko-2';
 import { Mudkip } from './mudkip';
 import { Munna } from './munna';
@@ -245,7 +244,6 @@ import { SpongyGloves } from './spongy-gloves';
 import { FusionStrikeEnergy } from './fusion-strike-energy';
 
 import {
-  JudgeFST,
   QuickBallFST,
   GossifleurFST,
   MankeyFST,
@@ -429,7 +427,6 @@ export const setFusionStrike: Card[] = [
   new MewVMAX(),
   new Minun(),
   new Morgrem(),
-  new Morpeko(),
   new Morpeko2(),
   new Mudkip(),
   new Munna(),
@@ -539,7 +536,6 @@ export const setFusionStrike: Card[] = [
   new FusionStrikeEnergy(),
 
   // Other Prints (Reprints & Alt Arts)
-  new JudgeFST(),
   new QuickBallFST(),
   new GossifleurFST(),
   new MankeyFST(),

@@ -1,4 +1,3 @@
-import { Flaaffy } from '../set-evolving-skies/flaaffy';
 import { TrainingCourt } from '../set-rebel-clash/training-court';
 import { FireEnergy } from '../set-scarlet-and-violet-energy/fire-energy';
 import { GrassEnergy } from '../set-scarlet-and-violet-energy/grass-energy';
@@ -161,13 +160,6 @@ export class MewVMAXAA extends MewVMAX {
 //   public fullName: string = 'Greedent VMAX (FST 272)';
 //   public legacyFullName = 'GreedentVMAXHR FST';
 // }
-
-export class FlaaffySR extends Flaaffy {
-  public set = 'FST';
-  public setNumber = '280';
-  public fullName: string = 'Flaaffy (FST 280)';
-  public legacyFullName = 'FlaaffySR FST';
-}
 
 export class PowerTabletSR extends PowerTablet {
   public setNumber = '281';
