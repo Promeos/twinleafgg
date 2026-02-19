@@ -39,7 +39,6 @@ export class Absol extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Absol';
   public fullName: string = 'Absol (FST 164)';
-  public legacyFullName = 'Absol FST';
 
   public usedDragOff: boolean = false;
   public dragOffAttackEffect: AttackEffect | null = null;

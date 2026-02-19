@@ -20,7 +20,6 @@ export class ChiliAndCilanAndCress extends TrainerCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Chili & Cilan & Cress';
   public fullName: string = 'Chili & Cilan & Cress (FST 227)';
-  public legacyFullName = 'Chili & Cilan & Cress FST';
   public text: string = 'Search your deck for up to 3 Fusion Strike Pokémon, reveal them, and put them into your hand. Then, shuffle your deck. You may play only 1 Supporter card during your turn.';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {

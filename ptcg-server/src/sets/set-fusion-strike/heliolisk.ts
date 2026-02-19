@@ -38,7 +38,6 @@ export class Heliolisk extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Heliolisk';
   public fullName: string = 'Heliolisk (FST 99)';
-  public legacyFullName = 'Heliolisk FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Electrobullet

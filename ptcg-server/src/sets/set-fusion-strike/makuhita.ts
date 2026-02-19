@@ -34,5 +34,4 @@ export class Makuhita extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Makuhita';
   public fullName: string = 'Makuhita (FST 142)';
-  public legacyFullName = 'Makuhita FST';
 }

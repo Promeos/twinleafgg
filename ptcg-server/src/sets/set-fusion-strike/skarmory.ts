@@ -43,7 +43,6 @@ export class Skarmory extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Skarmory';
   public fullName: string = 'Skarmory (FST 182)';
-  public legacyFullName = 'Skarmory FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Steel Wing

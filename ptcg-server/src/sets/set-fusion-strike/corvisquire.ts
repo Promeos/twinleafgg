@@ -33,7 +33,6 @@ export class Corvisquire extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Corvisquire';
   public fullName: string = 'Corvisquire (FST 220)';
-  public legacyFullName = 'Corvisquire FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Fury Attack

@@ -37,7 +37,6 @@ export class Arcanine extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Arcanine';
   public fullName: string = 'Arcanine (FST 33)';
-  public legacyFullName = 'Arcanine FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Heat Tackle

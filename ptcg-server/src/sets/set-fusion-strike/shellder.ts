@@ -26,6 +26,5 @@ export class Shellder extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public setNumber: string = '50';
   public name: string = 'Shellder';
-  public fullName: string = 'Shellder (FST 50)';
-  public legacyFullName = 'Shellder FST';
+  public fullName: string = 'Shellder FST';
 }

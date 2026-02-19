@@ -34,5 +34,4 @@ export class Centiskorch2 extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Centiskorch';
   public fullName: string = 'Centiskorch (FST 49)';
-  public legacyFullName = 'Centiskorch FST 49';
 }

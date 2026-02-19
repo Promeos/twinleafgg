@@ -37,7 +37,6 @@ export class Dubwool extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Dubwool';
   public fullName: string = 'Dubwool (FST 223)';
-  public legacyFullName = 'Dubwool FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Bounce

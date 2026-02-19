@@ -35,7 +35,6 @@ export class Mawile extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Mawile';
   public fullName: string = 'Mawile (FST 119)';
-  public legacyFullName = 'Mawile FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Chomp Chomp Hold

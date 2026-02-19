@@ -45,8 +45,7 @@ export class GenesectV extends PokemonCard {
 
   public name: string = 'Genesect V';
 
-  public fullName: string = 'Genesect V (FST 185)';
-  public legacyFullName = 'Genesect V FST';
+  public fullName: string = 'Genesect V FST';
 
   public readonly FUSION_STRIKE_SYSTEM_MARKER = 'FUSION_STRIKE_SYSTEM_MARKER';
 

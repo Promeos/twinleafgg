@@ -36,7 +36,6 @@ export class Victini extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Victini';
   public fullName: string = 'Victini (FST 36)';
-  public legacyFullName = 'Victini FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Fiery Cheering

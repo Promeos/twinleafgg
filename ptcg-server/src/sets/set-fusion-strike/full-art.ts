@@ -38,7 +38,6 @@ import { Shauna } from './shauna';
 export class MewVFA extends MewV {
   public setNumber = '250';
   public fullName: string = 'MewVFA FST';
-  public legacyFullName = 'CelebiVFA FST';
 }
 
 export class MewVAA extends MewV {
@@ -54,13 +53,11 @@ export class MewVAA extends MewV {
 // export class HoopaVFA extends HoopaV {
 //   public setNumber = '253';
 //   public fullName: string = 'Mew V (FST 253)';
-//   public legacyFullName = 'HoopaVFA FST';
 // }
 
 export class GenesectVFA extends GenesectV {
   public setNumber = '254';
-  public fullName: string = 'Genesect V (FST 254)';
-  public legacyFullName = 'GenesectVFA FST';
+  public fullName: string = 'GenesectVFA FST';
 }
 
 export class GenesectVAA extends GenesectV {
@@ -86,25 +83,21 @@ export class GenesectVAA extends GenesectV {
 // export class DancerFA extends Dancer {
 //   public setNumber = '259';
 //   public fullName: string = 'Genesect V (FST 259)';
-//   public legacyFullName = 'DancerFA FST';
 // }
 
 export class ElesasSparkleFA extends ElesasSparkle {
   public setNumber = '260';
-  public fullName: string = 'Elesa\'s Sparkle (FST 260)';
-  public legacyFullName = 'Elesa\'s SparkleFA FST';
+  public fullName: string = 'Elesa\'s SparkleFA FST';
 }
 
 export class SchoolboyFA extends Schoolboy {
   public setNumber = '261';
-  public fullName: string = 'Schoolboy (FST 261)';
-  public legacyFullName = 'SchoolboyFA FST';
+  public fullName: string = 'SchoolboyFA FST';
 }
 
 export class SchoolgirlFA extends Schoolgirl {
   public setNumber = '262';
-  public fullName: string = 'Schoolgirl (FST 262)';
-  public legacyFullName = 'SchoolgirlFA FST';
+  public fullName: string = 'SchoolgirlFA FST';
 }
 
 export class ShaunaFA extends Shauna {
@@ -130,13 +123,11 @@ export class ShaunaFA extends Shauna {
 // export class BoltundVMAXHR extends BoltundVMAX {
 //   public setNumber = '267';
 //   public fullName: string = 'Shauna (FST 267)';
-//   public legacyFullName = 'BoltundVMAXHR FST';
 // }
 
 export class MewVMAXHR extends MewVMAX {
   public setNumber = '268';
-  public fullName: string = 'Mew VMAX (FST 268)';
-  public legacyFullName = 'MewVMAXHR FST';
+  public fullName: string = 'MewVMAXHR FST';
 }
 
 export class MewVMAXAA extends MewVMAX {
@@ -152,38 +143,32 @@ export class MewVMAXAA extends MewVMAX {
 // export class GengarVMAXAA extends GengarVMAX {
 //   public setNumber = '271';
 //   public fullName: string = 'Gengar VMAX (FST 271)';
-//   public legacyFullName = 'GengarVMAXAA FST';
 // }
 
 // export class GreedentVMAXHR extends GreedentVMAX {
 //   public setNumber = '272';
 //   public fullName: string = 'Greedent VMAX (FST 272)';
-//   public legacyFullName = 'GreedentVMAXHR FST';
 // }
 
 export class PowerTabletSR extends PowerTablet {
   public setNumber = '281';
-  public fullName: string = 'Power Tablet (FST 281)';
-  public legacyFullName = 'Power TabletSR FST';
+  public fullName: string = 'Power TabletSR FST';
 }
 
 export class TrainingCourtSR extends TrainingCourt {
   public set = 'FST';
   public setNumber = '282';
-  public fullName: string = 'Training Court (FST 282)';
-  public legacyFullName = 'Training CourtSR FST';
+  public fullName: string = 'Training CourtSR FST';
 }
 
 export class GrassEnergySR extends GrassEnergy {
   public set = 'FST';
   public setNumber = '283';
-  public fullName: string = 'Grass Energy (FST 283)';
-  public legacyFullName = 'Grass EnergySR';
+  public fullName: string = 'Grass EnergySR';
 }
 
 export class FireEnergySR extends FireEnergy {
   public set = 'FST';
   public setNumber = '284';
-  public fullName: string = 'Fire Energy (FST 284)';
-  public legacyFullName = 'Fire EnergySR';
+  public fullName: string = 'Fire EnergySR';
 }

@@ -33,7 +33,6 @@ export class RillaboomVmax extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Rillaboom VMAX';
   public fullName: string = 'Rillaboom VMAX (FST 23)';
-  public legacyFullName = 'Rillaboom VMAX FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: G-Max Drum Solo

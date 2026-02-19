@@ -38,7 +38,6 @@ export class GreninjaV extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Greninja V';
   public fullName: string = 'Greninja V (FST 73)';
-  public legacyFullName = 'Greninja V FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Dancing Shuriken

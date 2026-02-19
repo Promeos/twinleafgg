@@ -34,5 +34,4 @@ export class Charjabug extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Charjabug';
   public fullName: string = 'Charjabug (FST 100)';
-  public legacyFullName = 'Charjabug FST';
 }

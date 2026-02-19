@@ -36,7 +36,6 @@ export class Rotom extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Rotom';
   public fullName: string = 'Rotom (FST 94)';
-  public legacyFullName = 'Rotom FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Surprise Short

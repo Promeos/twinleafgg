@@ -39,7 +39,6 @@ export class Grimmsnarl extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Grimmsnarl';
   public fullName: string = 'Grimmsnarl (FST 178)';
-  public legacyFullName = 'Grimmsnarl FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Rear Attack

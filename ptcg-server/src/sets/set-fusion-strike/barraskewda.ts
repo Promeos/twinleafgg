@@ -28,5 +28,4 @@ export class Barraskewda extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Barraskewda';
   public fullName: string = 'Barraskewda (FST 83)';
-  public legacyFullName = 'Barraskewda FST';
 }

@@ -38,7 +38,6 @@ export class GalarianPerrserker extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Galarian Perrserker';
   public fullName: string = 'Galarian Perrserker (FST 181)';
-  public legacyFullName = 'Galarian Perrserker FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Call to Muster

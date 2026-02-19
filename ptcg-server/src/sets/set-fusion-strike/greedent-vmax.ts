@@ -32,8 +32,7 @@ export class GreedentVMAX extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public setNumber: string = '218';
   public name: string = 'Greedent VMAX';
-  public fullName: string = 'Greedent VMAX (FST 218)';
-  public legacyFullName = 'Greedent VMAX FST';
+  public fullName: string = 'Greedent VMAX FST';
 
   private usedTurnAProfit = false;
 

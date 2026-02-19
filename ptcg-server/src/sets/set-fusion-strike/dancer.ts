@@ -17,7 +17,6 @@ export class Dancer extends TrainerCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Dancer';
   public fullName: string = 'Dancer (FST 232)';
-  public legacyFullName = 'Dancer FST';
   public text: string = 'Draw 2 cards. If you go second and it\'s your first turn, draw 3 more cards. You may play only 1 Supporter card during your turn.';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {

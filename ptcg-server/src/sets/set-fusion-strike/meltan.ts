@@ -39,7 +39,6 @@ export class Meltan extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Meltan';
   public fullName: string = 'Meltan (FST 188)';
-  public legacyFullName = 'Meltan FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Iron Intake

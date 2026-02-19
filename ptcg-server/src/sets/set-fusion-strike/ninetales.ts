@@ -28,5 +28,4 @@ export class Ninetales extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Ninetales';
   public fullName: string = 'Ninetales (FST 30)';
-  public legacyFullName = 'Ninetales FST';
 }

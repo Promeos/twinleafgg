@@ -37,7 +37,6 @@ export class Leavanny extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Leavanny';
   public fullName: string = 'Leavanny (FST 11)';
-  public legacyFullName = 'Leavanny FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Healing Circle

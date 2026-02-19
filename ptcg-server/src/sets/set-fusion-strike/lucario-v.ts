@@ -28,5 +28,4 @@ export class LucarioV extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Lucario V';
   public fullName: string = 'Lucario V (FST 146)';
-  public legacyFullName = 'Lucario V FST';
 }

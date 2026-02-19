@@ -40,7 +40,6 @@ export class DodrioV extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Dodrio V';
   public fullName: string = 'Dodrio V (FST 201)';
-  public legacyFullName = 'Dodrio V FST';
 
   public readonly ATTACK_BONUS_MARKER = 'DODRIOV_ATTACK_BONUS_MARKER';
   public readonly CLEAR_ATTACK_BONUS_MARKER = 'DODRIOV_CLEAR_ATTACK_BONUS_MARKER';

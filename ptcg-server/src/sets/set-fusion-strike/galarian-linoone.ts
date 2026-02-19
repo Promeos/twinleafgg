@@ -35,6 +35,5 @@ export class GalarianLinoone extends PokemonCard {
 
   public name: string = 'Galarian Linoone';
 
-  public fullName: string = 'Galarian Linoone (FST 160)';
-  public legacyFullName = 'Galarian Linoone FST';
+  public fullName: string = 'Galarian Linoone FST';
 }

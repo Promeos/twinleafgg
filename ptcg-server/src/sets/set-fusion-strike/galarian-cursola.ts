@@ -42,7 +42,6 @@ export class GalarianCursola extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Galarian Cursola';
   public fullName: string = 'Galarian Cursola (FST 118)';
-  public legacyFullName = 'Galarian Cursola FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Force Regeneration

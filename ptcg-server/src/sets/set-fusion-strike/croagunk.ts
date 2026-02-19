@@ -20,6 +20,5 @@ export class Croagunk extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public setNumber: string = '165';
   public name: string = 'Croagunk';
-  public fullName: string = 'Croagunk (FST 165)';
-  public legacyFullName = 'Croagunk FST';
+  public fullName: string = 'Croagunk FST';
 }

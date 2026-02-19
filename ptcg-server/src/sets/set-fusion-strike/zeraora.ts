@@ -30,7 +30,6 @@ export class Zeraora extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Zeraora';
   public fullName: string = 'Zeraora (FST 102)';
-  public legacyFullName = 'Zeraora FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Wild Charge

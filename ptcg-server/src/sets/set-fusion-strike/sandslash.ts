@@ -31,7 +31,6 @@ export class Sandslash extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Sandslash';
   public fullName: string = 'Sandslash (FST 132)';
-  public legacyFullName = 'Sandslash FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Dig Uppercut

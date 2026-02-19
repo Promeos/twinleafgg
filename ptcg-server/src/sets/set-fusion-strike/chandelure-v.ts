@@ -39,7 +39,6 @@ export class ChandelureV extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Chandelure V';
   public fullName: string = 'Chandelure V (FST 39)';
-  public legacyFullName = 'Chandelure V FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Confuse Ray

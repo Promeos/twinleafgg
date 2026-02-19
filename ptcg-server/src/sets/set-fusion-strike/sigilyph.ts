@@ -38,7 +38,6 @@ export class Sigilyph extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Sigilyph';
   public fullName: string = 'Sigilyph (FST 123)';
-  public legacyFullName = 'Sigilyph FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Joust

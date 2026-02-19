@@ -27,5 +27,4 @@ export class Vulpix extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Vulpix';
   public fullName: string = 'Vulpix (FST 28)';
-  public legacyFullName = 'Vulpix FST';
 }

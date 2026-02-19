@@ -33,5 +33,4 @@ export class Phantump extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Phantump';
   public fullName: string = 'Phantump (FST 16)';
-  public legacyFullName = 'Phantump FST';
 }

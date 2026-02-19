@@ -50,8 +50,7 @@ export class InteleonVMAX extends PokemonCard {
 
   public name: string = 'Inteleon VMAX';
 
-  public fullName: string = 'Inteleon VMAX (FST 79)';
-  public legacyFullName = 'Inteleon VMAX FST';
+  public fullName: string = 'Inteleon VMAX FST';
 
   public readonly DOUBLE_GUNNER_MARKER = 'DOUBLE_GUNNER_MARKER';
 

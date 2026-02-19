@@ -39,7 +39,6 @@ export class Toxtricity2 extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Toxtricity';
   public fullName: string = 'Toxtricity (FST 108)';
-  public legacyFullName = 'Toxtricity FST 108';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Maximum Downer (passive)

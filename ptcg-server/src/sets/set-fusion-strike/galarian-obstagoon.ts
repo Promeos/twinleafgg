@@ -41,7 +41,6 @@ export class GalarianObstagoon extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Galarian Obstagoon';
   public fullName: string = 'Galarian Obstagoon (FST 161)';
-  public legacyFullName = 'Galarian Obstagoon FST';
 
   public silencedAttack: Attack | null = null;
 

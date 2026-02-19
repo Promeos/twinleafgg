@@ -33,5 +33,4 @@ export class Slugma extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Slugma';
   public fullName: string = 'Slugma (FST 34)';
-  public legacyFullName = 'Slugma FST';
 }

@@ -43,7 +43,6 @@ export class Corviknight extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Corviknight';
   public fullName: string = 'Corviknight (FST 190)';
-  public legacyFullName = 'Corviknight FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Steel Wing

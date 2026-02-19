@@ -41,8 +41,7 @@ export class Meloetta extends PokemonCard {
 
   public name: string = 'Meloetta';
 
-  public fullName: string = 'Meloetta (FST 124)';
-  public legacyFullName = 'Meloetta FST';
+  public fullName: string = 'Meloetta FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
 

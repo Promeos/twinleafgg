@@ -39,7 +39,6 @@ export class Huntail extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Huntail';
   public fullName: string = 'Huntail (FST 66)';
-  public legacyFullName = 'Huntail FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Single Strike Jammer

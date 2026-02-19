@@ -38,7 +38,6 @@ export class Gliscor extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Gliscor';
   public fullName: string = 'Gliscor (FST 141)';
-  public legacyFullName = 'Gliscor FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Cut Down

@@ -29,5 +29,4 @@ export class Lopunny extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Lopunny';
   public fullName: string = 'Lopunny (FST 213)';
-  public legacyFullName = 'Lopunny FST';
 }

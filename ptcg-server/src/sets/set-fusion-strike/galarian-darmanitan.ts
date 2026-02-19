@@ -39,7 +39,6 @@ export class GalarianDarmanitan extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Galarian Darmanitan';
   public fullName: string = 'Galarian Darmanitan (FST 72)';
-  public legacyFullName = 'Galarian Darmanitan FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Powder Snow

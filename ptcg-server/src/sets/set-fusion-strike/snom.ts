@@ -31,7 +31,6 @@ export class Snom extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Snom';
   public fullName: string = 'Snom (FST 84)';
-  public legacyFullName = 'Snom FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Find Ice

@@ -34,5 +34,4 @@ export class Grapploct extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Grapploct';
   public fullName: string = 'Grapploct (FST 153)';
-  public legacyFullName = 'Grapploct FST';
 }

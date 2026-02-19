@@ -33,7 +33,6 @@ export class Plusle extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Plusle';
   public fullName: string = 'Plusle (FST 89)';
-  public legacyFullName = 'Plusle FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Spark Duo - +100 if Minun attacked last turn

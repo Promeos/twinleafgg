@@ -40,7 +40,6 @@ export class Centiskorch extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Centiskorch';
   public fullName: string = 'Centiskorch (FST 48)';
-  public legacyFullName = 'Centiskorch FST';
 
   public readonly ATTACK_BONUS_MARKER = 'CENTISKORCH_ATTACK_BONUS_MARKER';
   public readonly CLEAR_ATTACK_BONUS_MARKER = 'CENTISKORCH_CLEAR_ATTACK_BONUS_MARKER';

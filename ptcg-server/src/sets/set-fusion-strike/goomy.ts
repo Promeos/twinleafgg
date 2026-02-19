@@ -32,5 +32,4 @@ export class Goomy extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Goomy';
   public fullName: string = 'Goomy (FST 195)';
-  public legacyFullName = 'Goomy FST';
 }

@@ -38,7 +38,6 @@ export class Jynx extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Jynx';
   public fullName: string = 'Jynx (FST 112)';
-  public legacyFullName = 'Jynx FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Double Draw

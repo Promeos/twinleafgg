@@ -38,7 +38,6 @@ export class Magcargo extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Magcargo';
   public fullName: string = 'Magcargo (FST 35)';
-  public legacyFullName = 'Magcargo FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Body Splash

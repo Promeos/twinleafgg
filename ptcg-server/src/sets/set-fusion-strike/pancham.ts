@@ -36,7 +36,6 @@ export class Pancham extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Pancham';
   public fullName: string = 'Pancham (FST 149)';
-  public legacyFullName = 'Pancham FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Raised Bad

@@ -18,7 +18,6 @@ export class FarewellBell extends TrainerCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Farewell Bell';
   public fullName: string = 'Farewell Bell (FST 234)';
-  public legacyFullName = 'Farewell Bell FST';
   public text: string = 'If the Pokémon VMAX this card is attached to is Knocked Out by damage from an attack from your opponent\'s Pokémon, search your deck for a card and put it into your hand. Then, shuffle your deck. You may play any number of Item cards during your turn. Attach a Pokémon Tool to 1 of your Pokémon that doesn\'t already have a Pokémon Tool attached.';
 
   public damageDealt = false;

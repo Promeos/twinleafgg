@@ -37,7 +37,6 @@ export class Chansey extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Chansey';
   public fullName: string = 'Chansey (FST 202)';
-  public legacyFullName = 'Chansey FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Drain Slap

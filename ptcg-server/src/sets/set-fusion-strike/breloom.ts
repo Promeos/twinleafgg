@@ -37,7 +37,6 @@ export class Breloom extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Breloom';
   public fullName: string = 'Breloom (FST 5)';
-  public legacyFullName = 'Breloom FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Impact Blow

@@ -50,8 +50,6 @@ import {
   HereComesTeamRocketCEL,
   Mew2,
   RocketsAdminCEL,
-  ReshiramCEL,
-  ZekromCEL,
 } from './other-prints';
 
 export const setCelebrations: Card[] = [
@@ -109,6 +107,4 @@ export const setCelebrations: Card[] = [
   new HereComesTeamRocketCEL(),
   new Mew2(),
   new RocketsAdminCEL(),
-  new ReshiramCEL(),
-  new ZekromCEL(),
 ];

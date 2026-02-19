@@ -27,5 +27,4 @@ export class Dewpider extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Dewpider';
   public fullName: string = 'Dewpider (FST 19)';
-  public legacyFullName = 'Dewpider FST';
 }

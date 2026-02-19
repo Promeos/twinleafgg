@@ -30,7 +30,6 @@ export class GalarianDarumaka extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Galarian Darumaka';
   public fullName: string = 'Galarian Darumaka (FST 71)';
-  public legacyFullName = 'Galarian Darumaka FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Reckless Charge

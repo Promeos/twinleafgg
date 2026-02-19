@@ -34,5 +34,4 @@ export class Croconaw extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Croconaw';
   public fullName: string = 'Croconaw (FST 56)';
-  public legacyFullName = 'Croconaw FST';
 }

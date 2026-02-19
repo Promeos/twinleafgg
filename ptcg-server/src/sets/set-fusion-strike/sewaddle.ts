@@ -31,7 +31,6 @@ export class Sewaddle extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Sewaddle';
   public fullName: string = 'Sewaddle (FST 9)';
-  public legacyFullName = 'Sewaddle FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Grass Munch

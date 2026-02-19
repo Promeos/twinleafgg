@@ -37,7 +37,6 @@ export class Persian extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Persian';
   public fullName: string = 'Persian (FST 200)';
-  public legacyFullName = 'Persian FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Pay Day

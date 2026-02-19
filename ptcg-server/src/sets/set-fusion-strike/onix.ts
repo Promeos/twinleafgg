@@ -41,7 +41,6 @@ export class Onix extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Onix';
   public fullName: string = 'Onix (FST 138)';
-  public legacyFullName = 'Onix FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Guard Press

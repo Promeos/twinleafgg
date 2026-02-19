@@ -37,7 +37,6 @@ export class Pangoro extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Pangoro';
   public fullName: string = 'Pangoro (FST 174)';
-  public legacyFullName = 'Pangoro FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Knocking Hammer - discard top card of opponent's deck

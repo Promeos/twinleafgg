@@ -28,5 +28,4 @@ export class Munna extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Munna';
   public fullName: string = 'Munna (FST 121)';
-  public legacyFullName = 'Munna FST';
 }

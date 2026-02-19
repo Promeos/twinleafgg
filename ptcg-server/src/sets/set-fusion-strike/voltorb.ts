@@ -31,7 +31,6 @@ export class Voltorb extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Voltorb';
   public fullName: string = 'Voltorb (FST 87)';
-  public legacyFullName = 'Voltorb FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Single Shot Blast

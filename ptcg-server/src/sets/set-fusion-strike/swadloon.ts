@@ -39,7 +39,6 @@ export class Swadloon extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Swadloon';
   public fullName: string = 'Swadloon (FST 10)';
-  public legacyFullName = 'Swadloon FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Trip Over

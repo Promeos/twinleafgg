@@ -33,5 +33,4 @@ export class Sizzlipede extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Sizzlipede';
   public fullName: string = 'Sizzlipede (FST 46)';
-  public legacyFullName = 'Sizzlipede FST';
 }

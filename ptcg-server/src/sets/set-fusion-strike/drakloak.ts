@@ -41,7 +41,6 @@ export class Drakloak extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Drakloak';
   public fullName: string = 'Drakloak (FST 129)';
-  public legacyFullName = 'Drakloak FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: U-turn

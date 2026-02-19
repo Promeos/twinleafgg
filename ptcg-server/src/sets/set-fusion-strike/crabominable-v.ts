@@ -38,7 +38,6 @@ export class CrabominableV extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Crabominable V';
   public fullName: string = 'Crabominable V (FST 76)';
-  public legacyFullName = 'Crabominable V FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Trigger Avalanche

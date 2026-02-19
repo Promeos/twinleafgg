@@ -39,7 +39,6 @@ export class HoopaV extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Hoopa V';
   public fullName: string = 'Hoopa V (FST 253)';
-  public legacyFullName = 'Hoopa V FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Two-Faced (passive - adds Psychic type while in play)

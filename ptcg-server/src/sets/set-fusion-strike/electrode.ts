@@ -38,7 +38,6 @@ export class Electrode extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Electrode';
   public fullName: string = 'Electrode (FST 88)';
-  public legacyFullName = 'Electrode FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Sonic Boom

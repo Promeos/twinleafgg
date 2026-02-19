@@ -37,7 +37,6 @@ export class Turtonator extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Turtonator';
   public fullName: string = 'Turtonator (FST 198)';
-  public legacyFullName = 'Turtonator FST';
 
   public readonly SHELL_TRAP_MARKER = 'TURTONATOR_FST_SHELL_TRAP_MARKER';
   public readonly CLEAR_SHELL_TRAP_MARKER = 'TURTONATOR_FST_CLEAR_SHELL_TRAP_MARKER';

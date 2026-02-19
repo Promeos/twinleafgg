@@ -38,7 +38,6 @@ export class Frosmoth extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Frosmoth';
   public fullName: string = 'Frosmoth (FST 85)';
-  public legacyFullName = 'Frosmoth FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Icy Wind

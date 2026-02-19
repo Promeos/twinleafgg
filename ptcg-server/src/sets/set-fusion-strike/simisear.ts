@@ -38,7 +38,6 @@ export class Simisear extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Simisear';
   public fullName: string = 'Simisear (FST 38)';
-  public legacyFullName = 'Simisear FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Fling Fire

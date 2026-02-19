@@ -41,7 +41,6 @@ export class Flaaffy extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Flaaffy';
   public fullName: string = 'Flaaffy (FST 280)';
-  public legacyFullName = 'Flaaffy FST';
 
   public readonly DYNAMOTOR_MARKER = 'DYNAMOTOR_MARKER';
 

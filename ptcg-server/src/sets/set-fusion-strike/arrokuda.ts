@@ -27,5 +27,4 @@ export class Arrokuda extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Arrokuda';
   public fullName: string = 'Arrokuda (FST 82)';
-  public legacyFullName = 'Arrokuda FST';
 }

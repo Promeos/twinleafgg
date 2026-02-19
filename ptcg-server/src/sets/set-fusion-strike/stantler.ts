@@ -38,7 +38,6 @@ export class Stantler extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Stantler';
   public fullName: string = 'Stantler (FST 208)';
-  public legacyFullName = 'Stantler FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Wild Dive

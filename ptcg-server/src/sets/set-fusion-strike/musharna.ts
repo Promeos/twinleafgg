@@ -41,7 +41,6 @@ export class Musharna extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Musharna';
   public fullName: string = 'Musharna (FST 122)';
-  public legacyFullName = 'Musharna FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Sleep Inducer - gust opponent's benched Pokemon, then it's Asleep

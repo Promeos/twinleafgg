@@ -33,7 +33,6 @@ export class CinderaceVmax extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Cinderace VMAX';
   public fullName: string = 'Cinderace VMAX (FST 45)';
-  public legacyFullName = 'Cinderace VMAX FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: G-Max Fireball

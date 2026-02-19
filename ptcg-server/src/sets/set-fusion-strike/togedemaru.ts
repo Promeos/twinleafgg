@@ -38,7 +38,6 @@ export class Togedemaru extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Togedemaru';
   public fullName: string = 'Togedemaru (FST 187)';
-  public legacyFullName = 'Togedemaru FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Let's All Rollout

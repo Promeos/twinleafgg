@@ -37,7 +37,6 @@ export class Indeedee extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Indeedee';
   public fullName: string = 'Indeedee (FST 127)';
-  public legacyFullName = 'Indeedee FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Call for Family

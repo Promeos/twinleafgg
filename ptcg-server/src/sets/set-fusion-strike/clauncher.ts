@@ -33,5 +33,4 @@ export class Clauncher extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Clauncher';
   public fullName: string = 'Clauncher (FST 74)';
-  public legacyFullName = 'Clauncher FST';
 }

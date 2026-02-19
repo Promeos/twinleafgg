@@ -41,8 +41,7 @@ export class Accelgor extends PokemonCard {
 
   public name: string = 'Accelgor';
 
-  public fullName: string = 'Accelgor (FST 14)';
-  public legacyFullName = 'Accelgor FST';
+  public fullName: string = 'Accelgor FST';
 
 
 

@@ -34,5 +34,4 @@ export class PikachuV extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Pikachu V';
   public fullName: string = 'Pikachu V (FST 86)';
-  public legacyFullName = 'Pikachu V FST';
 }

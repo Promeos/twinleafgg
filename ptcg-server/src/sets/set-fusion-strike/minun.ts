@@ -43,7 +43,6 @@ export class Minun extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Minun';
   public fullName: string = 'Minun (FST 90)';
-  public legacyFullName = 'Minun FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Track when this Minun uses an attack (for Plusle's Spark Duo)

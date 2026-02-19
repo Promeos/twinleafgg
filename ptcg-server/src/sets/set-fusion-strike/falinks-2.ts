@@ -27,5 +27,4 @@ export class Falinks2 extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Falinks';
   public fullName: string = 'Falinks (FST 155)';
-  public legacyFullName = 'Falinks FST 155';
 }

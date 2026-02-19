@@ -37,7 +37,6 @@ export class Tynamo extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Tynamo';
   public fullName: string = 'Tynamo (FST 95)';
-  public legacyFullName = 'Tynamo FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Thunder Wave

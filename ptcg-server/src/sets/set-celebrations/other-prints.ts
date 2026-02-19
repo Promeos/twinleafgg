@@ -3,8 +3,6 @@ import { Pikachu } from '../set-evolutions/pikachu';
 import { HereComesTeamRocket } from '../set-team-rocket/here-comes-team-rocket';
 import { Mew } from './mew';
 import { RocketsAdmin } from '../set-ex-team-rocket-returns/rockets-admin';
-import { Reshiram } from '../set-black-and-white/reshiram';
-import { Zekrom } from '../set-black-and-white/zekrom';
 
 export class ProfessorsResearchCEL extends ProfessorsResearch {
   public fullName = 'Professor\'s Research CEL';
@@ -42,14 +40,3 @@ export class RocketsAdminCEL extends RocketsAdmin {
   public fullName: string = 'Rocket\'s Admin. CEL';
 }
 
-export class ReshiramCEL extends Reshiram {
-  public set: string = 'CEL';
-  public setNumber: string = '113A';
-  public fullName: string = 'Reshiram CEL';
-}
-
-export class ZekromCEL extends Zekrom {
-  public set: string = 'CEL';
-  public setNumber: string = '114A';
-  public fullName: string = 'Zekrom CEL';
-}

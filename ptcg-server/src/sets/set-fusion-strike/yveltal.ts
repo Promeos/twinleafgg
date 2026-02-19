@@ -42,6 +42,5 @@ export class Yveltal extends PokemonCard {
 
   public name: string = 'Yveltal';
 
-  public fullName: string = 'Yveltal (FST 175)';
-  public legacyFullName = 'Yveltal FST';
+  public fullName: string = 'Yveltal FST';
 }

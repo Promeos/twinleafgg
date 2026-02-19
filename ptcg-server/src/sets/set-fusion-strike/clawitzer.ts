@@ -38,7 +38,6 @@ export class Clawitzer extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Clawitzer';
   public fullName: string = 'Clawitzer (FST 75)';
-  public legacyFullName = 'Clawitzer FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Snipe Shot

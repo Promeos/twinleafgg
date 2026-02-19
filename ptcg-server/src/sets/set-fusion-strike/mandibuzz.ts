@@ -43,7 +43,6 @@ export class Mandibuzz extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Mandibuzz';
   public fullName: string = 'Mandibuzz (FST 173)';
-  public legacyFullName = 'Mandibuzz FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Bone Block

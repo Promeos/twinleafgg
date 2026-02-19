@@ -37,8 +37,7 @@ export class Basculin extends PokemonCard {
 
   public name: string = 'Basculin';
 
-  public fullName: string = 'Basculin (FST 70)';
-  public legacyFullName = 'Basculin FST';
+  public fullName: string = 'Basculin FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
 

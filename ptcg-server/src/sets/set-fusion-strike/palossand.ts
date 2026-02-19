@@ -39,7 +39,6 @@ export class Palossand extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Palossand';
   public fullName: string = 'Palossand (FST 126)';
-  public legacyFullName = 'Palossand FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Oppressing Sandstorm

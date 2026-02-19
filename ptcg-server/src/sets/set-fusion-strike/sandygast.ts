@@ -34,5 +34,4 @@ export class Sandygast extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Sandygast';
   public fullName: string = 'Sandygast (FST 125)';
-  public legacyFullName = 'Sandygast FST';
 }

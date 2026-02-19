@@ -36,7 +36,6 @@ export class Landorus extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Landorus';
   public fullName: string = 'Landorus (FST 148)';
-  public legacyFullName = 'Landorus FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Strafe - optional switch after attack

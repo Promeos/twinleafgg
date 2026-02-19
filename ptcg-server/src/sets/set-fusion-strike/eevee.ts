@@ -32,7 +32,6 @@ export class Eevee extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Eevee';
   public fullName: string = 'Eevee (FST 205)';
-  public legacyFullName = 'Eevee FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Continuous Steps

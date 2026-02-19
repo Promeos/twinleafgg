@@ -38,7 +38,6 @@ export class Latios extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Latios';
   public fullName: string = 'Latios (FST 194)';
-  public legacyFullName = 'Latios FST';
 
   public readonly BLUE_ASSIST_MARKER = 'LATIOS_FST_BLUE_ASSIST_MARKER';
 

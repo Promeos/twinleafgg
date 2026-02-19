@@ -32,7 +32,6 @@ export class Eldegoss extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Eldegoss';
   public fullName: string = 'Eldegoss (FST 25)';
-  public legacyFullName = 'Eldegoss FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Sunny Wind

@@ -38,7 +38,6 @@ export class Zoroark extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Zoroark';
   public fullName: string = 'Zoroark (FST 171)';
-  public legacyFullName = 'Zoroark FST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Double Claw

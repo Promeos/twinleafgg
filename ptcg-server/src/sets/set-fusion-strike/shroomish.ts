@@ -33,5 +33,4 @@ export class Shroomish extends PokemonCard {
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Shroomish';
   public fullName: string = 'Shroomish (FST 4)';
-  public legacyFullName = 'Shroomish FST';
 }
