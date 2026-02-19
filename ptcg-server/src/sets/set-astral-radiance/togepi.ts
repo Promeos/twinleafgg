@@ -62,7 +62,7 @@ export class Togepi extends PokemonCard {
             }
           });
 
-          const healEffect = new HealEffect(player, effect.player.active, 30);
+          const healEffect = new HealEffect(player, effect.player.active, 10);
           store.reduceEffect(state, healEffect);
 
           player.forEachPokemon(PlayerType.BOTTOM_PLAYER, cardList => {
