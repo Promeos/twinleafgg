@@ -269,7 +269,6 @@ export const setSwordAndShield: Card[] = [
   new Ferroseed(),
   new Ferrothorn(),
   new Frosmoth(),
-  new GalarianPerrserker(),
   new GalarianLinoone(),
   new GalarianMeowth(),
   new GalarianObstagoon(),

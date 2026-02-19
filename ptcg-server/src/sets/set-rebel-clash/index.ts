@@ -166,7 +166,6 @@ import { SpeedLightningEnergy } from './speed-lightning-energy';
 import { TwinEnergy } from './twin-energy';
 
 import {
-  EldegossVRCL,
   EldegossVRCLFullArt,
   TurffieldStadiumRCL,
   GalarianWeezingRCL,
@@ -189,7 +188,6 @@ import {
   ToolScrapper2RCL,
   TwinEnergy2RCL,
   VoltorbRCL,
-  TurffieldStadiumRCL170,
   RillaboomV2,
   EldegossV2,
   NinetalesV2,
@@ -388,7 +386,6 @@ export const setRebelClash: Card[] = [
   new TwinEnergy(),
 
   // Other Prints (Reprints & Alt Arts)
-  new EldegossVRCL(),
   new EldegossVRCLFullArt(),
   new TurffieldStadiumRCL(),
   new GalarianWeezingRCL(),
@@ -411,7 +408,6 @@ export const setRebelClash: Card[] = [
   new ToolScrapper2RCL(),
   new TwinEnergy2RCL(),
   new VoltorbRCL(),
-  new TurffieldStadiumRCL170(),
   new RillaboomV2(),
   new EldegossV2(),
   new NinetalesV2(),

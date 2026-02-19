@@ -58,7 +58,6 @@ import { GymTrainer } from './gym-trainer';
 import { RustedShield } from './rusted-shield';
 import { RustedSword } from './rusted-sword';
 import { TeamYellTowel } from './team-yell-towel';
-import { Rillaboom } from '../set-sword-and-shield/rillaboom';
 
 import {
   BirdKeeperSHF,
@@ -67,7 +66,6 @@ import {
   GrookeySHF,
   DottlerSHF,
   EldegossSHF,
-  ApplinSHF,
   ScorbunnySHF,
   SuicuneSHF,
   GalarianDarumakaSHF,
@@ -197,6 +195,7 @@ import {
   ChewtleSHF,
   DrizzileSHF,
   SobbleSHF,
+  RillaboomSHF,
 } from './other-prints';
 
 export const setShiningFates: Card[] = [
@@ -275,7 +274,7 @@ export const setShiningFates: Card[] = [
   new OrbeetleSHF(),
   new Raboot(),
   new Reshiram(),
-  new Rillaboom(),
+  new RillaboomSHF(),
   new Rolycoly(),
   new Rookidee(),
   new Rotom(),
@@ -309,7 +308,6 @@ export const setShiningFates: Card[] = [
   new GrookeySHF(),
   new DottlerSHF(),
   new EldegossSHF(),
-  new ApplinSHF(),
   new ScorbunnySHF(),
   new SuicuneSHF(),
   new GalarianDarumakaSHF(),

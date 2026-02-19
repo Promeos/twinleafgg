@@ -107,7 +107,7 @@ export class CaptureEnergyDAA extends CaptureEnergy {
 export class GalarianDarmanitanDAA extends GalarianDarmanitan {
   public set: string = 'DAA';
   public setNumber: string = '44';
-  public fullName: string = 'Galarian Darmanitan DAA';
+  public fullName: string = 'Galarian Darmanitan DAA 44';
 }
 
 export class GalarianSirfetchdDAA extends GalarianSirfetchd {

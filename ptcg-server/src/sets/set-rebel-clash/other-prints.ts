@@ -10,7 +10,6 @@ import { BossOrders as BossOrdersPAL172 } from '../set-paldea-evolved/boss-order
 import { Sonia as SoniaCPA65 } from '../set-champions-path/sonia';
 import { DragapultVMAX as DragapultVMAXRCL93 } from '../set-rebel-clash/dragapult-vmax';
 import { Frosmoth } from '../set-sword-and-shield/frosmoth';
-import { GalarianPerrserker as GalarianPerrserkerSSH128 } from '../set-sword-and-shield/galarian_perrserker';
 import { BigCharm } from '../set-sword-and-shield/big-charm';
 import { ScoopUpNet as ScoopUpNetRCL165 } from '../set-rebel-clash/scoop-up-net';
 import { ToolScrapper as ToolScrapperDRX116 } from '../set-dragons-exalted/tool-scrapper';
@@ -39,12 +38,7 @@ import { InteleonVmax } from './inteleon-vmax';
 import { ToxtricityVmax } from './toxtricity-vmax';
 import { MalamarVmax } from './malamar-vmax';
 import { CopperajahVmax } from './copperajah-vmax';
-
-export class EldegossVRCL extends EldegossV {
-  public set: string = 'RCL';
-  public setNumber: string = '19';
-  public fullName: string = 'Eldegoss V RCL';
-}
+import { GalarianPerrserker } from '../set-sword-and-shield/galarian-perrserker';
 
 export class EldegossVRCLFullArt extends EldegossV {
   public set: string = 'RCL';
@@ -141,7 +135,7 @@ export class FrosmothRCL extends Frosmoth {
   public set = 'RCL';
 }
 
-export class GalarianPerrserker2RCL extends GalarianPerrserkerSSH128 {
+export class GalarianPerrserker2RCL extends GalarianPerrserker {
   public setNumber = '205';
   public fullName: string = 'Galarian Perrserker2 RCL';
   public set = 'RCL';
@@ -175,12 +169,6 @@ export class VoltorbRCL extends Voltorb {
   public set: string = 'RCL';
   public setNumber: string = '56';
   public fullName: string = 'Voltorb RCL';
-}
-
-export class TurffieldStadiumRCL170 extends TurffieldStadium {
-  public set: string = 'RCL';
-  public setNumber: string = '170';
-  public fullName: string = 'Turffield Stadium RCL';
 }
 
 export class RillaboomV2 extends RillaboomV {

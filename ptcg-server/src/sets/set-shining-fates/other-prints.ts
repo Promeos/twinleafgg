@@ -4,7 +4,6 @@ import { Rowlet } from '../set-darkness-ablaze/rowlet';
 import { Grookey } from '../set-sword-and-shield/grookey';
 import { Dottler } from '../set-sword-and-shield/dottler';
 import { Eldegoss } from '../set-sword-and-shield/eldegoss';
-import { Applin2 } from '../set-rebel-clash/applin-2';
 import { Scorbunny } from '../set-sword-and-shield/scorbunny';
 import { Suicune } from '../set-darkness-ablaze/suicune';
 import { GalarianDarumaka } from '../set-rebel-clash/galarian-darumaka';
@@ -154,6 +153,12 @@ export class GrookeySHF extends Grookey {
   public fullName: string = 'Grookey SHF';
 }
 
+export class RillaboomSHF extends Rillaboom {
+  public set: string = 'SHF';
+  public setNumber: string = 'SV6';
+  public fullName: string = 'Rillaboom SHF SV6';
+}
+
 export class DottlerSHF extends Dottler {
   public set: string = 'SHF';
   public setNumber: string = 'SV008';
@@ -166,11 +171,11 @@ export class EldegossSHF extends Eldegoss {
   public fullName: string = 'Eldegoss SHF';
 }
 
-export class ApplinSHF extends Applin2 {
-  public set: string = 'SHF';
-  public setNumber: string = 'SV012';
-  public fullName: string = 'Applin SHF';
-}
+// export class ApplinSHF extends Applin2 {
+//   public set: string = 'SHF';
+//   public setNumber: string = 'SV012';
+//   public fullName: string = 'Applin SHF';
+// }
 
 export class ScorbunnySHF extends Scorbunny {
   public set: string = 'SHF';
