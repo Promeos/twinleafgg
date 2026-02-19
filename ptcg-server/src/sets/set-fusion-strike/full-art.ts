@@ -1,6 +1,7 @@
 import { TrainingCourt } from '../set-rebel-clash/training-court';
 import { FireEnergy } from '../set-scarlet-and-violet-energy/fire-energy';
 import { GrassEnergy } from '../set-scarlet-and-violet-energy/grass-energy';
+import { CelebiV } from '../set-chilling-reign/celebi-v';
 import { ElesasSparkle } from './elesas-sparkle';
 import { GenesectV } from './genesect-v';
 import { MewV } from './mew-v';
@@ -10,10 +11,11 @@ import { Schoolboy } from './schoolboy';
 import { Schoolgirl } from './schoolgirl';
 import { Shauna } from './shauna';
 
-// export class CelebiVFA extends CelebiV {
-//   public setNumber = '245';
-//   public fullName: string = 'Celebi V (FST 245)';
-// }
+export class CelebiVFA extends CelebiV {
+  public set = 'FST';
+  public setNumber = '245';
+  public fullName: string = 'Celebi V (FST 245)';
+}
 
 // export class TsareenaVFA extends TsareenaV {
 //   public setNumber = '246';

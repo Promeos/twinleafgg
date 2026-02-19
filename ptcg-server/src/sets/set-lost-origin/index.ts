@@ -387,7 +387,6 @@ export const setLostOrigin: Card[] = [
   new Arezu(),
   new BoxOfDisaster(),
   new ColresssExperiment(),
-  new ColresssExperiment(),
   new DamagePump(),
   new Fantina(),
   new Iscan(),

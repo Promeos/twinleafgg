@@ -47,7 +47,7 @@ export class Pancham extends PokemonCard {
         store, state, player,
         PlayerType.BOTTOM_PLAYER, SlotType.DECK,
         [SlotType.ACTIVE],
-        { superType: SuperType.ENERGY, energyType: EnergyType.BASIC, cardType: CardType.DARK },
+        { superType: SuperType.ENERGY, energyType: EnergyType.BASIC, provides: [CardType.DARK] },
         { min: 0, max: 2, allowCancel: false }
       );
     }
