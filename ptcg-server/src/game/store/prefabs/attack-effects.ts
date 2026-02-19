@@ -87,9 +87,9 @@ export function PUT_X_CARDS_FROM_YOUR_DISCARD_PILE_INTO_YOUR_HAND(
       { superType: SuperType.TRAINER, trainerType: TrainerType.ITEM },
       { min, max, allowCancel: false }
     )], selected => {
-    const cards = selected || [];
-    player.discard.moveCardsTo(cards, player.hand);
-  });
+      const cards = selected || [];
+      player.discard.moveCardsTo(cards, player.hand);
+    });
 }
 
 export function PUT_X_DAMAGE_COUNTERS_ON_ALL_YOUR_OPPONENTS_POKEMON(
@@ -343,7 +343,7 @@ export function THIS_ATTACK_DOES_X_DAMAGE_TO_1_OF_YOUR_OPPONENTS_POKEMON(
   ), selected => {
     const target = selected[0];
     let damageEffect: DealDamageEffect | PutDamageEffect;
-    if (target === player.active) {
+    if (target === opponent.active) {
       damageEffect = new DealDamageEffect(effect, damage);
     } else {
       damageEffect = new PutDamageEffect(effect, damage);

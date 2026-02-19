@@ -783,7 +783,7 @@ export function THIS_ATTACK_DOES_X_DAMAGE_TO_X_OF_YOUR_OPPONENTS_POKEMON(damage:
   const opponent = StateUtils.getOpponent(state, player);
 
   const targets = opponent.bench.filter(b => b.cards.length > 0);
-  if (targets.length === 0) {
+  if (targets.length === 0 && !slots?.includes(SlotType.ACTIVE)) {
     return state;
   }
 
@@ -795,6 +795,11 @@ export function THIS_ATTACK_DOES_X_DAMAGE_TO_X_OF_YOUR_OPPONENTS_POKEMON(damage:
     { min: min, max: max, allowCancel: false }
   ), selected => {
     selected.forEach(target => {
+      if (effect.target === effect.opponent.active) {
+        const damageEffect = new DealDamageEffect(effect, damage);
+        damageEffect.target = target;
+        return store.reduceEffect(state, damageEffect);
+      }
       const damageEffect = new PutDamageEffect(effect, damage);
       damageEffect.target = target;
 
@@ -892,7 +897,7 @@ export function DISCARD_X_ENERGY_FROM_YOUR_HAND(effect: PowerEffect, store: Stor
  */
 export function DISCARD_SPECIFIC_ENERGY_FROM_THIS_POKEMON(store: StoreLike, state: State, effect: AttackEffect, energyMap: CardType[]) {
   const player = effect.player;
-      
+
   const checkProvidedEnergy = new CheckProvidedEnergyEffect(player);
   state = store.reduceEffect(state, checkProvidedEnergy);
 
