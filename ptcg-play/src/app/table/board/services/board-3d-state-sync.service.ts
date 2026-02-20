@@ -16,6 +16,7 @@ import { ZONE_POSITIONS, getBenchPositions } from '../board-3d/board-3d-zone-pos
 export class Board3dStateSyncService {
   private cardsMap: Map<string, Board3dCard> = new Map();
   private skippedCardIdForSync: string | null = null;
+  private skippedScaleCardIdForSync: string | null = null;
 
   constructor(
     private assetLoader: Board3dAssetLoaderService,
@@ -37,13 +38,15 @@ export class Board3dStateSyncService {
     currentPlayerId: number,
     topPlayer?: Player,
     bottomPlayer?: Player,
-    skippedCardId?: string | null
+    skippedCardId?: string | null,
+    skippedScaleCardId?: string | null
   ): Promise<void> {
     if (!gameState || !gameState.state) {
       return;
     }
 
     this.skippedCardIdForSync = skippedCardId ?? null;
+    this.skippedScaleCardIdForSync = skippedScaleCardId ?? null;
     const state = gameState.state;
 
     // Use provided players if available (for replay/spectator mode with switchSide)
@@ -410,6 +413,8 @@ export class Board3dStateSyncService {
       if (cardId !== this.skippedCardIdForSync) {
         cardMesh.setPosition(position);
         cardMesh.setRotation(rotation);
+      }
+      if (cardId !== this.skippedCardIdForSync && cardId !== this.skippedScaleCardIdForSync) {
         cardMesh.setScale(scale);
       }
       // Update userData with latest cardList

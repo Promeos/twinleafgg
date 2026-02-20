@@ -1573,6 +1573,16 @@ export class Board3dInteractionService {
   }
 
   /**
+   * Get the card ID of the board card being hovered during drag (for state sync to preserve scale)
+   */
+  getHoveredBoardCardId(): string | null {
+    if (!this.isDragging || !this.hoveredPokemonCard?.userData?.cardId) {
+      return null;
+    }
+    return (this.hoveredPokemonCard.userData.cardId as string) ?? null;
+  }
+
+  /**
    * Check if there's a pending drag (mouse down on draggable card, waiting for threshold)
    */
   hasPendingDrag(): boolean {

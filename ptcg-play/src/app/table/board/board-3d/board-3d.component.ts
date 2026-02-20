@@ -463,7 +463,8 @@ export class Board3dComponent implements OnInit, OnChanges, AfterViewInit, OnDes
           this.clientId,
           this.topPlayer,
           this.bottomPlayer,
-          this.interactionService.getDraggedBoardCardId()
+          this.interactionService.getDraggedBoardCardId(),
+          this.interactionService.getHoveredBoardCardId()
         );
 
         // Update drop zone occupied states
