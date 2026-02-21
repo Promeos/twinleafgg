@@ -36,7 +36,7 @@ export class Togetic extends PokemonCard {
   public setNumber: string = '56';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Togetic';
-  public fullName: string = 'Togetic (ASR 56)';
+  public fullName: string = 'Togetic ASR 56';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Voice of Happiness - on-evolve, may heal 30 from Active

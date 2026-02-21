@@ -37,7 +37,7 @@ export class Whiscash extends PokemonCard {
   public setNumber: string = '36';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Whiscash';
-  public fullName: string = 'Whiscash (ASR 36)';
+  public fullName: string = 'Whiscash ASR 36';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Thrash

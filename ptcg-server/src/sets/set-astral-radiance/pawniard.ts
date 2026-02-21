@@ -31,7 +31,7 @@ export class Pawniard extends PokemonCard {
   public setNumber: string = '115';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Pawniard';
-  public fullName: string = 'Pawniard (ASR 115)';
+  public fullName: string = 'Pawniard ASR 115';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Reckless Charge

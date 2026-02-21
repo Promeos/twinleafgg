@@ -39,7 +39,7 @@ export class GalarianMrRimeV extends PokemonCard {
   public setNumber: string = '49';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Galarian Mr. Rime V';
-  public fullName: string = 'Galarian Mr. Rime V (ASR 49)';
+  public fullName: string = 'Galarian Mr. Rime V ASR 49';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Surprising Hand

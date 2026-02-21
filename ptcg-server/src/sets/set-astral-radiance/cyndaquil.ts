@@ -37,7 +37,7 @@ export class Cyndaquil extends PokemonCard {
   public setNumber: string = '23';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Cyndaquil';
-  public fullName: string = 'Cyndaquil (ASR 23)';
+  public fullName: string = 'Cyndaquil ASR 23';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Charge Energy

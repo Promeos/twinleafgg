@@ -16,7 +16,7 @@ export class Zisu extends TrainerCard {
   public setNumber: string = '159';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Zisu';
-  public fullName: string = 'Zisu (ASR 159)';
+  public fullName: string = 'Zisu ASR 159';
   public text: string = 'Draw cards until you have 1 more card in your hand than your opponent. You may play only 1 Supporter card during your turn.';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {

@@ -32,5 +32,5 @@ export class HisuianSneasel extends PokemonCard {
   public setNumber: string = '92';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Hisuian Sneasel';
-  public fullName: string = 'Hisuian Sneasel (ASR 92)';
+  public fullName: string = 'Hisuian Sneasel ASR 92';
 }

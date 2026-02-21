@@ -38,7 +38,7 @@ export class HisuianSneaslerV extends PokemonCard {
   public setNumber: string = '94';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Hisuian Sneasler V';
-  public fullName: string = 'Hisuian Sneasler V (ASR 94)';
+  public fullName: string = 'Hisuian Sneasler V ASR 94';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Poison Claws

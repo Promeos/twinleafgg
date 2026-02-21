@@ -38,7 +38,7 @@ export class Rapidash extends PokemonCard {
   public setNumber: string = '22';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Rapidash';
-  public fullName: string = 'Rapidash (ASR 22)';
+  public fullName: string = 'Rapidash ASR 22';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Ring of Fire

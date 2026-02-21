@@ -38,7 +38,7 @@ export class HisuianOverqwil2 extends PokemonCard {
   public setNumber: string = '91';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Hisuian Overqwil';
-  public fullName: string = 'Hisuian Overqwil (ASR 91)';
+  public fullName: string = 'Hisuian Overqwil ASR 91';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Dirty Press

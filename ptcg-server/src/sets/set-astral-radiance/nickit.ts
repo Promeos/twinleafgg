@@ -26,5 +26,5 @@ export class Nickit extends PokemonCard {
   public setNumber: string = '103';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Nickit';
-  public fullName: string = 'Nickit (ASR 103)';
+  public fullName: string = 'Nickit ASR 103';
 }

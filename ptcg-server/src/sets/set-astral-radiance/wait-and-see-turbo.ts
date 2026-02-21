@@ -16,7 +16,7 @@ export class WaitAndSeeTurbo extends TrainerCard {
   public setNumber: string = '158';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Wait and See Turbo';
-  public fullName: string = 'Wait and See Turbo (ASR 158)';
+  public fullName: string = 'Wait and See Turbo ASR 158';
   public text: string = 'You can use this card only if you go second, and only during your first turn. Search your deck for a basic Energy card and attach it to 1 of your Pokémon. Then, shuffle your deck. Your turn ends. You may play any number of Item cards during your turn.';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {

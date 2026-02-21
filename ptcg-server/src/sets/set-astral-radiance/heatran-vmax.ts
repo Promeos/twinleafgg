@@ -40,7 +40,7 @@ export class HeatranVmax extends PokemonCard {
   public setNumber: string = '26';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Heatran VMAX';
-  public fullName: string = 'Heatran VMAX (ASR 26)';
+  public fullName: string = 'Heatran VMAX ASR 26';
 
   public readonly MAGMA_GAIN_MARKER = 'HEATRAN_VMAX_ASR_MAGMA_GAIN_MARKER';
 

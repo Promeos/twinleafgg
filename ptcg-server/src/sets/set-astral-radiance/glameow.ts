@@ -30,7 +30,7 @@ export class Glameow extends PokemonCard {
   public setNumber: string = '127';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Glameow';
-  public fullName: string = 'Glameow (ASR 127)';
+  public fullName: string = 'Glameow ASR 127';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Fake Out

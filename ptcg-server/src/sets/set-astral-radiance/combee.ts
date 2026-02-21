@@ -37,7 +37,7 @@ export class Combee extends PokemonCard {
   public setNumber: string = '11';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Combee';
-  public fullName: string = 'Combee (ASR 11)';
+  public fullName: string = 'Combee ASR 11';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Honey Courier

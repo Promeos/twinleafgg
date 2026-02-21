@@ -38,7 +38,7 @@ export class HeatranV extends PokemonCard {
   public setNumber: string = '25';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Heatran V';
-  public fullName: string = 'Heatran V (ASR 25)';
+  public fullName: string = 'Heatran V ASR 25';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Heat Burn

@@ -31,7 +31,7 @@ export class Kirlia extends PokemonCard {
   public setNumber: string = '61';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Kirlia';
-  public fullName: string = 'Kirlia (ASR 61)';
+  public fullName: string = 'Kirlia ASR 61';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Teleportation Burst

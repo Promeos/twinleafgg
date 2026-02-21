@@ -38,7 +38,7 @@ export class Mismagius extends PokemonCard {
   public setNumber: string = '59';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Mismagius';
-  public fullName: string = 'Mismagius (ASR 59)';
+  public fullName: string = 'Mismagius ASR 59';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Ominous Prose

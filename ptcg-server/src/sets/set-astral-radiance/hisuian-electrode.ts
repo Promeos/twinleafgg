@@ -36,7 +36,7 @@ export class HisuianElectrode extends PokemonCard {
   public setNumber: string = '3';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Hisuian Electrode';
-  public fullName: string = 'Hisuian Electrode (ASR 3)';
+  public fullName: string = 'Hisuian Electrode ASR 3';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Triple Draw

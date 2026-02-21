@@ -38,7 +38,7 @@ export class MachampVmax extends PokemonCard {
   public setNumber: string = '73';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Machamp VMAX';
-  public fullName: string = 'Machamp VMAX (ASR 73)';
+  public fullName: string = 'Machamp VMAX ASR 73';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Revenge Buster

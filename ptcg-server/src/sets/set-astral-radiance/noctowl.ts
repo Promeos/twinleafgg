@@ -38,7 +38,7 @@ export class Noctowl extends PokemonCard {
   public setNumber: string = '121';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Noctowl';
-  public fullName: string = 'Noctowl (ASR 121)';
+  public fullName: string = 'Noctowl ASR 121';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Silent Wing

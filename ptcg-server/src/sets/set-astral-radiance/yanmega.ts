@@ -37,7 +37,7 @@ export class Yanmega extends PokemonCard {
   public setNumber: string = '7';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Yanmega';
-  public fullName: string = 'Yanmega (ASR 7)';
+  public fullName: string = 'Yanmega ASR 7';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Wide Wing

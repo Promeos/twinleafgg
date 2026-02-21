@@ -38,7 +38,7 @@ export class Cranidos extends PokemonCard {
   public setNumber: string = '76';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Cranidos';
-  public fullName: string = 'Cranidos (ASR 76)';
+  public fullName: string = 'Cranidos ASR 76';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Stone Edge

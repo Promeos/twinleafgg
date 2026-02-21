@@ -35,7 +35,7 @@ export class HisuianVoltorb extends PokemonCard {
   public setNumber: string = '2';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Hisuian Voltorb';
-  public fullName: string = 'Hisuian Voltorb (ASR 2)';
+  public fullName: string = 'Hisuian Voltorb ASR 2';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Cheerful Charge

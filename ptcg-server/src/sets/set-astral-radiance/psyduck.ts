@@ -36,7 +36,7 @@ export class Psyduck extends PokemonCard {
   public setNumber: string = '28';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Psyduck';
-  public fullName: string = 'Psyduck (ASR 28)';
+  public fullName: string = 'Psyduck ASR 28';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Spacing Out

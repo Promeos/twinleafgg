@@ -37,7 +37,7 @@ export class Hippowdon extends PokemonCard {
   public setNumber: string = '80';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Hippowdon';
-  public fullName: string = 'Hippowdon (ASR 80)';
+  public fullName: string = 'Hippowdon ASR 80';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Sand Breath

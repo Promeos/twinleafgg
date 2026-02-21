@@ -42,7 +42,7 @@ export class HisuianLilligantVstar extends PokemonCard {
   public setNumber: string = '18';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Hisuian Lilligant VSTAR';
-  public fullName: string = 'Hisuian Lilligant VSTAR (ASR 18)';
+  public fullName: string = 'Hisuian Lilligant VSTAR ASR 18';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Star Perfume (VSTAR Power)

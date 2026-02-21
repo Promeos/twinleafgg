@@ -37,7 +37,7 @@ export class HisuianGrowlithe extends PokemonCard {
   public setNumber: string = '70';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Hisuian Growlithe';
-  public fullName: string = 'Hisuian Growlithe (ASR 70)';
+  public fullName: string = 'Hisuian Growlithe ASR 70';
 
   public readonly PREVENT_DAMAGE_MARKER = 'HISUIAN_GROWLITHE_ASR_PREVENT_DAMAGE';
   public readonly CLEAR_PREVENT_DAMAGE_MARKER = 'HISUIAN_GROWLITHE_ASR_CLEAR_PREVENT_DAMAGE';

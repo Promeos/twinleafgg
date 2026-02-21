@@ -26,5 +26,5 @@ export class Ponyta extends PokemonCard {
   public setNumber: string = '21';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Ponyta';
-  public fullName: string = 'Ponyta (ASR 21)';
+  public fullName: string = 'Ponyta ASR 21';
 }

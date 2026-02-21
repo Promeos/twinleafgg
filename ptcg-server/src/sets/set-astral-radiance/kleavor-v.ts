@@ -39,7 +39,7 @@ export class KleavorV extends PokemonCard {
   public setNumber: string = '87';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Kleavor V';
-  public fullName: string = 'Kleavor V (ASR 87)';
+  public fullName: string = 'Kleavor V ASR 87';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Axe Slash

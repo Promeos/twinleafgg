@@ -38,7 +38,7 @@ export class HisuianTyphlosionV extends PokemonCard {
   public setNumber: string = '53';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Hisuian Typhlosion V';
-  public fullName: string = 'Hisuian Typhlosion V (ASR 53)';
+  public fullName: string = 'Hisuian Typhlosion V ASR 53';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Singe

@@ -37,7 +37,7 @@ export class MachampV extends PokemonCard {
   public setNumber: string = '72';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Machamp V';
-  public fullName: string = 'Machamp V (ASR 72)';
+  public fullName: string = 'Machamp V ASR 72';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Revenge Buster

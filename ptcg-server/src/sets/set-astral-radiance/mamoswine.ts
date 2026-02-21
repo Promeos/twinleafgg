@@ -40,7 +40,7 @@ export class Mamoswine extends PokemonCard {
   public setNumber: string = '33';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Mamoswine';
-  public fullName: string = 'Mamoswine (ASR 33)';
+  public fullName: string = 'Mamoswine ASR 33';
 
   public readonly CANT_ATTACK_MARKER = 'MAMOSWINE_ASR_CANT_ATTACK_MARKER';
   public readonly CLEAR_CANT_ATTACK_MARKER = 'MAMOSWINE_ASR_CLEAR_CANT_ATTACK_MARKER';

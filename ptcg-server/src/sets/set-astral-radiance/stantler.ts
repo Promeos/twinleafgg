@@ -34,7 +34,7 @@ export class Stantler extends PokemonCard {
   public setNumber: string = '125';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Stantler';
-  public fullName: string = 'Stantler (ASR 125)';
+  public fullName: string = 'Stantler ASR 125';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Guard Press

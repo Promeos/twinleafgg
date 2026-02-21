@@ -31,7 +31,7 @@ export class Rowlet extends PokemonCard {
   public setNumber: string = '19';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Rowlet';
-  public fullName: string = 'Rowlet (ASR 19)';
+  public fullName: string = 'Rowlet ASR 19';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Jump On

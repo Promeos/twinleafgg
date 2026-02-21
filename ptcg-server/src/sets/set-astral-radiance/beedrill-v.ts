@@ -39,7 +39,7 @@ export class BeedrillV extends PokemonCard {
   public setNumber: string = '1';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Beedrill V';
-  public fullName: string = 'Beedrill V (ASR 1)';
+  public fullName: string = 'Beedrill V ASR 1';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Twineedle

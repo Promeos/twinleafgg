@@ -41,7 +41,7 @@ export class Wyrdeer extends PokemonCard {
   public setNumber: string = '69';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Wyrdeer';
-  public fullName: string = 'Wyrdeer (ASR 69)';
+  public fullName: string = 'Wyrdeer ASR 69';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Hurried Gait - once per turn, draw a card

@@ -16,7 +16,7 @@ export class Choy extends TrainerCard {
   public setNumber: string = '137';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Choy';
-  public fullName: string = 'Choy (ASR 137)';
+  public fullName: string = 'Choy ASR 137';
   public text: string = 'Each player reveals their hand. Draw 3 cards. You may play only 1 Supporter card during your turn.';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {

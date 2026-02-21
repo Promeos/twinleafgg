@@ -37,7 +37,7 @@ export class Golduck extends PokemonCard {
   public setNumber: string = '29';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Golduck';
-  public fullName: string = 'Golduck (ASR 29)';
+  public fullName: string = 'Golduck ASR 29';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Entangled Dive

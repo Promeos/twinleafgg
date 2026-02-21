@@ -36,7 +36,7 @@ export class Magnemite extends PokemonCard {
   public setNumber: string = '105';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Magnemite';
-  public fullName: string = 'Magnemite (ASR 105)';
+  public fullName: string = 'Magnemite ASR 105';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Magnetic Catch

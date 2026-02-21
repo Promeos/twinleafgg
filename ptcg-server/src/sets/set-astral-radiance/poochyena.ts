@@ -35,7 +35,7 @@ export class Poochyena extends PokemonCard {
   public setNumber: string = '95';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Poochyena';
-  public fullName: string = 'Poochyena (ASR 95)';
+  public fullName: string = 'Poochyena ASR 95';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Slight Intrusion

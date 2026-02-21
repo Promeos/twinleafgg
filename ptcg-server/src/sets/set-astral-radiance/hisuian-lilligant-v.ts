@@ -37,7 +37,7 @@ export class HisuianLilligantV extends PokemonCard {
   public setNumber: string = '17';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Hisuian Lilligant V';
-  public fullName: string = 'Hisuian Lilligant V (ASR 17)';
+  public fullName: string = 'Hisuian Lilligant V ASR 17';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Dance Gracefully

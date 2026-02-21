@@ -37,7 +37,7 @@ export class Piloswine extends PokemonCard {
   public setNumber: string = '32';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Piloswine';
-  public fullName: string = 'Piloswine (ASR 32)';
+  public fullName: string = 'Piloswine ASR 32';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Blizzard

@@ -39,7 +39,7 @@ export class Bronzong extends PokemonCard {
   public setNumber: string = '112';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Bronzong';
-  public fullName: string = 'Bronzong (ASR 112)';
+  public fullName: string = 'Bronzong ASR 112';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Heatproof (passive - prevent damage from Fire Pokemon)

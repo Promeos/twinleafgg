@@ -59,7 +59,7 @@ export class Kamado extends TrainerCard {
   public setNumber: string = '149';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Kamado';
-  public fullName: string = 'Kamado (ASR 149)';
+  public fullName: string = 'Kamado ASR 149';
   public text: string = 'Choose a card in your hand, and discard the other cards. If you do, draw 4 cards. (If you have no other cards in your hand, you can\'t use this card.) You may play only 1 Supporter card during your turn.';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {

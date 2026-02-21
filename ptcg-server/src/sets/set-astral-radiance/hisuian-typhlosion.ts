@@ -46,7 +46,7 @@ export class HisuianTyphlosion extends PokemonCard {
   public setNumber: string = '52';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Hisuian Typhlosion';
-  public fullName: string = 'Hisuian Typhlosion (ASR 52)';
+  public fullName: string = 'Hisuian Typhlosion ASR 52';
 
   public readonly SUPERNATURAL_ORB_MARKER = 'HISUIAN_TYPHLOSION_ASR_SUPERNATURAL_ORB_MARKER';
 

@@ -38,7 +38,7 @@ export class Glaceon extends PokemonCard {
   public setNumber: string = '38';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Glaceon';
-  public fullName: string = 'Glaceon (ASR 38)';
+  public fullName: string = 'Glaceon ASR 38';
 
   public readonly PREVENT_DAMAGE_MARKER = 'GLACEON_ASR_PREVENT_DAMAGE';
   public readonly CLEAR_PREVENT_DAMAGE_MARKER = 'GLACEON_ASR_CLEAR_PREVENT_DAMAGE';

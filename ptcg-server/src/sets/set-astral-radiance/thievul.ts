@@ -37,7 +37,7 @@ export class Thievul extends PokemonCard {
   public setNumber: string = '104';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Thievul';
-  public fullName: string = 'Thievul (ASR 104)';
+  public fullName: string = 'Thievul ASR 104';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Baffling - passive, intercept TrainerTargetEffect for benched V Pokemon

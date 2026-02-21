@@ -39,7 +39,7 @@ export class HisuianAvalugg extends PokemonCard {
   public setNumber: string = '48';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Hisuian Avalugg';
-  public fullName: string = 'Hisuian Avalugg (ASR 48)';
+  public fullName: string = 'Hisuian Avalugg ASR 48';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Massive Ice (passive - take 30 less damage from attacks)

@@ -38,7 +38,7 @@ export class Bisharp extends PokemonCard {
   public setNumber: string = '116';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Bisharp';
-  public fullName: string = 'Bisharp (ASR 116)';
+  public fullName: string = 'Bisharp ASR 116';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Vengeful Cut

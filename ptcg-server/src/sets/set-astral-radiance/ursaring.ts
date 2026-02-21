@@ -38,7 +38,7 @@ export class Ursaring extends PokemonCard {
   public setNumber: string = '123';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Ursaring';
-  public fullName: string = 'Ursaring (ASR 123)';
+  public fullName: string = 'Ursaring ASR 123';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Continuous Slap

@@ -31,7 +31,7 @@ export class Azelf extends PokemonCard {
   public setNumber: string = '67';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Azelf';
-  public fullName: string = 'Azelf (ASR 67)';
+  public fullName: string = 'Azelf ASR 67';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Mind Bend

@@ -40,7 +40,7 @@ export class HisuianTyphlosionVstar extends PokemonCard {
   public setNumber: string = '54';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Hisuian Typhlosion VSTAR';
-  public fullName: string = 'Hisuian Typhlosion VSTAR (ASR 54)';
+  public fullName: string = 'Hisuian Typhlosion VSTAR ASR 54';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Hollow Flame

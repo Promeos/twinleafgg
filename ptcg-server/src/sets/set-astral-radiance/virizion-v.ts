@@ -37,7 +37,7 @@ export class VirizionV extends PokemonCard {
   public setNumber: string = '164';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Virizion V';
-  public fullName: string = 'Virizion V (ASR 164)';
+  public fullName: string = 'Virizion V ASR 164';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Verdant Wind - passive, remove special conditions from Pokemon with G energy

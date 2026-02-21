@@ -33,5 +33,5 @@ export class Quilava extends PokemonCard {
   public setNumber: string = '24';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Quilava';
-  public fullName: string = 'Quilava (ASR 24)';
+  public fullName: string = 'Quilava ASR 24';
 }

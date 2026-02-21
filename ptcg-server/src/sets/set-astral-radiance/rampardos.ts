@@ -36,7 +36,7 @@ export class Rampardos extends PokemonCard {
   public setNumber: string = '77';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Rampardos';
-  public fullName: string = 'Rampardos (ASR 77)';
+  public fullName: string = 'Rampardos ASR 77';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Jurassic Hammer

@@ -33,5 +33,5 @@ export class Dartrix extends PokemonCard {
   public setNumber: string = '20';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Dartrix';
-  public fullName: string = 'Dartrix (ASR 20)';
+  public fullName: string = 'Dartrix ASR 20';
 }

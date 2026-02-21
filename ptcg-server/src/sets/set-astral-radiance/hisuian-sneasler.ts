@@ -37,7 +37,7 @@ export class HisuianSneasler extends PokemonCard {
   public setNumber: string = '93';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Hisuian Sneasler';
-  public fullName: string = 'Hisuian Sneasler (ASR 93)';
+  public fullName: string = 'Hisuian Sneasler ASR 93';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Carry and Climb (passive - reduce retreat cost by 2 while on bench)

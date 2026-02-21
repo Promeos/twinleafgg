@@ -31,7 +31,7 @@ export class HisuianQwilfish2 extends PokemonCard {
   public setNumber: string = '89';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Hisuian Qwilfish';
-  public fullName: string = 'Hisuian Qwilfish (ASR 89)';
+  public fullName: string = 'Hisuian Qwilfish ASR 89';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Spiny Rush

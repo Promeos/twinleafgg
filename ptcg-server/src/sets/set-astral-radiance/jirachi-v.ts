@@ -42,7 +42,7 @@ export class JirachiV extends PokemonCard {
   public setNumber: string = '170';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Jirachi V';
-  public fullName: string = 'Jirachi V (ASR 170)';
+  public fullName: string = 'Jirachi V ASR 170';
 
   public readonly WISH_CONNECTOR_MARKER = 'JIRACHI_V_ASR_WISH_CONNECTOR_MARKER';
 

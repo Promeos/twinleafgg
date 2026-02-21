@@ -39,7 +39,7 @@ export class Bastiodon extends PokemonCard {
   public setNumber: string = '110';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Bastiodon';
-  public fullName: string = 'Bastiodon (ASR 110)';
+  public fullName: string = 'Bastiodon ASR 110';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Primal Fortress (passive - reduce damage from opponent's V Pokemon)

@@ -33,7 +33,7 @@ export class Drifblim extends PokemonCard {
   public setNumber: string = '64';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Drifblim';
-  public fullName: string = 'Drifblim (ASR 64)';
+  public fullName: string = 'Drifblim ASR 64';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Spooky Balloon

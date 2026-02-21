@@ -38,7 +38,7 @@ export class HisuianLilligant extends PokemonCard {
   public setNumber: string = '16';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Hisuian Lilligant';
-  public fullName: string = 'Hisuian Lilligant (ASR 16)';
+  public fullName: string = 'Hisuian Lilligant ASR 16';
 
   public usedTwisterLutz: boolean = false;
 

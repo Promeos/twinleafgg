@@ -39,7 +39,7 @@ export class HisuianDecidueye extends PokemonCard {
   public setNumber: string = '82';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Hisuian Decidueye';
-  public fullName: string = 'Hisuian Decidueye (ASR 82)';
+  public fullName: string = 'Hisuian Decidueye ASR 82';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Piercing Claw
