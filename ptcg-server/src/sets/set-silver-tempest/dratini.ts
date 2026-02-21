@@ -29,7 +29,7 @@ export class Dratini extends PokemonCard {
   public setNumber: string = '129';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Dratini';
-  public fullName: string = 'Dratini (SIT 129)';
+  public fullName: string = 'Dratini SIT 129';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Slam

@@ -37,7 +37,7 @@ export class Lanturn extends PokemonCard {
   public setNumber: string = '52';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Lanturn';
-  public fullName: string = 'Lanturn (SIT 52)';
+  public fullName: string = 'Lanturn SIT 52';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Strong Volt

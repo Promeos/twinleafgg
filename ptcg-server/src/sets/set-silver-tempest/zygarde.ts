@@ -36,7 +36,7 @@ export class Zygarde extends PokemonCard {
   public setNumber: string = '134';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Zygarde';
-  public fullName: string = 'Zygarde (SIT 134)';
+  public fullName: string = 'Zygarde SIT 134';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Shout of Power

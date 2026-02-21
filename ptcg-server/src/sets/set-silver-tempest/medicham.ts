@@ -40,7 +40,7 @@ export class Medicham extends PokemonCard {
   public setNumber: string = '73';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Medicham';
-  public fullName: string = 'Medicham (SIT 73)';
+  public fullName: string = 'Medicham SIT 73';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Chakra Awakening - reduce attack cost by CCC if exactly 4 cards in hand

@@ -39,7 +39,7 @@ export class Dragapult extends PokemonCard {
   public setNumber: string = '89';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Dragapult';
-  public fullName: string = 'Dragapult (SIT 89)';
+  public fullName: string = 'Dragapult SIT 89';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Dragon Launcher

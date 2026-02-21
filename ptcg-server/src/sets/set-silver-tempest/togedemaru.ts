@@ -36,7 +36,7 @@ export class Togedemaru extends PokemonCard {
   public setNumber: string = '127';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Togedemaru';
-  public fullName: string = 'Togedemaru (SIT 127)';
+  public fullName: string = 'Togedemaru SIT 127';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Toge Dash

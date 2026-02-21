@@ -36,7 +36,7 @@ export class HisuianLilligant extends PokemonCard {
   public setNumber: string = '10';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Hisuian Lilligant';
-  public fullName: string = 'Hisuian Lilligant (SIT 10)';
+  public fullName: string = 'Hisuian Lilligant SIT 10';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Swelling Scent

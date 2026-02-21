@@ -37,7 +37,7 @@ export class Amoonguss extends PokemonCard {
   public setNumber: string = '12';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Amoonguss';
-  public fullName: string = 'Amoonguss (SIT 12)';
+  public fullName: string = 'Amoonguss SIT 12';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Surprise Spores

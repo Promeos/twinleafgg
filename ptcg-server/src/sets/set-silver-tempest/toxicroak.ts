@@ -43,7 +43,7 @@ export class Toxicroak extends PokemonCard {
   public setNumber: string = '110';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Toxicroak';
-  public fullName: string = 'Toxicroak (SIT 110)';
+  public fullName: string = 'Toxicroak SIT 110';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Diving Uppercut

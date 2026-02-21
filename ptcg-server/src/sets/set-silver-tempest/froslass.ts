@@ -41,7 +41,7 @@ export class Froslass extends PokemonCard {
   public setNumber: string = '43';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Froslass';
-  public fullName: string = 'Froslass (SIT 43)';
+  public fullName: string = 'Froslass SIT 43';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Track when Candice was played this turn

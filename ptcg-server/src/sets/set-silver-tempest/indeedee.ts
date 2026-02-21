@@ -37,7 +37,7 @@ export class Indeedee extends PokemonCard {
   public setNumber: string = '86';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Indeedee';
-  public fullName: string = 'Indeedee (SIT 86)';
+  public fullName: string = 'Indeedee SIT 86';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Smart Service

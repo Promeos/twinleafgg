@@ -34,5 +34,5 @@ export class Ferrothorn extends PokemonCard {
   public setNumber: string = '122';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Ferrothorn';
-  public fullName: string = 'Ferrothorn (SIT 122)';
+  public fullName: string = 'Ferrothorn SIT 122';
 }

@@ -39,7 +39,7 @@ export class Torracat extends PokemonCard {
   public setNumber: string = '31';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Torracat';
-  public fullName: string = 'Torracat (SIT 31)';
+  public fullName: string = 'Torracat SIT 31';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Gritty Claws

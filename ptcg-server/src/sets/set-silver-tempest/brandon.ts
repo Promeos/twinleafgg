@@ -18,7 +18,7 @@ export class Brandon extends TrainerCard {
   public setNumber: string = '151';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Brandon';
-  public fullName: string = 'Brandon (SIT 151)';
+  public fullName: string = 'Brandon SIT 151';
   public text: string = 'You can use this card only when it is the last card in your hand. Draw a card for each Benched Pokémon (both yours and your opponent\'s). You may play only 1 Supporter card during your turn.';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {

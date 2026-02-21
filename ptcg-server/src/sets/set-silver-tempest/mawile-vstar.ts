@@ -41,7 +41,7 @@ export class MawileVstar extends PokemonCard {
   public setNumber: string = '71';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Mawile VSTAR';
-  public fullName: string = 'Mawile VSTAR (SIT 71)';
+  public fullName: string = 'Mawile VSTAR SIT 71';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Star Rondo (VSTAR Power)

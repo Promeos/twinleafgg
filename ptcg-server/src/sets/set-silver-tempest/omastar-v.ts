@@ -41,7 +41,7 @@ export class OmastarV extends PokemonCard {
   public setNumber: string = '35';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Omastar V';
-  public fullName: string = 'Omastar V (SIT 35)';
+  public fullName: string = 'Omastar V SIT 35';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Primal Guidance

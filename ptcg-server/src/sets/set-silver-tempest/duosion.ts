@@ -33,7 +33,7 @@ export class Duosion extends PokemonCard {
   public setNumber: string = '77';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Duosion';
-  public fullName: string = 'Duosion (SIT 77)';
+  public fullName: string = 'Duosion SIT 77';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Cell Spear

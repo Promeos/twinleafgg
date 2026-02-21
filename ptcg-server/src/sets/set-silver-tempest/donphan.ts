@@ -36,7 +36,7 @@ export class Donphan extends PokemonCard {
   public setNumber: string = '92';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Donphan';
-  public fullName: string = 'Donphan (SIT 92)';
+  public fullName: string = 'Donphan SIT 92';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Overspin

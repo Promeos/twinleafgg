@@ -40,7 +40,7 @@ export class HisuianArcanineV extends PokemonCard {
   public setNumber: string = '90';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Hisuian Arcanine V';
-  public fullName: string = 'Hisuian Arcanine V (SIT 90)';
+  public fullName: string = 'Hisuian Arcanine V SIT 90';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Irresistible Force

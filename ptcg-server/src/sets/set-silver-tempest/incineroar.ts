@@ -93,7 +93,7 @@ export class Incineroar extends PokemonCard {
   public setNumber: string = '32';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Incineroar';
-  public fullName: string = 'Incineroar (SIT 32)';
+  public fullName: string = 'Incineroar SIT 32';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Secret Attack

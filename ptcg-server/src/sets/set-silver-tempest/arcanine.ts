@@ -37,7 +37,7 @@ export class Arcanine extends PokemonCard {
   public setNumber: string = '20';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Arcanine';
-  public fullName: string = 'Arcanine (SIT 20)';
+  public fullName: string = 'Arcanine SIT 20';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Flame Cloak

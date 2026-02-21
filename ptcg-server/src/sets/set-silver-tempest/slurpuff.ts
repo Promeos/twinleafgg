@@ -37,7 +37,7 @@ export class Slurpuff extends PokemonCard {
   public setNumber: string = '84';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Slurpuff';
-  public fullName: string = 'Slurpuff (SIT 84)';
+  public fullName: string = 'Slurpuff SIT 84';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Draining Kiss

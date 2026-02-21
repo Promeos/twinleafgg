@@ -36,7 +36,7 @@ export class Murkrow extends PokemonCard {
   public setNumber: string = '106';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Murkrow';
-  public fullName: string = 'Murkrow (SIT 106)';
+  public fullName: string = 'Murkrow SIT 106';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Flock

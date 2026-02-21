@@ -38,7 +38,7 @@ export class Jynx extends PokemonCard {
   public setNumber: string = '62';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Jynx';
-  public fullName: string = 'Jynx (SIT 62)';
+  public fullName: string = 'Jynx SIT 62';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Selfish Lips

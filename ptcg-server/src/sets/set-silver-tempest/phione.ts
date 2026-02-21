@@ -35,7 +35,7 @@ export class Phione extends PokemonCard {
   public setNumber: string = '45';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Phione';
-  public fullName: string = 'Phione (SIT 45)';
+  public fullName: string = 'Phione SIT 45';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Sea Feast

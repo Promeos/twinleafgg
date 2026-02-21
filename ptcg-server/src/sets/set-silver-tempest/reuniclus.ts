@@ -41,7 +41,7 @@ export class Reuniclus extends PokemonCard {
   public setNumber: string = '78';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Reuniclus';
-  public fullName: string = 'Reuniclus (SIT 78)';
+  public fullName: string = 'Reuniclus SIT 78';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Persistent Cells (passive - KO'd by opponent's attack -> go to hand)

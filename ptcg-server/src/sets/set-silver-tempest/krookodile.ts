@@ -38,7 +38,7 @@ export class Krookodile extends PokemonCard {
   public setNumber: string = '113';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Krookodile';
-  public fullName: string = 'Krookodile (SIT 113)';
+  public fullName: string = 'Krookodile SIT 113';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability (Part 1): On evolve - discard random card from opponent's hand

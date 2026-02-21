@@ -40,7 +40,7 @@ export class Glalie extends PokemonCard {
   public setNumber: string = '42';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Glalie';
-  public fullName: string = 'Glalie (SIT 42)';
+  public fullName: string = 'Glalie SIT 42';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Track when Candice was played this turn

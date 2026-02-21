@@ -38,7 +38,7 @@ export class Relicanth extends PokemonCard {
   public setNumber: string = '44';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Relicanth';
-  public fullName: string = 'Relicanth (SIT 44)';
+  public fullName: string = 'Relicanth SIT 44';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Fossil Finding

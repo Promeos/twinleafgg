@@ -37,7 +37,7 @@ export class MawileV extends PokemonCard {
   public setNumber: string = '70';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Mawile V';
-  public fullName: string = 'Mawile V (SIT 70)';
+  public fullName: string = 'Mawile V SIT 70';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Pouty Slap

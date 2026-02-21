@@ -50,7 +50,7 @@ export class SkuntankV extends PokemonCard {
   public setNumber: string = '108';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Skuntank V';
-  public fullName: string = 'Skuntank V (SIT 108)';
+  public fullName: string = 'Skuntank V SIT 108';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Track opponent's retreats - store the retreating Pokemon card reference.

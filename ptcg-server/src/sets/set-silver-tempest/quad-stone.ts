@@ -16,7 +16,7 @@ export class QuadStone extends TrainerCard {
   public setNumber: string = '163';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Quad Stone';
-  public fullName: string = 'Quad Stone (SIT 163)';
+  public fullName: string = 'Quad Stone SIT 163';
   public text: string = 'You may use 4 Quad Stone cards at once.\n• If you used 1 card, heal 10 damage from your Active Pokémon.\n• If you used 4 cards, heal all damage from each of your Pokémon. (This effect works one time for 4 cards.) You may play any number of Item cards during your turn.';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {

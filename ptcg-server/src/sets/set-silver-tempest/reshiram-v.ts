@@ -36,7 +36,7 @@ export class ReshiramV extends PokemonCard {
   public setNumber: string = '24';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Reshiram V';
-  public fullName: string = 'Reshiram V (SIT 24)';
+  public fullName: string = 'Reshiram V SIT 24';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Sparkling Wing

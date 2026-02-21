@@ -33,5 +33,5 @@ export class Espurr extends PokemonCard {
   public setNumber: string = '81';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Espurr';
-  public fullName: string = 'Espurr (SIT 81)';
+  public fullName: string = 'Espurr SIT 81';
 }

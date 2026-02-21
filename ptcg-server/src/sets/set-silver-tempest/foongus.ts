@@ -26,5 +26,5 @@ export class Foongus extends PokemonCard {
   public setNumber: string = '11';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Foongus';
-  public fullName: string = 'Foongus (SIT 11)';
+  public fullName: string = 'Foongus SIT 11';
 }

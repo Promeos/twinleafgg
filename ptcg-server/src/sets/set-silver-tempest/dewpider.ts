@@ -26,5 +26,5 @@ export class Dewpider extends PokemonCard {
   public setNumber: string = '47';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Dewpider';
-  public fullName: string = 'Dewpider (SIT 47)';
+  public fullName: string = 'Dewpider SIT 47';
 }

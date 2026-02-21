@@ -37,7 +37,7 @@ export class Stonjourner extends PokemonCard {
   public setNumber: string = '101';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Stonjourner';
-  public fullName: string = 'Stonjourner (SIT 101)';
+  public fullName: string = 'Stonjourner SIT 101';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Mystery Press

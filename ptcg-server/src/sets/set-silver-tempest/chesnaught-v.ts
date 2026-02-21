@@ -37,7 +37,7 @@ export class ChesnaughtV extends PokemonCard {
   public setNumber: string = '15';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Chesnaught V';
-  public fullName: string = 'Chesnaught V (SIT 15)';
+  public fullName: string = 'Chesnaught V SIT 15';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Needle Line (passive)

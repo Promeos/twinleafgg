@@ -34,7 +34,7 @@ export class Morpeko extends PokemonCard {
   public setNumber: string = '116';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Morpeko';
-  public fullName: string = 'Morpeko (SIT 116)';
+  public fullName: string = 'Morpeko SIT 116';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Track when a Dedenne used Dede-Short this turn

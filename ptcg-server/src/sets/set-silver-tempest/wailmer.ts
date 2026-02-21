@@ -36,7 +36,7 @@ export class Wailmer extends PokemonCard {
   public setNumber: string = '37';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Wailmer';
-  public fullName: string = 'Wailmer (SIT 37)';
+  public fullName: string = 'Wailmer SIT 37';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Gulp Down

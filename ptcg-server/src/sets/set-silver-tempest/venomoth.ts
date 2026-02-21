@@ -38,7 +38,7 @@ export class Venomoth extends PokemonCard {
   public setNumber: string = '2';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Venomoth';
-  public fullName: string = 'Venomoth (SIT 2)';
+  public fullName: string = 'Venomoth SIT 2';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Miracle Powder

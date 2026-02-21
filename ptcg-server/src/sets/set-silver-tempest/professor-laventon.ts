@@ -18,7 +18,7 @@ export class ProfessorLaventon extends TrainerCard {
   public setNumber: string = '162';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Professor Laventon';
-  public fullName: string = 'Professor Laventon (SIT 162)';
+  public fullName: string = 'Professor Laventon SIT 162';
   public text: string = 'Put up to 3 Pokémon that have "Hisuian" in their names from your discard pile into your hand. You may play only 1 Supporter card during your turn.';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {

@@ -36,7 +36,7 @@ export class Keldeo extends PokemonCard {
   public setNumber: string = '46';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Keldeo';
-  public fullName: string = 'Keldeo (SIT 46)';
+  public fullName: string = 'Keldeo SIT 46';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Four as One

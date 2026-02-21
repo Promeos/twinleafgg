@@ -39,7 +39,7 @@ export class Dedenne extends PokemonCard {
   public setNumber: string = '85';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Dedenne';
-  public fullName: string = 'Dedenne (SIT 85)';
+  public fullName: string = 'Dedenne SIT 85';
 
   public togeDashTurn = -10;
 

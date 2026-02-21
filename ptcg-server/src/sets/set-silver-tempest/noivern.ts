@@ -37,7 +37,7 @@ export class Noivern extends PokemonCard {
   public setNumber: string = '133';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Noivern';
-  public fullName: string = 'Noivern (SIT 133)';
+  public fullName: string = 'Noivern SIT 133';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Radiant Hunt

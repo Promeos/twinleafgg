@@ -37,7 +37,7 @@ export class Meditite extends PokemonCard {
   public setNumber: string = '72';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Meditite';
-  public fullName: string = 'Meditite (SIT 72)';
+  public fullName: string = 'Meditite SIT 72';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Yoga Guard (passive - prevent all damage on bench)

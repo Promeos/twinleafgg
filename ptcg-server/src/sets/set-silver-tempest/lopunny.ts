@@ -37,7 +37,7 @@ export class Lopunny extends PokemonCard {
   public setNumber: string = '145';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Lopunny';
-  public fullName: string = 'Lopunny (SIT 145)';
+  public fullName: string = 'Lopunny SIT 145';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Double Kick

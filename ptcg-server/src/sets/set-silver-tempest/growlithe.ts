@@ -32,5 +32,5 @@ export class Growlithe extends PokemonCard {
   public setNumber: string = '19';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Growlithe';
-  public fullName: string = 'Growlithe (SIT 19)';
+  public fullName: string = 'Growlithe SIT 19';
 }

@@ -32,7 +32,7 @@ export class Swablu extends PokemonCard {
   public setNumber: string = '142';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Swablu';
-  public fullName: string = 'Swablu (SIT 142)';
+  public fullName: string = 'Swablu SIT 142';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Continuous Spin

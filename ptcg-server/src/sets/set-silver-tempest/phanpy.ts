@@ -31,7 +31,7 @@ export class Phanpy extends PokemonCard {
   public setNumber: string = '91';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Phanpy';
-  public fullName: string = 'Phanpy (SIT 91)';
+  public fullName: string = 'Phanpy SIT 91';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Knock Away

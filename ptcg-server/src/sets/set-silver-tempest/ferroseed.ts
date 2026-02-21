@@ -33,5 +33,5 @@ export class Ferroseed extends PokemonCard {
   public setNumber: string = '121';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Ferroseed';
-  public fullName: string = 'Ferroseed (SIT 121)';
+  public fullName: string = 'Ferroseed SIT 121';
 }

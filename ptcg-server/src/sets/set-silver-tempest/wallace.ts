@@ -16,7 +16,7 @@ export class Wallace extends TrainerCard {
   public setNumber: string = '166';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Wallace';
-  public fullName: string = 'Wallace (SIT 166)';
+  public fullName: string = 'Wallace SIT 166';
   public text: string = 'Draw 3 cards. Your opponent may draw a card. If they do, draw 1 more card. You may play only 1 Supporter card during your turn.';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {

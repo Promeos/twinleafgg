@@ -31,7 +31,7 @@ export class Krokorok extends PokemonCard {
   public setNumber: string = '112';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Krokorok';
-  public fullName: string = 'Krokorok (SIT 112)';
+  public fullName: string = 'Krokorok SIT 112';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Crunch

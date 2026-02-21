@@ -21,7 +21,7 @@ export class EarthenSealStone extends TrainerCard {
   public setNumber: string = '154';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Earthen Seal Stone';
-  public fullName: string = 'Earthen Seal Stone (SIT 154)';
+  public fullName: string = 'Earthen Seal Stone SIT 154';
   public text: string = 'The Pokémon V this card is attached to can use the VSTAR Power on this card. (You still need the necessary Energy to use this attack.) You may play any number of Item cards during your turn. Attach a Pokémon Tool to 1 of your Pokémon that doesn\'t already have a Pokémon Tool attached.';
 
   public attacks: Attack[] = [{

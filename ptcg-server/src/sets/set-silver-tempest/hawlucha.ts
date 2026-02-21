@@ -37,7 +37,7 @@ export class Hawlucha extends PokemonCard {
   public setNumber: string = '98';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Hawlucha';
-  public fullName: string = 'Hawlucha (SIT 98)';
+  public fullName: string = 'Hawlucha SIT 98';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Allure
