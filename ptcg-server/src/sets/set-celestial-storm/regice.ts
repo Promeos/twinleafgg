@@ -3,8 +3,9 @@ import { Stage, CardType } from '../../game/store/card/card-types';
 import { GameError, GameMessage, PowerType, State, StateUtils, StoreLike, SpecialCondition } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
 import { AddSpecialConditionsEffect } from '../../game/store/effects/attack-effects';
-import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { PowerEffect } from '../../game/store/effects/game-effects';
 import { PlayStadiumEffect } from '../../game/store/effects/play-card-effects';
+import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class Regice extends PokemonCard {
 
@@ -50,7 +51,7 @@ export class Regice extends PokemonCard {
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       const specialConditionEffect = new AddSpecialConditionsEffect(effect, [SpecialCondition.ASLEEP]);
       state = store.reduceEffect(state, specialConditionEffect);
     }

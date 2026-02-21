@@ -3,7 +3,8 @@ import { Stage, CardType } from '../../game/store/card/card-types';
 import { CoinFlipPrompt, GameMessage, PowerType, State, StateUtils, StoreLike } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
 import { CheckHpEffect, CheckProvidedEnergyEffect } from '../../game/store/effects/check-effects';
-import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { PowerEffect } from '../../game/store/effects/game-effects';
+import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class Brambleghast extends PokemonCard {
   public regulationMark = 'H';
@@ -60,7 +61,7 @@ export class Brambleghast extends PokemonCard {
       }
     }
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       const player = effect.player;
 
       // Check attached energy

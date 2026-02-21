@@ -98,7 +98,7 @@ export class Incineroar extends PokemonCard {
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Secret Attack
     // Ref: set-cosmic-eclipse/empoleon.ts (Recall - choose attack from previous evolutions)
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       const generator = useSecretAttack(() => generator.next(), store, state, this, effect);
       return generator.next().value;
     }

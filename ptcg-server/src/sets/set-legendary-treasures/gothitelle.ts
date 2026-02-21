@@ -3,13 +3,14 @@ import { Stage, CardType } from '../../game/store/card/card-types';
 import { StoreLike } from '../../game/store/store-like';
 import { State } from '../../game/store/state/state';
 import { Effect } from '../../game/store/effects/effect';
-import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { PowerEffect } from '../../game/store/effects/game-effects';
 import { PowerType } from '../../game/store/card/pokemon-types';
 import { StateUtils } from '../../game/store/state-utils';
 import { GameError } from '../../game/game-error';
 import { GameMessage } from '../../game/game-message';
 import { PlayItemEffect } from '../../game/store/effects/play-card-effects';
 import { CheckProvidedEnergyEffect } from '../../game/store/effects/check-effects';
+import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class Gothitelle extends PokemonCard {
 
@@ -41,7 +42,7 @@ export class Gothitelle extends PokemonCard {
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       const player = effect.player;
       const checkProvidedEnergyEffect = new CheckProvidedEnergyEffect(player);
       store.reduceEffect(state, checkProvidedEnergyEffect);

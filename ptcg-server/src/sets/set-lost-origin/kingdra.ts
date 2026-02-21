@@ -6,6 +6,7 @@ import { Effect } from '../../game/store/effects/effect';
 import { PowerEffect } from '../../game/store/effects/game-effects';
 import { EndTurnEffect } from '../../game/store/effects/game-phase-effects';
 import { PlayPokemonEffect } from '../../game/store/effects/play-card-effects';
+import { WAS_POWER_USED } from '../../game/store/prefabs/prefabs';
 
 export class Kingdra extends PokemonCard {
   public stage: Stage = Stage.STAGE_2;
@@ -40,7 +41,7 @@ export class Kingdra extends PokemonCard {
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
 
-    if (effect instanceof PowerEffect && effect.power === this.powers[0]) {
+    if (WAS_POWER_USED(effect, 0, this)) {
       const player = effect.player;
       const opponent = StateUtils.getOpponent(state, player);
 

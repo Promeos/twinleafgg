@@ -3,8 +3,9 @@ import { Stage, CardType, EnergyType } from '../../game/store/card/card-types';
 import { ChoosePokemonPrompt, ConfirmPrompt, GameMessage, PlayerType, PowerType, SlotType, State, StateUtils, StoreLike } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
 import { PutDamageEffect } from '../../game/store/effects/attack-effects';
-import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { PowerEffect } from '../../game/store/effects/game-effects';
 import { CheckPokemonTypeEffect, CheckProvidedEnergyEffect } from '../../game/store/effects/check-effects';
+import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class Bastiodon extends PokemonCard {
   public stage: Stage = Stage.STAGE_2;
@@ -66,7 +67,7 @@ export class Bastiodon extends PokemonCard {
 
     }
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       const player = effect.player;
       const opponent = StateUtils.getOpponent(state, player);
       const hasBench = opponent.bench.some(b => b.cards.length > 0);

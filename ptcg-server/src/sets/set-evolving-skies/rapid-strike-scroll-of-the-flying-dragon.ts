@@ -7,12 +7,13 @@ import { CardTag, CardType, TrainerType } from '../../game/store/card/card-types
 import { TrainerCard } from '../../game/store/card/trainer-card';
 import { Effect } from '../../game/store/effects/effect';
 import { CheckPokemonAttacksEffect } from '../../game/store/effects/check-effects';
-import { AttackEffect } from '../../game/store/effects/game-effects';
+
 import { IS_TOOL_BLOCKED } from '../../game/store/prefabs/prefabs';
 import { THIS_ATTACK_DOES_X_DAMAGE_TO_1_OF_YOUR_OPPONENTS_POKEMON } from '../../game/store/prefabs/attack-effects';
 import { State } from '../../game/store/state/state';
 import { StoreLike } from '../../game/store/store-like';
 import { DISCARD_X_ENERGY_FROM_THIS_POKEMON } from '../../game/store/prefabs/costs';
+import { AttackEffect } from '../../game/store/effects/game-effects';
 
 export class RapidStrikeScrollOfTheFlyingDragon extends TrainerCard {
   public trainerType: TrainerType = TrainerType.TOOL;
@@ -37,8 +38,8 @@ export class RapidStrikeScrollOfTheFlyingDragon extends TrainerCard {
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Add Meteor attack to Rapid Strike Pokemon with this tool
     if (effect instanceof CheckPokemonAttacksEffect &&
-        effect.player.active.getPokemonCard()?.tools.includes(this) &&
-        !effect.attacks.includes(this.attacks[0])) {
+      effect.player.active.getPokemonCard()?.tools.includes(this) &&
+      !effect.attacks.includes(this.attacks[0])) {
 
       if (IS_TOOL_BLOCKED(store, state, effect.player, this)) { return state; }
 

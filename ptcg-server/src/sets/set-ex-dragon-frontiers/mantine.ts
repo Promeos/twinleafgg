@@ -4,7 +4,7 @@ import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { PowerType } from '../../game/store/card/pokemon-types';
 import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
 import { HEAL_X_DAMAGE_FROM_THIS_POKEMON } from '../../game/store/prefabs/attack-effects';
-import { ADD_MARKER, HAS_MARKER, MOVE_CARDS, REMOVE_MARKER_AT_END_OF_TURN, WAS_POWER_USED } from '../../game/store/prefabs/prefabs';
+import { ADD_MARKER, HAS_MARKER, MOVE_CARDS, REMOVE_MARKER_AT_END_OF_TURN, WAS_POWER_USED, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 
 export class Mantine extends PokemonCard {
@@ -120,7 +120,7 @@ export class Mantine extends PokemonCard {
       return state;
     }
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       HEAL_X_DAMAGE_FROM_THIS_POKEMON(10, effect, store, state);
     }
 

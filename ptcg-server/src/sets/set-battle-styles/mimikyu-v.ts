@@ -7,7 +7,8 @@ import { EndTurnEffect } from '../../game/store/effects/game-phase-effects';
 import { PlayPokemonEffect } from '../../game/store/effects/play-card-effects';
 import { ConfirmPrompt, GameMessage, PokemonCardList, PowerType, StateUtils } from '../../game';
 import { AbstractAttackEffect, PutCountersEffect } from '../../game/store/effects/attack-effects';
-import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { PowerEffect } from '../../game/store/effects/game-effects';
+import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class MimikyuV extends PokemonCard {
 
@@ -101,7 +102,7 @@ export class MimikyuV extends PokemonCard {
       }
     }
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
 
       const player = effect.player;
       const opponent = StateUtils.getOpponent(state, player);

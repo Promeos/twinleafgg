@@ -1,16 +1,10 @@
 import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { Stage, CardType, CardTag, BoardEffect } from '../../game/store/card/card-types';
-import {
-  PowerType, StoreLike, State, StateUtils, GameError, GameMessage,
-  PlayerType, SlotType,
-  ChoosePokemonPrompt,
-  ConfirmPrompt,
-  ShuffleDeckPrompt
-} from '../../game';
+import { PowerType, StoreLike, State, StateUtils, GameError, GameMessage, PlayerType, SlotType, ChoosePokemonPrompt, ConfirmPrompt, ShuffleDeckPrompt } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
-import { PowerEffect, AttackEffect, EvolveEffect } from '../../game/store/effects/game-effects';
+import { PowerEffect, EvolveEffect } from '../../game/store/effects/game-effects';
 import { PutDamageEffect } from '../../game/store/effects/attack-effects';
-import { AFTER_ATTACK, BLOCK_IF_GX_ATTACK_USED, CONFIRMATION_PROMPT } from '../../game/store/prefabs/prefabs';
+import { AFTER_ATTACK, BLOCK_IF_GX_ATTACK_USED, CONFIRMATION_PROMPT, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 // FLI Greninja-GX 24 (https://limitlesstcg.com/cards/FLI/24)
 export class GreninjaGX extends PokemonCard {
@@ -124,7 +118,7 @@ export class GreninjaGX extends PokemonCard {
     }
 
     // Shadowy Hunter-GX
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[1]) {
+    if (WAS_ATTACK_USED(effect, 1, this)) {
       const player = effect.player;
       const opponent = StateUtils.getOpponent(state, player);
 

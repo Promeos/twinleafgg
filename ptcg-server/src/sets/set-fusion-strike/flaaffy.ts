@@ -6,8 +6,8 @@ import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { Stage, CardType, EnergyType, SuperType } from '../../game/store/card/card-types';
 import { PowerType, StoreLike, State, GameError, GameMessage, EnergyCard, SlotType } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
-import { ATTACH_X_TYPE_ENERGY_FROM_DISCARD_TO_1_OF_YOUR_POKEMON, IS_ABILITY_BLOCKED } from '../../game/store/prefabs/prefabs';
-import { PowerEffect } from '../../game/store/effects/game-effects';
+import { ATTACH_X_TYPE_ENERGY_FROM_DISCARD_TO_1_OF_YOUR_POKEMON, IS_ABILITY_BLOCKED, WAS_POWER_USED } from '../../game/store/prefabs/prefabs';
+
 import { PlayPokemonEffect } from '../../game/store/effects/play-card-effects';
 import { EndTurnEffect } from '../../game/store/effects/game-phase-effects';
 
@@ -51,7 +51,7 @@ export class Flaaffy extends PokemonCard {
       player.marker.removeMarker(this.DYNAMOTOR_MARKER, this);
     }
 
-    if (effect instanceof PowerEffect && effect.power === this.powers[0]) {
+    if (WAS_POWER_USED(effect, 0, this)) {
       const player = effect.player;
 
       if (IS_ABILITY_BLOCKED(store, state, player, this)) {

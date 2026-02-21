@@ -3,7 +3,7 @@ import { Stage, CardType, SpecialCondition } from '../../game/store/card/card-ty
 import { StoreLike } from '../../game/store/store-like';
 import { State } from '../../game/store/state/state';
 import { Effect } from '../../game/store/effects/effect';
-import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { PowerEffect } from '../../game/store/effects/game-effects';
 import { AddSpecialConditionsEffect } from '../../game/store/effects/attack-effects';
 import { PowerType } from '../../game/store/card/pokemon-types';
 import { StateUtils } from '../../game/store/state-utils';
@@ -11,6 +11,7 @@ import { GameError } from '../../game/game-error';
 import { GameMessage } from '../../game/game-message';
 import { CoinFlipPrompt } from '../../game/store/prompts/coin-flip-prompt';
 import { PlayItemEffect } from '../../game/store/effects/play-card-effects';
+import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class Vileplume extends PokemonCard {
 
@@ -52,7 +53,7 @@ export class Vileplume extends PokemonCard {
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       const player = effect.player;
       return store.prompt(state, [
         new CoinFlipPrompt(player.id, GameMessage.COIN_FLIP)

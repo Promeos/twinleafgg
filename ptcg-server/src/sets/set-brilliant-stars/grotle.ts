@@ -5,7 +5,7 @@ import { Effect } from '../../game/store/effects/effect';
 import { PlayPokemonEffect } from '../../game/store/effects/play-card-effects';
 import { EndTurnEffect } from '../../game/store/effects/game-phase-effects';
 import { PowerEffect } from '../../game/store/effects/game-effects';
-import { MOVE_CARDS } from '../../game/store/prefabs/prefabs';
+import { MOVE_CARDS, WAS_POWER_USED } from '../../game/store/prefabs/prefabs';
 
 export class Grotle extends PokemonCard {
   public stage: Stage = Stage.STAGE_1;
@@ -49,7 +49,7 @@ export class Grotle extends PokemonCard {
       player.marker.removeMarker(this.SUN_DRENCHED_SHELL_MARKER, this);
     }
 
-    if (effect instanceof PowerEffect && effect.power === this.powers[0]) {
+    if (WAS_POWER_USED(effect, 0, this)) {
       const player = effect.player;
       const opponent = StateUtils.getOpponent(state, player);
 

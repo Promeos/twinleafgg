@@ -1,10 +1,11 @@
-import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { PowerEffect } from '../../game/store/effects/game-effects';
 import { Effect } from '../../game/store/effects/effect';
 import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { Stage, CardType, CardTag } from '../../game/store/card/card-types';
 import { PlayPokemonEffect } from '../../game/store/effects/play-card-effects';
 import { PowerType, StoreLike, State, ConfirmPrompt, GameMessage } from '../../game';
 import { PUT_THIS_POKEMON_AND_ALL_ATTACHED_CARDS_INTO_YOUR_HAND } from '../../game/store/prefabs/attack-effects';
+import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 
 export class ShayminEx extends PokemonCard {
@@ -81,7 +82,7 @@ export class ShayminEx extends PokemonCard {
       });
     }
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       PUT_THIS_POKEMON_AND_ALL_ATTACHED_CARDS_INTO_YOUR_HAND(store, state, effect);
       return state;
     }

@@ -1,7 +1,8 @@
 import { PokemonCard, Stage, CardType, State, StoreLike, StateUtils, CardTag } from '../../game';
 import { AfterDamageEffect, ApplyWeaknessEffect } from '../../game/store/effects/attack-effects';
-import { AttackEffect } from '../../game/store/effects/game-effects';
+
 import { EndTurnEffect } from '../../game/store/effects/game-phase-effects';
+import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class Keldeoex extends PokemonCard {
   public stage: Stage = Stage.BASIC;
@@ -38,13 +39,13 @@ export class Keldeoex extends PokemonCard {
       this.movedToActiveThisTurn = false;
     }
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       if (this.movedToActiveThisTurn) {
         effect.damage += 120;
       }
     }
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[1]) {
+    if (WAS_ATTACK_USED(effect, 1, this)) {
       const player = effect.player;
       const opponent = StateUtils.getOpponent(state, player);
 

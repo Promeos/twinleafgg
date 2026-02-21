@@ -1,11 +1,11 @@
 import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { Stage, CardType, SuperType, CardTag, BoardEffect } from '../../game/store/card/card-types';
 import { StoreLike, State, PowerType, PlayerType, AttachEnergyPrompt, GameError, GameMessage, SlotType, StateUtils } from '../../game';
-import { PowerEffect } from '../../game/store/effects/game-effects';
+
 import { Effect } from '../../game/store/effects/effect';
 import { PlayPokemonEffect } from '../../game/store/effects/play-card-effects';
 import { EndTurnEffect } from '../../game/store/effects/game-phase-effects';
-import { IS_ABILITY_BLOCKED, MOVE_CARDS, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
+import { IS_ABILITY_BLOCKED, MOVE_CARDS, WAS_ATTACK_USED, WAS_POWER_USED } from '../../game/store/prefabs/prefabs';
 
 export class Regigigas extends PokemonCard {
 
@@ -59,7 +59,7 @@ export class Regigigas extends PokemonCard {
       player.marker.removeMarker(this.ANCIENT_WISDOM_MARKER, this);
     }
 
-    if (effect instanceof PowerEffect && effect.power === this.powers[0]) {
+    if (WAS_POWER_USED(effect, 0, this)) {
       // Check if player has Regirock, Regice, Registeel, Regieleki, and Regidrago in play
       const player = effect.player;
 

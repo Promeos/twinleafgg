@@ -3,12 +3,10 @@ import { Effect } from '../../game/store/effects/effect';
 import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { Stage, CardType, SuperType } from '../../game/store/card/card-types';
 import { PlayPokemonEffect } from '../../game/store/effects/play-card-effects';
-import {
-  PowerType, StoreLike, State, PlayerType, SlotType,
-  MoveEnergyPrompt, StateUtils, PokemonCardList
-} from '../../game';
-import { PowerEffect, AttackEffect } from '../../game/store/effects/game-effects';
+import { PowerType, StoreLike, State, PlayerType, SlotType, MoveEnergyPrompt, StateUtils, PokemonCardList } from '../../game';
+import { PowerEffect } from '../../game/store/effects/game-effects';
 import { HealTargetEffect } from '../../game/store/effects/attack-effects';
+import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 
 export class Shaymin extends PokemonCard {
@@ -89,7 +87,7 @@ export class Shaymin extends PokemonCard {
       });
     }
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       const player = effect.player;
       const targets: PokemonCardList[] = [];
 

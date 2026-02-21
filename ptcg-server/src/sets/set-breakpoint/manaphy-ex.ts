@@ -3,8 +3,9 @@ import { Stage, CardType, CardTag, SuperType } from '../../game/store/card/card-
 import { PowerType, StoreLike, State, PlayerType } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
 import { CheckRetreatCostEffect } from '../../game/store/effects/check-effects';
-import { PowerEffect, AttackEffect } from '../../game/store/effects/game-effects';
+import { PowerEffect } from '../../game/store/effects/game-effects';
 import { HealTargetEffect } from '../../game/store/effects/attack-effects';
+import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class ManaphyEX extends PokemonCard {
   public tags = [CardTag.POKEMON_EX];
@@ -12,7 +13,7 @@ export class ManaphyEX extends PokemonCard {
   public cardType: CardType = W;
   public hp: number = 120;
   public weakness = [{ type: G }];
-  public retreat = [ C ];
+  public retreat = [C];
 
   public powers = [{
     name: 'Aqua Tube',
@@ -22,7 +23,7 @@ export class ManaphyEX extends PokemonCard {
   public attacks = [
     {
       name: 'Mineral Pump',
-      cost: [ W, W ],
+      cost: [W, W],
       damage: 60,
       text: 'Heal 30 damage from each of your Benched Pokémon.'
     }
@@ -41,12 +42,12 @@ export class ManaphyEX extends PokemonCard {
 
       let isManaphyOnYourSide = false;
       player.forEachPokemon(PlayerType.BOTTOM_PLAYER, (cardList, card) => {
-        if (card === this){
+        if (card === this) {
           isManaphyOnYourSide = true;
         }
       });
 
-      if (!isManaphyOnYourSide){
+      if (!isManaphyOnYourSide) {
         return state;
       }
 
@@ -63,18 +64,18 @@ export class ManaphyEX extends PokemonCard {
       }
 
       player.active.cards.forEach(card => {
-        if (card.superType === SuperType.ENERGY && card.name === 'Water Energy'){
-          effect.cost = [ ];
+        if (card.superType === SuperType.ENERGY && card.name === 'Water Energy') {
+          effect.cost = [];
         }
       });
     }
 
     // Mineral Pump
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       const player = effect.player;
-      
+
       player.forEachPokemon(PlayerType.BOTTOM_PLAYER, (cardList, card) => {
-        if (cardList === player.active){
+        if (cardList === player.active) {
           return;
         }
         const healing = new HealTargetEffect(effect, 30);

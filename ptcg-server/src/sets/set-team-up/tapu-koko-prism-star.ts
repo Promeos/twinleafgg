@@ -3,7 +3,7 @@ import { Stage, CardType, EnergyType, SuperType, CardTag } from '../../game/stor
 import { AttachEnergyPrompt, EnergyCard, GameError, GameMessage, PlayerType, PokemonCardList, PowerType, SlotType, State, StateUtils, StoreLike } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
 import { PowerEffect } from '../../game/store/effects/game-effects';
-import { MOVE_CARDS } from '../../game/store/prefabs/prefabs';
+import { MOVE_CARDS, WAS_POWER_USED } from '../../game/store/prefabs/prefabs';
 
 export class TapuKokoPrismStar extends PokemonCard {
   public stage: Stage = Stage.BASIC;
@@ -38,7 +38,7 @@ export class TapuKokoPrismStar extends PokemonCard {
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
 
-    if (effect instanceof PowerEffect && effect.power === this.powers[0]) {
+    if (WAS_POWER_USED(effect, 0, this)) {
       const player = effect.player;
       const cardList = StateUtils.findCardList(state, this);
 

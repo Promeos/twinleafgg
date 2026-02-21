@@ -1,17 +1,11 @@
-import {
-  ChoosePokemonPrompt, CoinFlipPrompt, PlayerType,
-  PowerType,
-  SlotType,
-  State,
-  StateUtils,
-  StoreLike
-} from '../../game';
+import { ChoosePokemonPrompt, CoinFlipPrompt, PlayerType, PowerType, SlotType, State, StateUtils, StoreLike } from '../../game';
 import { GameLog, GameMessage } from '../../game/game-message';
 import { CardType, Stage } from '../../game/store/card/card-types';
 import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { Effect } from '../../game/store/effects/effect';
-import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { PowerEffect } from '../../game/store/effects/game-effects';
 import { PlayPokemonEffect } from '../../game/store/effects/play-card-effects';
+import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 
 export class GalarianZigzagoon extends PokemonCard {
@@ -24,7 +18,7 @@ export class GalarianZigzagoon extends PokemonCard {
 
   public weakness = [{ type: CardType.GRASS }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat = [CardType.COLORLESS];
 
   public powers = [{
     name: 'Headbutt Tantrum',
@@ -35,7 +29,7 @@ export class GalarianZigzagoon extends PokemonCard {
   public attacks = [
     {
       name: 'Surprise Attack',
-      cost: [ CardType.DARK, CardType.COLORLESS ],
+      cost: [CardType.DARK, CardType.COLORLESS],
       damage: 30,
       text: 'Flip a coin. If tails, this attack does nothing.'
     }
@@ -72,18 +66,18 @@ export class GalarianZigzagoon extends PokemonCard {
         player.id,
         GameMessage.CHOOSE_POKEMON_TO_DAMAGE,
         PlayerType.TOP_PLAYER,
-        [ SlotType.ACTIVE, SlotType.BENCH ],
+        [SlotType.ACTIVE, SlotType.BENCH],
         { allowCancel: true },
       ), selected => {
         const targets = selected || [];
         targets.forEach(target => {
           target.damage += 10;
-          store.log(state, GameLog.LOG_PLAYER_DISCARDS_CARD, { name: player.name, damage: 10, target: target.getPokemonCard()!.name, effect: this.powers[0].name });        
-        });        
+          store.log(state, GameLog.LOG_PLAYER_DISCARDS_CARD, { name: player.name, damage: 10, target: target.getPokemonCard()!.name, effect: this.powers[0].name });
+        });
       });
     }
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       return store.prompt(state, [
         new CoinFlipPrompt(effect.player.id, GameMessage.COIN_FLIP),
       ], heads => {

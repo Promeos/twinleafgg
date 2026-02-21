@@ -2,12 +2,12 @@ import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { Stage, CardType, SpecialCondition } from '../../game/store/card/card-types';
 import { StoreLike } from '../../game/store/store-like';
 import { GamePhase, State } from '../../game/store/state/state';
-import { PowerEffect, AttackEffect } from '../../game/store/effects/game-effects';
+import { PowerEffect } from '../../game/store/effects/game-effects';
 import { Effect } from '../../game/store/effects/effect';
 import { GameLog, PowerType, StateUtils } from '../../game';
 import { AddSpecialConditionsEffect, PutDamageEffect } from '../../game/store/effects/attack-effects';
 import { CoinFlipEffect } from '../../game/store/effects/play-card-effects';
-import { SIMULATE_COIN_FLIP } from '../../game/store/prefabs/prefabs';
+import { SIMULATE_COIN_FLIP, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class Haunter extends PokemonCard {
 
@@ -94,7 +94,7 @@ export class Haunter extends PokemonCard {
       return state;
     }
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       const sleepEffect = new AddSpecialConditionsEffect(effect, [SpecialCondition.ASLEEP]);
       store.reduceEffect(state, sleepEffect);
       return state;

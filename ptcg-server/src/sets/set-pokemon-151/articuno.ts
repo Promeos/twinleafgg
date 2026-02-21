@@ -3,8 +3,9 @@ import { Stage, CardType } from '../../game/store/card/card-types';
 import { PlayerType, PowerType, State, StoreLike } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
 import { CheckProvidedEnergyEffect, CheckRetreatCostEffect } from '../../game/store/effects/check-effects';
-import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { PowerEffect } from '../../game/store/effects/game-effects';
 import { PutDamageEffect } from '../../game/store/effects/attack-effects';
+import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class Articuno extends PokemonCard {
   public stage: Stage = Stage.BASIC;
@@ -73,7 +74,7 @@ export class Articuno extends PokemonCard {
     }
 
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       const opponent = effect.opponent;
       const benched = opponent.bench.filter(b => b.cards.length > 0);
 

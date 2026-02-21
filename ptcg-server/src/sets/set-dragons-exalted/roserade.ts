@@ -3,10 +3,10 @@ import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { PowerType, StoreLike, State, CoinFlipPrompt, ConfirmPrompt, PlayerType } from '../../game';
 import { Stage, CardType, SpecialCondition } from '../../game/store/card/card-types';
 import { PlayPokemonEffect } from '../../game/store/effects/play-card-effects';
-import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { PowerEffect } from '../../game/store/effects/game-effects';
 import { AddSpecialConditionsEffect } from '../../game/store/effects/attack-effects';
 import { GameLog, GameMessage } from '../../game/game-message';
-import { ABILITY_USED, SEARCH_DECK_FOR_CARDS_TO_HAND, SHUFFLE_DECK } from '../../game/store/prefabs/prefabs';
+import { ABILITY_USED, SEARCH_DECK_FOR_CARDS_TO_HAND, SHUFFLE_DECK, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class Roserade extends PokemonCard {
 
@@ -91,7 +91,7 @@ export class Roserade extends PokemonCard {
       });
     }
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       const player = effect.player;
 
       return store.prompt(state, [

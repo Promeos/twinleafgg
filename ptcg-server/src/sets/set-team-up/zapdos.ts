@@ -2,8 +2,9 @@ import { State, StoreLike } from '../../game';
 import { CardType, Stage } from '../../game/store/card/card-types';
 import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { Effect } from '../../game/store/effects/effect';
-import { AttackEffect, RetreatEffect } from '../../game/store/effects/game-effects';
+import { RetreatEffect } from '../../game/store/effects/game-effects';
 import { EndTurnEffect } from '../../game/store/effects/game-phase-effects';
+import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class Zapdos extends PokemonCard {
 
@@ -48,7 +49,7 @@ export class Zapdos extends PokemonCard {
       this.movedToActiveThisTurn = true;
     }
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       effect.ignoreWeakness = true;
       if (this.movedToActiveThisTurn) {
         effect.damage += 70;

@@ -1,12 +1,13 @@
 import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { Stage, CardType, CardTag } from '../../game/store/card/card-types';
 import { State } from '../../game/store/state/state';
-import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { PowerEffect } from '../../game/store/effects/game-effects';
 import { PowerType, StateUtils, PlayerType } from '../../game';
 import { StoreLike } from '../../game/store/store-like';
 import { Effect } from '../../game/store/effects/effect';
 import { DiscardCardsEffect } from '../../game/store/effects/attack-effects';
 import { CheckProvidedEnergyEffect, CheckTableStateEffect } from '../../game/store/effects/check-effects';
+import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class Rotomex extends PokemonCard {
   public stage: Stage = Stage.BASIC;
@@ -62,7 +63,7 @@ export class Rotomex extends PokemonCard {
       });
     }
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       const player = effect.player;
 
       // Discard all Energy from this Pokemon

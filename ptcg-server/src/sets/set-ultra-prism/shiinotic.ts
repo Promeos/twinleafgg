@@ -2,9 +2,10 @@ import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { Stage, CardType, SpecialCondition, SuperType, BoardEffect } from '../../game/store/card/card-types';
 import { StoreLike, State, PowerType, GameError, GameMessage, StateUtils, Card, ChooseCardsPrompt, ShuffleDeckPrompt, ShowCardsPrompt, PlayerType } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
-import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { PowerEffect } from '../../game/store/effects/game-effects';
 import { AddSpecialConditionsEffect } from '../../game/store/effects/attack-effects';
 import { EndTurnEffect } from '../../game/store/effects/game-phase-effects';
+import { WAS_ATTACK_USED, WAS_POWER_USED } from '../../game/store/prefabs/prefabs';
 
 export class Shiinotic extends PokemonCard {
   public stage: Stage = Stage.STAGE_1;
@@ -44,7 +45,7 @@ export class Shiinotic extends PokemonCard {
       player.marker.removeMarker(this.ILLUMINATE_MARKER, this);
     }
 
-    if (effect instanceof PowerEffect && effect.power === this.powers[0]) {
+    if (WAS_POWER_USED(effect, 0, this)) {
       const player = effect.player;
       const opponent = StateUtils.getOpponent(state, player);
 
@@ -109,7 +110,7 @@ export class Shiinotic extends PokemonCard {
       });
     }
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       const specialConditionEffect = new AddSpecialConditionsEffect(effect, [SpecialCondition.ASLEEP]);
       store.reduceEffect(state, specialConditionEffect);
     }

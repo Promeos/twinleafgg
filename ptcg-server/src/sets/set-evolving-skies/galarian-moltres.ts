@@ -1,12 +1,10 @@
 import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { Stage, CardType, EnergyType, SuperType } from '../../game/store/card/card-types';
-import {
-  PowerType, StoreLike, State, StateUtils,
-  GameMessage, ConfirmPrompt, ChooseCardsPrompt, EnergyCard, GameError
-} from '../../game';
+import { PowerType, StoreLike, State, StateUtils, GameMessage, ConfirmPrompt, ChooseCardsPrompt, EnergyCard, GameError } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
-import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { PowerEffect } from '../../game/store/effects/game-effects';
 import { PlayPokemonEffect } from '../../game/store/effects/play-card-effects';
+import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class GalarianMoltres extends PokemonCard {
 
@@ -105,7 +103,7 @@ export class GalarianMoltres extends PokemonCard {
       });
     }
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
 
       const player = effect.player;
       const opponent = StateUtils.getOpponent(state, player);

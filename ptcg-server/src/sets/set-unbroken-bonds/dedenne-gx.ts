@@ -3,10 +3,10 @@ import { Stage, CardType, CardTag, SpecialCondition } from '../../game/store/car
 import { ChoosePokemonPrompt, ConfirmPrompt, GameMessage, PlayerType, PowerType, SlotType, State, StoreLike } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
 import { PlayPokemonEffect } from '../../game/store/effects/play-card-effects';
-import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { PowerEffect } from '../../game/store/effects/game-effects';
 import { EndTurnEffect } from '../../game/store/effects/game-phase-effects';
 import { AddSpecialConditionsEffect } from '../../game/store/effects/attack-effects';
-import { BLOCK_IF_GX_ATTACK_USED } from '../../game/store/prefabs/prefabs';
+import { BLOCK_IF_GX_ATTACK_USED, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class DedenneGX extends PokemonCard {
   public stage: Stage = Stage.BASIC;
@@ -89,7 +89,7 @@ export class DedenneGX extends PokemonCard {
       });
     }
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[1]) {
+    if (WAS_ATTACK_USED(effect, 1, this)) {
       const player = effect.player;
 
 

@@ -3,7 +3,8 @@ import { Stage, CardType, CardTag } from '../../game/store/card/card-types';
 import { GamePhase, PowerType, State, StateUtils, StoreLike } from '../..';
 import { PutDamageEffect } from '../../game/store/effects/attack-effects';
 import { Effect } from '../../game/store/effects/effect';
-import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { PowerEffect } from '../../game/store/effects/game-effects';
+import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class UrsalunaV extends PokemonCard {
 
@@ -78,7 +79,7 @@ export class UrsalunaV extends PokemonCard {
       effect.damage = Math.max(0, effect.damage - 30);
     }
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       effect.damage -= effect.player.active.damage;
       return state;
     }

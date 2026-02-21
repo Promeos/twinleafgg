@@ -1,8 +1,8 @@
 import { PokemonCard, Stage, CardType, CardTag, PowerType, StoreLike, State, ConfirmPrompt, GameMessage, SuperType, StateUtils, ChooseCardsPrompt, Card } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
-import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { PowerEffect } from '../../game/store/effects/game-effects';
 import { DiscardToHandEffect, PlayPokemonEffect } from '../../game/store/effects/play-card-effects';
-import { MOVE_CARDS } from '../../game/store/prefabs/prefabs';
+import { MOVE_CARDS, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class DragoniteEX extends PokemonCard {
   public stage: Stage = Stage.BASIC;
@@ -99,7 +99,7 @@ export class DragoniteEX extends PokemonCard {
       });
     }
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[1]) {
+    if (WAS_ATTACK_USED(effect, 1, this)) {
 
       const player = effect.player;
       const opponent = StateUtils.getOpponent(state, player);

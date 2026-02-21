@@ -3,13 +3,12 @@ import { Stage, CardType, CardTag } from '../../game/store/card/card-types';
 import { StoreLike, State, PowerType, GamePhase } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
 import { StateUtils } from '../../game';
-import { PowerEffect } from '../../game/store/effects/game-effects';
 import { CheckProvidedEnergyEffect } from '../../game/store/effects/check-effects';
 import { AddSpecialConditionsEffect } from '../../game/store/effects/attack-effects';
 import { SpecialCondition } from '../../game/store/card/card-types';
-import { AttackEffect } from '../../game/store/effects/game-effects';
 import { PutDamageEffect } from '../../game/store/effects/attack-effects';
-import { BLOCK_IF_GX_ATTACK_USED } from '../../game/store/prefabs/prefabs';
+import { BLOCK_IF_GX_ATTACK_USED, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
+import { PowerEffect } from '../../game/store/effects/game-effects';
 
 export class ShuckleGX extends PokemonCard {
 
@@ -107,14 +106,14 @@ export class ShuckleGX extends PokemonCard {
     }
 
     // Triple Poison
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       const specialCondition = new AddSpecialConditionsEffect(effect, [SpecialCondition.POISONED]);
       specialCondition.poisonDamage = 30;
       return store.reduceEffect(state, specialCondition);
     }
 
     // Wrap-GX
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[1]) {
+    if (WAS_ATTACK_USED(effect, 1, this)) {
       const player = effect.player;
 
       // Check if player has used GX attack

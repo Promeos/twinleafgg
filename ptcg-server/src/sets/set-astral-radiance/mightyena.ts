@@ -3,8 +3,9 @@ import { Stage, CardType, CardTag } from '../../game/store/card/card-types';
 import { CheckAttackCostEffect } from '../../game/store/effects/check-effects';
 import { PowerType, StoreLike, State, StateUtils, PlayerType } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
-import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { PowerEffect } from '../../game/store/effects/game-effects';
 import { DealDamageEffect } from '../../game/store/effects/attack-effects';
+import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class Mightyena extends PokemonCard {
 
@@ -86,7 +87,7 @@ export class Mightyena extends PokemonCard {
       }
     }
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       const player = effect.player;
 
       const dealDamage = new DealDamageEffect(effect, 50);

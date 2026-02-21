@@ -1,9 +1,10 @@
 import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { Stage, CardType, SuperType } from '../../game/store/card/card-types';
 import { StoreLike, State, GameMessage, ChooseCardsPrompt, ShuffleDeckPrompt, PowerType, ConfirmPrompt, ShowCardsPrompt, StateUtils } from '../../game';
-import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { PowerEffect } from '../../game/store/effects/game-effects';
 import { Effect } from '../../game/store/effects/effect';
 import { PlayPokemonEffect } from '../../game/store/effects/play-card-effects';
+import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 
 export class Flamigo extends PokemonCard {
@@ -104,7 +105,7 @@ export class Flamigo extends PokemonCard {
       });
     }
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       const player = effect.player;
 
       let pokemonCount = 0;

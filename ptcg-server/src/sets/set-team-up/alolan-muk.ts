@@ -1,20 +1,12 @@
-import {
-  CardList,
-  ChooseCardsPrompt,
-  PowerType,
-  ShowCardsPrompt,
-  ShuffleDeckPrompt,
-  State,
-  StateUtils,
-  StoreLike
-} from '../../game';
+import { CardList, ChooseCardsPrompt, PowerType, ShowCardsPrompt, ShuffleDeckPrompt, State, StateUtils, StoreLike } from '../../game';
 import { GameLog, GameMessage } from '../../game/game-message';
 import { CardType, SpecialCondition, Stage, SuperType, TrainerType } from '../../game/store/card/card-types';
 import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { AddSpecialConditionsEffect } from '../../game/store/effects/attack-effects';
 import { Effect } from '../../game/store/effects/effect';
-import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { PowerEffect } from '../../game/store/effects/game-effects';
 import { PlayPokemonEffect } from '../../game/store/effects/play-card-effects';
+import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 
 export class AlolanMuk extends PokemonCard {
@@ -105,7 +97,7 @@ export class AlolanMuk extends PokemonCard {
       });
     }
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       const poisonEffect = new AddSpecialConditionsEffect(effect, [SpecialCondition.POISONED]);
       store.reduceEffect(state, poisonEffect);
 

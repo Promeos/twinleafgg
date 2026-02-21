@@ -2,11 +2,12 @@ import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { Stage, CardType } from '../../game/store/card/card-types';
 import { PowerType, StoreLike, State, StateUtils, PlayerType, CoinFlipPrompt } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
-import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { PowerEffect } from '../../game/store/effects/game-effects';
 import { GameMessage } from '../../game/game-message';
 import { AttachEnergyEffect } from '../../game/store/effects/play-card-effects';
 import { EndTurnEffect } from '../../game/store/effects/game-phase-effects';
 import { PutDamageEffect } from '../../game/store/effects/attack-effects';
+import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class Shuckle extends PokemonCard {
 
@@ -18,7 +19,7 @@ export class Shuckle extends PokemonCard {
 
   public weakness = [{ type: CardType.WATER }];
 
-  public retreat = [ CardType.COLORLESS ];
+  public retreat = [CardType.COLORLESS];
 
   public powers = [{
     name: 'Fermenting Liquid',
@@ -30,7 +31,7 @@ export class Shuckle extends PokemonCard {
   public attacks = [
     {
       name: 'Shell Stunner',
-      cost: [ CardType.GRASS, CardType.COLORLESS ],
+      cost: [CardType.GRASS, CardType.COLORLESS],
       damage: 20,
       text: 'Flip a coin. If heads, prevent all damage done to Shuckle by ' +
         'attacks during your opponent\'s next turn.'
@@ -83,7 +84,7 @@ export class Shuckle extends PokemonCard {
       return state;
     }
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       const player = effect.player;
       const opponent = StateUtils.getOpponent(state, player);
 

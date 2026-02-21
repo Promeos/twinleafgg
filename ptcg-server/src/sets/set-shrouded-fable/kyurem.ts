@@ -3,11 +3,11 @@ import { Stage, CardType } from '../../game/store/card/card-types';
 import { StoreLike } from '../../game/store/store-like';
 import { State } from '../../game/store/state/state';
 import { Effect } from '../../game/store/effects/effect';
-import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { PowerEffect } from '../../game/store/effects/game-effects';
 import { Card, ChoosePokemonPrompt, GameMessage, PlayerType, PowerType, SlotType, StateUtils, TrainerCard } from '../../game';
 import { CheckAttackCostEffect, CheckProvidedEnergyEffect } from '../../game/store/effects/check-effects';
 import { DiscardCardsEffect } from '../../game/store/effects/attack-effects';
-import { DAMAGE_OPPONENT_POKEMON } from '../../game/store/prefabs/prefabs';
+import { DAMAGE_OPPONENT_POKEMON, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 
 export class Kyurem extends PokemonCard {
@@ -67,7 +67,7 @@ export class Kyurem extends PokemonCard {
       return state;
     }
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       const player = effect.player;
 
       const checkProvidedEnergy = new CheckProvidedEnergyEffect(player);

@@ -5,7 +5,7 @@ import { Stage, CardType } from '../../game/store/card/card-types';
 import { OrderCardsPrompt } from '../../game/store/prompts/order-cards-prompt';
 import { PlayPokemonEffect } from '../../game/store/effects/play-card-effects';
 import { PowerType, StoreLike, State, ConfirmPrompt, GameMessage } from '../../game';
-import { MOVE_CARDS } from '../../game/store/prefabs/prefabs';
+import { MOVE_CARDS, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 function* usePsychicRestore(next: Function, store: StoreLike, state: State, effect: AttackEffect): IterableIterator<State> {
   const player = effect.player;
@@ -123,7 +123,7 @@ export class Uxie extends PokemonCard {
       });
     }
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       const generator = usePsychicRestore(() => generator.next(), store, state, effect);
       return generator.next().value;
     }

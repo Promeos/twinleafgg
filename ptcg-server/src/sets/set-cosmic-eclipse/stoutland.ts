@@ -3,11 +3,11 @@ import { Stage, CardType } from '../../game/store/card/card-types';
 import { Card, ChooseEnergyPrompt, ChoosePokemonPrompt, GameMessage, PlayerType, PowerType, SlotType, State, StateUtils, StoreLike } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
 import { PlayPokemonEffect } from '../../game/store/effects/play-card-effects';
-import { AttackEffect, KnockOutEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { KnockOutEffect, PowerEffect } from '../../game/store/effects/game-effects';
 import { CheckProvidedEnergyEffect } from '../../game/store/effects/check-effects';
 import { DealDamageEffect, PutDamageEffect } from '../../game/store/effects/attack-effects';
 import { EndTurnEffect } from '../../game/store/effects/game-phase-effects';
-import { DAMAGE_OPPONENT_POKEMON } from '../../game/store/prefabs/prefabs';
+import { DAMAGE_OPPONENT_POKEMON, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class Stoutland extends PokemonCard {
   public stage: Stage = Stage.STAGE_2;
@@ -127,7 +127,7 @@ export class Stoutland extends PokemonCard {
 
     }
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       const player = effect.player;
       const opponent = StateUtils.getOpponent(state, player);
 

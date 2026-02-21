@@ -3,8 +3,9 @@ import { CardType, Stage } from '../../game/store/card/card-types';
 import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { CheckProvidedEnergyEffect, CheckRetreatCostEffect } from '../../game/store/effects/check-effects';
 import { Effect } from '../../game/store/effects/effect';
-import { AttackEffect, PowerEffect, RetreatEffect } from '../../game/store/effects/game-effects';
+import { PowerEffect, RetreatEffect } from '../../game/store/effects/game-effects';
 import { EndTurnEffect } from '../../game/store/effects/game-phase-effects';
+import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class Golisopod extends PokemonCard {
   public stage: Stage = Stage.STAGE_1;
@@ -83,7 +84,7 @@ export class Golisopod extends PokemonCard {
       this.movedToActiveThisTurn = true;
     }
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       if (this.movedToActiveThisTurn) {
         effect.damage += 60;
       }

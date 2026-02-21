@@ -8,6 +8,7 @@ import { StoreLike, State, ChooseCardsPrompt, PokemonCardList, Card, ShuffleDeck
 import { AttackEffect } from '../../game/store/effects/game-effects';
 import { Effect } from '../../game/store/effects/effect';
 import { GameMessage } from '../../game/game-message';
+import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 function* useFlock(next: Function, store: StoreLike, state: State,
   effect: AttackEffect): IterableIterator<State> {
@@ -73,7 +74,7 @@ export class Caterpie extends PokemonCard {
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Flock
     // Ref: set-roaring-skies/wurmple.ts (Flock - search for named Pokemon and put onto bench)
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       const generator = useFlock(() => generator.next(), store, state, effect);
       return generator.next().value;
     }

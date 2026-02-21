@@ -7,8 +7,8 @@ import { CheckProvidedEnergyEffect } from '../../game/store/effects/check-effect
 import { DiscardCardsEffect } from '../../game/store/effects/attack-effects';
 import { StateUtils } from '../../game/store/state-utils';
 import { CardTarget } from '../../game';
-import { PowerEffect, AttackEffect } from '../../game/store/effects/game-effects';
-import { BLOCK_IF_GX_ATTACK_USED } from '../../game/store/prefabs/prefabs';
+import { PowerEffect } from '../../game/store/effects/game-effects';
+import { BLOCK_IF_GX_ATTACK_USED, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class ArticunoGX extends PokemonCard {
   public tags = [CardTag.POKEMON_GX];
@@ -118,7 +118,7 @@ export class ArticunoGX extends PokemonCard {
     }
 
     // Cold Crush-GX
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[1]) {
+    if (WAS_ATTACK_USED(effect, 1, this)) {
       const player = effect.player;
       const opponent = StateUtils.getOpponent(state, player);
 

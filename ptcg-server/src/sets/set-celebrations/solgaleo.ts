@@ -6,8 +6,8 @@ import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { Stage, CardType, EnergyType, SuperType } from '../../game/store/card/card-types';
 import { EnergyCard, GameError, GameMessage, PlayerType, PowerType, SlotType, StoreLike, State } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
-import { WAS_ATTACK_USED, IS_ABILITY_BLOCKED, USE_ABILITY_ONCE_PER_TURN, ABILITY_USED, REMOVE_MARKER_AT_END_OF_TURN } from '../../game/store/prefabs/prefabs';
-import { PowerEffect } from '../../game/store/effects/game-effects';
+import { WAS_ATTACK_USED, IS_ABILITY_BLOCKED, USE_ABILITY_ONCE_PER_TURN, ABILITY_USED, REMOVE_MARKER_AT_END_OF_TURN, WAS_POWER_USED } from '../../game/store/prefabs/prefabs';
+
 import { PlayPokemonEffect } from '../../game/store/effects/play-card-effects';
 import { ChooseCardsPrompt } from '../../game/store/prompts/choose-cards-prompt';
 import { ChoosePokemonPrompt } from '../../game/store/prompts/choose-pokemon-prompt';
@@ -22,7 +22,7 @@ export class Solgaleo extends PokemonCard {
   public resistance = [{ type: G, value: -30 }];
   public retreat = [C, C];
 
-  public powers = [  {
+  public powers = [{
     name: 'Rush In',
     useWhenInPlay: true,
     powerType: PowerType.ABILITY,
@@ -55,7 +55,7 @@ export class Solgaleo extends PokemonCard {
       player.marker.removeMarker(this.RUSH_IN_MARKER, this);
     }
 
-    if (effect instanceof PowerEffect && effect.power === this.powers[0]) {
+    if (WAS_POWER_USED(effect, 0, this)) {
       const player = effect.player;
 
       if (IS_ABILITY_BLOCKED(store, state, player, this)) {

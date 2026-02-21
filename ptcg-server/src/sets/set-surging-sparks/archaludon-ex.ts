@@ -1,8 +1,9 @@
 import { PokemonCard, CardTag, Stage, CardType, PowerType, StoreLike, State, ConfirmPrompt, GameMessage, SuperType, PlayerType, AttachEnergyPrompt, SlotType, StateUtils, EnergyCard, CardTarget, EnergyType } from '../../game';
 import { CheckPokemonStatsEffect } from '../../game/store/effects/check-effects';
 import { Effect } from '../../game/store/effects/effect';
-import { AttackEffect, EvolveEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { EvolveEffect, PowerEffect } from '../../game/store/effects/game-effects';
 import { EndTurnEffect } from '../../game/store/effects/game-phase-effects';
+import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class Archaludonex extends PokemonCard {
   public tags = [CardTag.POKEMON_ex];
@@ -98,7 +99,7 @@ export class Archaludonex extends PokemonCard {
       });
     }
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       const player = effect.player;
       const opponent = StateUtils.getOpponent(state, player);
 

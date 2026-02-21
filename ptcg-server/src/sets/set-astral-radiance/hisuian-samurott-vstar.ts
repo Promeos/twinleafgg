@@ -4,7 +4,7 @@ import { StoreLike, State, PowerType, StateUtils, ChoosePokemonPrompt, GameMessa
 import { PowerEffect } from '../../game/store/effects/game-effects';
 import { PutDamageCountersEffect } from '../../game/store/effects/game-effects';
 import { Effect } from '../../game/store/effects/effect';
-import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
+import { WAS_ATTACK_USED, WAS_POWER_USED } from '../../game/store/prefabs/prefabs';
 
 export class HisuianSamurottVSTAR extends PokemonCard {
 
@@ -57,7 +57,7 @@ export class HisuianSamurottVSTAR extends PokemonCard {
 
     // Moon Cleave Star: VSTAR power - put 4 damage counters on 1 of opponent's Pokemon
     // Ref: set-brilliant-stars/arceus-vstar.ts (VSTAR power pattern)
-    if (effect instanceof PowerEffect && effect.power === this.powers[0]) {
+    if (WAS_POWER_USED(effect, 0, this)) {
       const player = effect.player;
 
       if (player.usedVSTAR === true) {

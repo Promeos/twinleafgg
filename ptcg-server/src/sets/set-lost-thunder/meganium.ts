@@ -10,6 +10,7 @@ import { EvolveEffect, PowerEffect } from '../../game/store/effects/game-effects
 import { GameError } from '../../game/game-error';
 import { GameMessage } from '../../game/game-message';
 import { Card, CardManager, CardTarget, ChooseCardsPrompt, ChoosePokemonPrompt, PlayerType, PokemonCardList, SlotType } from '../../game';
+import { WAS_POWER_USED } from '../../game/store/prefabs/prefabs';
 
 function isMatchingStage2(stage1: PokemonCard[], basic: PokemonCard, stage2: PokemonCard): boolean {
   for (const card of stage1) {
@@ -149,7 +150,7 @@ export class Meganium extends PokemonCard {
       player.marker.removeMarker(this.QUICK_RIPENING_HERB_MARKER, this);
     }
 
-    if (effect instanceof PowerEffect && effect.power === this.powers[0]) {
+    if (WAS_POWER_USED(effect, 0, this)) {
       const player = effect.player;
 
       // Check to see if anything is blocking our Ability

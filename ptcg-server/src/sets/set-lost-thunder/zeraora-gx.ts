@@ -3,7 +3,7 @@ import { Stage, CardType, CardTag, EnergyType, SuperType } from '../../game/stor
 import { AttachEnergyPrompt, EnergyCard, GameError, GameMessage, PlayerType, PowerType, SlotType, State, StateUtils, StoreLike } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
 import { CheckProvidedEnergyEffect, CheckRetreatCostEffect } from '../../game/store/effects/check-effects';
-import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { PowerEffect } from '../../game/store/effects/game-effects';
 import { BLOCK_IF_GX_ATTACK_USED, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class ZeraoraGX extends PokemonCard {
@@ -92,7 +92,7 @@ export class ZeraoraGX extends PokemonCard {
       player.active.cannotAttackNextTurnPending = true;
     }
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[1]) {
+    if (WAS_ATTACK_USED(effect, 1, this)) {
       const player = effect.player;
 
       const hasEnergyInDiscard = player.discard.cards.some(c => {

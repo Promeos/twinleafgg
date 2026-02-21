@@ -6,11 +6,11 @@ import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { Stage, CardType, BoardEffect, SpecialCondition } from '../../game/store/card/card-types';
 import { PlayerType, PowerType, StoreLike, State, StateUtils, GameError, GameMessage, PokemonCardList } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
-import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { AttackEffect } from '../../game/store/effects/game-effects';
 import { CheckProvidedEnergyEffect } from '../../game/store/effects/check-effects';
 import { EndTurnEffect } from '../../game/store/effects/game-phase-effects';
 import { EnergyCard } from '../../game/store/card/energy-card';
-import { WAS_ATTACK_USED, IS_ABILITY_BLOCKED } from '../../game/store/prefabs/prefabs';
+import { WAS_ATTACK_USED, IS_ABILITY_BLOCKED, WAS_POWER_USED } from '../../game/store/prefabs/prefabs';
 import { DISCARD_X_ENERGY_FROM_THIS_POKEMON } from '../../game/store/prefabs/costs';
 
 export class Charizard extends PokemonCard {
@@ -49,7 +49,7 @@ export class Charizard extends PokemonCard {
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Energy Burn
     // Ref: set-base-set/charizard.ts (Energy Burn - same power text, same implementation)
-    if (effect instanceof PowerEffect && effect.power === this.powers[0]) {
+    if (WAS_POWER_USED(effect, 0, this)) {
       const player = effect.player;
       const cardList = StateUtils.findCardList(state, this) as PokemonCardList;
 

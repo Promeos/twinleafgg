@@ -4,7 +4,7 @@ import { Card, CardList, ChooseCardsPrompt, CoinFlipPrompt, GameMessage, PowerTy
 import { Effect } from '../../game/store/effects/effect';
 import { PowerEffect } from '../../game/store/effects/game-effects';
 import { EndTurnEffect } from '../../game/store/effects/game-phase-effects';
-import { BLOCK_IF_DISCARD_EMPTY } from '../../game/store/prefabs/prefabs';
+import { BLOCK_IF_DISCARD_EMPTY, WAS_POWER_USED } from '../../game/store/prefabs/prefabs';
 
 export class Munchlax extends PokemonCard {
   public stage: Stage = Stage.BASIC;
@@ -27,7 +27,7 @@ export class Munchlax extends PokemonCard {
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
 
-    if (effect instanceof PowerEffect && effect.power === this.powers[0]) {
+    if (WAS_POWER_USED(effect, 0, this)) {
       const player = effect.player;
       const opponent = StateUtils.getOpponent(state, player);
 

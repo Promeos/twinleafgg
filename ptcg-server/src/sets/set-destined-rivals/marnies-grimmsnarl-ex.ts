@@ -1,8 +1,8 @@
 import { AttachEnergyPrompt, CardTag, CardTarget, CardType, ChoosePokemonPrompt, ConfirmPrompt, EnergyType, GameMessage, PlayerType, PokemonCard, PowerType, ShuffleDeckPrompt, SlotType, Stage, State, StateUtils, StoreLike, SuperType } from '../../game';
 import { PutDamageEffect } from '../../game/store/effects/attack-effects';
 import { Effect } from '../../game/store/effects/effect';
-import { AttackEffect, EvolveEffect, PowerEffect } from '../../game/store/effects/game-effects';
-import { SHUFFLE_DECK } from '../../game/store/prefabs/prefabs';
+import { EvolveEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { SHUFFLE_DECK, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class MarniesGrimmsnarlex extends PokemonCard {
   public stage: Stage = Stage.STAGE_2;
@@ -93,7 +93,7 @@ export class MarniesGrimmsnarlex extends PokemonCard {
       return state;
     }
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       const player = effect.player;
       const opponent = StateUtils.getOpponent(state, player);
 

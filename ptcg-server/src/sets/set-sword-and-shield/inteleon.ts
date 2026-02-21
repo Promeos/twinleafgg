@@ -1,7 +1,8 @@
 import { PokemonCard, CardTag, Stage, CardType, PowerType, ChooseCardsPrompt, ConfirmPrompt, GameMessage, ShowCardsPrompt, State, StateUtils, StoreLike, SuperType, ChoosePokemonPrompt, PlayerType, SlotType, ShuffleDeckPrompt } from '../../game';
 import { PutDamageEffect } from '../../game/store/effects/attack-effects';
 import { Effect } from '../../game/store/effects/effect';
-import { AttackEffect, EvolveEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { EvolveEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class Inteleon extends PokemonCard {
 
@@ -97,7 +98,7 @@ export class Inteleon extends PokemonCard {
       });
     }
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       const player = effect.player;
       const opponent = StateUtils.getOpponent(state, player);
 

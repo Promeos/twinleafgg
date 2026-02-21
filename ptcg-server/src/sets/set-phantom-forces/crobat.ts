@@ -1,14 +1,11 @@
 import { Effect } from '../../game/store/effects/effect';
 import { PokemonCard } from '../../game/store/card/pokemon-card';
-import {
-  PowerType, StoreLike, State, ChoosePokemonPrompt, PlayerType, SlotType,
-  StateUtils
-} from '../../game';
+import { PowerType, StoreLike, State, ChoosePokemonPrompt, PlayerType, SlotType, StateUtils } from '../../game';
 import { Stage, CardType } from '../../game/store/card/card-types';
 import { PlayPokemonEffect } from '../../game/store/effects/play-card-effects';
 import { GameMessage } from '../../game/game-message';
-import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
-import { DAMAGE_OPPONENT_POKEMON } from '../../game/store/prefabs/prefabs';
+import { PowerEffect } from '../../game/store/effects/game-effects';
+import { DAMAGE_OPPONENT_POKEMON, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 
 export class Crobat extends PokemonCard {
@@ -85,7 +82,7 @@ export class Crobat extends PokemonCard {
       });
     }
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       const player = effect.player;
 
       return store.prompt(state, new ChoosePokemonPrompt(

@@ -1,15 +1,10 @@
 import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { Stage, CardType, CardTag } from '../../game/store/card/card-types';
-import {
-  PowerType, StoreLike, State, StateUtils,
-  PlayerType,
-  GamePhase,
-  EnergyCard
-} from '../../game';
+import { PowerType, StoreLike, State, StateUtils, PlayerType, GamePhase, EnergyCard } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
-import { PowerEffect, AttackEffect } from '../../game/store/effects/game-effects';
+import { PowerEffect } from '../../game/store/effects/game-effects';
 import { DiscardCardsEffect, PutDamageEffect } from '../../game/store/effects/attack-effects';
-import { BLOCK_IF_GX_ATTACK_USED } from '../../game/store/prefabs/prefabs';
+import { BLOCK_IF_GX_ATTACK_USED, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 // BUS Necrozma-GX 63 (https://limitlesstcg.com/cards/BUS/63)
 export class NecrozmaGX extends PokemonCard {
@@ -93,7 +88,7 @@ export class NecrozmaGX extends PokemonCard {
     }
 
     // Prismatic Burst
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       const player = effect.player;
 
       const psychicEnergy = player.active.cards.filter(card =>
@@ -108,7 +103,7 @@ export class NecrozmaGX extends PokemonCard {
     }
 
     // Black Ray-GX
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[1]) {
+    if (WAS_ATTACK_USED(effect, 1, this)) {
       const player = effect.player;
       const opponent = StateUtils.getOpponent(state, player);
 

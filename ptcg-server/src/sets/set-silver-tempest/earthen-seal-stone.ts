@@ -7,12 +7,13 @@ import { TrainerType, CardTag, CardType } from '../../game/store/card/card-types
 import { StoreLike, State, GameMessage, PlayerType, SlotType, CardTarget, GameError } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
 import { Attack } from '../../game/store/card/pokemon-types';
-import { AttackEffect } from '../../game/store/effects/game-effects';
+
 import { CheckPokemonAttacksEffect } from '../../game/store/effects/check-effects';
 import { AttachPokemonToolEffect } from '../../game/store/effects/play-card-effects';
 import { ChooseCardsPrompt } from '../../game/store/prompts/choose-cards-prompt';
 import { ChoosePokemonPrompt } from '../../game/store/prompts/choose-pokemon-prompt';
 import { IS_TOOL_BLOCKED } from '../../game/store/prefabs/prefabs';
+import { AttackEffect } from '../../game/store/effects/game-effects';
 
 export class EarthenSealStone extends TrainerCard {
   public trainerType: TrainerType = TrainerType.TOOL;

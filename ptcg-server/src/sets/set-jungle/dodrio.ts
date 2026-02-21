@@ -2,8 +2,9 @@ import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { Stage, CardType } from '../../game/store/card/card-types';
 import { StoreLike, State, PowerType, PlayerType } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
-import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { PowerEffect } from '../../game/store/effects/game-effects';
 import { CheckRetreatCostEffect } from '../../game/store/effects/check-effects';
+import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class Dodrio extends PokemonCard {
 
@@ -85,7 +86,7 @@ export class Dodrio extends PokemonCard {
       }
     }
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       effect.damage += effect.player.active.damage;
       return state;
     }

@@ -1,14 +1,10 @@
 import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { Stage, CardType, EnergyType, SuperType, CardTag, BoardEffect } from '../../game/store/card/card-types';
-import {
-  PowerType, StoreLike, State, StateUtils,
-  GameError, GameMessage, EnergyCard, PlayerType, SlotType,
-  CardTarget
-} from '../../game';
+import { PowerType, StoreLike, State, StateUtils, GameError, GameMessage, EnergyCard, PlayerType, SlotType, CardTarget } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
-import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
+
 import { AttachEnergyPrompt } from '../../game/store/prompts/attach-energy-prompt';
-import { MOVE_CARDS } from '../../game/store/prefabs/prefabs';
+import { MOVE_CARDS, WAS_ATTACK_USED, WAS_POWER_USED } from '../../game/store/prefabs/prefabs';
 
 export class OriginFormePalkiaVSTAR extends PokemonCard {
 
@@ -51,7 +47,7 @@ export class OriginFormePalkiaVSTAR extends PokemonCard {
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
 
-    if (effect instanceof PowerEffect && effect.power === this.powers[0]) {
+    if (WAS_POWER_USED(effect, 0, this)) {
       const player = effect.player;
 
       if (player.usedVSTAR === true) {
@@ -109,8 +105,7 @@ export class OriginFormePalkiaVSTAR extends PokemonCard {
       return state;
     }
 
-
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
 
       const player = effect.player;
       const opponent = StateUtils.getOpponent(state, player);

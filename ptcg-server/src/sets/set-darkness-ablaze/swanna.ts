@@ -7,7 +7,7 @@ import { GameMessage } from '../../game/game-message';
 import { TrainerEffect } from '../../game/store/effects/play-card-effects';
 import { CheckAttackCostEffect } from '../../game/store/effects/check-effects';
 import { EndTurnEffect } from '../../game/store/effects/game-phase-effects';
-import { MOVE_CARDS } from '../../game/store/prefabs/prefabs';
+import { MOVE_CARDS, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 function* useFeatherSlice(next: Function, store: StoreLike, state: State, effect: AttackEffect, self: Card): IterableIterator<State> {
   const player = effect.player;
@@ -114,7 +114,7 @@ export class Swanna extends PokemonCard {
       effect.player.marker.removeMarker(this.SWANNA_SKY_CIRCUS_MARKER);
     }
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       const generator = useFeatherSlice(() => generator.next(), store, state, effect, this);
       return generator.next().value;
     }

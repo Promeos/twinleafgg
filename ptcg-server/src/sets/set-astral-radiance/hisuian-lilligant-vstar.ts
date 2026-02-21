@@ -7,9 +7,9 @@ import { Stage, CardType, CardTag, SuperType, EnergyType } from '../../game/stor
 import { PowerType, StoreLike, State, StateUtils, GameMessage, GameError } from '../../game';
 import { Card } from '../../game/store/card/card';
 import { ChooseCardsPrompt } from '../../game/store/prompts/choose-cards-prompt';
-import { PowerEffect } from '../../game/store/effects/game-effects';
+
 import { Effect } from '../../game/store/effects/effect';
-import { WAS_ATTACK_USED, MOVE_CARDS, SHOW_CARDS_TO_PLAYER, SHUFFLE_DECK } from '../../game/store/prefabs/prefabs';
+import { WAS_ATTACK_USED, MOVE_CARDS, SHOW_CARDS_TO_PLAYER, SHUFFLE_DECK, WAS_POWER_USED } from '../../game/store/prefabs/prefabs';
 
 export class HisuianLilligantVstar extends PokemonCard {
   public tags = [CardTag.POKEMON_VSTAR];
@@ -48,7 +48,7 @@ export class HisuianLilligantVstar extends PokemonCard {
     // Ability: Star Perfume (VSTAR Power)
     // Ref: set-silver-tempest/lugia-vstar.ts (VSTAR power - usedVSTAR check, ChooseCardsPrompt, blocked filter)
     // Ref: set-destined-rivals/ethans-adventure.ts (blocked array for mixed Pokemon + Energy search)
-    if (effect instanceof PowerEffect && effect.power === this.powers[0]) {
+    if (WAS_POWER_USED(effect, 0, this)) {
       const player = effect.player;
       const opponent = StateUtils.getOpponent(state, player);
 

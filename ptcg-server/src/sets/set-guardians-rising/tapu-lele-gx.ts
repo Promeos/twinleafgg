@@ -1,24 +1,11 @@
-import { AttackEffect, HealEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { HealEffect, PowerEffect } from '../../game/store/effects/game-effects';
 import { Effect } from '../../game/store/effects/effect';
 import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { Stage, CardType, CardTag, SuperType, TrainerType, BoardEffect } from '../../game/store/card/card-types';
 import { PlayPokemonEffect } from '../../game/store/effects/play-card-effects';
-import {
-  PowerType, StoreLike, State, GameMessage, ChooseCardsPrompt,
-  ConfirmPrompt,
-  ShowCardsPrompt,
-  StateUtils,
-  GameLog,
-  PlayerType,
-  CardTarget,
-  ChoosePokemonPrompt,
-  GameError,
-  PokemonCardList,
-  SlotType,
-  ShuffleDeckPrompt
-} from '../../game';
+import { PowerType, StoreLike, State, GameMessage, ChooseCardsPrompt, ConfirmPrompt, ShowCardsPrompt, StateUtils, GameLog, PlayerType, CardTarget, ChoosePokemonPrompt, GameError, PokemonCardList, SlotType, ShuffleDeckPrompt } from '../../game';
 import { CheckProvidedEnergyEffect } from '../../game/store/effects/check-effects';
-import { BLOCK_IF_GX_ATTACK_USED } from '../../game/store/prefabs/prefabs';
+import { BLOCK_IF_GX_ATTACK_USED, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class TapuLeleGX extends PokemonCard {
 
@@ -133,7 +120,7 @@ export class TapuLeleGX extends PokemonCard {
     }
 
     // Energy Drive
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       const player = effect.player;
       const opponent = StateUtils.getOpponent(state, player);
 
@@ -150,7 +137,7 @@ export class TapuLeleGX extends PokemonCard {
       effect.damage = (playerEnergyCount + opponentEnergyCount) * 20;
     }
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[1]) {
+    if (WAS_ATTACK_USED(effect, 1, this)) {
 
       const player = effect.player;
 

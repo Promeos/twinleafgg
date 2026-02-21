@@ -3,11 +3,12 @@ import { CardType, Stage } from '../../game/store/card/card-types';
 import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { AbstractAttackEffect, AddSpecialConditionsEffect, DealDamageEffect, PutDamageEffect } from '../../game/store/effects/attack-effects';
 import { Effect } from '../../game/store/effects/effect';
-import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { PowerEffect } from '../../game/store/effects/game-effects';
 import { EndTurnEffect } from '../../game/store/effects/game-phase-effects';
 import { PlayPokemonEffect } from '../../game/store/effects/play-card-effects';
 import { State } from '../../game/store/state/state';
 import { StoreLike } from '../../game/store/store-like';
+import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class Garchomp extends PokemonCard {
 
@@ -53,7 +54,7 @@ export class Garchomp extends PokemonCard {
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       const player = effect.player;
 
       // Discard 2 cards from your deck 

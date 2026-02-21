@@ -1,7 +1,8 @@
 import { PokemonCard, Stage, CardType, StoreLike, State, GameMessage, PowerType, CoinFlipPrompt } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
-import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { PowerEffect } from '../../game/store/effects/game-effects';
 import { CheckRetreatCostEffect, CheckProvidedEnergyEffect } from '../../game/store/effects/check-effects';
+import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class Lombre extends PokemonCard {
   public stage: Stage = Stage.STAGE_1;
@@ -69,7 +70,7 @@ export class Lombre extends PokemonCard {
     }
 
     // Handle Ambush attack
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       const player = effect.player;
 
       // Flip a coin

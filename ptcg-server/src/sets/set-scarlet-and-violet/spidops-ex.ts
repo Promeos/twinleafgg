@@ -1,7 +1,8 @@
 import { PokemonCard, Stage, CardType, PowerType, StoreLike, State, StateUtils, PlayerType, CardTag } from '../../game';
 import { CheckRetreatCostEffect } from '../../game/store/effects/check-effects';
 import { Effect } from '../../game/store/effects/effect';
-import { AttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { PowerEffect } from '../../game/store/effects/game-effects';
+import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class Spidopsex extends PokemonCard {
 
@@ -90,7 +91,7 @@ export class Spidopsex extends PokemonCard {
       }
     }
 
-    if (effect instanceof AttackEffect && effect.attack === this.attacks[0]) {
+    if (WAS_ATTACK_USED(effect, 0, this)) {
       const player = effect.player;
       const opponent = StateUtils.getOpponent(state, player);
 
