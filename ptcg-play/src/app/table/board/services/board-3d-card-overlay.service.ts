@@ -205,9 +205,10 @@ export class Board3dCardOverlayService {
     // After rotation, card's local +Y axis (height) points in world +Z direction
     // Main card center is at (0, 0, 0), top edge at Z = +1.75, bottom edge at Z = -1.75
     // Position tool card below main card so its top edge (center Z + 1.75) is visible above main card bottom
-    // Y axis is depth (forward/back), positive Y = back/away from camera
+    // Y axis maps to world Y (height). Board center at Y=0.05; main card at Y=0.1.
+    // Tool must be above 0.05 (avoid occlusion) but below 0.1 (appear under main card).
     const baseX = 0; // Center horizontally (full-size cards are wider)
-    const baseY = -0.1; // Further behind main card (positive Y = back/away from camera, makes it appear underneath)
+    const baseY = -0.02; // Slightly below main card (world Y≈0.08) - above board center, under card
     const baseZ = -0.75; // Below main card (main card bottom is at Z = -1.75, so -2.0 puts tool card below with top visible)
     const verticalSpacing = 0.05; // Small spacing between stacked tools
 
@@ -260,6 +261,10 @@ export class Board3dCardOverlayService {
         1.0, // Same size as main card
         maskTexture
       );
+
+      // Render above board center overlay (renderOrder 100) so tools are visible on active Pokemon
+      toolCardMesh.getGroup().renderOrder = 150;
+      toolCardMesh.getMesh().renderOrder = 150;
 
       mainCardMesh.getGroup().add(toolCardMesh.getGroup());
       overlays.toolCards.push(toolCardMesh);
