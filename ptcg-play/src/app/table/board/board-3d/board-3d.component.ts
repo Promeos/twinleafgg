@@ -153,13 +153,6 @@ export class Board3dComponent implements OnInit, OnChanges, AfterViewInit, OnDes
       this.updateSelectionVisuals();
     });
 
-    // Evolution animation - play only when evolution event fires (not on state sync)
-    this.boardInteractionService.evolutionAnimation$.pipe(
-      untilDestroyed(this)
-    ).subscribe(event => {
-      this.handleEvolutionAnimationEvent(event);
-    });
-
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -635,44 +628,6 @@ export class Board3dComponent implements OnInit, OnChanges, AfterViewInit, OnDes
       topActive,
       topBench
     );
-  }
-
-  /**
-   * Handle evolution animation event - play 3D animation only when server emits evolution event.
-   * Card ID format: bottomPlayer_1_active or topPlayer_2_bench_0. Slot: "1"=ACTIVE, "2"=BENCH.
-   * Retries once if card not found or cardData mismatch (evolution event may arrive before state sync).
-   */
-  private handleEvolutionAnimationEvent(event: { playerId: number; cardId: number | string; slot: string; index?: number }, retryCount = 0): void {
-    if (!event || !this.topPlayer || !this.bottomPlayer) return;
-
-    const position = event.playerId === this.bottomPlayer.id ? 'bottomPlayer' :
-      event.playerId === this.topPlayer.id ? 'topPlayer' : undefined;
-    if (!position) return;
-
-    const slotStr = String(event.slot);
-    const isActive = slotStr === String(SlotType.ACTIVE);
-    const cardId = isActive
-      ? `${position}_${event.playerId}_active`
-      : `${position}_${event.playerId}_bench_${event.index ?? 0}`;
-
-    const card = this.stateSync.getCardById(cardId);
-    if (!card) {
-      if (retryCount < 1) {
-        setTimeout(() => this.handleEvolutionAnimationEvent(event, retryCount + 1), 80);
-      }
-      return;
-    }
-
-    const cardData = card.getGroup().userData.cardData;
-    if (cardData && cardData.id !== event.cardId) {
-      if (retryCount < 1) {
-        setTimeout(() => this.handleEvolutionAnimationEvent(event, retryCount + 1), 80);
-      }
-      return;
-    }
-
-    this.animationService.evolutionAnimation(card.getGroup());
-    this.markDirty();
   }
 
   private syncHand(): void {
