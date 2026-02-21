@@ -75,7 +75,7 @@ export class Crossceiver extends TrainerCard {
   public setNumber: string = '231';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Crossceiver';
-  public fullName: string = 'Crossceiver (FST 231)';
+  public fullName: string = 'Crossceiver FST 231';
   public text: string = 'You must play 2 Crossceiver cards at once. (This effect works one time for 2 cards.) Put a Pokémon or a Supporter card from your discard pile into your hand. You may play any number of Item cards during your turn.';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {

@@ -32,5 +32,5 @@ export class Slugma extends PokemonCard {
   public setNumber: string = '34';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Slugma';
-  public fullName: string = 'Slugma (FST 34)';
+  public fullName: string = 'Slugma FST 34';
 }

@@ -31,7 +31,7 @@ export class Sizzlipede2 extends PokemonCard {
   public setNumber: string = '47';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Sizzlipede';
-  public fullName: string = 'Sizzlipede (FST 47)';
+  public fullName: string = 'Sizzlipede FST 47';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Singe

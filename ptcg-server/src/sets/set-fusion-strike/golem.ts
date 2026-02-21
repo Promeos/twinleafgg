@@ -38,7 +38,7 @@ export class Golem extends PokemonCard {
   public setNumber: string = '137';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Golem';
-  public fullName: string = 'Golem (FST 137)';
+  public fullName: string = 'Golem FST 137';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Desperate Blast (passive - when KO'd in active by opponent's attack, deal 100 to attacker)

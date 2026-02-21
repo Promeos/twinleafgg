@@ -31,7 +31,7 @@ export class CinderaceV extends PokemonCard {
   public setNumber: string = '43';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Cinderace V';
-  public fullName: string = 'Cinderace V (FST 43)';
+  public fullName: string = 'Cinderace V FST 43';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Blaze Kick

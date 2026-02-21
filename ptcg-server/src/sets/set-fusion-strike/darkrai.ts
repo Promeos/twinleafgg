@@ -26,5 +26,5 @@ export class Darkrai extends PokemonCard {
   public setNumber: string = '167';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Darkrai';
-  public fullName: string = 'Darkrai (FST 167)';
+  public fullName: string = 'Darkrai FST 167';
 }

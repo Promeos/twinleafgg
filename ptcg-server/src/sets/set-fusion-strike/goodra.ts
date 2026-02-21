@@ -36,7 +36,7 @@ export class Goodra extends PokemonCard {
   public setNumber: string = '197';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Goodra';
-  public fullName: string = 'Goodra (FST 197)';
+  public fullName: string = 'Goodra FST 197';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Slimy Room (passive intercept of opponent's energy attachment)

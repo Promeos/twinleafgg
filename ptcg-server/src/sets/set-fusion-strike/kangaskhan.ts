@@ -38,7 +38,7 @@ export class Kangaskhan extends PokemonCard {
   public setNumber: string = '204';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Kangaskhan';
-  public fullName: string = 'Kangaskhan (FST 204)';
+  public fullName: string = 'Kangaskhan FST 204';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Coordinated One-Two Punch

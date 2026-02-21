@@ -36,7 +36,7 @@ export class Sandshrew extends PokemonCard {
   public setNumber: string = '131';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Sandshrew';
-  public fullName: string = 'Sandshrew (FST 131)';
+  public fullName: string = 'Sandshrew FST 131';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Dig It Up

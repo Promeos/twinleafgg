@@ -31,7 +31,7 @@ export class Toxtricity extends PokemonCard {
   public setNumber: string = '107';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Toxtricity';
-  public fullName: string = 'Toxtricity (FST 107)';
+  public fullName: string = 'Toxtricity FST 107';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Punk Shock

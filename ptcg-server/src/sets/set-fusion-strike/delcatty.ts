@@ -37,7 +37,7 @@ export class Delcatty extends PokemonCard {
   public setNumber: string = '211';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Delcatty';
-  public fullName: string = 'Delcatty (FST 211)';
+  public fullName: string = 'Delcatty FST 211';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Willful Busybody

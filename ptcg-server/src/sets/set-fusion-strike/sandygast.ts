@@ -33,5 +33,5 @@ export class Sandygast extends PokemonCard {
   public setNumber: string = '125';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Sandygast';
-  public fullName: string = 'Sandygast (FST 125)';
+  public fullName: string = 'Sandygast FST 125';
 }

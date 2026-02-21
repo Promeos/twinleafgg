@@ -29,7 +29,7 @@ export class Zeraora extends PokemonCard {
   public setNumber: string = '102';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Zeraora';
-  public fullName: string = 'Zeraora (FST 102)';
+  public fullName: string = 'Zeraora FST 102';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Wild Charge

@@ -31,5 +31,5 @@ export class Goomy extends PokemonCard {
   public setNumber: string = '195';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Goomy';
-  public fullName: string = 'Goomy (FST 195)';
+  public fullName: string = 'Goomy FST 195';
 }

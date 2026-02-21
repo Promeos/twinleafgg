@@ -37,7 +37,7 @@ export class Bewear extends PokemonCard {
   public setNumber: string = '151';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Bewear';
-  public fullName: string = 'Bewear (FST 151)';
+  public fullName: string = 'Bewear FST 151';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Split Spiral Punch

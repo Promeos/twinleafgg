@@ -31,7 +31,7 @@ export class Morpeko2 extends PokemonCard {
   public setNumber: string = '179';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Morpeko';
-  public fullName: string = 'Morpeko (FST 179)';
+  public fullName: string = 'Morpeko FST 179';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Explosive Discontent

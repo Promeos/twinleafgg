@@ -18,27 +18,25 @@ export class Absol extends PokemonCard {
   public weakness = [{ type: G }];
   public retreat = [C];
 
-  public attacks = [
-    {
-      name: 'Drag Off',
-      cost: [C, C],
-      damage: 0,
-      text: 'Switch 1 of your opponent\'s Benched Pokémon with their Active Pokémon. This attack does 30 damage to the new Active Pokémon.'
-    },
-    {
-      name: 'Slash',
-      cost: [D, C, C],
-      damage: 80,
-      text: ''
-    }
-  ];
+  public attacks = [{
+    name: 'Drag Off',
+    cost: [C, C],
+    damage: 0,
+    text: 'Switch 1 of your opponent\'s Benched Pokémon with their Active Pokémon. This attack does 30 damage to the new Active Pokémon.'
+  },
+  {
+    name: 'Slash',
+    cost: [D, C, C],
+    damage: 80,
+    text: ''
+  }];
 
   public regulationMark: string = 'E';
   public set: string = 'FST';
   public setNumber: string = '164';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Absol';
-  public fullName: string = 'Absol (FST 164)';
+  public fullName: string = 'Absol FST 164';
 
   public usedDragOff: boolean = false;
   public dragOffAttackEffect: AttackEffect | null = null;

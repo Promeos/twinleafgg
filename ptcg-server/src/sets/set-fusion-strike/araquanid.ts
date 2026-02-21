@@ -37,7 +37,7 @@ export class Araquanid extends PokemonCard {
   public setNumber: string = '20';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Araquanid';
-  public fullName: string = 'Araquanid (FST 20)';
+  public fullName: string = 'Araquanid FST 20';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Bubble Launch

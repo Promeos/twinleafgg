@@ -41,7 +41,7 @@ export class EspeonVmax extends PokemonCard {
   public setNumber: string = '270';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Espeon VMAX';
-  public fullName: string = 'Espeon VMAX (FST 270)';
+  public fullName: string = 'Espeon VMAX FST 270';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Solar Revelation - prevent attack effects (not damage) on your Pokemon with energy

@@ -33,5 +33,5 @@ export class Graveler extends PokemonCard {
   public setNumber: string = '136';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Graveler';
-  public fullName: string = 'Graveler (FST 136)';
+  public fullName: string = 'Graveler FST 136';
 }

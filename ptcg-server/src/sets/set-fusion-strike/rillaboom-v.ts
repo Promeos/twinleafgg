@@ -37,7 +37,7 @@ export class RillaboomV extends PokemonCard {
   public setNumber: string = '22';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Rillaboom V';
-  public fullName: string = 'Rillaboom V (FST 22)';
+  public fullName: string = 'Rillaboom V FST 22';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Drain Punch

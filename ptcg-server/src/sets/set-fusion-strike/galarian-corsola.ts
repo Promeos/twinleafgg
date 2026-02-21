@@ -27,5 +27,5 @@ export class GalarianCorsola extends PokemonCard {
   public setNumber: string = '117';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Galarian Corsola';
-  public fullName: string = 'Galarian Corsola (FST 117)';
+  public fullName: string = 'Galarian Corsola FST 117';
 }

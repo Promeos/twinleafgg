@@ -40,7 +40,7 @@ export class Claydol extends PokemonCard {
   public setNumber: string = '145';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Claydol';
-  public fullName: string = 'Claydol (FST 145)';
+  public fullName: string = 'Claydol FST 145';
 
   public usedRapidSpin = false;
 

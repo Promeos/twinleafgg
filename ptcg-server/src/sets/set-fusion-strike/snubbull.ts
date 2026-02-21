@@ -32,5 +32,5 @@ export class Snubbull extends PokemonCard {
   public setNumber: string = '115';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Snubbull';
-  public fullName: string = 'Snubbull (FST 115)';
+  public fullName: string = 'Snubbull FST 115';
 }

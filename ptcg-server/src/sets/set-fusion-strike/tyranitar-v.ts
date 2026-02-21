@@ -33,5 +33,5 @@ export class TyranitarV extends PokemonCard {
   public setNumber: string = '158';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Tyranitar V';
-  public fullName: string = 'Tyranitar V (FST 158)';
+  public fullName: string = 'Tyranitar V FST 158';
 }

@@ -39,7 +39,7 @@ export class Simipour extends PokemonCard {
   public setNumber: string = '69';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Simipour';
-  public fullName: string = 'Simipour (FST 69)';
+  public fullName: string = 'Simipour FST 69';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Water Pulse

@@ -36,7 +36,7 @@ export class Mantine extends PokemonCard {
   public setNumber: string = '61';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Mantine';
-  public fullName: string = 'Mantine (FST 61)';
+  public fullName: string = 'Mantine FST 61';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Bounce

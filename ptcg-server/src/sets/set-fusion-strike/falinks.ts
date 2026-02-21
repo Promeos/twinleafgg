@@ -36,7 +36,7 @@ export class Falinks extends PokemonCard {
   public setNumber: string = '154';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Falinks';
-  public fullName: string = 'Falinks (FST 154)';
+  public fullName: string = 'Falinks FST 154';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Cliff Edge Formation

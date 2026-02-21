@@ -32,7 +32,7 @@ export class Impidimp extends PokemonCard {
   public setNumber: string = '176';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Impidimp';
-  public fullName: string = 'Impidimp (FST 176)';
+  public fullName: string = 'Impidimp FST 176';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Play Rough

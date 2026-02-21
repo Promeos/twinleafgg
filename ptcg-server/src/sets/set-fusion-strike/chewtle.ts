@@ -26,5 +26,5 @@ export class Chewtle extends PokemonCard {
   public setNumber: string = '80';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Chewtle';
-  public fullName: string = 'Chewtle (FST 80)';
+  public fullName: string = 'Chewtle FST 80';
 }

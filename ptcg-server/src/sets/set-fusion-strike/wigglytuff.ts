@@ -36,7 +36,7 @@ export class Wigglytuff extends PokemonCard {
   public setNumber: string = '111';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Wigglytuff';
-  public fullName: string = 'Wigglytuff (FST 111)';
+  public fullName: string = 'Wigglytuff FST 111';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Find Treasure

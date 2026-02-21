@@ -27,5 +27,5 @@ export class Munna extends PokemonCard {
   public setNumber: string = '121';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Munna';
-  public fullName: string = 'Munna (FST 121)';
+  public fullName: string = 'Munna FST 121';
 }

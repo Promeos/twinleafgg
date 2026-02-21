@@ -37,7 +37,7 @@ export class AppletunV extends PokemonCard {
   public setNumber: string = '26';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Appletun V';
-  public fullName: string = 'Appletun V (FST 26)';
+  public fullName: string = 'Appletun V FST 26';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Sweet Impact

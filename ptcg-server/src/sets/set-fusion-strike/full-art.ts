@@ -14,7 +14,7 @@ import { Shauna } from './shauna';
 export class CelebiVFA extends CelebiV {
   public set = 'FST';
   public setNumber = '245';
-  public fullName: string = 'Celebi V (FST 245)';
+  public fullName: string = 'Celebi V FST 245';
 }
 
 // export class TsareenaVFA extends TsareenaV {
@@ -54,7 +54,7 @@ export class MewVAA extends MewV {
 
 // export class HoopaVFA extends HoopaV {
 //   public setNumber = '253';
-//   public fullName: string = 'Mew V (FST 253)';
+//   public fullName: string = 'Mew V FST 253';
 // }
 
 export class GenesectVFA extends GenesectV {
@@ -84,7 +84,7 @@ export class GenesectVAA extends GenesectV {
 
 // export class DancerFA extends Dancer {
 //   public setNumber = '259';
-//   public fullName: string = 'Genesect V (FST 259)';
+//   public fullName: string = 'Genesect V FST 259';
 // }
 
 export class ElesasSparkleFA extends ElesasSparkle {
@@ -124,7 +124,7 @@ export class ShaunaFA extends Shauna {
 
 // export class BoltundVMAXHR extends BoltundVMAX {
 //   public setNumber = '267';
-//   public fullName: string = 'Shauna (FST 267)';
+//   public fullName: string = 'Shauna FST 267';
 // }
 
 export class MewVMAXHR extends MewVMAX {
@@ -144,12 +144,12 @@ export class MewVMAXAA extends MewVMAX {
 
 // export class GengarVMAXAA extends GengarVMAX {
 //   public setNumber = '271';
-//   public fullName: string = 'Gengar VMAX (FST 271)';
+//   public fullName: string = 'Gengar VMAX FST 271';
 // }
 
 // export class GreedentVMAXHR extends GreedentVMAX {
 //   public setNumber = '272';
-//   public fullName: string = 'Greedent VMAX (FST 272)';
+//   public fullName: string = 'Greedent VMAX FST 272';
 // }
 
 export class PowerTabletSR extends PowerTablet {

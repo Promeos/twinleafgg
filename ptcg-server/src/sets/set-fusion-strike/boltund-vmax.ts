@@ -39,7 +39,7 @@ export class BoltundVmax extends PokemonCard {
   public setNumber: string = '104';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Boltund VMAX';
-  public fullName: string = 'Boltund VMAX (FST 104)';
+  public fullName: string = 'Boltund VMAX FST 104';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Bolt Storm

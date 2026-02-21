@@ -38,7 +38,7 @@ export class Morgrem extends PokemonCard {
   public setNumber: string = '177';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Morgrem';
-  public fullName: string = 'Morgrem (FST 177)';
+  public fullName: string = 'Morgrem FST 177';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Crushing Blow

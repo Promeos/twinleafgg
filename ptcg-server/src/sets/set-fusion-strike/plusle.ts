@@ -32,12 +32,12 @@ export class Plusle extends PokemonCard {
   public setNumber: string = '89';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Plusle';
-  public fullName: string = 'Plusle (FST 89)';
+  public fullName: string = 'Plusle FST 89';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Spark Duo - +100 if Minun attacked last turn
     // Ref: set-chilling-reign/zebstrika.ts (HAS_MARKER + 2-phase marker for "used during your last turn")
-    // The 2-phase marker is set by Minun (FST 90) when it attacks; it persists into the next turn's CLEAR phase.
+    // The 2-phase marker is set by Minun FST 90 when it attacks; it persists into the next turn's CLEAR phase.
     if (WAS_ATTACK_USED(effect, 0, this)) {
       const player = effect.player;
 

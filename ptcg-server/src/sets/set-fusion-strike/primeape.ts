@@ -31,7 +31,7 @@ export class Primeape extends PokemonCard {
   public setNumber: string = '134';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Primeape';
-  public fullName: string = 'Primeape (FST 134)';
+  public fullName: string = 'Primeape FST 134';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Gut Punch

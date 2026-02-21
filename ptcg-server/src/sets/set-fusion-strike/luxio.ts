@@ -27,5 +27,5 @@ export class Luxio extends PokemonCard {
   public setNumber: string = '92';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Luxio';
-  public fullName: string = 'Luxio (FST 92)';
+  public fullName: string = 'Luxio FST 92';
 }

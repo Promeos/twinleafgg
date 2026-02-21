@@ -30,7 +30,7 @@ export class GalarianZigzagoon extends PokemonCard {
   public setNumber: string = '159';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Galarian Zigzagoon';
-  public fullName: string = 'Galarian Zigzagoon (FST 159)';
+  public fullName: string = 'Galarian Zigzagoon FST 159';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Lick

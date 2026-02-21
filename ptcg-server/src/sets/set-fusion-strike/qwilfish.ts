@@ -35,7 +35,7 @@ export class Qwilfish extends PokemonCard {
   public setNumber: string = '60';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Qwilfish';
-  public fullName: string = 'Qwilfish (FST 60)';
+  public fullName: string = 'Qwilfish FST 60';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Collect

@@ -37,7 +37,7 @@ export class Simisage extends PokemonCard {
   public setNumber: string = '8';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Simisage';
-  public fullName: string = 'Simisage (FST 8)';
+  public fullName: string = 'Simisage FST 8';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Return

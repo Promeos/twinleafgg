@@ -29,7 +29,7 @@ export class Panpour extends PokemonCard {
   public setNumber: string = '68';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Panpour';
-  public fullName: string = 'Panpour (FST 68)';
+  public fullName: string = 'Panpour FST 68';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Pry

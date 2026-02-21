@@ -38,7 +38,7 @@ export class BoltundV extends PokemonCard {
   public setNumber: string = '103';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Boltund V';
-  public fullName: string = 'Boltund V (FST 103)';
+  public fullName: string = 'Boltund V FST 103';
 
   public usedSmashTurn: boolean = false;
 

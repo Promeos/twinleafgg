@@ -37,7 +37,7 @@ export class Feraligatr extends PokemonCard {
   public setNumber: string = '57';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Feraligatr';
-  public fullName: string = 'Feraligatr (FST 57)';
+  public fullName: string = 'Feraligatr FST 57';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Rowdy (on-evolve - coin flip, discard 5 from opponent's or own deck)

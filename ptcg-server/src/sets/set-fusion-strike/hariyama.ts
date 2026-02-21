@@ -39,7 +39,7 @@ export class Hariyama extends PokemonCard {
   public setNumber: string = '143';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Hariyama';
-  public fullName: string = 'Hariyama (FST 143)';
+  public fullName: string = 'Hariyama FST 143';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Guts (passive - survive KO on coin flip)

@@ -35,7 +35,7 @@ export class Virizion extends PokemonCard {
   public setNumber: string = '15';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Virizion';
-  public fullName: string = 'Virizion (FST 15)';
+  public fullName: string = 'Virizion FST 15';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Bail Out

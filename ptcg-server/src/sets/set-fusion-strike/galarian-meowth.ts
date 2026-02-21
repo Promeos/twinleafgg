@@ -41,7 +41,7 @@ export class GalarianMeowth extends PokemonCard {
   public setNumber: string = '180';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Galarian Meowth';
-  public fullName: string = 'Galarian Meowth (FST 180)';
+  public fullName: string = 'Galarian Meowth FST 180';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Growl

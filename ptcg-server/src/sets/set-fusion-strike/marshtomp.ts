@@ -36,7 +36,7 @@ export class Marshtomp extends PokemonCard {
   public setNumber: string = '63';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Marshtomp';
-  public fullName: string = 'Marshtomp (FST 63)';
+  public fullName: string = 'Marshtomp FST 63';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Energy Loop

@@ -37,7 +37,7 @@ export class Marill extends PokemonCard {
   public setNumber: string = '58';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Marill';
-  public fullName: string = 'Marill (FST 58)';
+  public fullName: string = 'Marill FST 58';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Aqua Liner

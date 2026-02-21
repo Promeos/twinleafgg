@@ -37,7 +37,7 @@ export class Cufant extends PokemonCard {
   public setNumber: string = '191';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Cufant';
-  public fullName: string = 'Cufant (FST 191)';
+  public fullName: string = 'Cufant FST 191';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: High Horsepower

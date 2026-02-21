@@ -30,7 +30,7 @@ export class Klefki extends PokemonCard {
   public setNumber: string = '186';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Klefki';
-  public fullName: string = 'Klefki (FST 186)';
+  public fullName: string = 'Klefki FST 186';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Unlock

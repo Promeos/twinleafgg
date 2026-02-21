@@ -38,7 +38,7 @@ export class Vikavolt extends PokemonCard {
   public setNumber: string = '101';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Vikavolt';
-  public fullName: string = 'Vikavolt (FST 101)';
+  public fullName: string = 'Vikavolt FST 101';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Electro Blaster

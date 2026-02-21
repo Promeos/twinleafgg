@@ -31,7 +31,7 @@ export class Wooloo2 extends PokemonCard {
   public setNumber: string = '222';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Wooloo';
-  public fullName: string = 'Wooloo (FST 222)';
+  public fullName: string = 'Wooloo FST 222';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Knock Away

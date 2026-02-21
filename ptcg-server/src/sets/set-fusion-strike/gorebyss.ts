@@ -41,7 +41,7 @@ export class Gorebyss extends PokemonCard {
   public setNumber: string = '67';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Gorebyss';
-  public fullName: string = 'Gorebyss (FST 67)';
+  public fullName: string = 'Gorebyss FST 67';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Rapid Strike Canceler

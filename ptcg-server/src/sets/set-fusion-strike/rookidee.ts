@@ -31,7 +31,7 @@ export class Rookidee extends PokemonCard {
   public setNumber: string = '219';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Rookidee';
-  public fullName: string = 'Rookidee (FST 219)';
+  public fullName: string = 'Rookidee FST 219';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Fury Attack

@@ -37,7 +37,7 @@ export class Metapod extends PokemonCard {
   public setNumber: string = '2';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Metapod';
-  public fullName: string = 'Metapod (FST 2)';
+  public fullName: string = 'Metapod FST 2';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Exoskeleton (passive - reduce damage by 20 from attacks)

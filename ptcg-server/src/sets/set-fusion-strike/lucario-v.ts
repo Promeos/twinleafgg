@@ -27,5 +27,5 @@ export class LucarioV extends PokemonCard {
   public setNumber: string = '146';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Lucario V';
-  public fullName: string = 'Lucario V (FST 146)';
+  public fullName: string = 'Lucario V FST 146';
 }

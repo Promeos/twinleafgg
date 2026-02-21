@@ -36,7 +36,7 @@ export class Eelektrik extends PokemonCard {
   public setNumber: string = '96';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Eelektrik';
-  public fullName: string = 'Eelektrik (FST 96)';
+  public fullName: string = 'Eelektrik FST 96';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Thunder

@@ -37,7 +37,7 @@ export class SandacondaV extends PokemonCard {
   public setNumber: string = '252';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Sandaconda V';
-  public fullName: string = 'Sandaconda V (FST 252)';
+  public fullName: string = 'Sandaconda V FST 252';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Wall of Sand (passive - permanent damage reduction)

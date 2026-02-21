@@ -16,7 +16,7 @@ export class Sidney extends TrainerCard {
   public setNumber: string = '241';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Sidney';
-  public fullName: string = 'Sidney (FST 241)';
+  public fullName: string = 'Sidney FST 241';
   public text: string = 'Your opponent reveals their hand. Discard up to 2 in any combination of Pokémon Tool cards, Special Energy cards, and Stadium cards from it. You may play only 1 Supporter card during your turn.';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {

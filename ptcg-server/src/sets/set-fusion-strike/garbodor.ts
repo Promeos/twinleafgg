@@ -37,7 +37,7 @@ export class Garbodor extends PokemonCard {
   public setNumber: string = '169';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Garbodor';
-  public fullName: string = 'Garbodor (FST 169)';
+  public fullName: string = 'Garbodor FST 169';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Poison Gas

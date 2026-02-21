@@ -37,7 +37,7 @@ export class Ninetales2 extends PokemonCard {
   public setNumber: string = '31';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Ninetales';
-  public fullName: string = 'Ninetales (FST 31)';
+  public fullName: string = 'Ninetales FST 31';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Byway of the Nine-Tailed Fox (passive)

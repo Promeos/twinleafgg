@@ -31,7 +31,7 @@ export class Buneary extends PokemonCard {
   public setNumber: string = '212';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Buneary';
-  public fullName: string = 'Buneary (FST 212)';
+  public fullName: string = 'Buneary FST 212';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Double Kick

@@ -16,7 +16,7 @@ export class SpongyGloves extends TrainerCard {
   public setNumber: string = '243';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Spongy Gloves';
-  public fullName: string = 'Spongy Gloves (FST 243)';
+  public fullName: string = 'Spongy Gloves FST 243';
   public text: string = 'The attacks of the Pokémon this card is attached to do 30 more damage to your opponent\'s Active Water Pokémon (before applying Weakness and Resistance). You may play any number of Item cards during your turn. Attach a Pokémon Tool to 1 of your Pokémon that doesn\'t already have a Pokémon Tool attached.';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {

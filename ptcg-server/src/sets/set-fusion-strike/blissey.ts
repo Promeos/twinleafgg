@@ -38,7 +38,7 @@ export class Blissey extends PokemonCard {
   public setNumber: string = '203';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Blissey';
-  public fullName: string = 'Blissey (FST 203)';
+  public fullName: string = 'Blissey FST 203';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Expert in Roundness

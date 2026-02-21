@@ -38,7 +38,7 @@ export class Toxel2 extends PokemonCard {
   public setNumber: string = '106';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Toxel';
-  public fullName: string = 'Toxel (FST 106)';
+  public fullName: string = 'Toxel FST 106';
 
   public readonly REDUCE_DAMAGE_MARKER = 'TOXEL2_FST_REDUCE_DAMAGE_MARKER';
   public readonly CLEAR_REDUCE_DAMAGE_MARKER = 'TOXEL2_FST_CLEAR_REDUCE_DAMAGE_MARKER';

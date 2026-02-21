@@ -38,7 +38,7 @@ export class Granbull extends PokemonCard {
   public setNumber: string = '116';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Granbull';
-  public fullName: string = 'Granbull (FST 116)';
+  public fullName: string = 'Granbull FST 116';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Dig Up

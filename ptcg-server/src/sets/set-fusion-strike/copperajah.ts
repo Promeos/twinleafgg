@@ -38,7 +38,7 @@ export class Copperajah extends PokemonCard {
   public setNumber: string = '192';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Copperajah';
-  public fullName: string = 'Copperajah (FST 192)';
+  public fullName: string = 'Copperajah FST 192';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: High Horsepower

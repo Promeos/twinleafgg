@@ -38,7 +38,7 @@ export class Excadrill extends PokemonCard {
   public setNumber: string = '183';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Excadrill';
-  public fullName: string = 'Excadrill (FST 183)';
+  public fullName: string = 'Excadrill FST 183';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Rock Tomb

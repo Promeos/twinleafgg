@@ -32,5 +32,5 @@ export class Clobbopus extends PokemonCard {
   public setNumber: string = '152';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Clobbopus';
-  public fullName: string = 'Clobbopus (FST 152)';
+  public fullName: string = 'Clobbopus FST 152';
 }

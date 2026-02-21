@@ -44,7 +44,7 @@ export class Melmetal extends PokemonCard {
   public setNumber: string = '189';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Melmetal';
-  public fullName: string = 'Melmetal (FST 189)';
+  public fullName: string = 'Melmetal FST 189';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Ingot Swing

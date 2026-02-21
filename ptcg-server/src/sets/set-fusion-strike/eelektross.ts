@@ -37,7 +37,7 @@ export class Eelektross extends PokemonCard {
   public setNumber: string = '97';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Eelektross';
-  public fullName: string = 'Eelektross (FST 97)';
+  public fullName: string = 'Eelektross FST 97';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Upper Shock

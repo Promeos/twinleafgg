@@ -37,7 +37,7 @@ export class Toxicroak extends PokemonCard {
   public setNumber: string = '166';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Toxicroak';
-  public fullName: string = 'Toxicroak (FST 166)';
+  public fullName: string = 'Toxicroak FST 166';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Severe Poison

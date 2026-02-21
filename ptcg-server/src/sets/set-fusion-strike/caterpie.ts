@@ -68,7 +68,7 @@ export class Caterpie extends PokemonCard {
   public setNumber: string = '1';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Caterpie';
-  public fullName: string = 'Caterpie (FST 1)';
+  public fullName: string = 'Caterpie FST 1';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Flock

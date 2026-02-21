@@ -39,7 +39,7 @@ export class ChandelureVmax extends PokemonCard {
   public setNumber: string = '40';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Chandelure VMAX';
-  public fullName: string = 'Chandelure VMAX (FST 40)';
+  public fullName: string = 'Chandelure VMAX FST 40';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Cursed Shimmer
