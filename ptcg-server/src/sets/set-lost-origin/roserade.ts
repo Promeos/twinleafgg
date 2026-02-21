@@ -39,7 +39,7 @@ export class Roserade extends PokemonCard {
   public setNumber: string = '15';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Roserade';
-  public fullName: string = 'Roserade (LOR 15)';
+  public fullName: string = 'Roserade LOR 15';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Poisonous Whip

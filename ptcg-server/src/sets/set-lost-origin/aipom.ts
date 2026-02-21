@@ -35,7 +35,7 @@ export class Aipom extends PokemonCard {
   public setNumber: string = '144';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Aipom';
-  public fullName: string = 'Aipom (LOR 144)';
+  public fullName: string = 'Aipom LOR 144';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Mischievous Tail

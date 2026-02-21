@@ -32,7 +32,7 @@ export class Gliscor extends PokemonCard {
   public setNumber: string = '96';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Gliscor';
-  public fullName: string = 'Gliscor (LOR 96)';
+  public fullName: string = 'Gliscor LOR 96';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Hurricane Shock

@@ -15,7 +15,7 @@ export class Riley extends TrainerCard {
   public setNumber: string = '166';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Riley';
-  public fullName: string = 'Riley (LOR 166)';
+  public fullName: string = 'Riley LOR 166';
   public text: string = 'Reveal the top 5 cards of your deck and have your opponent choose 2 of them. Discard the chosen cards and put the remaining cards into your hand. You may play only 1 Supporter card during your turn.';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {

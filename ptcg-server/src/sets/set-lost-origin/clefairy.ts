@@ -40,7 +40,7 @@ export class Clefairy extends PokemonCard {
   public setNumber: string = '62';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Clefairy';
-  public fullName: string = 'Clefairy (LOR 62)';
+  public fullName: string = 'Clefairy LOR 62';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Moon-Watching Party

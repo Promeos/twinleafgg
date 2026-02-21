@@ -31,7 +31,7 @@ export class Nuzleaf extends PokemonCard {
   public setNumber: string = '12';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Nuzleaf';
-  public fullName: string = 'Nuzleaf (LOR 12)';
+  public fullName: string = 'Nuzleaf LOR 12';
 
   public usedPushDown = false;
 

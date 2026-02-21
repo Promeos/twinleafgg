@@ -40,7 +40,7 @@ export class Orbeetle extends PokemonCard {
   public setNumber: string = '20';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Orbeetle';
-  public fullName: string = 'Orbeetle (LOR 20)';
+  public fullName: string = 'Orbeetle LOR 20';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Jamming Attachment (on-evolve)

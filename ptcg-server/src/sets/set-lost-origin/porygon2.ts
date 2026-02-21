@@ -32,7 +32,7 @@ export class Porygon2 extends PokemonCard {
   public setNumber: string = '141';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Porygon2';
-  public fullName: string = 'Porygon2 (LOR 141)';
+  public fullName: string = 'Porygon2 LOR 141';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Garbage Attack

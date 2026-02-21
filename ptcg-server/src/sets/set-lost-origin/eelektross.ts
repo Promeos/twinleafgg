@@ -42,7 +42,7 @@ export class Eelektross extends PokemonCard {
   public setNumber: string = '61';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Eelektross';
-  public fullName: string = 'Eelektross (LOR 61)';
+  public fullName: string = 'Eelektross LOR 61';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Check for Coil bonus on ANY attack from this Pokemon (next turn all attacks bonus)

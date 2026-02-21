@@ -36,7 +36,7 @@ export class Sudowoodo extends PokemonCard {
   public setNumber: string = '94';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Sudowoodo';
-  public fullName: string = 'Sudowoodo (LOR 94)';
+  public fullName: string = 'Sudowoodo LOR 94';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Joust

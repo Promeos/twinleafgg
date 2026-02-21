@@ -35,7 +35,7 @@ export class Stonjourner extends PokemonCard {
   public setNumber: string = '111';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Stonjourner';
-  public fullName: string = 'Stonjourner (LOR 111)';
+  public fullName: string = 'Stonjourner LOR 111';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Power Stone

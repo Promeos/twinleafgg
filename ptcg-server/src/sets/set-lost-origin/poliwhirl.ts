@@ -37,7 +37,7 @@ export class Poliwhirl extends PokemonCard {
   public setNumber: string = '31';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Poliwhirl';
-  public fullName: string = 'Poliwhirl (LOR 31)';
+  public fullName: string = 'Poliwhirl LOR 31';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Double Smash

@@ -35,7 +35,7 @@ export class Hoopa extends PokemonCard {
   public setNumber: string = '122';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Hoopa';
-  public fullName: string = 'Hoopa (LOR 122)';
+  public fullName: string = 'Hoopa LOR 122';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Hand of Djinn

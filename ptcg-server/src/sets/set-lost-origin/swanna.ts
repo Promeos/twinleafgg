@@ -39,7 +39,7 @@ export class Swanna extends PokemonCard {
   public setNumber: string = '47';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Swanna';
-  public fullName: string = 'Swanna (LOR 47)';
+  public fullName: string = 'Swanna LOR 47';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Water Pulse

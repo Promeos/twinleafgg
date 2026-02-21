@@ -33,5 +33,5 @@ export class Lickilicky extends PokemonCard {
   public setNumber: string = '139';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Lickilicky';
-  public fullName: string = 'Lickilicky (LOR 139)';
+  public fullName: string = 'Lickilicky LOR 139';
 }

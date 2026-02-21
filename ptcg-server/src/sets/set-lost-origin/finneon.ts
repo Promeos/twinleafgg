@@ -38,7 +38,7 @@ export class Finneon extends PokemonCard {
   public setNumber: string = '40';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Finneon';
-  public fullName: string = 'Finneon (LOR 40)';
+  public fullName: string = 'Finneon LOR 40';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Oceanic Accompaniment

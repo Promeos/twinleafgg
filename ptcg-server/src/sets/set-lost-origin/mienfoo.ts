@@ -32,5 +32,5 @@ export class Mienfoo extends PokemonCard {
   public setNumber: string = '103';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Mienfoo';
-  public fullName: string = 'Mienfoo (LOR 103)';
+  public fullName: string = 'Mienfoo LOR 103';
 }

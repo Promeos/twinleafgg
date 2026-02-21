@@ -38,7 +38,7 @@ export class Malamar extends PokemonCard {
   public setNumber: string = '78';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Malamar';
-  public fullName: string = 'Malamar (LOR 78)';
+  public fullName: string = 'Malamar LOR 78';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Synchro Kinesis

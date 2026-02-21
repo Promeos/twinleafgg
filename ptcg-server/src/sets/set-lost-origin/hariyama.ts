@@ -37,7 +37,7 @@ export class Hariyama extends PokemonCard {
   public setNumber: string = '98';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Hariyama';
-  public fullName: string = 'Hariyama (LOR 98)';
+  public fullName: string = 'Hariyama LOR 98';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Shove

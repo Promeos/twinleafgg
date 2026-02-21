@@ -39,7 +39,7 @@ export class Parasect extends PokemonCard {
   public setNumber: string = '5';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Parasect';
-  public fullName: string = 'Parasect (LOR 5)';
+  public fullName: string = 'Parasect LOR 5';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Lethargy Spores

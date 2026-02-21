@@ -38,7 +38,7 @@ export class RadiantSteelix extends PokemonCard {
   public setNumber: string = '124';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Radiant Steelix';
-  public fullName: string = 'Radiant Steelix (LOR 124)';
+  public fullName: string = 'Radiant Steelix LOR 124';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Energy Stream

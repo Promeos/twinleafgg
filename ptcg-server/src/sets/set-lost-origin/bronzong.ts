@@ -39,7 +39,7 @@ export class Bronzong extends PokemonCard {
   public setNumber: string = '126';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Bronzong';
-  public fullName: string = 'Bronzong (LOR 126)';
+  public fullName: string = 'Bronzong LOR 126';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Gravitational Drop

@@ -30,7 +30,7 @@ export class Paras extends PokemonCard {
   public setNumber: string = '4';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Paras';
-  public fullName: string = 'Paras (LOR 4)';
+  public fullName: string = 'Paras LOR 4';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Absorb

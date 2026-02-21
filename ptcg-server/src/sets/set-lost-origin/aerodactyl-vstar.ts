@@ -40,7 +40,7 @@ export class AerodactylVstar extends PokemonCard {
   public setNumber: string = '93';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Aerodactyl VSTAR';
-  public fullName: string = 'Aerodactyl VSTAR (LOR 93)';
+  public fullName: string = 'Aerodactyl VSTAR LOR 93';
 
   // Flag set when Ancient Star has been used; persists as long as this card is in play
   public ancientStarActive: boolean = false;

@@ -38,7 +38,7 @@ export class Lumineon extends PokemonCard {
   public setNumber: string = '41';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Lumineon';
-  public fullName: string = 'Lumineon (LOR 41)';
+  public fullName: string = 'Lumineon LOR 41';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Swim Freely

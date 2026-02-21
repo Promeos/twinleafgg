@@ -30,7 +30,7 @@ export class Gligar extends PokemonCard {
   public setNumber: string = '95';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Gligar';
-  public fullName: string = 'Gligar (LOR 95)';
+  public fullName: string = 'Gligar LOR 95';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Cyclone Pincers

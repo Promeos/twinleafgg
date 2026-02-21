@@ -30,7 +30,7 @@ export class Litleo extends PokemonCard {
   public setNumber: string = '28';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Litleo';
-  public fullName: string = 'Litleo (LOR 28)';
+  public fullName: string = 'Litleo LOR 28';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Singe

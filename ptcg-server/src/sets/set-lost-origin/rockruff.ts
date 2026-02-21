@@ -35,7 +35,7 @@ export class Rockruff extends PokemonCard {
   public setNumber: string = '109';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Rockruff';
-  public fullName: string = 'Rockruff (LOR 109)';
+  public fullName: string = 'Rockruff LOR 109';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Double Draw

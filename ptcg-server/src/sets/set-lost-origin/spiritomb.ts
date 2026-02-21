@@ -39,7 +39,7 @@ export class Spiritomb extends PokemonCard {
   public setNumber: string = '117';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Spiritomb';
-  public fullName: string = 'Spiritomb (LOR 117)';
+  public fullName: string = 'Spiritomb LOR 117';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Cursed Message (passive on KO)

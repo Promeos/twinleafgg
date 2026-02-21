@@ -39,7 +39,7 @@ export class Pyroar extends PokemonCard {
   public setNumber: string = '29';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Pyroar';
-  public fullName: string = 'Pyroar (LOR 29)';
+  public fullName: string = 'Pyroar LOR 29';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Scorching Aura (passive)

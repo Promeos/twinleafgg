@@ -39,7 +39,7 @@ export class Trevenant extends PokemonCard {
   public setNumber: string = '17';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Trevenant';
-  public fullName: string = 'Trevenant (LOR 17)';
+  public fullName: string = 'Trevenant LOR 17';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Elder Tree Barrier (passive)

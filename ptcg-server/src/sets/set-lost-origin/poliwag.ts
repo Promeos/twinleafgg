@@ -31,7 +31,7 @@ export class Poliwag extends PokemonCard {
   public setNumber: string = '30';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Poliwag';
-  public fullName: string = 'Poliwag (LOR 30)';
+  public fullName: string = 'Poliwag LOR 30';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Splashing Dodge

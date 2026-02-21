@@ -37,7 +37,7 @@ export class Clefable extends PokemonCard {
   public setNumber: string = '63';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Clefable';
-  public fullName: string = 'Clefable (LOR 63)';
+  public fullName: string = 'Clefable LOR 63';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Spirit Charm - passive, reduce damage from Dragon Pokemon by 30 (no stacking)

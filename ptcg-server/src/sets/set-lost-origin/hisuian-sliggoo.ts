@@ -40,7 +40,7 @@ export class HisuianSliggoo extends PokemonCard {
   public setNumber: string = '133';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Hisuian Sliggoo';
-  public fullName: string = 'Hisuian Sliggoo (LOR 133)';
+  public fullName: string = 'Hisuian Sliggoo LOR 133';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Rigidify

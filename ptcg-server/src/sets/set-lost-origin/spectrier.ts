@@ -37,7 +37,7 @@ export class Spectrier extends PokemonCard {
   public setNumber: string = '81';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Spectrier';
-  public fullName: string = 'Spectrier (LOR 81)';
+  public fullName: string = 'Spectrier LOR 81';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Night Footsteps

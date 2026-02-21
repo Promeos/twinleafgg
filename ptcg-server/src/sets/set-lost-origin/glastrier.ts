@@ -39,7 +39,7 @@ export class Glastrier extends PokemonCard {
   public setNumber: string = '51';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Glastrier';
-  public fullName: string = 'Glastrier (LOR 51)';
+  public fullName: string = 'Glastrier LOR 51';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Freeze Down

@@ -31,7 +31,7 @@ export class Horsea extends PokemonCard {
   public setNumber: string = '35';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Horsea';
-  public fullName: string = 'Horsea (LOR 35)';
+  public fullName: string = 'Horsea LOR 35';
 
   public usedReverseThrust = false;
 

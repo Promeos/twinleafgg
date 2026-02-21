@@ -36,7 +36,7 @@ export class Magcargo extends PokemonCard {
   public setNumber: string = '22';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Magcargo';
-  public fullName: string = 'Magcargo (LOR 22)';
+  public fullName: string = 'Magcargo LOR 22';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Lost Volcano

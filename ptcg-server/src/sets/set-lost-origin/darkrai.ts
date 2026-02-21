@@ -36,7 +36,7 @@ export class Darkrai extends PokemonCard {
   public setNumber: string = '120';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Darkrai';
-  public fullName: string = 'Darkrai (LOR 120)';
+  public fullName: string = 'Darkrai LOR 120';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Nightmare

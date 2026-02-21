@@ -29,7 +29,7 @@ export class Litwick extends PokemonCard {
   public setNumber: string = '24';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Litwick';
-  public fullName: string = 'Litwick (LOR 24)';
+  public fullName: string = 'Litwick LOR 24';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Kindling Panic

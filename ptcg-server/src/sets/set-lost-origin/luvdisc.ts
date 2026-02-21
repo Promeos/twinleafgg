@@ -35,7 +35,7 @@ export class Luvdisc extends PokemonCard {
   public setNumber: string = '38';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Luvdisc';
-  public fullName: string = 'Luvdisc (LOR 38)';
+  public fullName: string = 'Luvdisc LOR 38';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Matching Look

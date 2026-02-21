@@ -37,7 +37,7 @@ export class Dustox extends PokemonCard {
   public setNumber: string = '10';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Dustox';
-  public fullName: string = 'Dustox (LOR 10)';
+  public fullName: string = 'Dustox LOR 10';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Nadir Powder

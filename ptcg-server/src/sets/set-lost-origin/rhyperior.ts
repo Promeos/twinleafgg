@@ -37,7 +37,7 @@ export class Rhyperior extends PokemonCard {
   public setNumber: string = '91';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Rhyperior';
-  public fullName: string = 'Rhyperior (LOR 91)';
+  public fullName: string = 'Rhyperior LOR 91';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Geo Cannon

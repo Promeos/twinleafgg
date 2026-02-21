@@ -37,7 +37,7 @@ export class Eelektrik extends PokemonCard {
   public setNumber: string = '60';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Eelektrik';
-  public fullName: string = 'Eelektrik (LOR 60)';
+  public fullName: string = 'Eelektrik LOR 60';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Ad Hoc Shock - on-evolve, may flip coin; if heads, opponent's Active is Paralyzed

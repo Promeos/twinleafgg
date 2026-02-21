@@ -38,7 +38,7 @@ export class HisuianGoodra extends PokemonCard {
   public setNumber: string = '134';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Hisuian Goodra';
-  public fullName: string = 'Hisuian Goodra (LOR 134)';
+  public fullName: string = 'Hisuian Goodra LOR 134';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Metal Lodging (passive)

@@ -38,7 +38,7 @@ export class Honchkrow extends PokemonCard {
   public setNumber: string = '115';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Honchkrow';
-  public fullName: string = 'Honchkrow (LOR 115)';
+  public fullName: string = 'Honchkrow LOR 115';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Night Cyclone

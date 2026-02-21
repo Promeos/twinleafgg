@@ -39,7 +39,7 @@ export class Gastrodon extends PokemonCard {
   public setNumber: string = '102';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Gastrodon';
-  public fullName: string = 'Gastrodon (LOR 102)';
+  public fullName: string = 'Gastrodon LOR 102';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Recover

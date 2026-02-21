@@ -37,7 +37,7 @@ export class Shiftry extends PokemonCard {
   public setNumber: string = '13';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Shiftry';
-  public fullName: string = 'Shiftry (LOR 13)';
+  public fullName: string = 'Shiftry LOR 13';
 
   public usedFanTornado = false;
   public usedTearingGust = false;

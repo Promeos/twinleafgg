@@ -17,7 +17,7 @@ export class Fantina extends TrainerCard {
   public setNumber: string = '157';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Fantina';
-  public fullName: string = 'Fantina (LOR 157)';
+  public fullName: string = 'Fantina LOR 157';
   public text: string = 'You can use this card only if you have 10 or more cards in the Lost Zone. During your opponent\'s next turn, all of your Pokémon take 120 less damage from attacks from your opponent\'s Pokémon V (after applying Weakness and Resistance). (This includes Pokémon that come into play during that turn.) You may play only 1 Supporter card during your turn.';
 
   public readonly FANTINA_MARKER = 'FANTINA_LOR_MARKER';

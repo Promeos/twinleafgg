@@ -30,7 +30,7 @@ export class Makuhita extends PokemonCard {
   public setNumber: string = '97';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Makuhita';
-  public fullName: string = 'Makuhita (LOR 97)';
+  public fullName: string = 'Makuhita LOR 97';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Fake Out

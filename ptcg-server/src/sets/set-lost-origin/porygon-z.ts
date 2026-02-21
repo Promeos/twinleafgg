@@ -36,7 +36,7 @@ export class PorygonZ extends PokemonCard {
   public setNumber: string = '142';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Porygon-Z';
-  public fullName: string = 'Porygon-Z (LOR 142)';
+  public fullName: string = 'Porygon-Z LOR 142';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Downgrading Beam

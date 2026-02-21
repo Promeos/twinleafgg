@@ -36,7 +36,7 @@ export class Rhydon extends PokemonCard {
   public setNumber: string = '90';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Rhydon';
-  public fullName: string = 'Rhydon (LOR 90)';
+  public fullName: string = 'Rhydon LOR 90';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Take Down

@@ -31,7 +31,7 @@ export class Gastly extends PokemonCard {
   public setNumber: string = '64';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Gastly';
-  public fullName: string = 'Gastly (LOR 64)';
+  public fullName: string = 'Gastly LOR 64';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Furtive Drop

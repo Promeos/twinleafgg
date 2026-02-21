@@ -29,7 +29,7 @@ export class HisuianBasculin extends PokemonCard {
   public setNumber: string = '44';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Hisuian Basculin';
-  public fullName: string = 'Hisuian Basculin (LOR 44)';
+  public fullName: string = 'Hisuian Basculin LOR 44';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Surprise Attack

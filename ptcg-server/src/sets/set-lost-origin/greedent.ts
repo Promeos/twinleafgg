@@ -37,7 +37,7 @@ export class Greedent extends PokemonCard {
   public setNumber: string = '151';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Greedent';
-  public fullName: string = 'Greedent (LOR 151)';
+  public fullName: string = 'Greedent LOR 151';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Collect

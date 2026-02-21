@@ -39,7 +39,7 @@ export class Ariados extends PokemonCard {
   public setNumber: string = '113';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Ariados';
-  public fullName: string = 'Ariados (LOR 113)';
+  public fullName: string = 'Ariados LOR 113';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: String Bind

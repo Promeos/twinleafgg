@@ -37,7 +37,7 @@ export class GalladeV extends PokemonCard {
   public setNumber: string = '181';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Gallade V';
-  public fullName: string = 'Gallade V (LOR 181)';
+  public fullName: string = 'Gallade V LOR 181';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Rising Sword

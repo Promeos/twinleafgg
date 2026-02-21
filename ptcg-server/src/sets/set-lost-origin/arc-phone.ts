@@ -17,7 +17,7 @@ export class ArcPhone extends TrainerCard {
   public setNumber: string = '152';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Arc Phone';
-  public fullName: string = 'Arc Phone (LOR 152)';
+  public fullName: string = 'Arc Phone LOR 152';
   public text: string = 'Look at the top card of your deck. You may switch that card with 1 of your face-down Prize cards. (The cards stay face down.) You may play any number of Item cards during your turn.';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {

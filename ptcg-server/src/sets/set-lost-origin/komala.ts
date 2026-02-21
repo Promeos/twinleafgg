@@ -38,7 +38,7 @@ export class Komala extends PokemonCard {
   public setNumber: string = '149';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Komala';
-  public fullName: string = 'Komala (LOR 149)';
+  public fullName: string = 'Komala LOR 149';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: All Just a Dream (passive)

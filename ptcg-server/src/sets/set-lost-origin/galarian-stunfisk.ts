@@ -37,7 +37,7 @@ export class GalarianStunfisk extends PokemonCard {
   public setNumber: string = '127';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Galarian Stunfisk';
-  public fullName: string = 'Galarian Stunfisk (LOR 127)';
+  public fullName: string = 'Galarian Stunfisk LOR 127';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Field Trap

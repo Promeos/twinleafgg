@@ -37,7 +37,7 @@ export class Mienshao extends PokemonCard {
   public setNumber: string = '104';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Mienshao';
-  public fullName: string = 'Mienshao (LOR 104)';
+  public fullName: string = 'Mienshao LOR 104';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Double Smash

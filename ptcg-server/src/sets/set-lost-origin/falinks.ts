@@ -36,7 +36,7 @@ export class Falinks extends PokemonCard {
   public setNumber: string = '110';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Falinks';
-  public fullName: string = 'Falinks (LOR 110)';
+  public fullName: string = 'Falinks LOR 110';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Fighting Headbutt

@@ -16,7 +16,7 @@ export class ToolBox extends TrainerCard {
   public setNumber: string = '168';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Tool Box';
-  public fullName: string = 'Tool Box (LOR 168)';
+  public fullName: string = 'Tool Box LOR 168';
   public text: string = 'Look at the top 7 cards of your deck. You may reveal any number of Pokémon Tool cards you find there and put them into your hand. Shuffle the other cards back into your deck. You may play any number of Item cards during your turn.';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {

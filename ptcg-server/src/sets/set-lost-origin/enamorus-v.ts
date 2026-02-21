@@ -39,7 +39,7 @@ export class EnamorusV extends PokemonCard {
   public setNumber: string = '82';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Enamorus V';
-  public fullName: string = 'Enamorus V (LOR 82)';
+  public fullName: string = 'Enamorus V LOR 82';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Guardian of Love (passive)

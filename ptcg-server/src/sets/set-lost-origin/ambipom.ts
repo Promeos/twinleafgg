@@ -36,7 +36,7 @@ export class Ambipom extends PokemonCard {
   public setNumber: string = '145';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Ambipom';
-  public fullName: string = 'Ambipom (LOR 145)';
+  public fullName: string = 'Ambipom LOR 145';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: All-You-Can-Grab

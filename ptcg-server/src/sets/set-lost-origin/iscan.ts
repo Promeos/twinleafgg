@@ -16,7 +16,7 @@ export class Iscan extends TrainerCard {
   public setNumber: string = '158';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Iscan';
-  public fullName: string = 'Iscan (LOR 158)';
+  public fullName: string = 'Iscan LOR 158';
   public text: string = 'Draw 2 cards. If your Active Pokémon has "Hisuian" in its name, draw 2 more cards. You may play only 1 Supporter card during your turn.';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {

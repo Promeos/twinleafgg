@@ -35,7 +35,7 @@ export class Relicanth extends PokemonCard {
   public setNumber: string = '101';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Relicanth';
-  public fullName: string = 'Relicanth (LOR 101)';
+  public fullName: string = 'Relicanth LOR 101';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Into the Deep
