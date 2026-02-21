@@ -43,7 +43,7 @@ export class HattereneVmax extends PokemonCard {
   public setNumber: string = '66';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Hatterene VMAX';
-  public fullName: string = 'Hatterene VMAX (CRZ 66)';
+  public fullName: string = 'Hatterene VMAX CRZ 66';
 
   public readonly WITCHS_DOMAIN_MARKER = 'HATTERENE_VMAX_WITCHS_DOMAIN_MARKER';
 

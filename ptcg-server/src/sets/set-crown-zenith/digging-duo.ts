@@ -77,7 +77,7 @@ export class DiggingDuo extends TrainerCard {
   public setNumber: string = '126';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Digging Duo';
-  public fullName: string = 'Digging Duo (CRZ 126)';
+  public fullName: string = 'Digging Duo CRZ 126';
   public text: string = 'Flip a coin. If heads, look at the bottom 8 cards of your deck and put 1 of them into your hand. If tails, look at the bottom 3 cards of your deck and put 1 of them into your hand. Shuffle the other cards back into your deck. You may play only 1 Supporter card during your turn.';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {

@@ -16,7 +16,7 @@ export class FriendsInSinnoh extends TrainerCard {
   public setNumber: string = '131';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Friends in Sinnoh';
-  public fullName: string = 'Friends in Sinnoh (CRZ 131)';
+  public fullName: string = 'Friends in Sinnoh CRZ 131';
   public text: string = 'Draw 3 cards. You may play only 1 Supporter card during your turn.';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {

@@ -37,7 +37,7 @@ export class Liepard extends PokemonCard {
   public setNumber: string = '78';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Liepard';
-  public fullName: string = 'Liepard (CRZ 78)';
+  public fullName: string = 'Liepard CRZ 78';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Fury Swipes

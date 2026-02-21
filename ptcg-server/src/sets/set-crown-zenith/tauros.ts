@@ -35,7 +35,7 @@ export class Tauros extends PokemonCard {
   public setNumber: string = '106';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Tauros';
-  public fullName: string = 'Tauros (CRZ 106)';
+  public fullName: string = 'Tauros CRZ 106';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Adrena-Tackle

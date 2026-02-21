@@ -30,7 +30,7 @@ export class Scyther extends PokemonCard {
   public setNumber: string = '6';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Scyther';
-  public fullName: string = 'Scyther (CRZ 6)';
+  public fullName: string = 'Scyther CRZ 6';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Mach Cut

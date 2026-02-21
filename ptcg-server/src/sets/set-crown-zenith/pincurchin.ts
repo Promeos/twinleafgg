@@ -37,7 +37,7 @@ export class Pincurchin extends PokemonCard {
   public setNumber: string = '56';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Pincurchin';
-  public fullName: string = 'Pincurchin (CRZ 56)';
+  public fullName: string = 'Pincurchin CRZ 56';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Call for Family

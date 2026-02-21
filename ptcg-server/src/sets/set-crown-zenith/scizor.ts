@@ -40,7 +40,7 @@ export class Scizor extends PokemonCard {
   public setNumber: string = '86';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Scizor';
-  public fullName: string = 'Scizor (CRZ 86)';
+  public fullName: string = 'Scizor CRZ 86';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: X-Scissor

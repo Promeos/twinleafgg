@@ -35,7 +35,7 @@ export class Luvdisc extends PokemonCard {
   public setNumber: string = '35';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Luvdisc';
-  public fullName: string = 'Luvdisc (CRZ 35)';
+  public fullName: string = 'Luvdisc CRZ 35';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Emotional Draw

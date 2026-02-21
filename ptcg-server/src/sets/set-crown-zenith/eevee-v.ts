@@ -37,7 +37,7 @@ export class EeveeV extends PokemonCard {
   public setNumber: string = '108';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Eevee V';
-  public fullName: string = 'Eevee V (CRZ 108)';
+  public fullName: string = 'Eevee V CRZ 108';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Vee Brave

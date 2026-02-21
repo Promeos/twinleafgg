@@ -34,7 +34,7 @@ export class Gloom extends PokemonCard {
   public setNumber: string = '2';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Gloom';
-  public fullName: string = 'Gloom (CRZ 2)';
+  public fullName: string = 'Gloom CRZ 2';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Offensive Scent

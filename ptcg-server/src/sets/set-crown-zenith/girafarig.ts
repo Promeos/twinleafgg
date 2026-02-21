@@ -37,7 +37,7 @@ export class Girafarig extends PokemonCard {
   public setNumber: string = '61';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Girafarig';
-  public fullName: string = 'Girafarig (CRZ 61)';
+  public fullName: string = 'Girafarig CRZ 61';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Double Draw

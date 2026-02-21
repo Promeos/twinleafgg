@@ -38,7 +38,7 @@ export class Exeggutor extends PokemonCard {
   public setNumber: string = '58';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Exeggutor';
-  public fullName: string = 'Exeggutor (CRZ 58)';
+  public fullName: string = 'Exeggutor CRZ 58';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Powerful Storm

@@ -37,7 +37,7 @@ export class Volcanion extends PokemonCard {
   public setNumber: string = '26';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Volcanion';
-  public fullName: string = 'Volcanion (CRZ 26)';
+  public fullName: string = 'Volcanion CRZ 26';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Hydro Burn

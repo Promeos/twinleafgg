@@ -29,7 +29,7 @@ export class Shinx2 extends PokemonCard {
   public setNumber: string = '40';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Shinx';
-  public fullName: string = 'Shinx (CRZ 40)';
+  public fullName: string = 'Shinx CRZ 40';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Thunder Jolt

@@ -40,7 +40,7 @@ export class RotomVstar extends PokemonCard {
   public setNumber: string = '46';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Rotom VSTAR';
-  public fullName: string = 'Rotom VSTAR (CRZ 46)';
+  public fullName: string = 'Rotom VSTAR CRZ 46';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Conversion Star (VSTAR Power)

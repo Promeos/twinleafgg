@@ -16,7 +16,7 @@ export class FriendsInHisui extends TrainerCard {
   public setNumber: string = '130';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Friends in Hisui';
-  public fullName: string = 'Friends in Hisui (CRZ 130)';
+  public fullName: string = 'Friends in Hisui CRZ 130';
   public text: string = 'Draw 3 cards. You may play only 1 Supporter card during your turn.';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {

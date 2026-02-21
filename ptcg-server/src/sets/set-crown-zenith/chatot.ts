@@ -36,7 +36,7 @@ export class Chatot extends PokemonCard {
   public setNumber: string = '112';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Chatot';
-  public fullName: string = 'Chatot (CRZ 112)';
+  public fullName: string = 'Chatot CRZ 112';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Cycle Draw

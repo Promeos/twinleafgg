@@ -32,7 +32,7 @@ export class Bellossom extends PokemonCard {
   public setNumber: string = '3';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Bellossom';
-  public fullName: string = 'Bellossom (CRZ 3)';
+  public fullName: string = 'Bellossom CRZ 3';
 
   public usedFlowerSpin: boolean = false;
 

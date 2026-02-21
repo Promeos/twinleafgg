@@ -38,7 +38,7 @@ export class TapuLele extends PokemonCard {
   public setNumber: string = '64';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Tapu Lele';
-  public fullName: string = 'Tapu Lele (CRZ 64)';
+  public fullName: string = 'Tapu Lele CRZ 64';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Energy Burst

@@ -38,7 +38,7 @@ export class Gumshoos extends PokemonCard {
   public setNumber: string = '118';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Gumshoos';
-  public fullName: string = 'Gumshoos (CRZ 118)';
+  public fullName: string = 'Gumshoos CRZ 118';
 
   // Track if the opponent's active Pokemon moved from bench this turn
   // Using EndTurnEffect to save the state before movedToActiveThisTurn is cleared

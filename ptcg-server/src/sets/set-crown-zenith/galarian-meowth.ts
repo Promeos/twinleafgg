@@ -32,7 +32,7 @@ export class GalarianMeowth extends PokemonCard {
   public setNumber: string = '84';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Galarian Meowth';
-  public fullName: string = 'Galarian Meowth (CRZ 84)';
+  public fullName: string = 'Galarian Meowth CRZ 84';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Fasten Claws

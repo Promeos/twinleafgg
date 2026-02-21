@@ -38,7 +38,7 @@ export class Oranguru extends PokemonCard {
   public setNumber: string = '119';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Oranguru';
-  public fullName: string = 'Oranguru (CRZ 119)';
+  public fullName: string = 'Oranguru CRZ 119';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Primate Acting

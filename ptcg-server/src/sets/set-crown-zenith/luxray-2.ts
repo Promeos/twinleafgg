@@ -7,5 +7,5 @@ import { Luxray } from './luxray';
 
 export class Luxray2 extends Luxray {
   public setNumber: string = '43';
-  public fullName: string = 'Luxray (CRZ 43)';
+  public fullName: string = 'Luxray CRZ 43';
 }

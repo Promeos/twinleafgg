@@ -36,7 +36,7 @@ export class GlaceonV extends PokemonCard {
   public setNumber: string = '38';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Glaceon V';
-  public fullName: string = 'Glaceon V (CRZ 38)';
+  public fullName: string = 'Glaceon V CRZ 38';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Frost Charge

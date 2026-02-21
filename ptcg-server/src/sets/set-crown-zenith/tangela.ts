@@ -32,5 +32,5 @@ export class Tangela extends PokemonCard {
   public setNumber: string = '4';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Tangela';
-  public fullName: string = 'Tangela (CRZ 4)';
+  public fullName: string = 'Tangela CRZ 4';
 }

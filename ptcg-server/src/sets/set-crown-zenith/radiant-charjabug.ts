@@ -42,7 +42,7 @@ export class RadiantCharjabug extends PokemonCard {
   public setNumber: string = '51';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Radiant Charjabug';
-  public fullName: string = 'Radiant Charjabug (CRZ 51)';
+  public fullName: string = 'Radiant Charjabug CRZ 51';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Shocking Block

@@ -36,7 +36,7 @@ export class Volcarona extends PokemonCard {
   public setNumber: string = '25';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Volcarona';
-  public fullName: string = 'Volcarona (CRZ 25)';
+  public fullName: string = 'Volcarona CRZ 25';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Volcanic Heat

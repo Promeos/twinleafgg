@@ -36,7 +36,7 @@ export class Pangoro extends PokemonCard {
   public setNumber: string = '80';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Pangoro';
-  public fullName: string = 'Pangoro (CRZ 80)';
+  public fullName: string = 'Pangoro CRZ 80';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Wild Tackle

@@ -36,7 +36,7 @@ export class Entei extends PokemonCard {
   public setNumber: string = '21';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Entei';
-  public fullName: string = 'Entei (CRZ 21)';
+  public fullName: string = 'Entei CRZ 21';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Explosive Heat Dash (passive - no retreat cost if has Fire Energy)

@@ -26,5 +26,5 @@ export class Yungoos extends PokemonCard {
   public setNumber: string = '117';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Yungoos';
-  public fullName: string = 'Yungoos (CRZ 117)';
+  public fullName: string = 'Yungoos CRZ 117';
 }

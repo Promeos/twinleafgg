@@ -29,7 +29,7 @@ export class Pikachu extends PokemonCard {
   public setNumber: string = '160';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Pikachu';
-  public fullName: string = 'Pikachu (CRZ 160)';
+  public fullName: string = 'Pikachu CRZ 160';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Wild Charge

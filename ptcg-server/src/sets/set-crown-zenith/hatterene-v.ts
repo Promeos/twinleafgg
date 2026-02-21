@@ -41,7 +41,7 @@ export class HattereneV extends PokemonCard {
   public setNumber: string = '65';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Hatterene V';
-  public fullName: string = 'Hatterene V (CRZ 65)';
+  public fullName: string = 'Hatterene V CRZ 65';
 
   public usedTeleportationBurst: boolean = false;
 

@@ -26,5 +26,5 @@ export class Pancham extends PokemonCard {
   public setNumber: string = '72';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Pancham';
-  public fullName: string = 'Pancham (CRZ 72)';
+  public fullName: string = 'Pancham CRZ 72';
 }

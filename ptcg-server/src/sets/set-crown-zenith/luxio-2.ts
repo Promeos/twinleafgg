@@ -37,7 +37,7 @@ export class Luxio2 extends PokemonCard {
   public setNumber: string = '42';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Luxio';
-  public fullName: string = 'Luxio (CRZ 42)';
+  public fullName: string = 'Luxio CRZ 42';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Shorting Spark

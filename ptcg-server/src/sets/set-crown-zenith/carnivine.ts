@@ -37,7 +37,7 @@ export class Carnivine extends PokemonCard {
   public setNumber: string = '12';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Carnivine';
-  public fullName: string = 'Carnivine (CRZ 12)';
+  public fullName: string = 'Carnivine CRZ 12';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Festering Saliva

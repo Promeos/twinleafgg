@@ -40,7 +40,7 @@ export class SimisearVstar extends PokemonCard {
   public setNumber: string = '23';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Simisear VSTAR';
-  public fullName: string = 'Simisear VSTAR (CRZ 23)';
+  public fullName: string = 'Simisear VSTAR CRZ 23';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Fireball Fever

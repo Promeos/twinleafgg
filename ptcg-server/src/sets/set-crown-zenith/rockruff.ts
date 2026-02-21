@@ -36,7 +36,7 @@ export class Rockruff extends PokemonCard {
   public setNumber: string = '73';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Rockruff';
-  public fullName: string = 'Rockruff (CRZ 73)';
+  public fullName: string = 'Rockruff CRZ 73';
 
   public usedInviteOut: boolean = false;
 

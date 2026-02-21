@@ -37,7 +37,7 @@ export class Bisharp extends PokemonCard {
   public setNumber: string = '93';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Bisharp';
-  public fullName: string = 'Bisharp (CRZ 93)';
+  public fullName: string = 'Bisharp CRZ 93';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Spike Draw
