@@ -2,6 +2,7 @@ import { DarknessEnergySpecial } from '../set-ex-ruby-and-sapphire/darkness-ener
 import { Delcatty } from '../set-ex-ruby-and-sapphire/delcatty';
 import { EnergySwitch } from '../set-scarlet-and-violet/energy-switch';
 import { GreatBall } from '../set-ex-firered-leafgreen/great-ball';
+import { MetalEnergySpecial } from '../set-undaunted/metal-energy-special';
 import { WarpEnergy } from '../set-shining-legends/warp-energy';
 
 export class DarknessEnergySpecialPK extends DarknessEnergySpecial {
@@ -29,6 +30,13 @@ export class GreatBallPK extends GreatBall {
   public fullName = 'Great Ball PK';
   public set = 'PK';
   public setNumber = '77';
+}
+
+export class MetalEnergySpecialPK extends MetalEnergySpecial {
+  public fullName = 'Metal Energy Special PK';
+  public set = 'PK';
+  public setNumber = '88';
+  public text = 'Damage done by attacks to the Pokémon that Metal Energy is attached to is reduced by 10 (after applying Weakness and Resistance). Ignore this effect if the Pokémon that Metal Energy is attached to isn\t[M]. Metal Energy provides[M] Energy. (Doesn\t count as a basic Energy card.)';
 }
 
 export class WarpEnergyPK extends WarpEnergy {

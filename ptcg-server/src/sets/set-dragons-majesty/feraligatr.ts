@@ -30,7 +30,7 @@ export class Feraligatr extends PokemonCard {
 
   public set: string = 'DRM';
   public cardImage: string = 'assets/cardback.png';
-  public setNumber: string = '16';
+  public setNumber: string = '24';
   public name: string = 'Feraligatr';
   public fullName: string = 'Feraligatr DRM';
 

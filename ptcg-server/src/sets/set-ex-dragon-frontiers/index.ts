@@ -9,6 +9,7 @@ import { Croconaw } from './croconaw';
 import { Dragoniteex } from './dragonite-ex';
 import { Electabuzz } from './electabuzz';
 import { Elekid } from './elekid';
+import { Feraligatr } from './feraligatr';
 import { Flygonex } from './flygon-ex';
 import { Gardevoirex } from './gardevoir-ex';
 import { HolonEnergyWP } from './holon-energy-wp';
@@ -39,7 +40,11 @@ import { Vibrava } from './vibrava';
 import { Vibrava2 } from './vibrava2';
 
 // Other prints
-import { TvReporterDF } from './other-prints';
+import {
+  BoostEnergyDF,
+  ProfessorElmsTrainingMethodDF,
+  TvReporterDF
+} from './other-prints';
 
 export const setEXDragonFrontiers: Card[] = [
   new Altariaex(),
@@ -52,6 +57,7 @@ export const setEXDragonFrontiers: Card[] = [
   new Dragoniteex(),
   new Electabuzz(),
   new Elekid(),
+  new Feraligatr(),
   new Flygonex(),
   new Gardevoirex(),
   new HolonEnergyWP(),
@@ -82,5 +88,7 @@ export const setEXDragonFrontiers: Card[] = [
   new Vibrava2(),
 
   // Other prints
+  new BoostEnergyDF(),
+  new ProfessorElmsTrainingMethodDF(),
   new TvReporterDF(),
 ];

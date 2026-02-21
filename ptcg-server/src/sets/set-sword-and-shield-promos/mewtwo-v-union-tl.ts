@@ -8,6 +8,7 @@ import { CheckHpEffect } from '../../game/store/effects/check-effects';
 import { MewtwoVUNIONTopRight } from './mewtwo-v-union-tr';
 import { MewtwoVUNIONBottomLeft } from './mewtwo-v-union-bl';
 import { MewtwoVUNIONBottomRight } from './mewtwo-v-union-br';
+import { IS_ABILITY_BLOCKED } from '../../game/store/prefabs/prefabs';
 
 export class MewtwoVUNIONTopLeft extends PokemonCard {
   public stage: Stage = Stage.VUNION;
@@ -109,7 +110,7 @@ export class MewtwoVUNIONTopLeft extends PokemonCard {
     }
 
     // Photon Barrier
-    if (effect instanceof AbstractAttackEffect && effect.target.cards.includes(this)) {
+    if (effect instanceof AbstractAttackEffect && effect.target.cards.includes(this) && !IS_ABILITY_BLOCKED(store, state, effect.player, this)) {
       const sourceCard = effect.source.getPokemonCard();
 
       if (StateUtils.findOwner(state, effect.source) === StateUtils.findOwner(state, effect.target)) {

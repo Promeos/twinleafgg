@@ -1,5 +1,13 @@
+import { PokeBall } from '../set-jungle/pokeball';
 import { Potion } from '../set-base-set/potion';
 import { WarpPointMA } from '../set-ex-team-magma-vs-team-aqua/other-prints';
+
+export class PokeBallCG extends PokeBall {
+  public fullName = 'Poké Ball CG';
+  public set = 'CG';
+  public setNumber = '82';
+  public text = 'Flip a coin. If heads, search your deck for a Pokémon, reveal it, and put it into your hand. Shuffle your deck afterward.';
+}
 
 export class PotionCG extends Potion {
   public fullName = 'Potion CG';

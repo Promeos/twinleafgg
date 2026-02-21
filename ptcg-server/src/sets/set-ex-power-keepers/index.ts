@@ -21,6 +21,7 @@ import {
   DelcattyPK,
   EnergySwitchPK,
   GreatBallPK,
+  MetalEnergySpecialPK,
   WarpEnergyPK
 } from './other-prints';
 
@@ -45,6 +46,7 @@ export const setEXPowerKeepers: Card[] = [
   new DelcattyPK(),
   new EnergySwitchPK(),
   new GreatBallPK(),
+  new MetalEnergySpecialPK(),
   new WarpEnergyPK(),
 
   // Basic energies

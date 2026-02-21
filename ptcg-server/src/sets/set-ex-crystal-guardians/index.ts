@@ -27,6 +27,7 @@ import { Windstorm } from './windstorm';
 
 // Other prints
 import {
+  PokeBallCG,
   PotionCG,
   WarpPointCG,
 } from './other-prints';
@@ -59,6 +60,7 @@ export const setEXCrystalGuardians: Card[] = [
   new Windstorm(),
 
   // Other prints
+  new PokeBallCG(),
   new PotionCG(),
   new WarpPointCG(),
 ];
