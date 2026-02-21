@@ -13,17 +13,23 @@ import { Fearow } from './fearow';
 import { Grovyle } from './grovyle';
 import { Jirachiex } from './jirachi-ex';
 import { Kyogreex } from './kyogre-ex';
+import { Mudkip } from './mudkip';
 import { MysteriousShard } from './mysterious-shard';
 import { Sceptileex } from './sceptile-ex';
 import { Shuppet } from './shuppet';
 import { Spearow } from './spearow';
+import { Swampert } from './swampert';
+import { Swampertex } from './swampert-ex';
 import { Tauros } from './tauros';
 import { Treecko } from './treecko';
 import { Treecko2 } from './treecko2';
 import { Windstorm } from './windstorm';
 
 // Other prints
-import { PotionCG } from './other-prints';
+import {
+  PotionCG,
+  WarpPointCG,
+} from './other-prints';
 
 export const setEXCrystalGuardians: Card[] = [
   new AlakazamStar(),
@@ -40,10 +46,13 @@ export const setEXCrystalGuardians: Card[] = [
   new Grovyle(),
   new Jirachiex(),
   new Kyogreex(),
+  new Mudkip(),
   new MysteriousShard(),
   new Sceptileex(),
   new Shuppet(),
   new Spearow(),
+  new Swampert(),
+  new Swampertex(),
   new Tauros(),
   new Treecko(),
   new Treecko2(),
@@ -51,4 +60,5 @@ export const setEXCrystalGuardians: Card[] = [
 
   // Other prints
   new PotionCG(),
+  new WarpPointCG(),
 ];

@@ -5,6 +5,7 @@ import { CharizardStar } from './charizard-star';
 import { Chikorita } from './chikorita';
 import { Cloyster } from './cloyster';
 import { Copycat } from './copycat';
+import { Croconaw } from './croconaw';
 import { Dragoniteex } from './dragonite-ex';
 import { Electabuzz } from './electabuzz';
 import { Elekid } from './elekid';
@@ -31,10 +32,14 @@ import { Seadra } from './seadra';
 import { Shelder } from './shelder';
 import { StrengthCharm } from './strength-charm';
 import { Swablu } from './swablu';
+import { Totodile } from './totodile';
 import { Trapinch } from './trapinch';
 import { Trapinch2 } from './trapinch2';
 import { Vibrava } from './vibrava';
 import { Vibrava2 } from './vibrava2';
+
+// Other prints
+import { TvReporterDF } from './other-prints';
 
 export const setEXDragonFrontiers: Card[] = [
   new Altariaex(),
@@ -43,6 +48,7 @@ export const setEXDragonFrontiers: Card[] = [
   new Chikorita(),
   new Cloyster(),
   new Copycat(),
+  new Croconaw(),
   new Dragoniteex(),
   new Electabuzz(),
   new Elekid(),
@@ -69,8 +75,12 @@ export const setEXDragonFrontiers: Card[] = [
   new Shelder(),
   new StrengthCharm(),
   new Swablu(),
+  new Totodile(),
   new Trapinch(),
   new Trapinch2(),
   new Vibrava(),
   new Vibrava2(),
+
+  // Other prints
+  new TvReporterDF(),
 ];

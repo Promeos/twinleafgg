@@ -73,6 +73,7 @@ cardManager.defineSet(sets.setEXLegendMaker);
 cardManager.defineSet(sets.setNintendoPromos);
 
 cardManager.defineSet(sets.setPOPSeries2);
+cardManager.defineSet(sets.setPOPSeries3);
 cardManager.defineSet(sets.setPOPSeries4);
 cardManager.defineSet(sets.setPOPSeries5);
 cardManager.defineSet(sets.setPOPSeries8);

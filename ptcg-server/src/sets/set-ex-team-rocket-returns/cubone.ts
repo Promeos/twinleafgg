@@ -2,13 +2,13 @@ import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { Stage, CardType } from '../../game/store/card/card-types';
 import { StoreLike, State, StateUtils, Card } from '../../game';
 import { AttackEffect } from '../../game/store/effects/game-effects';
-import { SHOW_CARDS_TO_PLAYER, SHUFFLE_DECK, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
+import { MULTIPLE_COIN_FLIPS_PROMPT, SHOW_CARDS_TO_PLAYER, SHUFFLE_DECK, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
-export class NidoranFemale extends PokemonCard {
+export class Cubone extends PokemonCard {
   public stage: Stage = Stage.BASIC;
-  public cardType: CardType = G;
+  public cardType: CardType = F;
   public hp: number = 50;
-  public weakness = [{ type: P }];
+  public weakness = [{ type: G }];
   public retreat = [C];
 
   public attacks = [
@@ -19,18 +19,19 @@ export class NidoranFemale extends PokemonCard {
       text: 'Reveal cards from your deck until you reveal a Basic Pokémon. Show that card to your opponent and put it into your hand. Shuffle the other revealed cards into your deck. (If you don\'t reveal a Basic Pokémon, shuffle all the revealed cards back into your deck.)'
     },
     {
-      name: 'Bite',
-      cost: [C, C],
-      damage: 20,
-      text: ''
+      name: 'Bonemerang',
+      cost: [F],
+      damage: 10,
+      damageCalculation: 'x',
+      text: 'Flip 2 coins. This attack does 10 damage times the number of heads.'
     }
   ];
 
-  public set: string = 'RG';
+  public set: string = 'TRR';
   public cardImage: string = 'assets/cardback.png';
-  public setNumber: string = '70';
-  public name: string = 'Nidoran ♀';
-  public fullName: string = 'Nidoran F RG';
+  public setNumber: string = '51';
+  public name: string = 'Cubone';
+  public fullName: string = 'Cubone TRR';
 
   public reduceEffect(store: StoreLike, state: State, effect: AttackEffect): State {
 
@@ -61,6 +62,14 @@ export class NidoranFemale extends PokemonCard {
         player.deck.moveCardTo(pokemon, player.hand);
       }
       SHUFFLE_DECK(store, state, player);
+    }
+
+    if (WAS_ATTACK_USED(effect, 1, this)) {
+      const player = effect.player;
+      MULTIPLE_COIN_FLIPS_PROMPT(store, state, player, 2, results => {
+        const heads = results.filter(r => r).length;
+        effect.damage = 10 * heads;
+      });
     }
 
     return state;
