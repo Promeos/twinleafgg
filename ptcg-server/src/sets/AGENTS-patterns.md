@@ -1156,3 +1156,48 @@ store.prompt(state, new MoveEnergyPrompt(
 > **Common mistake**: Swapping `blockedFrom` and `blockedTo`. Always think: "FROM where?" = source, "TO where?" = destination.
 
 Reference: `set-vivid-voltage/galarian-sirfetchd-v.ts`
+
+---
+
+## Special Card Types: Structural Requirements
+
+### LV.X Cards
+
+Every LV.X implementation MUST have these structural properties:
+1. `public stage: Stage = Stage.LV_X`
+2. `public evolvesFrom: string = 'BasePokemonName'` (e.g., `'Garchomp C'`, `'Luxray GL'`)
+3. `public tags = [CardTag.POKEMON_LV_X, CardTag.POKEMON_SP]` (for SP Pokemon) or `[CardTag.POKEMON_LV_X]`
+4. An `LV.X Rule` power at `powers[0]` with `PowerType.LV_X_RULE` and `useWhenInPlay: false`
+5. Any Poké-Powers must use `PowerType.POKEPOWER` (NOT `PowerType.ABILITY`)
+6. NO `useWhenInPlay: true` on Poké-Powers
+
+Reference: `set-supreme-victors/garchomp-c-lv-x.ts`, `set-rising-rivals/luxray-gl-lv-x.ts`
+
+### Mega Evolution Cards
+
+Every MEGA card MUST have:
+1. `public stage: Stage = Stage.MEGA`
+2. `public evolvesFrom: string = 'BasePokemonName-EX'` (e.g., `'Rayquaza-EX'`)
+3. `public tags = [CardTag.MEGA, CardTag.POKEMON_EX]`
+4. A `Mega Evolution Rule` power at `powers[0]` with `PowerType.MEGA_EVOLUTION_RULE`
+5. Ancient Traits (Δ Evolution etc.) should NOT have `useWhenInPlay: true`
+
+Reference: `set-roaring-skies/mega-rayquaza-ex.ts`
+
+### Passive Damage Intercepts
+
+When intercepting `DealDamageEffect`, `PutDamageEffect`, or `PutCountersEffect` for a specific card, BOTH checks are required:
+```typescript
+effect.target.cards.includes(this) && effect.target.getPokemonCard() === this
+```
+The `cards.includes(this)` check alone fails for evolved Pokemon where this card is buried under a Stage 2. Missing `getPokemonCard() === this` is the most commonly missed pattern.
+
+### ConfirmPrompt GameMessage Selection
+
+When using `ConfirmPrompt` in attacks or abilities, use the correct `GameMessage` for the context:
+
+- `GameMessage.WANT_TO_USE_ABILITY` — only for ability activation confirm dialogs (WAS_POWER_USED pattern)
+- `GameMessage.WANT_TO_DISCARD_ENERGY` — for optional energy discard during attacks (e.g., "You may discard all [L] Energy...")
+- `GameMessage.WANT_TO_SWITCH_POKEMON` — for optional switch during/after attacks
+
+Using the wrong message doesn't break the game but shows incorrect dialog text to the player.
