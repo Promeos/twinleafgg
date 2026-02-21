@@ -3,10 +3,11 @@
 // If you have any questions or feedback, reach out to @C4 in the discord.
 
 import { PokemonCard } from '../../game/store/card/pokemon-card';
-import { Stage, CardType, SuperType } from '../../game/store/card/card-types';
-import { StoreLike, State, StateUtils, ChooseCardsPrompt, GameMessage } from '../../game';
+import { Stage, CardType } from '../../game/store/card/card-types';
+import { StoreLike, State } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
 import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
+import { PUT_ENERGY_FROM_OPPONENTS_ACTIVE_INTO_THEIR_HAND } from '../../game/store/prefabs/attack-effects';
 
 export class Dewott extends PokemonCard {
   public stage: Stage = Stage.STAGE_1;
@@ -43,30 +44,8 @@ export class Dewott extends PokemonCard {
     // Ref: set-rebel-clash/heliolisk.ts (DiscardCardsEffect + ChooseCardsPrompt for energy selection),
     //      set-darkness-ablaze/wishiwashi.ts (moveTo hand pattern)
     if (WAS_ATTACK_USED(effect, 1, this)) {
-      const player = effect.player;
-      const opponent = StateUtils.getOpponent(state, player);
-
-      // Check if opponent's active has any energy
-      const energyCards = opponent.active.cards.filter(c => c.superType === SuperType.ENERGY);
-      if (energyCards.length === 0) {
-        return state;
-      }
-
-      // Optional: you may put an energy into their hand
-      store.prompt(state, new ChooseCardsPrompt(
-        player,
-        GameMessage.CHOOSE_CARD_TO_HAND,
-        opponent.active,
-        { superType: SuperType.ENERGY },
-        { min: 0, max: 1, allowCancel: false }
-      ), selected => {
-        const cards = selected || [];
-        cards.forEach(card => {
-          opponent.active.moveCardTo(card, opponent.hand);
-        });
-      });
+      return PUT_ENERGY_FROM_OPPONENTS_ACTIVE_INTO_THEIR_HAND(store, state, effect);
     }
-
     return state;
   }
 }

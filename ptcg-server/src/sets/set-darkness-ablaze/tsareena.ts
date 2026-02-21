@@ -4,10 +4,11 @@
 
 import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { Stage, CardType } from '../../game/store/card/card-types';
-import { Card, ChooseCardsPrompt, ConfirmPrompt, EnergyCard, GameMessage, StoreLike, State, StateUtils, SuperType } from '../../game';
+import { StoreLike, State } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
 import { WAS_ATTACK_USED, THIS_ATTACK_DOES_X_DAMAGE_TO_X_OF_YOUR_OPPONENTS_POKEMON } from '../../game/store/prefabs/prefabs';
 import { CheckProvidedEnergyEffect } from '../../game/store/effects/check-effects';
+import { PUT_ENERGY_FROM_OPPONENTS_ACTIVE_INTO_THEIR_HAND } from '../../game/store/prefabs/attack-effects';
 
 export class Tsareena extends PokemonCard {
   public stage: Stage = Stage.STAGE_2;
@@ -58,35 +59,8 @@ export class Tsareena extends PokemonCard {
     // Attack 2: Time Out Kick
     // Ref: set-darkness-ablaze/centiskorch-v.ts (ConfirmPrompt "you may" + discard energy from opponent's active)
     if (WAS_ATTACK_USED(effect, 1, this)) {
-      const player = effect.player;
-      const opponent = StateUtils.getOpponent(state, player);
-
-      const hasEnergy = opponent.active.cards.some(c => c instanceof EnergyCard);
-      if (!hasEnergy) {
-        return state;
-      }
-
-      store.prompt(state, new ConfirmPrompt(
-        player.id,
-        GameMessage.WANT_TO_USE_EFFECT_OF_ATTACK,
-      ), wantToUse => {
-        if (wantToUse) {
-          store.prompt(state, new ChooseCardsPrompt(
-            player,
-            GameMessage.CHOOSE_CARD_TO_HAND,
-            opponent.active,
-            { superType: SuperType.ENERGY },
-            { min: 1, max: 1, allowCancel: false }
-          ), selected => {
-            const cards: Card[] = selected || [];
-            if (cards.length > 0) {
-              opponent.active.moveCardsTo(cards, opponent.hand);
-            }
-          });
-        }
-      });
+      return PUT_ENERGY_FROM_OPPONENTS_ACTIVE_INTO_THEIR_HAND(store, state, effect);
     }
-
     return state;
   }
 }

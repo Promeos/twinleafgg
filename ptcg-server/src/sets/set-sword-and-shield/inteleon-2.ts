@@ -4,10 +4,10 @@
 
 import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { Stage, CardType } from '../../game/store/card/card-types';
-import { Card, ChooseEnergyPrompt, ConfirmPrompt, GameMessage, StoreLike, State, StateUtils } from '../../game';
+import { StoreLike, State, StateUtils } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
 import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
-import { CheckProvidedEnergyEffect } from '../../game/store/effects/check-effects';
+import { PUT_ENERGY_FROM_OPPONENTS_ACTIVE_INTO_THEIR_HAND } from '../../game/store/prefabs/attack-effects';
 
 export class Inteleon2 extends PokemonCard {
   public stage: Stage = Stage.STAGE_2;
@@ -55,37 +55,8 @@ export class Inteleon2 extends PokemonCard {
     // Attack 2: Hydro Snipe
     // Ref: set-hidden-fates/lycanroc-gx-2.ts (ChooseEnergyPrompt + move energy to hand)
     if (WAS_ATTACK_USED(effect, 1, this)) {
-      const player = effect.player;
-      const opponent = StateUtils.getOpponent(state, player);
-
-      const checkEnergy = new CheckProvidedEnergyEffect(opponent, opponent.active);
-      state = store.reduceEffect(state, checkEnergy);
-
-      if (checkEnergy.energyMap.length === 0) {
-        return state;
-      }
-
-      state = store.prompt(state, new ConfirmPrompt(
-        player.id,
-        GameMessage.WANT_TO_USE_ABILITY,
-      ), wantToUse => {
-        if (wantToUse) {
-          store.prompt(state, new ChooseEnergyPrompt(
-            player.id,
-            GameMessage.CHOOSE_ENERGIES_TO_HAND,
-            checkEnergy.energyMap,
-            [CardType.COLORLESS],
-            { allowCancel: false }
-          ), energy => {
-            const cards: Card[] = (energy || []).map(e => e.card);
-            if (cards.length > 0) {
-              opponent.active.moveCardsTo(cards, opponent.hand);
-            }
-          });
-        }
-      });
+      return PUT_ENERGY_FROM_OPPONENTS_ACTIVE_INTO_THEIR_HAND(store, state, effect);
     }
-
     return state;
   }
 }

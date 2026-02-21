@@ -4,11 +4,10 @@
 
 import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { Stage, CardType, CardTag } from '../../game/store/card/card-types';
-import { StoreLike, State, StateUtils, PlayerType, GameMessage, ChoosePokemonPrompt, SlotType, ConfirmPrompt } from '../../game';
+import { StoreLike, State, StateUtils, PlayerType, GameMessage, ChoosePokemonPrompt, SlotType } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
 import { WAS_ATTACK_USED, DAMAGE_OPPONENT_POKEMON } from '../../game/store/prefabs/prefabs';
-import { CheckProvidedEnergyEffect } from '../../game/store/effects/check-effects';
-import { ChooseEnergyPrompt } from '../../game/store/prompts/choose-energy-prompt';
+import { PUT_ENERGY_FROM_OPPONENTS_ACTIVE_INTO_THEIR_HAND } from '../../game/store/prefabs/attack-effects';
 
 export class InteleonVmax extends PokemonCard {
   public tags = [CardTag.POKEMON_VMAX];
@@ -45,35 +44,7 @@ export class InteleonVmax extends PokemonCard {
     // Attack 1: Hydro Snipe
     // Ref: set-sword-and-shield/lapras.ts (Aqua Wash - ConfirmPrompt + ChooseEnergyPrompt + move energy to hand)
     if (WAS_ATTACK_USED(effect, 0, this)) {
-      const player = effect.player;
-      const opponent = StateUtils.getOpponent(state, player);
-
-      const checkEnergy = new CheckProvidedEnergyEffect(opponent, opponent.active);
-      store.reduceEffect(state, checkEnergy);
-
-      if (checkEnergy.energyMap.length === 0) {
-        return state;
-      }
-
-      store.prompt(state, new ConfirmPrompt(
-        player.id,
-        GameMessage.WANT_TO_USE_ABILITY,
-      ), wantToUse => {
-        if (wantToUse) {
-          store.prompt(state, new ChooseEnergyPrompt(
-            player.id,
-            GameMessage.CHOOSE_ENERGIES_TO_HAND,
-            checkEnergy.energyMap,
-            [CardType.COLORLESS],
-            { allowCancel: false }
-          ), energy => {
-            const cards = (energy || []).slice(0, 1).map(e => e.card);
-            if (cards.length > 0) {
-              opponent.active.moveCardsTo(cards, opponent.hand);
-            }
-          });
-        }
-      });
+      return PUT_ENERGY_FROM_OPPONENTS_ACTIVE_INTO_THEIR_HAND(store, state, effect);
     }
 
     // Attack 2: Max Bullet
