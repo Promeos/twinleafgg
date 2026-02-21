@@ -42,7 +42,7 @@ export class MimikyuVmax extends PokemonCard {
   public setNumber: string = '69';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Mimikyu VMAX';
-  public fullName: string = 'Mimikyu VMAX (BRS 69)';
+  public fullName: string = 'Mimikyu VMAX BRS 69';
 
   public readonly ACEROLA_PLAYED_MARKER = 'MIMIKYU_VMAX_BRS_ACEROLA_PLAYED_MARKER';
 

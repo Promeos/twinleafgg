@@ -40,7 +40,7 @@ export class Escavalier extends PokemonCard {
   public setNumber: string = '101';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Escavalier';
-  public fullName: string = 'Escavalier (BRS 101)';
+  public fullName: string = 'Escavalier BRS 101';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Miraculous Armor

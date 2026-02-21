@@ -17,7 +17,7 @@ export class HuntingGloves extends TrainerCard {
   public setNumber: string = '142';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Hunting Gloves';
-  public fullName: string = 'Hunting Gloves (BRS 142)';
+  public fullName: string = 'Hunting Gloves BRS 142';
   public text: string = 'The attacks of the Pokémon this card is attached to do 30 more damage to your opponent\'s Active Dragon Pokémon (before applying Weakness and Resistance). You may play any number of Item cards during your turn. Attach a Pokémon Tool to 1 of your Pokémon that doesn\'t already have a Pokémon Tool attached.';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {

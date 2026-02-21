@@ -32,5 +32,5 @@ export class Throh extends PokemonCard {
   public setNumber: string = '80';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Throh';
-  public fullName: string = 'Throh (BRS 80)';
+  public fullName: string = 'Throh BRS 80';
 }

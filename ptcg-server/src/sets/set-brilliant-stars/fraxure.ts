@@ -32,5 +32,5 @@ export class Fraxure extends PokemonCard {
   public setNumber: string = '111';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Fraxure';
-  public fullName: string = 'Fraxure (BRS 111)';
+  public fullName: string = 'Fraxure BRS 111';
 }

@@ -35,7 +35,7 @@ export class Castform extends PokemonCard {
   public setNumber: string = '116';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Castform';
-  public fullName: string = 'Castform (BRS 116)';
+  public fullName: string = 'Castform BRS 116';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Double Draw

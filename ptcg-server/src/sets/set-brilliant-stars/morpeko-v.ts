@@ -39,7 +39,7 @@ export class MorpekoV extends PokemonCard {
   public setNumber: string = '95';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Morpeko V';
-  public fullName: string = 'Morpeko V (BRS 95)';
+  public fullName: string = 'Morpeko V BRS 95';
 
   public readonly MARNIES_PRIDE_MARKER = 'MORPEKO_V_BRS_MARNIES_PRIDE_MARKER';
   public usedGnawAndRun = false;

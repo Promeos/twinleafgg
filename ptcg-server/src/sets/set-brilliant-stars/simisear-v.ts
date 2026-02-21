@@ -39,7 +39,7 @@ export class SimisearV extends PokemonCard {
   public setNumber: string = '27';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Simisear V';
-  public fullName: string = 'Simisear V (BRS 27)';
+  public fullName: string = 'Simisear V BRS 27';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Bursting Power

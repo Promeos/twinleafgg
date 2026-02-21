@@ -31,7 +31,7 @@ export class Dedenne extends PokemonCard {
   public setNumber: string = '67';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Dedenne';
-  public fullName: string = 'Dedenne (BRS 67)';
+  public fullName: string = 'Dedenne BRS 67';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Dede-Flash

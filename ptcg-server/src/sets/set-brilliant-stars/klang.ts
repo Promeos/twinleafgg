@@ -39,7 +39,7 @@ export class Klang extends PokemonCard {
   public setNumber: string = '103';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Klang';
-  public fullName: string = 'Klang (BRS 103)';
+  public fullName: string = 'Klang BRS 103';
 
   public readonly GUARD_PRESS_MARKER = 'KLANG_BRS_GUARD_PRESS_MARKER';
   public readonly CLEAR_GUARD_PRESS_MARKER = 'KLANG_BRS_CLEAR_GUARD_PRESS_MARKER';

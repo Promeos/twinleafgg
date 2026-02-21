@@ -32,5 +32,5 @@ export class Clefairy extends PokemonCard {
   public setNumber: string = '53';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Clefairy';
-  public fullName: string = 'Clefairy (BRS 53)';
+  public fullName: string = 'Clefairy BRS 53';
 }

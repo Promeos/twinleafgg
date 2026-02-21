@@ -33,5 +33,5 @@ export class Klink extends PokemonCard {
   public setNumber: string = '102';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Klink';
-  public fullName: string = 'Klink (BRS 102)';
+  public fullName: string = 'Klink BRS 102';
 }

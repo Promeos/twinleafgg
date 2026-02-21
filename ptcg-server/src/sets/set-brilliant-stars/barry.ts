@@ -16,7 +16,7 @@ export class Barry extends TrainerCard {
   public setNumber: string = '130';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Barry';
-  public fullName: string = 'Barry (BRS 130)';
+  public fullName: string = 'Barry BRS 130';
   public text: string = 'Draw 3 cards. You may play only 1 Supporter card during your turn.';
 
   // Ref: set-phantom-forces/tierno.ts (Draw 3 cards Supporter)

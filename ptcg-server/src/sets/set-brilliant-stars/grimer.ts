@@ -30,7 +30,7 @@ export class Grimer extends PokemonCard {
   public setNumber: string = '84';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Grimer';
-  public fullName: string = 'Grimer (BRS 84)';
+  public fullName: string = 'Grimer BRS 84';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Poison Gas

@@ -26,5 +26,5 @@ export class Cubchoo extends PokemonCard {
   public setNumber: string = '42';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Cubchoo';
-  public fullName: string = 'Cubchoo (BRS 42)';
+  public fullName: string = 'Cubchoo BRS 42';
 }

@@ -27,5 +27,5 @@ export class Prinplup extends PokemonCard {
   public setNumber: string = '36';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Prinplup';
-  public fullName: string = 'Prinplup (BRS 36)';
+  public fullName: string = 'Prinplup BRS 36';
 }

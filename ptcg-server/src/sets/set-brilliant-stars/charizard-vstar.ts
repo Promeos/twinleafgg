@@ -39,7 +39,7 @@ export class CharizardVstar extends PokemonCard {
   public setNumber: string = '18';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Charizard VSTAR';
-  public fullName: string = 'Charizard VSTAR (BRS 18)';
+  public fullName: string = 'Charizard VSTAR BRS 18';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Explosive Fire

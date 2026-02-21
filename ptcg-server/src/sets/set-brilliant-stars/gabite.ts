@@ -26,5 +26,5 @@ export class Gabite extends PokemonCard {
   public setNumber: string = '108';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Gabite';
-  public fullName: string = 'Gabite (BRS 108)';
+  public fullName: string = 'Gabite BRS 108';
 }

@@ -38,7 +38,7 @@ export class Grimmsnarl extends PokemonCard {
   public setNumber: string = '94';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Grimmsnarl';
-  public fullName: string = 'Grimmsnarl (BRS 94)';
+  public fullName: string = 'Grimmsnarl BRS 94';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Longhair Shot

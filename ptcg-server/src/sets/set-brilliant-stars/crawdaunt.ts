@@ -37,7 +37,7 @@ export class Crawdaunt extends PokemonCard {
   public setNumber: string = '33';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Crawdaunt';
-  public fullName: string = 'Crawdaunt (BRS 33)';
+  public fullName: string = 'Crawdaunt BRS 33';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Crab Impact

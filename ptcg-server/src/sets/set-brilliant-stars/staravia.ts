@@ -28,5 +28,5 @@ export class Staravia extends PokemonCard {
   public setNumber: string = '118';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Staravia';
-  public fullName: string = 'Staravia (BRS 118)';
+  public fullName: string = 'Staravia BRS 118';
 }

@@ -40,7 +40,7 @@ export class Luxray extends PokemonCard {
   public setNumber: string = '51';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Luxray';
-  public fullName: string = 'Luxray (BRS 51)';
+  public fullName: string = 'Luxray BRS 51';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Energy Crush

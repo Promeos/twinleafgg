@@ -40,7 +40,7 @@ export class Klinklang extends PokemonCard {
   public setNumber: string = '104';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Klinklang';
-  public fullName: string = 'Klinklang (BRS 104)';
+  public fullName: string = 'Klinklang BRS 104';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Gear Wall (passive)

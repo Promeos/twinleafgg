@@ -36,7 +36,7 @@ export class Chimecho extends PokemonCard {
   public setNumber: string = '63';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Chimecho';
-  public fullName: string = 'Chimecho (BRS 63)';
+  public fullName: string = 'Chimecho BRS 63';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Clear Tone

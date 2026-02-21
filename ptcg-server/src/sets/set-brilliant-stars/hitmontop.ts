@@ -35,7 +35,7 @@ export class Hitmontop extends PokemonCard {
   public setNumber: string = '72';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Hitmontop';
-  public fullName: string = 'Hitmontop (BRS 72)';
+  public fullName: string = 'Hitmontop BRS 72';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Spinning Draw

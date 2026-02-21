@@ -38,7 +38,7 @@ export class Beartic extends PokemonCard {
   public setNumber: string = '43';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Beartic';
-  public fullName: string = 'Beartic (BRS 43)';
+  public fullName: string = 'Beartic BRS 43';
 
   public readonly CANT_ATTACK_MARKER = 'BEARTIC_BRS_CANT_ATTACK_MARKER';
   public readonly CLEAR_CANT_ATTACK_MARKER = 'BEARTIC_BRS_CLEAR_CANT_ATTACK_MARKER';

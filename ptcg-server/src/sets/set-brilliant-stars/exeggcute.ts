@@ -32,5 +32,5 @@ export class Exeggcute extends PokemonCard {
   public setNumber: string = '1';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Exeggcute';
-  public fullName: string = 'Exeggcute (BRS 1)';
+  public fullName: string = 'Exeggcute BRS 1';
 }

@@ -36,7 +36,7 @@ export class Tropius extends PokemonCard {
   public setNumber: string = '5';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Tropius';
-  public fullName: string = 'Tropius (BRS 5)';
+  public fullName: string = 'Tropius BRS 5';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Curative Bower (passive)

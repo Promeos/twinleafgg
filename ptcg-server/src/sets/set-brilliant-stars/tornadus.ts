@@ -38,7 +38,7 @@ export class Tornadus extends PokemonCard {
   public setNumber: string = '126';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Tornadus';
-  public fullName: string = 'Tornadus (BRS 126)';
+  public fullName: string = 'Tornadus BRS 126';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Sudden Cyclone (on-play-from-hand trigger)

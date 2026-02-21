@@ -38,7 +38,7 @@ export class Claydol extends PokemonCard {
   public setNumber: string = '59';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Claydol';
-  public fullName: string = 'Claydol (BRS 59)';
+  public fullName: string = 'Claydol BRS 59';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Coinciding Figures

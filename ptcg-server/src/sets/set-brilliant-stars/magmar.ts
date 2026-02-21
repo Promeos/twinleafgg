@@ -32,5 +32,5 @@ export class Magmar extends PokemonCard {
   public setNumber: string = '19';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Magmar';
-  public fullName: string = 'Magmar (BRS 19)';
+  public fullName: string = 'Magmar BRS 19';
 }

@@ -41,7 +41,7 @@ export class Torkoal extends PokemonCard {
   public setNumber: string = '23';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Torkoal';
-  public fullName: string = 'Torkoal (BRS 23)';
+  public fullName: string = 'Torkoal BRS 23';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Firebreathing

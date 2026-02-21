@@ -31,7 +31,7 @@ export class Buizel extends PokemonCard {
   public setNumber: string = '38';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Buizel';
-  public fullName: string = 'Buizel (BRS 38)';
+  public fullName: string = 'Buizel BRS 38';
 
   private readonly PREVENT_MARKER = 'BUIZEL_PREVENT_MARKER';
   private readonly CLEAR_PREVENT_MARKER = 'BUIZEL_CLEAR_PREVENT_MARKER';

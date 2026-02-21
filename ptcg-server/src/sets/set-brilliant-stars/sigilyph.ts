@@ -38,7 +38,7 @@ export class Sigilyph extends PokemonCard {
   public setNumber: string = '66';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Sigilyph';
-  public fullName: string = 'Sigilyph (BRS 66)';
+  public fullName: string = 'Sigilyph BRS 66';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Tri Recharge

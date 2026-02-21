@@ -36,7 +36,7 @@ export class KinglerV extends PokemonCard {
   public setNumber: string = '28';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Kingler V';
-  public fullName: string = 'Kingler V (BRS 28)';
+  public fullName: string = 'Kingler V BRS 28';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Falling Bubbles

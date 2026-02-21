@@ -32,5 +32,5 @@ export class Corphish extends PokemonCard {
   public setNumber: string = '32';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Corphish';
-  public fullName: string = 'Corphish (BRS 32)';
+  public fullName: string = 'Corphish BRS 32';
 }

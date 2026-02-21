@@ -36,7 +36,7 @@ export class CharizardV extends PokemonCard {
   public setNumber: string = '17';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Charizard V';
-  public fullName: string = 'Charizard V (BRS 17)';
+  public fullName: string = 'Charizard V BRS 17';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Incinerate

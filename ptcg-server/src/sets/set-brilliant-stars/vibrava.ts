@@ -27,5 +27,5 @@ export class Vibrava extends PokemonCard {
   public setNumber: string = '75';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Vibrava';
-  public fullName: string = 'Vibrava (BRS 75)';
+  public fullName: string = 'Vibrava BRS 75';
 }

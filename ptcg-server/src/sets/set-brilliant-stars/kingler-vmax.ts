@@ -37,7 +37,7 @@ export class KinglerVmax extends PokemonCard {
   public setNumber: string = '29';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Kingler VMAX';
-  public fullName: string = 'Kingler VMAX (BRS 29)';
+  public fullName: string = 'Kingler VMAX BRS 29';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Bubbles Galore

@@ -38,7 +38,7 @@ export class Wormadam3 extends PokemonCard {
   public setNumber: string = '98';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Wormadam';
-  public fullName: string = 'Wormadam (BRS 98)';
+  public fullName: string = 'Wormadam BRS 98';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Matron's Anger

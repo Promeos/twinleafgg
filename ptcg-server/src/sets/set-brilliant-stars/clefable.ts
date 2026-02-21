@@ -39,7 +39,7 @@ export class Clefable extends PokemonCard {
   public setNumber: string = '54';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Clefable';
-  public fullName: string = 'Clefable (BRS 54)';
+  public fullName: string = 'Clefable BRS 54';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Moonlit Miracle

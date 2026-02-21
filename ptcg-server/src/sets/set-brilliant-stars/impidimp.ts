@@ -35,7 +35,7 @@ export class Impidimp extends PokemonCard {
   public setNumber: string = '92';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Impidimp';
-  public fullName: string = 'Impidimp (BRS 92)';
+  public fullName: string = 'Impidimp BRS 92';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Call for Family

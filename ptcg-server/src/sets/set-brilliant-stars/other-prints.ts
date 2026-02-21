@@ -432,65 +432,65 @@ export class RapidStrikeUrshifuVMAX2BRS extends RapidStrikeUrshifuVMAXBST88 {
 export class BurmyBRS extends Burmy {
   public set: string = 'BRS';
   public setNumber: string = '9';
-  public fullName: string = 'Burmy (BRS 9)';
+  public fullName: string = 'Burmy BRS 9';
 }
 
 export class KarrablastBRS extends Karrablast {
   public set: string = 'BRS';
   public setNumber: string = '15';
-  public fullName: string = 'Karrablast (BRS 15)';
+  public fullName: string = 'Karrablast BRS 15';
 }
 
 export class FreshWaterSetBRS extends FreshWaterSet {
   public set: string = 'BRS';
   public setNumber: string = '139';
-  public fullName: string = 'Fresh Water Set (BRS 139)';
+  public fullName: string = 'Fresh Water Set BRS 139';
 }
 
 export class CharizardV2 extends CharizardV {
   public set: string = 'BRS';
   public setNumber: string = '153';
-  public fullName: string = 'Charizard V (BRS 153)';
+  public fullName: string = 'Charizard V BRS 153';
 }
 
 export class CharizardV3 extends CharizardV {
   public set: string = 'BRS';
   public setNumber: string = '154';
-  public fullName: string = 'Charizard V (BRS 154)';
+  public fullName: string = 'Charizard V BRS 154';
 }
 
 export class GranbullV2 extends GranbullV {
   public set: string = 'BRS';
   public setNumber: string = '159';
-  public fullName: string = 'Granbull V (BRS 159)';
+  public fullName: string = 'Granbull V BRS 159';
 }
 
 export class HonchkrowV2 extends HonchkrowV {
   public set: string = 'BRS';
   public setNumber: string = '161';
-  public fullName: string = 'Honchkrow V (BRS 161)';
+  public fullName: string = 'Honchkrow V BRS 161';
 }
 
 export class HonchkrowV3 extends HonchkrowV {
   public set: string = 'BRS';
   public setNumber: string = '162';
-  public fullName: string = 'Honchkrow V (BRS 162)';
+  public fullName: string = 'Honchkrow V BRS 162';
 }
 
 export class FlygonV2 extends FlygonV {
   public set: string = 'BRS';
   public setNumber: string = '164';
-  public fullName: string = 'Flygon V (BRS 164)';
+  public fullName: string = 'Flygon V BRS 164';
 }
 
 export class Barry2 extends Barry {
   public set: string = 'BRS';
   public setNumber: string = '167';
-  public fullName: string = 'Barry (BRS 167)';
+  public fullName: string = 'Barry BRS 167';
 }
 
 export class CharizardVstar2 extends CharizardVstar {
   public set: string = 'BRS';
   public setNumber: string = '174';
-  public fullName: string = 'Charizard VSTAR (BRS 174)';
+  public fullName: string = 'Charizard VSTAR BRS 174';
 }

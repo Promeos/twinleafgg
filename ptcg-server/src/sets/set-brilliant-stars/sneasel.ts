@@ -32,5 +32,5 @@ export class Sneasel extends PokemonCard {
   public setNumber: string = '86';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Sneasel';
-  public fullName: string = 'Sneasel (BRS 86)';
+  public fullName: string = 'Sneasel BRS 86';
 }

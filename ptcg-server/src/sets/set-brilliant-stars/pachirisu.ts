@@ -30,7 +30,7 @@ export class Pachirisu extends PokemonCard {
   public setNumber: string = '52';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Pachirisu';
-  public fullName: string = 'Pachirisu (BRS 52)';
+  public fullName: string = 'Pachirisu BRS 52';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Windup Thunder

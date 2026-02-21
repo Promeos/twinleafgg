@@ -32,7 +32,7 @@ export class PikachuV extends PokemonCard {
   public setNumber: string = '157';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Pikachu V';
-  public fullName: string = 'Pikachu V (BRS 157)';
+  public fullName: string = 'Pikachu V BRS 157';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Lightning Blast

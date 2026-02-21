@@ -37,7 +37,7 @@ export class HonchkrowV extends PokemonCard {
   public setNumber: string = '88';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Honchkrow V';
-  public fullName: string = 'Honchkrow V (BRS 88)';
+  public fullName: string = 'Honchkrow V BRS 88';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Ability: Boss Pockets

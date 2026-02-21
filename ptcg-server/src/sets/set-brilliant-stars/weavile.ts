@@ -36,7 +36,7 @@ export class Weavile extends PokemonCard {
   public setNumber: string = '87';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Weavile';
-  public fullName: string = 'Weavile (BRS 87)';
+  public fullName: string = 'Weavile BRS 87';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Ransack

@@ -36,7 +36,7 @@ export class Snorunt extends PokemonCard {
   public setNumber: string = '34';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Snorunt';
-  public fullName: string = 'Snorunt (BRS 34)';
+  public fullName: string = 'Snorunt BRS 34';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Ice Breath

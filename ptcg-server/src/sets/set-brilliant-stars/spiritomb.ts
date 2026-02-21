@@ -38,7 +38,7 @@ export class Spiritomb extends PokemonCard {
   public setNumber: string = '89';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Spiritomb';
-  public fullName: string = 'Spiritomb (BRS 89)';
+  public fullName: string = 'Spiritomb BRS 89';
 
   public readonly TICKING_TERROR_MARKER = 'SPIRITOMB_BRS_TICKING_TERROR_MARKER';
   public readonly TICKING_TERROR_2_MARKER = 'SPIRITOMB_BRS_TICKING_TERROR_2_MARKER';

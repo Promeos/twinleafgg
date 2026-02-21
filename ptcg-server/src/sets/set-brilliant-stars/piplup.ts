@@ -30,7 +30,7 @@ export class Piplup extends PokemonCard {
   public setNumber: string = '35';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Piplup';
-  public fullName: string = 'Piplup (BRS 35)';
+  public fullName: string = 'Piplup BRS 35';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Bubble

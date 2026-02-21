@@ -40,7 +40,7 @@ export class Probopass extends PokemonCard {
   public setNumber: string = '99';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Probopass';
-  public fullName: string = 'Probopass (BRS 99)';
+  public fullName: string = 'Probopass BRS 99';
 
   public usedMagneticTension = false;
 

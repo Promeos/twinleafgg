@@ -37,7 +37,7 @@ export class FlygonV extends PokemonCard {
   public setNumber: string = '106';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Flygon V';
-  public fullName: string = 'Flygon V (BRS 106)';
+  public fullName: string = 'Flygon V BRS 106';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Draconic Impulse

@@ -37,7 +37,7 @@ export class Cinccino extends PokemonCard {
   public setNumber: string = '125';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Cinccino';
-  public fullName: string = 'Cinccino (BRS 125)';
+  public fullName: string = 'Cinccino BRS 125';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 2: Triple Axel

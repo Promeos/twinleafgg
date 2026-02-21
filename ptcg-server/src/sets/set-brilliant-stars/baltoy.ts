@@ -31,7 +31,7 @@ export class Baltoy extends PokemonCard {
   public setNumber: string = '58';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Baltoy';
-  public fullName: string = 'Baltoy (BRS 58)';
+  public fullName: string = 'Baltoy BRS 58';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Triple Spin

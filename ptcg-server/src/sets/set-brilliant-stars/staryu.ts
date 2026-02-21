@@ -30,7 +30,7 @@ export class Staryu extends PokemonCard {
   public setNumber: string = '30';
   public cardImage: string = 'assets/cardback.png';
   public name: string = 'Staryu';
-  public fullName: string = 'Staryu (BRS 30)';
+  public fullName: string = 'Staryu BRS 30';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     // Attack 1: Double Spin
