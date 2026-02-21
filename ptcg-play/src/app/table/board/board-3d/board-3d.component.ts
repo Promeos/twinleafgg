@@ -898,6 +898,28 @@ export class Board3dComponent implements OnInit, OnChanges, AfterViewInit, OnDes
     const isLostZone = cardObject.userData.isLostZone;
     const isDeck = cardObject.userData.isDeck;
     const isPrize = cardObject.userData.isPrize;
+    const isEnergyIcon = cardObject.userData.isEnergyIcon;
+    const isToolCard = cardObject.userData.isToolCard;
+
+    // Handle energy icon click (show energy card info)
+    if (isEnergyIcon && cardData && cardList) {
+      this.cardsBaseService.showCardInfo({
+        card: cardData,
+        cardList,
+        players: [this.topPlayer, this.bottomPlayer].filter(p => p)
+      });
+      return;
+    }
+
+    // Handle tool card click (show tool card info)
+    if (isToolCard && cardData && cardList) {
+      this.cardsBaseService.showCardInfo({
+        card: cardData,
+        cardList,
+        players: [this.topPlayer, this.bottomPlayer].filter(p => p)
+      });
+      return;
+    }
 
     // Handle Lost Zone click
     if (isLostZone && cardList) {

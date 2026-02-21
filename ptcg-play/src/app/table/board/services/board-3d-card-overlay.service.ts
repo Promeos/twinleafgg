@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Scene, Vector3, Texture, PerspectiveCamera } from 'three';
-import { PokemonCardList, Card, BoardEffect, SpecialCondition } from 'ptcg-server';
+import { PokemonCardList, Card, CardList, BoardEffect, SpecialCondition } from 'ptcg-server';
 import { Board3dCard } from '../board-3d/board-3d-card';
 import { Board3dAssetLoaderService } from './board-3d-asset-loader.service';
 import { Board3dEnergySprite } from '../board-3d/board-3d-energy-sprite';
@@ -61,7 +61,7 @@ export class Board3dCardOverlayService {
 
     // Update energies
     if (cardList.energies && cardList.energies.cards.length > 0) {
-      await this.updateEnergyOverlay(overlays, cardList.energies.cards);
+      await this.updateEnergyOverlay(overlays, cardList.energies);
     } else {
       overlays.energySprite.clear();
     }
@@ -89,12 +89,13 @@ export class Board3dCardOverlayService {
    */
   private async updateEnergyOverlay(
     overlays: CardOverlays,
-    energyCards: Card[]
+    energyCardList: CardList
   ): Promise<void> {
-    // Load energy textures
+    if (!energyCardList || energyCardList.cards.length === 0) return;
+
     const cardBackTexture = await this.assetLoader.loadCardBack();
 
-    for (const card of energyCards) {
+    for (const card of energyCardList.cards) {
       const iconPath = Board3dEnergySprite.getEnergyIconPath(card);
       if (iconPath && !this.energyTextureCache.has(iconPath)) {
         try {
@@ -106,7 +107,7 @@ export class Board3dCardOverlayService {
       }
     }
 
-    overlays.energySprite.updateEnergies(energyCards, this.energyTextureCache, cardBackTexture);
+    overlays.energySprite.updateEnergies(energyCardList.cards, energyCardList, this.energyTextureCache, cardBackTexture);
   }
 
   /**
@@ -261,6 +262,14 @@ export class Board3dCardOverlayService {
         1.0, // Same size as main card
         maskTexture
       );
+
+      // userData for click-to-show-tool-card-info
+      const toolCardList = new CardList();
+      toolCardList.cards = [tool];
+      toolCardList.isPublic = true;
+      toolCardMesh.getGroup().userData.isToolCard = true;
+      toolCardMesh.getGroup().userData.cardData = tool;
+      toolCardMesh.getGroup().userData.cardList = toolCardList;
 
       // Render above board center overlay (renderOrder 100) so tools are visible on active Pokemon
       toolCardMesh.getGroup().renderOrder = 150;

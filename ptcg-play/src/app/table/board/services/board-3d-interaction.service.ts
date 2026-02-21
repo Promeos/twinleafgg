@@ -183,13 +183,17 @@ export class Board3dInteractionService {
 
   /**
    * Get the card object from an intersection
-   * Traverses up the object hierarchy to find the card group
+   * Traverses up the object hierarchy to find the card group.
+   * Energy icons and tool cards (overlays) take priority so clicking them shows that card's info.
    */
   private getCardFromIntersection(intersection: Intersection): Object3D | null {
     let obj: Object3D | null = intersection.object;
 
-    // Traverse up the hierarchy until we find a card
     while (obj) {
+      // Energy icon or tool overlay: return immediately to show that card's info
+      if (obj.userData?.isEnergyIcon || obj.userData?.isToolCard) {
+        return obj;
+      }
       if (obj.userData && obj.userData.isCard) {
         return obj;
       }
