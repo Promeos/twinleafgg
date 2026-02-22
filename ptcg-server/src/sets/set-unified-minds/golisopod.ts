@@ -3,9 +3,8 @@ import { CardType, Stage } from '../../game/store/card/card-types';
 import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { CheckProvidedEnergyEffect, CheckRetreatCostEffect } from '../../game/store/effects/check-effects';
 import { Effect } from '../../game/store/effects/effect';
-import { PowerEffect, RetreatEffect } from '../../game/store/effects/game-effects';
-import { EndTurnEffect } from '../../game/store/effects/game-phase-effects';
-import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
+import { PowerEffect } from '../../game/store/effects/game-effects';
+import { MOVED_TO_ACTIVE_THIS_TURN, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class Golisopod extends PokemonCard {
   public stage: Stage = Stage.STAGE_1;
@@ -46,11 +45,6 @@ export class Golisopod extends PokemonCard {
   public fullName: string = 'Golisopod UNM';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
-
-    if (effect instanceof EndTurnEffect && this.movedToActiveThisTurn) {
-      this.movedToActiveThisTurn = false;
-    }
-
     if (effect instanceof CheckRetreatCostEffect && effect.player.active.getPokemonCard() === this) {
       const player = effect.player;
 
@@ -80,12 +74,8 @@ export class Golisopod extends PokemonCard {
       return state;
     }
 
-    if (effect instanceof RetreatEffect && effect.player.active.getPokemonCard() !== this) {
-      this.movedToActiveThisTurn = true;
-    }
-
     if (WAS_ATTACK_USED(effect, 0, this)) {
-      if (this.movedToActiveThisTurn) {
+      if (MOVED_TO_ACTIVE_THIS_TURN(effect.player, this)) {
         effect.damage += 60;
       }
     }

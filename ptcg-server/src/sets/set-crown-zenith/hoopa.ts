@@ -3,8 +3,7 @@ import { Stage, CardType } from '../../game/store/card/card-types';
 import { StoreLike, State } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
 
-import { EndTurnEffect } from '../../game/store/effects/game-phase-effects';
-import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
+import { MOVED_TO_ACTIVE_THIS_TURN, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class Hoopa extends PokemonCard {
 
@@ -40,14 +39,8 @@ export class Hoopa extends PokemonCard {
   public fullName: string = 'Hoopa CRZ';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
-
-    if (effect instanceof EndTurnEffect) {
-      this.movedToActiveThisTurn = false;
-      console.log('movedToActiveThisTurn = false');
-    }
-
     if (WAS_ATTACK_USED(effect, 0, this)) {
-      if (!this.movedToActiveThisTurn) {
+      if (!MOVED_TO_ACTIVE_THIS_TURN(effect.player, this)) {
         effect.damage = 0;
         return state;
       }

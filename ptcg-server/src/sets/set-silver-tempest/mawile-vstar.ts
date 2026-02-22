@@ -6,9 +6,8 @@ import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { Stage, CardType, CardTag, BoardEffect } from '../../game/store/card/card-types';
 import { PowerType, StoreLike, State, StateUtils, GameError, GameMessage, PlayerType, SlotType } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
-import { WAS_ATTACK_USED, WAS_POWER_USED, IS_ABILITY_BLOCKED } from '../../game/store/prefabs/prefabs';
+import { MOVED_TO_ACTIVE_THIS_TURN, WAS_ATTACK_USED, WAS_POWER_USED, IS_ABILITY_BLOCKED } from '../../game/store/prefabs/prefabs';
 import { ChoosePokemonPrompt } from '../../game/store/prompts/choose-pokemon-prompt';
-import { EndTurnEffect } from '../../game/store/effects/game-phase-effects';
 
 export class MawileVstar extends PokemonCard {
   public tags = [CardTag.POKEMON_VSTAR];
@@ -93,9 +92,7 @@ export class MawileVstar extends PokemonCard {
       });
 
       if (thisBench) {
-        player.switchPokemon(thisBench);
-        // Mark that this Pokemon moved to active this turn
-        this.movedToActiveThisTurn = true;
+        player.switchPokemon(thisBench, store, state);
       }
 
       // Gust opponent's benched Pokemon to active
@@ -113,16 +110,9 @@ export class MawileVstar extends PokemonCard {
       });
     }
 
-    // Reset movedToActiveThisTurn at end of turn
-    // Ref: set-phantom-forces/yanmega.ts (movedToActiveThisTurn reset)
-    if (effect instanceof EndTurnEffect && this.movedToActiveThisTurn) {
-      this.movedToActiveThisTurn = false;
-    }
-
     // Attack 1: Sudden Eater
-    // Ref: set-phantom-forces/yanmega.ts (Surprise Strike - movedToActiveThisTurn)
     if (WAS_ATTACK_USED(effect, 0, this)) {
-      if (this.movedToActiveThisTurn) {
+      if (MOVED_TO_ACTIVE_THIS_TURN(effect.player, this)) {
         effect.damage += 90;
       }
     }

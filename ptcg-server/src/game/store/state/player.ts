@@ -3,6 +3,7 @@ import { GameMessage } from '../../game-message';
 import { CardTarget, PlayerType, SlotType } from '../actions/play-card-action';
 import { CardTag } from '../card/card-types';
 import { PokemonCard } from '../card/pokemon-card';
+import { MovedToActiveEffect } from '../effects/game-effects';
 import { CardList } from './card-list';
 import { Marker } from './card-marker';
 import { PokemonCardList } from './pokemon-card-list';
@@ -280,6 +281,11 @@ export class Player {
 
         // Keep existing boolean for backwards compatibility
         activePokemon.movedToActiveThisTurn = true;
+
+        // Dispatch MovedToActiveEffect for cards that intercept it (e.g. Cobalion-EX Metal Road)
+        if (store && state) {
+          store.reduceEffect(state, new MovedToActiveEffect(this, activePokemon));
+        }
       }
     }
   }

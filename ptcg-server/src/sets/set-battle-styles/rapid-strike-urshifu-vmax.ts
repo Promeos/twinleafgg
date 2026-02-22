@@ -6,8 +6,7 @@ import { Effect } from '../../game/store/effects/effect';
 import { DiscardCardsEffect } from '../../game/store/effects/attack-effects';
 import { GameMessage } from '../../game/game-message';
 import { CheckProvidedEnergyEffect } from '../../game/store/effects/check-effects';
-import { EndTurnEffect } from '../../game/store/effects/game-phase-effects';
-import { DAMAGE_OPPONENT_POKEMON, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
+import { DAMAGE_OPPONENT_POKEMON, MOVED_TO_ACTIVE_THIS_TURN, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class RapidStrikeUrshifuVMAX extends PokemonCard {
 
@@ -53,13 +52,8 @@ export class RapidStrikeUrshifuVMAX extends PokemonCard {
   public fullName: string = 'Rapid Strike Urshifu VMAX BST';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
-
-    if (effect instanceof EndTurnEffect) {
-      this.movedToActiveThisTurn = false;
-    }
-
     if (WAS_ATTACK_USED(effect, 0, this)) {
-      if (this.movedToActiveThisTurn) {
+      if (MOVED_TO_ACTIVE_THIS_TURN(effect.player, this)) {
         effect.damage += 120;
       }
     }

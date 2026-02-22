@@ -4,8 +4,7 @@ import { StoreLike, State, StateUtils, ChoosePokemonPrompt, GameMessage, PlayerT
 import { PutDamageEffect } from '../../game/store/effects/attack-effects';
 import { Effect } from '../../game/store/effects/effect';
 
-import { EndTurnEffect } from '../../game/store/effects/game-phase-effects';
-import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
+import { MOVED_TO_ACTIVE_THIS_TURN, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class Palafin extends PokemonCard {
 
@@ -46,13 +45,8 @@ export class Palafin extends PokemonCard {
   public fullName: string = 'Palafin OBF';
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
-
-    if (effect instanceof EndTurnEffect) {
-      this.movedToActiveThisTurn = false;
-    }
-
     if (WAS_ATTACK_USED(effect, 1, this)) {
-      if (!this.movedToActiveThisTurn) {
+      if (!MOVED_TO_ACTIVE_THIS_TURN(effect.player, this)) {
         effect.damage = 0;
         return state;
       }

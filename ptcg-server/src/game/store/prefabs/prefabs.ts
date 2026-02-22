@@ -54,6 +54,14 @@ export function JUST_EVOLVED(effect: Effect, card: PokemonCard): effect is Evolv
 }
 
 /**
+ * Returns whether the given Pokemon moved from the player's Bench to the Active Spot this turn.
+ * Uses engine-tracked player.movedToActiveThisTurn (cleared at turn start).
+ */
+export function MOVED_TO_ACTIVE_THIS_TURN(player: Player, pokemon: PokemonCard): boolean {
+  return player.movedToActiveThisTurn.includes(pokemon.id);
+}
+
+/**
  * Adds the "ability used" board effect to the given Pokemon. 
  */
 export function ABILITY_USED(player: Player, card: PokemonCard) {

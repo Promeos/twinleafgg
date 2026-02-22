@@ -40,8 +40,9 @@ export class EarthenSealStone extends TrainerCard {
       if (!effect.player.active.tools.includes(this)) { return state; }
       const pokemonCard = effect.player.active.getPokemonCard();
       if (!pokemonCard) { return state; }
-      // Only attach if the Pokemon is a V Pokemon
-      if (!pokemonCard.tags.includes(CardTag.POKEMON_V)) { return state; }
+      // Only add attack if the Pokemon is a V, VMAX, VSTAR, or V-UNION
+      const vTags = [CardTag.POKEMON_V, CardTag.POKEMON_VMAX, CardTag.POKEMON_VSTAR, CardTag.POKEMON_VUNION];
+      if (!vTags.some(tag => pokemonCard.tags.includes(tag))) { return state; }
       // Don't add the attack if the tool is blocked
       if (IS_TOOL_BLOCKED(store, state, effect.player, this)) { return state; }
       if (!effect.attacks.includes(this.attacks[0])) {

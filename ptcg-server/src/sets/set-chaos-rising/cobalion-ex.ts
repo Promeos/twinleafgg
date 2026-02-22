@@ -1,7 +1,7 @@
-import { CardTag, CardTarget, CardType, ConfirmPrompt, EnergyType, GameMessage, MoveEnergyPrompt, PlayerType, PokemonCard, PowerType, SlotType, Stage, State, StateUtils, StoreLike, SuperType } from '../../game';
+import { CardTag, CardTarget, CardType, ConfirmPrompt, EnergyCard, GameMessage, MoveEnergyPrompt, PlayerType, PokemonCard, PowerType, SlotType, Stage, State, StateUtils, StoreLike, SuperType } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
-import { PowerEffect } from '../../game/store/effects/game-effects';
-import { WAS_ATTACK_USED, REMOVE_MARKER_AT_END_OF_TURN } from '../../game/store/prefabs/prefabs';
+import { MovedToActiveEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { MOVED_TO_ACTIVE_THIS_TURN, REMOVE_MARKER_AT_END_OF_TURN, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class Cobalionex extends PokemonCard {
   public stage: Stage = Stage.BASIC;
@@ -10,7 +10,7 @@ export class Cobalionex extends PokemonCard {
   public hp: number = 210;
   public weakness = [{ type: R }];
   public resistance = [{ type: G, value: -30 }];
-  public retreat = [C, C, C];
+  public retreat = [C, C];
 
   public powers = [{
     name: 'Metal Road',
@@ -39,7 +39,9 @@ export class Cobalionex extends PokemonCard {
     REMOVE_MARKER_AT_END_OF_TURN(effect, this.METAL_ROAD_MARKER, this);
 
     const player = state.players[state.activePlayer];
-    if (this.movedToActiveThisTurn == true && player.active.getPokemonCard() === this) {
+    if (effect instanceof MovedToActiveEffect && effect.pokemonCard === this
+      && state.players[state.activePlayer] === effect.player
+      && MOVED_TO_ACTIVE_THIS_TURN(effect.player, this)) {
 
       if (player.marker.hasMarker(this.METAL_ROAD_MARKER, this)) {
         return state;
@@ -68,20 +70,36 @@ export class Cobalionex extends PokemonCard {
 
         const blockedFrom: CardTarget[] = [];
         const blockedTo: CardTarget[] = [];
+        const blockedMap: {
+          source: CardTarget,
+          blocked: number[]
+        }[] = [];
 
-        let hasEnergyOnBench = false;
+        let hasMetalOrAnyEnergy = false;
         player.forEachPokemon(PlayerType.BOTTOM_PLAYER, (cardList, card, target) => {
           if (cardList === player.active) {
             blockedFrom.push(target);
             return;
           }
           blockedTo.push(target);
-          if (cardList.cards.some(c => c.superType === SuperType.ENERGY)) {
-            hasEnergyOnBench = true;
+
+          // Block cards that do NOT provide Metal or Any (Colorless)
+          const blocked: number[] = [];
+          cardList.cards.forEach((c, index) => {
+            const providesMetalOrAny = c instanceof EnergyCard
+              && (c.provides.includes(CardType.METAL) || c.provides.includes(CardType.ANY));
+            if (!providesMetalOrAny) {
+              blocked.push(index);
+            } else {
+              hasMetalOrAnyEnergy = true;
+            }
+          });
+          if (blocked.length > 0) {
+            blockedMap.push({ source: target, blocked });
           }
         });
 
-        if (hasEnergyOnBench === false) {
+        if (!hasMetalOrAnyEnergy) {
           return state;
         }
 
@@ -90,8 +108,8 @@ export class Cobalionex extends PokemonCard {
           GameMessage.MOVE_ENERGY_CARDS,
           PlayerType.BOTTOM_PLAYER,
           [SlotType.BENCH, SlotType.ACTIVE], // Only allow moving to active
-          { superType: SuperType.ENERGY, energyType: EnergyType.BASIC, name: 'Metal Energy' },
-          { allowCancel: true, blockedFrom, blockedTo }
+          { superType: SuperType.ENERGY },
+          { allowCancel: true, blockedFrom, blockedTo, blockedMap }
         ), transfers => {
           // Add marker whether user moved energy or cancelled - once-per-turn consumed
           player.marker.addMarker(this.METAL_ROAD_MARKER, this);
