@@ -2669,12 +2669,13 @@ export function CAN_PLAY_TRAINER_CARD(store: StoreLike, state: State, player: Pl
         }
         break;
       case TrainerType.STADIUM: {
-        // Can't play stadium if one already played this turn
-        if (player.stadiumPlayedTurn === state.turn) {
+        const stadium = StateUtils.getStadiumCard(state);
+        const isHyperrogueOverPrismTower = trainerCard.name === 'Hyperrogue Ange Floette' && stadium?.name === 'Prism Tower';
+        // Can't play stadium if one already played this turn (unless Hyperrogue Ange Floette over Prism Tower)
+        if (player.stadiumPlayedTurn === state.turn && !isHyperrogueOverPrismTower) {
           return false;
         }
         // Can't play same stadium already in play
-        const stadium = StateUtils.getStadiumCard(state);
         if (stadium && stadium.name === trainerCard.name) {
           return false;
         }
