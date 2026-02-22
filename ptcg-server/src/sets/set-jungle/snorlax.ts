@@ -2,10 +2,9 @@ import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { Stage, CardType, SpecialCondition } from '../../game/store/card/card-types';
 import { CoinFlipPrompt, GameMessage, PokemonCardList, PowerType, State, StateUtils, StoreLike } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
-import { PowerEffect } from '../../game/store/effects/game-effects';
 import { AddSpecialConditionsEffect } from '../../game/store/effects/attack-effects';
 import { CheckTableStateEffect } from '../../game/store/effects/check-effects';
-import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
+import { IS_POKEMON_POWER_BLOCKED, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class Snorlax extends PokemonCard {
   public stage: Stage = Stage.BASIC;
@@ -50,14 +49,7 @@ export class Snorlax extends PokemonCard {
       const cardList = StateUtils.findCardList(state, this);
 
       // Try reducing ability
-      try {
-        const stub = new PowerEffect(player, {
-          name: 'test',
-          powerType: PowerType.POKEMON_POWER,
-          text: ''
-        }, this);
-        store.reduceEffect(state, stub);
-      } catch {
+      if (IS_POKEMON_POWER_BLOCKED(store, state, player, this)) {
         return state;
       }
 

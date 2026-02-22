@@ -2,11 +2,10 @@ import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { Stage, CardType, EnergyType, SuperType, BoardEffect } from '../../game/store/card/card-types';
 import { AttachEnergyPrompt, EnergyCard, GameError, GameMessage, PlayerType, PowerType, SelectPrompt, SlotType, State, StateUtils, StoreLike } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
-import { PowerEffect } from '../../game/store/effects/game-effects';
 import { PutDamageEffect } from '../../game/store/effects/attack-effects';
 import { AttachEnergyEffect, PlayPokemonEffect } from '../../game/store/effects/play-card-effects';
 import { EndTurnEffect } from '../../game/store/effects/game-phase-effects';
-import { WAS_ATTACK_USED, WAS_POWER_USED } from '../../game/store/prefabs/prefabs';
+import { IS_ABILITY_BLOCKED, WAS_ATTACK_USED, WAS_POWER_USED } from '../../game/store/prefabs/prefabs';
 
 export class Swampert extends PokemonCard {
   public stage: Stage = Stage.STAGE_2;
@@ -58,14 +57,7 @@ export class Swampert extends PokemonCard {
       const player = effect.player;
 
       // Check to see if anything is blocking our Ability
-      try {
-        const stub = new PowerEffect(player, {
-          name: 'test',
-          powerType: PowerType.ABILITY,
-          text: ''
-        }, this);
-        store.reduceEffect(state, stub);
-      } catch {
+      if (IS_ABILITY_BLOCKED(store, state, player, this)) {
         return state;
       }
 

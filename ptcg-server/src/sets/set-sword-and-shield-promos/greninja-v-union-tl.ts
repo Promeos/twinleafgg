@@ -10,7 +10,7 @@ import { GreninjaVUNIONBottomRight } from './greninja-v-union-br';
 import { EndTurnEffect } from '../../game/store/effects/game-phase-effects';
 import { PlayItemEffect } from '../../game/store/effects/play-card-effects';
 import { MarkerConstants } from '../../game/store/markers/marker-constants';
-import { WAS_ATTACK_USED, BLOCK_RETREAT, BLOCK_RETREAT_IF_MARKER, REMOVE_MARKER_FROM_ACTIVE_AT_END_OF_TURN, WAS_POWER_USED } from '../../game/store/prefabs/prefabs';
+import { BLOCK_RETREAT, BLOCK_RETREAT_IF_MARKER, REMOVE_MARKER_FROM_ACTIVE_AT_END_OF_TURN, WAS_ATTACK_USED, WAS_POWER_USED } from '../../game/store/prefabs/prefabs';
 
 export class GreninjaVUNIONTopLeft extends PokemonCard {
   public stage: Stage = Stage.VUNION;
@@ -126,14 +126,7 @@ export class GreninjaVUNIONTopLeft extends PokemonCard {
     if (effect instanceof PlayItemEffect && effect.target && effect.target.cards.includes(this)) {
       /*const player = StateUtils.findOwner(state, effect.target);
 
-      try {
-        const stub = new PowerEffect(player, {
-          name: 'test',
-          powerType: PowerType.ABILITY,
-          text: ''
-        }, this);
-        store.reduceEffect(state, stub);
-      } catch {
+      if (IS_ABILITY_BLOCKED(store, state, player, this)) {
         return state;
       }*/
 

@@ -4,8 +4,7 @@ import { PowerType, StoreLike, State, ChoosePokemonPrompt, PlayerType, SlotType,
 import { Stage, CardType } from '../../game/store/card/card-types';
 import { PlayPokemonEffect } from '../../game/store/effects/play-card-effects';
 import { GameMessage } from '../../game/game-message';
-import { PowerEffect } from '../../game/store/effects/game-effects';
-import { DAMAGE_OPPONENT_POKEMON, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
+import { DAMAGE_OPPONENT_POKEMON, IS_ABILITY_BLOCKED, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 
 export class Crobat extends PokemonCard {
@@ -57,14 +56,7 @@ export class Crobat extends PokemonCard {
       const player = StateUtils.findOwner(state, effect.target);
 
       // Try to reduce PowerEffect, to check if something is blocking our ability
-      try {
-        const stub = new PowerEffect(player, {
-          name: 'test',
-          powerType: PowerType.ABILITY,
-          text: ''
-        }, this);
-        store.reduceEffect(state, stub);
-      } catch {
+      if (IS_ABILITY_BLOCKED(store, state, player, this)) {
         return state;
       }
 

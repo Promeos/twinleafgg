@@ -6,11 +6,9 @@ import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { Stage, CardType, SuperType } from '../../game/store/card/card-types';
 import { PowerType, StoreLike, State, StateUtils, AttachEnergyPrompt, PlayerType, SlotType, GameMessage, ConfirmPrompt } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
-import { WAS_ATTACK_USED, MOVE_CARDS } from '../../game/store/prefabs/prefabs';
+import { IS_ABILITY_BLOCKED, MOVE_CARDS, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 import { CheckProvidedEnergyEffect } from '../../game/store/effects/check-effects';
 import { PlayPokemonEffect } from '../../game/store/effects/play-card-effects';
-import { PowerEffect } from '../../game/store/effects/game-effects';
-
 export class Orbeetle extends PokemonCard {
   public stage: Stage = Stage.STAGE_2;
   public evolvesFrom: string = 'Dottler';
@@ -52,14 +50,7 @@ export class Orbeetle extends PokemonCard {
       const player = effect.player;
 
       // Check if ability is blocked
-      try {
-        const stub = new PowerEffect(player, {
-          name: 'test',
-          powerType: PowerType.ABILITY,
-          text: ''
-        }, this);
-        store.reduceEffect(state, stub);
-      } catch {
+      if (IS_ABILITY_BLOCKED(store, state, player, this)) {
         return state;
       }
 

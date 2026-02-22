@@ -3,8 +3,7 @@ import { Stage, CardType } from '../../game/store/card/card-types';
 import { CoinFlipPrompt, GameMessage, PowerType, State, StateUtils, StoreLike } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
 import { CheckHpEffect, CheckProvidedEnergyEffect } from '../../game/store/effects/check-effects';
-import { PowerEffect } from '../../game/store/effects/game-effects';
-import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
+import { IS_ABILITY_BLOCKED, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class Brambleghast extends PokemonCard {
   public regulationMark = 'H';
@@ -45,14 +44,7 @@ export class Brambleghast extends PokemonCard {
 
       const hpBoostPerPrize = 50;
 
-      try {
-        const stub = new PowerEffect(player, {
-          name: 'test',
-          powerType: PowerType.ABILITY,
-          text: ''
-        }, this);
-        store.reduceEffect(state, stub);
-      } catch {
+      if (IS_ABILITY_BLOCKED(store, state, player, this)) {
         return state;
       }
 

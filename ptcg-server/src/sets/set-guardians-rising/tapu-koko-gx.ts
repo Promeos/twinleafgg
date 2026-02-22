@@ -6,8 +6,7 @@ import { Effect } from '../../game/store/effects/effect';
 import { CheckProvidedEnergyEffect } from '../../game/store/effects/check-effects';
 import { StateUtils } from '../../game/store/state-utils';
 import { CardTarget } from '../../game';
-import { PowerEffect } from '../../game/store/effects/game-effects';
-import { BLOCK_IF_GX_ATTACK_USED, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
+import { BLOCK_IF_GX_ATTACK_USED, IS_ABILITY_BLOCKED, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class TapuKokoGX extends PokemonCard {
   public tags = [CardTag.POKEMON_GX];
@@ -51,14 +50,7 @@ export class TapuKokoGX extends PokemonCard {
       const player = effect.player;
 
       // Try to reduce PowerEffect, to check if something is blocking our ability
-      try {
-        const stub = new PowerEffect(player, {
-          name: 'test',
-          powerType: PowerType.ABILITY,
-          text: ''
-        }, this);
-        store.reduceEffect(state, stub);
-      } catch {
+      if (IS_ABILITY_BLOCKED(store, state, player, this)) {
         return state;
       }
 

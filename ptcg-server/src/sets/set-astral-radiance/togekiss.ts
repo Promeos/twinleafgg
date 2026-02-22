@@ -6,7 +6,8 @@ import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { Stage, CardType, BoardEffect } from '../../game/store/card/card-types';
 import { PowerType, StoreLike, State, GameMessage, ConfirmPrompt, PlayerType } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
-import { EvolveEffect, HealEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { EvolveEffect, HealEffect } from '../../game/store/effects/game-effects';
+import { IS_ABILITY_BLOCKED } from '../../game/store/prefabs/prefabs';
 
 export class Togekiss extends PokemonCard {
   public stage: Stage = Stage.STAGE_2;
@@ -16,7 +17,7 @@ export class Togekiss extends PokemonCard {
   public weakness = [{ type: M }];
   public retreat = [C];
 
-  public powers = [  {
+  public powers = [{
     name: 'Shine of Happiness',
     powerType: PowerType.ABILITY,
     text: 'When you play this Pokémon from your hand to evolve 1 of your Pokémon during your turn, you may heal 90 damage from your Active Pokémon.'
@@ -49,14 +50,7 @@ export class Togekiss extends PokemonCard {
         return state;
       }
 
-      try {
-        const stub = new PowerEffect(player, {
-          name: 'test',
-          powerType: PowerType.ABILITY,
-          text: ''
-        }, this);
-        store.reduceEffect(state, stub);
-      } catch {
+      if (IS_ABILITY_BLOCKED(store, state, player, this)) {
         return state;
       }
 

@@ -1,8 +1,7 @@
 import { PokemonCard, Stage, CardType, StoreLike, State, GameMessage, PowerType, CoinFlipPrompt } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
-import { PowerEffect } from '../../game/store/effects/game-effects';
 import { CheckRetreatCostEffect, CheckProvidedEnergyEffect } from '../../game/store/effects/check-effects';
-import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
+import { IS_POKEBODY_BLOCKED, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class Lombre extends PokemonCard {
   public stage: Stage = Stage.STAGE_1;
@@ -45,14 +44,7 @@ export class Lombre extends PokemonCard {
       }
 
       // Try to reduce PowerEffect, to check if something is blocking our ability
-      try {
-        const stub = new PowerEffect(player, {
-          name: 'test',
-          powerType: PowerType.POKEBODY,
-          text: ''
-        }, this);
-        store.reduceEffect(state, stub);
-      } catch {
+      if (IS_POKEBODY_BLOCKED(store, state, player, this)) {
         return state;
       }
 

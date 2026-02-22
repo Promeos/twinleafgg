@@ -3,7 +3,6 @@ import { Stage, CardType, SpecialCondition } from '../../game/store/card/card-ty
 import { StoreLike } from '../../game/store/store-like';
 import { State } from '../../game/store/state/state';
 import { Effect } from '../../game/store/effects/effect';
-import { PowerEffect } from '../../game/store/effects/game-effects';
 import { AddSpecialConditionsEffect } from '../../game/store/effects/attack-effects';
 import { PowerType } from '../../game/store/card/pokemon-types';
 import { StateUtils } from '../../game/store/state-utils';
@@ -11,7 +10,7 @@ import { GameError } from '../../game/game-error';
 import { GameMessage } from '../../game/game-message';
 import { CoinFlipPrompt } from '../../game/store/prompts/coin-flip-prompt';
 import { PlayItemEffect } from '../../game/store/effects/play-card-effects';
-import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
+import { IS_POKEBODY_BLOCKED, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class Vileplume extends PokemonCard {
 
@@ -72,14 +71,7 @@ export class Vileplume extends PokemonCard {
       const player = effect.player;
 
       // Try to reduce PowerEffect, to check if something is blocking our ability
-      try {
-        const stub = new PowerEffect(player, {
-          name: 'test',
-          powerType: PowerType.ABILITY,
-          text: ''
-        }, this);
-        store.reduceEffect(state, stub);
-      } catch {
+      if (IS_POKEBODY_BLOCKED(store, state, player, this)) {
         return state;
       }
 

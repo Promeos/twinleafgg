@@ -4,8 +4,7 @@ import { ChooseCardsPrompt, GameError, GameMessage, PowerType, ShowCardsPrompt, 
 import { Effect } from '../../game/store/effects/effect';
 import { PlayPokemonEffect } from '../../game/store/effects/play-card-effects';
 import { EndTurnEffect } from '../../game/store/effects/game-phase-effects';
-import { PowerEffect } from '../../game/store/effects/game-effects';
-import { MOVE_CARDS, WAS_POWER_USED } from '../../game/store/prefabs/prefabs';
+import { IS_ABILITY_BLOCKED, MOVE_CARDS, WAS_POWER_USED } from '../../game/store/prefabs/prefabs';
 
 export class Grotle extends PokemonCard {
   public stage: Stage = Stage.STAGE_1;
@@ -54,14 +53,7 @@ export class Grotle extends PokemonCard {
       const opponent = StateUtils.getOpponent(state, player);
 
       // Check to see if anything is blocking our Ability
-      try {
-        const stub = new PowerEffect(player, {
-          name: 'test',
-          powerType: PowerType.ABILITY,
-          text: ''
-        }, this);
-        store.reduceEffect(state, stub);
-      } catch {
+      if (IS_ABILITY_BLOCKED(store, state, player, this)) {
         return state;
       }
 

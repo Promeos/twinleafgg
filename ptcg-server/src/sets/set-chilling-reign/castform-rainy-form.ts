@@ -3,9 +3,8 @@ import { Stage, CardType, TrainerType } from '../../game/store/card/card-types';
 import { StoreLike, State, TrainerCard, PowerType } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
 import { CheckAttackCostEffect } from '../../game/store/effects/check-effects';
-import { PowerEffect } from '../../game/store/effects/game-effects';
 import { DealDamageEffect, PutDamageEffect } from '../../game/store/effects/attack-effects';
-import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
+import { IS_ABILITY_BLOCKED, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class CastformRainyForm extends PokemonCard {
   public stage: Stage = Stage.BASIC;
@@ -51,14 +50,7 @@ export class CastformRainyForm extends PokemonCard {
       const player = effect.player;
       const stadiumsInDiscard = player.discard.cards.filter(c => c instanceof TrainerCard && (<TrainerCard>c).trainerType === TrainerType.STADIUM).length;
 
-      try {
-        const stub = new PowerEffect(player, {
-          name: 'test',
-          powerType: PowerType.ABILITY,
-          text: ''
-        }, this);
-        store.reduceEffect(state, stub);
-      } catch {
+      if (IS_ABILITY_BLOCKED(store, state, player, this)) {
         return state;
       }
 

@@ -3,8 +3,7 @@ import { Stage, CardType, SuperType } from '../../game/store/card/card-types';
 import { EnergyCard, PowerType, State, StoreLike } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
 import { CheckHpEffect, CheckProvidedEnergyEffect } from '../../game/store/effects/check-effects';
-import { PowerEffect } from '../../game/store/effects/game-effects';
-import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
+import { IS_ABILITY_BLOCKED, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 
 export class Gourgeist extends PokemonCard {
@@ -40,14 +39,7 @@ export class Gourgeist extends PokemonCard {
     if (effect instanceof CheckHpEffect && effect.target.cards.includes(this)) {
       const player = effect.player;
 
-      try {
-        const stub = new PowerEffect(player, {
-          name: 'test',
-          powerType: PowerType.ABILITY,
-          text: ''
-        }, this);
-        store.reduceEffect(state, stub);
-      } catch {
+      if (IS_ABILITY_BLOCKED(store, state, player, this)) {
         return state;
       }
 

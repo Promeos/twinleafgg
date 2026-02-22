@@ -3,9 +3,8 @@ import { Stage, CardType } from '../../game/store/card/card-types';
 import { GameError, GameMessage, PowerType, State, StateUtils, StoreLike, SpecialCondition } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
 import { AddSpecialConditionsEffect } from '../../game/store/effects/attack-effects';
-import { PowerEffect } from '../../game/store/effects/game-effects';
 import { PlayStadiumEffect } from '../../game/store/effects/play-card-effects';
-import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
+import { IS_ABILITY_BLOCKED, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class Regice extends PokemonCard {
 
@@ -61,14 +60,7 @@ export class Regice extends PokemonCard {
       const opponent = StateUtils.getOpponent(state, player);
 
       // Try to reduce PowerEffect, to check if something is blocking our ability
-      try {
-        const stub = new PowerEffect(player, {
-          name: 'test',
-          powerType: PowerType.ABILITY,
-          text: ''
-        }, this);
-        store.reduceEffect(state, stub);
-      } catch {
+      if (IS_ABILITY_BLOCKED(store, state, player, this)) {
         return state;
       }
 

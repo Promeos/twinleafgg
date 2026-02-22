@@ -6,8 +6,8 @@ import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { Stage, CardType, CardTag } from '../../game/store/card/card-types';
 import { PowerType, StoreLike, State, GameMessage, GameError, StateUtils } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
-import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
-import { UseAttackEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { IS_ABILITY_BLOCKED, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
+import { UseAttackEffect } from '../../game/store/effects/game-effects';
 
 export class Slaking extends PokemonCard {
   public tags = [CardTag.SINGLE_STRIKE];
@@ -18,7 +18,7 @@ export class Slaking extends PokemonCard {
   public weakness = [{ type: F }];
   public retreat = [C, C, C, C];
 
-  public powers = [  {
+  public powers = [{
     name: 'Act Freely',
     powerType: PowerType.ABILITY,
     text: 'If a Stadium is in play, this Pokémon can\'t attack.'
@@ -47,14 +47,7 @@ export class Slaking extends PokemonCard {
     if (effect instanceof UseAttackEffect && effect.player.active.getPokemonCard() === this) {
       const player = effect.player;
 
-      try {
-        const stub = new PowerEffect(player, {
-          name: 'test',
-          powerType: PowerType.ABILITY,
-          text: ''
-        }, this);
-        store.reduceEffect(state, stub);
-      } catch {
+      if (IS_ABILITY_BLOCKED(store, state, player, this)) {
         return state;
       }
 

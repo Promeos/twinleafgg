@@ -2,9 +2,9 @@ import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { Stage, CardType, CardTag, BoardEffect } from '../../game/store/card/card-types';
 import { PowerType, StoreLike, State, StateUtils, GameError, GameMessage, PlayerType, SlotType, ChoosePokemonPrompt, ConfirmPrompt, ShuffleDeckPrompt } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
-import { PowerEffect, EvolveEffect } from '../../game/store/effects/game-effects';
+import { EvolveEffect } from '../../game/store/effects/game-effects';
 import { PutDamageEffect } from '../../game/store/effects/attack-effects';
-import { AFTER_ATTACK, BLOCK_IF_GX_ATTACK_USED, CONFIRMATION_PROMPT, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
+import { AFTER_ATTACK, BLOCK_IF_GX_ATTACK_USED, CONFIRMATION_PROMPT, IS_ABILITY_BLOCKED, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 // FLI Greninja-GX 24 (https://limitlesstcg.com/cards/FLI/24)
 export class GreninjaGX extends PokemonCard {
@@ -63,14 +63,7 @@ export class GreninjaGX extends PokemonCard {
       const player = effect.player;
 
       // Try to reduce PowerEffect, to check if something is blocking our ability
-      try {
-        const stub = new PowerEffect(player, {
-          name: 'test',
-          powerType: PowerType.ABILITY,
-          text: ''
-        }, this);
-        store.reduceEffect(state, stub);
-      } catch {
+      if (IS_ABILITY_BLOCKED(store, state, player, this)) {
         return state;
       }
 

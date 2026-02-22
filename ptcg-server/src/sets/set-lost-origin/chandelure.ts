@@ -6,7 +6,8 @@ import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { Stage, CardType, BoardEffect } from '../../game/store/card/card-types';
 import { PowerType, StoreLike, State, StateUtils, GameMessage, ConfirmPrompt, PlayerType } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
-import { EvolveEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { EvolveEffect } from '../../game/store/effects/game-effects';
+import { IS_ABILITY_BLOCKED } from '../../game/store/prefabs/prefabs';
 
 export class Chandelure extends PokemonCard {
   public stage: Stage = Stage.STAGE_2;
@@ -16,7 +17,7 @@ export class Chandelure extends PokemonCard {
   public weakness = [{ type: W }];
   public retreat = [C, C];
 
-  public powers = [  {
+  public powers = [{
     name: 'Mountain Roasting',
     powerType: PowerType.ABILITY,
     text: 'When you play this Pokémon from your hand to evolve 1 of your Pokémon during your turn, you may discard the top 3 cards of your opponent\'s deck.'
@@ -45,14 +46,7 @@ export class Chandelure extends PokemonCard {
     if (effect instanceof EvolveEffect && effect.pokemonCard === this) {
       const player = effect.player;
 
-      try {
-        const stub = new PowerEffect(player, {
-          name: 'test',
-          powerType: PowerType.ABILITY,
-          text: ''
-        }, this);
-        store.reduceEffect(state, stub);
-      } catch {
+      if (IS_ABILITY_BLOCKED(store, state, player, this)) {
         return state;
       }
 

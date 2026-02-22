@@ -6,11 +6,11 @@ import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { Stage, CardType, SuperType } from '../../game/store/card/card-types';
 import { PowerType, StoreLike, State, GameMessage, PlayerType } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
-import { EvolveEffect, PowerEffect } from '../../game/store/effects/game-effects';
+import { EvolveEffect } from '../../game/store/effects/game-effects';
 import { Card } from '../../game/store/card/card';
 import { ChooseCardsPrompt } from '../../game/store/prompts/choose-cards-prompt';
 import { ConfirmPrompt } from '../../game/store/prompts/confirm-prompt';
-import { SHUFFLE_DECK, ADD_MARKER, HAS_MARKER, REMOVE_MARKER_AT_END_OF_TURN } from '../../game/store/prefabs/prefabs';
+import { ADD_MARKER, HAS_MARKER, IS_ABILITY_BLOCKED, REMOVE_MARKER_AT_END_OF_TURN, SHUFFLE_DECK } from '../../game/store/prefabs/prefabs';
 
 export class Eevee extends PokemonCard {
   public stage: Stage = Stage.BASIC;
@@ -61,14 +61,7 @@ export class Eevee extends PokemonCard {
       }
 
       // Check if ability is blocked
-      try {
-        const stub = new PowerEffect(player, {
-          name: 'test',
-          powerType: PowerType.ABILITY,
-          text: ''
-        }, this);
-        store.reduceEffect(state, stub);
-      } catch {
+      if (IS_ABILITY_BLOCKED(store, state, player, this)) {
         return state;
       }
 

@@ -3,12 +3,11 @@ import { Stage, CardType, CardTag } from '../../game/store/card/card-types';
 import { StoreLike } from '../../game/store/store-like';
 import { State } from '../../game/store/state/state';
 import { PowerType } from '../../game/store/card/pokemon-types';
-import { PowerEffect } from '../../game/store/effects/game-effects';
 import { Effect } from '../../game/store/effects/effect';
 import { CheckProvidedEnergyEffect, CheckRetreatCostEffect } from '../../game/store/effects/check-effects';
 import { StateUtils, ChoosePokemonPrompt, GameMessage, PlayerType, SlotType, CardTarget } from '../../game';
 import { PutDamageEffect } from '../../game/store/effects/attack-effects';
-import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
+import { IS_ABILITY_BLOCKED, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class Zapdosex extends PokemonCard {
   public stage: Stage = Stage.BASIC;
@@ -45,14 +44,7 @@ export class Zapdosex extends PokemonCard {
       const player = effect.player;
 
       // Check to see if anything is blocking our Ability
-      try {
-        const stub = new PowerEffect(player, {
-          name: 'test',
-          powerType: PowerType.ABILITY,
-          text: ''
-        }, this);
-        store.reduceEffect(state, stub);
-      } catch {
+      if (IS_ABILITY_BLOCKED(store, state, player, this)) {
         return state;
       }
 

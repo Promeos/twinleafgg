@@ -1,9 +1,8 @@
 import { PokemonCard, CardTag, Stage, CardType, PowerType, StoreLike, State, ConfirmPrompt, GameMessage, ChooseCardsPrompt, SuperType, TrainerType, StateUtils, ChoosePokemonPrompt, PlayerType, SlotType, ShuffleDeckPrompt, BoardEffect } from '../../game';
 import { PutDamageEffect, KnockOutOpponentEffect } from '../../game/store/effects/attack-effects';
 import { Effect } from '../../game/store/effects/effect';
-import { PowerEffect } from '../../game/store/effects/game-effects';
 import { PlayPokemonEffect } from '../../game/store/effects/play-card-effects';
-import { BLOCK_IF_GX_ATTACK_USED, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
+import { BLOCK_IF_GX_ATTACK_USED, IS_ABILITY_BLOCKED, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 
 // LOT Alolan Ninetales-GX 132 (https://limitlesstcg.com/cards/LOT/132)
@@ -65,14 +64,7 @@ export class AlolanNinetalesGX extends PokemonCard {
       const player = effect.player;
 
       // Try to reduce PowerEffect, to check if something is blocking our ability
-      try {
-        const stub = new PowerEffect(player, {
-          name: 'test',
-          powerType: PowerType.ABILITY,
-          text: ''
-        }, this);
-        store.reduceEffect(state, stub);
-      } catch {
+      if (IS_ABILITY_BLOCKED(store, state, player, this)) {
         return state;
       }
 
