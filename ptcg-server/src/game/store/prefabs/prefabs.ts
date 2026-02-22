@@ -1,5 +1,5 @@
-import { AttachEnergyOptions, AttachEnergyPrompt, Card, CardList, CardTarget, ChooseCardsOptions, ChooseCardsPrompt, ChoosePokemonPrompt, ChoosePrizePrompt, ChooseEnergyPrompt, CoinFlipPrompt, ConfirmPrompt, DamageMap, EnergyCard, GameError, GameLog, GameMessage, MoveDamagePrompt, Player, PlayerType, PokemonCardList, PowerType, SelectPrompt, ShowCardsPrompt, ShuffleDeckPrompt, SlotType, State, StateUtils, StoreLike, TrainerCard } from '../..';
-import { TrainerEffect, AttachEnergyEffect, ToolEffect } from '../effects/play-card-effects';
+import { AttachEnergyOptions, AttachEnergyPrompt, Card, CardList, CardTarget, ChooseCardsOptions, ChooseCardsPrompt, ChoosePokemonPrompt, ChoosePrizePrompt, ChooseEnergyPrompt, ConfirmPrompt, DamageMap, EnergyCard, GameError, GameLog, GameMessage, MoveDamagePrompt, Player, PlayerType, PokemonCardList, PowerType, SelectPrompt, ShowCardsPrompt, ShuffleDeckPrompt, SlotType, State, StateUtils, StoreLike, TrainerCard } from '../..';
+import { TrainerEffect, AttachEnergyEffect, ToolEffect, CoinFlipEffect, CoinFlipSequenceEffect } from '../effects/play-card-effects';
 import { BoardEffect, CardTag, CardType, EnergyType, SpecialCondition, Stage, SuperType, TrainerType } from '../card/card-types';
 import { Attack } from '../card/pokemon-types';
 import { GamePhase } from '../state/state';
@@ -2212,12 +2212,13 @@ export function CONFIRMATION_PROMPT(store: StoreLike, state: State, player: Play
 }
 
 export function COIN_FLIP_PROMPT(store: StoreLike, state: State, player: Player, callback: (result: boolean) => void): State {
-  return store.prompt(state, new CoinFlipPrompt(player.id, GameMessage.COIN_FLIP), callback);
+  const coinFlip = new CoinFlipEffect(player, callback);
+  return store.reduceEffect(state, coinFlip);
 }
 
 export function MULTIPLE_COIN_FLIPS_PROMPT(store: StoreLike, state: State, player: Player, amount: number, callback: (results: boolean[]) => void): State {
-  const prompts: CoinFlipPrompt[] = new Array(amount).fill(0).map((_) => new CoinFlipPrompt(player.id, GameMessage.COIN_FLIP));
-  return store.prompt(state, prompts, callback);
+  const sequenceEffect = new CoinFlipSequenceEffect(player, amount, callback);
+  return store.reduceEffect(state, sequenceEffect);
 }
 
 /**
@@ -2230,17 +2231,11 @@ export function FLIP_UNTIL_TAILS_AND_COUNT_HEADS(
   player: Player,
   callback: (heads: number) => void
 ): State {
-  const flipCoin = (heads: number): State => {
-    return store.prompt(state, [new CoinFlipPrompt(player.id, GameMessage.COIN_FLIP)], result => {
-      if (result) {
-        return flipCoin(heads + 1);
-      }
-      callback(heads);
-      return state;
-    });
-  };
-
-  return flipCoin(0);
+  const sequenceEffect = new CoinFlipSequenceEffect(player, 'untilTails', (results: boolean[]) => {
+    const headsCount = results.filter(r => r).length;
+    callback(headsCount);
+  });
+  return store.reduceEffect(state, sequenceEffect);
 }
 
 export function SIMULATE_COIN_FLIP(store: StoreLike, state: State, player: Player): boolean {

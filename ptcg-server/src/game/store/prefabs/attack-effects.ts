@@ -5,7 +5,8 @@ import { AddSpecialConditionsEffect, AfterDamageEffect, ApplyWeaknessEffect, Car
 import { CheckProvidedEnergyEffect } from '../effects/check-effects';
 import { AttackEffect } from '../effects/game-effects';
 import { AfterAttackEffect } from '../effects/game-phase-effects';
-import { COIN_FLIP_PROMPT, FLIP_UNTIL_TAILS_AND_COUNT_HEADS, MOVE_CARDS } from './prefabs';
+import { FLIP_UNTIL_TAILS_AND_COUNT_HEADS, MOVE_CARDS } from './prefabs';
+import { CoinFlipEffect } from '../effects/play-card-effects';
 
 
 /**
@@ -253,12 +254,13 @@ export function FLIP_A_COIN_IF_HEADS_DEAL_MORE_DAMAGE(
   state: State,
   effect: AttackEffect,
   amount: number
-) {
-  COIN_FLIP_PROMPT(store, state, effect.player, (result => {
+): State {
+  const coinFlip = new CoinFlipEffect(effect.player, (result: boolean) => {
     if (result) {
       effect.damage += amount;
     }
-  }));
+  });
+  return store.reduceEffect(state, coinFlip);
 }
 
 export function FLIP_A_COIN_UNTIL_YOU_GET_TAILS_DO_X_DAMAGE_PER_HEADS(

@@ -2,9 +2,7 @@ import { PokemonCard } from '../../game/store/card/pokemon-card';
 import { Stage, CardType } from '../../game/store/card/card-types';
 import { StoreLike, State } from '../../game';
 import { Effect } from '../../game/store/effects/effect';
-
-import { CoinFlipEffect } from '../../game/store/effects/play-card-effects';
-import { WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
+import { FLIP_UNTIL_TAILS_AND_COUNT_HEADS, WAS_ATTACK_USED } from '../../game/store/prefabs/prefabs';
 
 export class Pawniard2 extends PokemonCard {
   public stage: Stage = Stage.BASIC;
@@ -30,22 +28,9 @@ export class Pawniard2 extends PokemonCard {
 
   public reduceEffect(store: StoreLike, state: State, effect: Effect): State {
     if (WAS_ATTACK_USED(effect, 0, this)) {
-      const player = effect.player;
-      let headsCount = 0;
-
-      const flipUntilTails = (s: State): State => {
-        const coinFlipEffect = new CoinFlipEffect(player, (result: boolean) => {
-          if (result) {
-            headsCount++;
-            flipUntilTails(s);
-          } else {
-            effect.damage = 10 * headsCount;
-          }
-        });
-        return store.reduceEffect(s, coinFlipEffect);
-      };
-
-      return flipUntilTails(state);
+      return FLIP_UNTIL_TAILS_AND_COUNT_HEADS(store, state, effect.player, headsCount => {
+        effect.damage = 10 * headsCount;
+      });
     }
     return state;
   }
