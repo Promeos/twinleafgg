@@ -2835,7 +2835,8 @@ export function CAN_PLAY_POKEMON_CARD(store: StoreLike, state: State, player: Pl
       if (activePokemon) {
         const matchesEvolution = activePokemon.name === pokemonCard.evolvesFrom ||
           activePokemon.evolvesTo.includes(pokemonCard.name) ||
-          activePokemon.evolvesToStage.includes(pokemonCard.stage);
+          activePokemon.evolvesToStage.includes(pokemonCard.stage) ||
+          (Array.isArray(activePokemon.evolvesFromBase) && activePokemon.evolvesFromBase.length > 0 && activePokemon.evolvesFromBase.includes(pokemonCard.evolvesFrom));
         if (matchesEvolution) {
           // Check if Pokemon was played this turn (can't evolve if played this turn)
           if (player.active.pokemonPlayedTurn < state.turn) {
@@ -2851,7 +2852,8 @@ export function CAN_PLAY_POKEMON_CARD(store: StoreLike, state: State, player: Pl
         if (benchPokemon) {
           const matchesEvolution = benchPokemon.name === pokemonCard.evolvesFrom ||
             benchPokemon.evolvesTo.includes(pokemonCard.name) ||
-            benchPokemon.evolvesToStage.includes(pokemonCard.stage);
+            benchPokemon.evolvesToStage.includes(pokemonCard.stage) ||
+            (Array.isArray(benchPokemon.evolvesFromBase) && benchPokemon.evolvesFromBase.length > 0 && benchPokemon.evolvesFromBase.includes(pokemonCard.evolvesFrom));
           if (matchesEvolution) {
             // Check if Pokemon was played this turn (can't evolve if played this turn)
             if (bench.pokemonPlayedTurn < state.turn) {
