@@ -43,6 +43,7 @@ import { Vibrava2 } from './vibrava2';
 import {
   BoostEnergyDF,
   ProfessorElmsTrainingMethodDF,
+  SwitchDF,
   TvReporterDF
 } from './other-prints';
 
@@ -90,5 +91,6 @@ export const setEXDragonFrontiers: Card[] = [
   // Other prints
   new BoostEnergyDF(),
   new ProfessorElmsTrainingMethodDF(),
+  new SwitchDF(),
   new TvReporterDF(),
 ];
