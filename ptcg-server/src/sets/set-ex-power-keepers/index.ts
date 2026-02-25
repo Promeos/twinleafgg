@@ -9,11 +9,14 @@ import { FlareonStar } from './flareon-star';
 import { JolteonStar } from './jolteon-star';
 import { Machoke } from './machoke';
 import { Machop } from './machop';
+import { Metagrossex } from './metagross-ex';
 import { MysteriousFossil } from './mysterious-fossil';
+import { PhoebesStadium } from './phoebes-stadium';
 import { Salamenceex } from './salamence-ex';
 import { SidneysStadium } from './sidneys-stadium';
 import { Skitty } from './skitty';
 import { StevensAdvice } from './stevens-advice';
+import { Wynaut } from './wynaut';
 
 // Other prints
 import {
@@ -35,11 +38,14 @@ export const setEXPowerKeepers: Card[] = [
   new JolteonStar(),
   new Machoke(),
   new Machop(),
+  new Metagrossex(),
   new MysteriousFossil(),
+  new PhoebesStadium(),
   new Salamenceex(),
   new SidneysStadium(),
   new Skitty(),
   new StevensAdvice(),
+  new Wynaut(),
 
   // Other prints
   new DarknessEnergySpecialPK(),

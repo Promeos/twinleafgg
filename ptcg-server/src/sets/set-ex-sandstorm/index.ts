@@ -6,8 +6,10 @@ import { Gardevoirex } from './gardevoir-ex';
 import { LanettesNetSearch } from './lanettes-net-search';
 import { Lombre } from './lombre';
 import { Lotad } from './lotad';
+import { Lunatone } from './lunatone';
 import { Marill } from './marill';
 import { MultiEnergy } from './multi-energy';
+import { Onix } from './onix';
 import { Skitty } from './skitty';
 import { Trapinch } from './trapinch';
 import { Wailmer } from './wailmer';
@@ -30,8 +32,10 @@ export const setEXSandstorm: Card[] = [
   new LanettesNetSearch(),
   new Lombre(),
   new Lotad(),
+  new Lunatone(),
   new Marill(),
   new MultiEnergy(),
+  new Onix(),
   new Skitty(),
   new Trapinch(),
   new Wailmer(),

@@ -1,6 +1,13 @@
+import { BillsMaintenance } from '../set-ex-firered-leafgreen/bills-maintenance';
 import { PokeBall } from '../set-jungle/pokeball';
 import { Potion } from '../set-base-set/potion';
 import { WarpPointMA } from '../set-ex-team-magma-vs-team-aqua/other-prints';
+
+export class BillsMaintenanceCG extends BillsMaintenance {
+  public fullName = 'Bills Maintenance CG';
+  public set = 'CG';
+  public setNumber = '71';
+}
 
 export class PokeBallCG extends PokeBall {
   public fullName = 'Poké Ball CG';

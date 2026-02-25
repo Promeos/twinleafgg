@@ -9,6 +9,7 @@ import { CrystalBeach } from './crystal-beach';
 import { Delcattyex } from './delcatty-ex';
 import { Diglett } from './diglett';
 import { Dugtrio } from './dugtrio';
+import { Electrike } from './electrike';
 import { Fearow } from './fearow';
 import { Grovyle } from './grovyle';
 import { Jirachiex } from './jirachi-ex';
@@ -27,6 +28,7 @@ import { Windstorm } from './windstorm';
 
 // Other prints
 import {
+  BillsMaintenanceCG,
   PokeBallCG,
   PotionCG,
   WarpPointCG,
@@ -43,6 +45,7 @@ export const setEXCrystalGuardians: Card[] = [
   new Delcattyex(),
   new Diglett(),
   new Dugtrio(),
+  new Electrike(),
   new Fearow(),
   new Grovyle(),
   new Jirachiex(),
@@ -60,6 +63,7 @@ export const setEXCrystalGuardians: Card[] = [
   new Windstorm(),
 
   // Other prints
+  new BillsMaintenanceCG(),
   new PokeBallCG(),
   new PotionCG(),
   new WarpPointCG(),

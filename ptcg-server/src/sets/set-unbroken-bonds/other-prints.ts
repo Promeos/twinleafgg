@@ -208,7 +208,7 @@ export class TripleAccelerationEnergy2UNB extends TripleAccelerationEnergyUNB190
 
 export class Pokegear30UNB extends Pokegear30 {
   public setNumber = '182';
-  public fullName: string = 'Pokégear 3.02 UNB';
+  public fullName: string = 'Pokégear 3.01 UNB';
   public set = 'UNB';
 }
 

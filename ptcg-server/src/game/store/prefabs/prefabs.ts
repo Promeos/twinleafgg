@@ -823,6 +823,23 @@ export function THIS_ATTACK_DOES_X_DAMAGE_TO_X_OF_YOUR_OPPONENTS_POKEMON(damage:
   });
 }
 
+export function THIS_ATTACK_DOES_X_DAMAGE_TO_EACH_OF_YOUR_OPPONENTS_POKEMON(damage: number, effect: AttackEffect, store: StoreLike, state: State, benchOnly: boolean = false) {
+  const player = effect.player;
+  const opponent = StateUtils.getOpponent(state, player);
+
+  opponent.forEachPokemon(PlayerType.TOP_PLAYER, (cardList, card) => {
+    if (effect.target === effect.opponent.active && !benchOnly) {
+      const damageEffect = new DealDamageEffect(effect, damage);
+      damageEffect.target = cardList;
+      return store.reduceEffect(state, damageEffect);
+    }
+    const damageEffect = new PutDamageEffect(effect, damage);
+    damageEffect.target = cardList;
+
+    store.reduceEffect(state, damageEffect);
+  });
+}
+
 export function THIS_POKEMON_DOES_DAMAGE_TO_ITSELF(store: StoreLike, state: State, effect: AttackEffect, amount: number) {
   const dealDamage = new DealDamageEffect(effect, amount);
   dealDamage.target = effect.source;

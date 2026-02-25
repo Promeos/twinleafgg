@@ -22,6 +22,7 @@ import { PowHandExtension } from './pow-hand-extension';
 import { Rattata } from './rattata';
 import { REnergy } from './r-energy';
 import { RocketsAdmin } from './rockets-admin';
+import { RocketsHideout } from './rockets-hideout';
 import { RocketsMission } from './rockets-mission';
 import { RocketsPokeBall } from './rockets-poke-ball';
 import { RocketsScytherex } from './rockets-scyther-ex';
@@ -60,6 +61,7 @@ export const setEXTeamRocketReturns: Card[] = [
   new Rattata(),
   new REnergy(),
   new RocketsAdmin(),
+  new RocketsHideout(),
   new RocketsMission(),
   new RocketsPokeBall(),
   new RocketsScytherex(),
