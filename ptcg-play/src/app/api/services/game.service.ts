@@ -248,24 +248,6 @@ export class GameService {
       .subscribe(() => { }, (error: ApiError) => this.handleError(error));
   }
 
-  public undo(gameId: number) {
-    this.socketService.emit('game:action:undo', { gameId })
-      .subscribe(() => { }, (error: ApiError) => this.handleError(error));
-  }
-
-  public canUndo(gameId: number): Observable<boolean> {
-    return new Observable<boolean>(observer => {
-      this.socketService.emit('game:canUndo', { gameId })
-        .subscribe((result: { canUndo: boolean }) => {
-          observer.next(result.canUndo);
-          observer.complete();
-        }, (error: ApiError) => {
-          observer.next(false);
-          observer.complete();
-        });
-    });
-  }
-
   public forceDisconnect() {
     // Force disconnect from the socket to simulate network issues
     this.socketService.forceDisconnect();

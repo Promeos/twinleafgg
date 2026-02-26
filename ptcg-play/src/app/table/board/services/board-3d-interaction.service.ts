@@ -284,17 +284,6 @@ export class Board3dInteractionService {
         this.pendingDragCamera = camera;
         return card;
       }
-      // Board card dragging (for retreat)
-      if (card.userData.isBoardCard && card.userData.cardTarget) {
-        const target = card.userData.cardTarget as CardTarget;
-        // Only allow dragging active/bench Pokemon for retreat
-        if (target.slot === SlotType.ACTIVE || target.slot === SlotType.BENCH) {
-          // Store pending drag info - will start on move threshold
-          this.pendingDragCard = card;
-          this.pendingDragCamera = camera;
-          return card;
-        }
-      }
     }
 
     return null;

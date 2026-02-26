@@ -39,7 +39,6 @@ export class TableComponent implements OnInit, OnDestroy {
   private gameId: number;
   public showGameOver = false;
   public gameOverPrompt: GameOverPrompt;
-  public canUndoBackend = false;
   public showSandboxPanel = false;
   public sandboxSidebarCollapsed: boolean = false;
   public use3dBoard: boolean = false;
@@ -147,7 +146,6 @@ export class TableComponent implements OnInit, OnDestroy {
         // Game ID should only be set when actively joining as a player, not when spectating
 
         this.updatePlayers(this.gameState, clientId);
-        this.updateCanUndo();
       });
 
     this.gameStates$
@@ -164,19 +162,7 @@ export class TableComponent implements OnInit, OnDestroy {
           this.showSandboxPanel = false;
         }
         this.updatePlayers(this.gameState, clientId);
-        this.updateCanUndo();
       });
-
-    // Listen for undoing event
-    if (this.gameId) {
-      const eventName = `game[${this.gameId}]:undoing`;
-      this.gameService.socketService.on(eventName, (data: { playerName: string }) => {
-        const myName = this.bottomPlayer?.name || this.topPlayer?.name;
-        if (data.playerName && data.playerName !== myName) {
-          this.snackBar.open(`${data.playerName} is rewinding their board state`, 'OK', { duration: 3000 });
-        }
-      });
-    }
   }
 
   ngOnDestroy() {
@@ -379,19 +365,8 @@ export class TableComponent implements OnInit, OnDestroy {
     });
   }
 
-  private updateCanUndo() {
-    if (this.gameId) {
-      this.gameService.canUndo(this.gameId).subscribe(canUndo => {
-        this.canUndoBackend = canUndo;
-      });
-    } else {
-      this.canUndoBackend = false;
-    }
-  }
-
   private updateGameState(state: LocalGameState) {
     this.gameState = state;
-    this.updateCanUndo();
     // Show game over screen when the game is finished
     if (state && state.state && state.state.phase === GamePhase.FINISHED && !state.gameOver) {
       this.showGameOver = true;
@@ -402,14 +377,6 @@ export class TableComponent implements OnInit, OnDestroy {
     }
     // Update player information
     this.updatePlayers(state, this.clientId);
-  }
-
-  public undo() {
-    if (this.gameId) {
-      this.gameService.undo(this.gameId);
-      // Optionally, optimistically set canUndoBackend to false until next state update
-      this.canUndoBackend = false;
-    }
   }
 
   toggleSandboxSidebar() {
